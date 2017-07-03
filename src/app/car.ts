@@ -1,5 +1,5 @@
 export class Car {
-	id: number;
+	id: string;	// TODO:_id
 	name: string;
 	model: string;
 	year: string;
