@@ -1,0 +1,33 @@
+div {
+	border: 1px solid black;
+}
+
+.carCard {
+	display:  inline-block;
+	width: 22em;
+}
+
+button {
+	display: block;
+}
+
+.avatar {
+	display: inline-block;
+	width: 10em;
+	height: 10em;
+	background-color: purple;
+}
+
+nav {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.miles-per-gallon,
+.right-pane {
+	display: inline-block;
+}
+.miles-per-gallon {
+	vertical-align: top;	/*  Needed for proper top-alignment of an inline-block */
+	width: 10em;
+}

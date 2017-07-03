@@ -10,6 +10,9 @@ import { InMemoryDataService }  from '../in-memory-data-service';
 
 import { CarCardComponent } from './car-card.component';
 
+import { Car } from '../car';
+import { FillUp} from '../fillUp';
+
 describe('CarCardComponent', () => {
   let component: CarCardComponent;
   let fixture: ComponentFixture<CarCardComponent>;
@@ -28,6 +31,8 @@ describe('CarCardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CarCardComponent);
     component = fixture.componentInstance;
+    component.fillUps = [new FillUp];    // Needed for tests
+    component.car = new Car;        // not to error out; non-substantial
     fixture.detectChanges();
   });
 
@@ -50,24 +55,5 @@ describe('CarCardComponent', () => {
     element = dbg.nativeElement;
 
     expect(element.getElementsByTagName("div")[0].className).toBe('header');
-  });
-
-  describe('header div', () => {
-    it('should contain text "Hot Rod"', (done) => {
-      let dbg: DebugElement;
-      let element: HTMLElement;
-
-      dbg = fixture.debugElement.query(By.css('.header'));
-      element = dbg.nativeElement;
-
-      let loop = window.setInterval(()=>{
-        if (fixture.componentInstance.carName !== undefined) {
-          window.clearInterval(loop);
-          fixture.detectChanges();
-          expect(element.textContent).toContain('Hot Rod');
-          done();
-        }
-      }, 50);
-    });
   });
 });

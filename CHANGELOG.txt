@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- *car-card.component.ts* CarCardComponent which shows a single car card basically finished
 - DataService class completed
 - *data.service.ts* DataService class which handles HTTP requests towards the server; getCars(), getFillUps() and getReminders() methods implemented together with a belonging test
 - *in-memory-data-service.ts* InMemoryDataService class which will stub the back end using InMemoryDbService.

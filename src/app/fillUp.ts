@@ -1,6 +1,6 @@
 export class FillUp {
 	id: string;	// TODO:_id
-	quantiy: number;
+	quantity: number;
 	pricePerGalon: number;
 	date: string;
 	station: string;

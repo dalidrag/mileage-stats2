@@ -1,7 +1,7 @@
 <div class='carCard'>
  	<div class='header'>
- 		<p>{{carModel}}</p>
- 		<p>{{carName}}</p>
+ 		<p>{{car.model}}</p>
+ 		<p>{{car.name}}</p>
  	</div>
  	<div class='vehicle'>
  		<div class='avatar'></div>
@@ -12,15 +12,17 @@
  		</nav>
  	</div>
  	<div class='statistics'>
- 		<div class='miles-per-gallon'>
- 			<p>{{milesPerGallon}}</p>
- 			<p>MPG</p>
+ 	<div class='miles-per-gallon'>
+ 		<p>{{milesPerGallon}}</p>
+ 			<p>mpg</p>
  		</div>
- 		<p>{{costPerMile}}</p>
- 		<p>COST PER MILE</p>
- 		<div class='dollars-per-month'>
- 			<p>{{costPerMonth}}</p>
- 			<p>DOLLARS PER MONTH</p>
+ 		<div class='right-pane'>
+ 	 		<p>{{costPerMile}}</p>
+ 			<p>cost per mile</p>
+ 			<div class='dollars-per-month'>
+ 				<p>{{costPerMonth}}</p>
+ 				<p>dollars per month</p>
+ 			</div>
  		</div>
  	</div>
 </div>
