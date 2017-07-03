@@ -5,7 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.1.0] - 2017-07-03
 ### Added
+- *car-card.component.ts* CarCardsComponent which shows all car cards basically finished
 - *car-card.component.ts* CarCardComponent which shows a single car card basically finished
 - DataService class completed
 - *data.service.ts* DataService class which handles HTTP requests towards the server; getCars(), getFillUps() and getReminders() methods implemented together with a belonging test
