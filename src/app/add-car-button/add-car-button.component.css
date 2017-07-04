@@ -1,0 +1,14 @@
+div {
+	border: 1px solid black;
+}
+.wrapper {
+	display: inline-flex;	/* So that we can easily vertically center the button */
+	vertical-align: top;		/* Needed to properly align inline-flex to the top */
+	align-items: center;		/* horizontally center the button */
+	width: 22em;
+	height: 27em;
+}
+.add-car-button {
+	width: 100%;
+	text-align: center;	/* vertically center the button */
+}

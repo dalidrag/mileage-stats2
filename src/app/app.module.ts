@@ -12,12 +12,14 @@ import { DataService } from './data.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data-service';
 import { CarCardsComponent } from './car-cards/car-cards.component';
+import { AddCarButtonComponent } from './add-car-button/add-car-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarCardComponent,
-    CarCardsComponent
+    CarCardsComponent,
+    AddCarButtonComponent
   ],
   imports: [
     BrowserModule,
