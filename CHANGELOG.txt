@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- Form validation for AddCar implemented.
+- *cars-data-resolver* implemented.
 - Routing module introduced. Rest of app modularized into Dasboard and AddCar modules.
 - *add-car.component.ts* AddCar component basics implemented.
 - routing.
