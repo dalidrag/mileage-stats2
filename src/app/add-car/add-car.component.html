@@ -1,0 +1,10 @@
+<label for="carModel">Car Model
+	<input id="carModel" [(ngModel)]="car.model" autofocus />
+</label>
+<label for="carNickName">Car Nick Name
+	<input id="carNickName" [(ngModel)]="car.name" />
+</label>
+<label for="carYear">Car Year
+	<input id="carYear" [(ngModel)]="car.year" />
+</label>
+<button id="addCarButton" (click)="writeCarData()" >Create This Car</button>
