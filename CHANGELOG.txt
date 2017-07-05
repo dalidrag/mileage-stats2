@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+
+## [0.2.0] - 2017-07-05
 ### Added
 - Form validation for AddCar implemented.
 - *cars-data-resolver* implemented.
@@ -12,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - *add-car.component.ts* AddCar component basics implemented.
 - routing.
 - *add-car-button.component.ts* AddCarButton component.
+
 
 ## [0.1.0] - 2017-07-03
 ### Added
