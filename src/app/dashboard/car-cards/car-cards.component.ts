@@ -2,10 +2,10 @@
 import { Component, OnInit } from '@angular/core';
 
 // The class which handles AJAX data services
-import { DataService } from '../data.service';
+import { DataService } from '../../data.service';
 
-import { Car } from '../car';
-import { FillUp } from '../fillUp';
+import { Car } from '../../car';
+import { FillUp } from '../../fillUp';
 /***********************************************************************************/
 
 /**

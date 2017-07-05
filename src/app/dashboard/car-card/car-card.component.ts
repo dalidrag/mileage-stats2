@@ -1,9 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { DataService } from '../data.service';
-
-import { FillUp } from '../fillUp';
-import { Car } from '../car';
+import { FillUp } from '../../fillUp';
+import { Car } from '../../car';
 
 /**
  * This component shows a car card, which displays car name and model, car avatar, 
@@ -14,8 +12,7 @@ import { Car } from '../car';
 @Component({
   selector: 'app-car-card',
   templateUrl: './car-card.component.html',
-  styleUrls: ['./car-card.component.css'],
-  providers: [DataService]
+  styleUrls: ['./car-card.component.css']
 })
 export class CarCardComponent implements OnInit {
 	@Input()
@@ -26,7 +23,7 @@ export class CarCardComponent implements OnInit {
 	costPerMile: number;
 	costPerMonth: number;
 
-  constructor(private dataService: DataService) { }
+  constructor() { }
 
   ngOnInit() {
   	// this.dataService.getCars().then((cars)=>{

@@ -4,11 +4,11 @@ import { HttpModule} from '@angular/http';
 import { RouterModule }   from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { RoutingModule } from './routing/routing.module';
+import { AddCarModule } from './add-car/add-car.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+
 import { AppComponent } from './app.component';
-import { CarCardComponent } from './car-card/car-card.component';
-import { CarCardsComponent} from './car-cards/car-cards.component';
-import { AddCarButtonComponent } from './add-car-button/add-car-button.component';
-import { AddCarComponent } from './add-car/add-car.component';
 
 // The class which handles AJAX data services
 import { DataService } from './data.service';
@@ -19,31 +19,15 @@ import { InMemoryDataService }  from './in-memory-data-service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CarCardComponent,
-    CarCardsComponent,
-    AddCarButtonComponent,
-    AddCarComponent
+    AppComponent
   ],
   imports: [
+    RoutingModule,
+    DashboardModule,
+    AddCarModule,
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot([
-    {
-      path: '',
-      redirectTo: '/dashboard',
-      pathMatch: 'full'
-    },
-    {
-      path: 'dashboard',
-      component: CarCardsComponent
-    },
-    {
-      path: 'addCar',
-      component: AddCarComponent
-    }
-    ]),
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [DataService],
