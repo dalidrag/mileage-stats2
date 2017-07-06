@@ -3,14 +3,35 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { CarCardsComponent} from '../dashboard/car-cards/car-cards.component';
+
 import { AddCarComponent } from '../add-car/add-car.component';
+
+import { AccordionComponent } from '../car-detail/accordion/accordion.component';
+import { BasicCarDataComponent } from '../car-detail/basic-car-data/basic-car-data.component';
+import { FillUpsComponent } from '../car-detail/fill-ups/fill-ups.component';
+import { RemindersComponent } from '../car-detail/reminders/reminders.component';
 
 import { CarsDataResolve } from './cars-data-resolver';
 
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: CarCardsComponent },
-    { path: 'addCar', component: AddCarComponent, resolve: { cars: CarsDataResolve } }
+    { path: 'addCar', component: AddCarComponent, resolve: { cars: CarsDataResolve } },
+    { path: 'carDetails', component: AccordionComponent, children: [
+      {
+        path: 'basicCarData',
+        component: BasicCarDataComponent
+      },
+      {
+        path: 'fillUps',
+        component: FillUpsComponent
+      },
+      {
+        path: 'reminders',
+        component: RemindersComponent
+      }
+      ]
+    }
 ];
 
 @NgModule({

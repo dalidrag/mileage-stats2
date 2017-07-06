@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { RoutingModule } from './routing/routing.module';
 import { AddCarModule } from './add-car/add-car.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { CarDetailModule } from './car-detail/car-detail.module';
 
 import { AppComponent } from './app.component';
 
@@ -24,6 +25,7 @@ import { InMemoryDataService }  from './in-memory-data-service';
   imports: [
     RoutingModule,
     DashboardModule,
+    CarDetailModule,
     AddCarModule,
     BrowserModule,
     HttpModule,

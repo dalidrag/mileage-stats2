@@ -1,0 +1,10 @@
+div {	/* The whole reminders frame within the accordion widget */
+	position: absolute;
+	left: 90px;
+	right:  auto;
+	
+	width: 50em;
+	height: 40em;
+
+	border: 1px solid black;
+}

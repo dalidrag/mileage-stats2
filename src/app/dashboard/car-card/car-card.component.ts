@@ -1,7 +1,10 @@
+/****************************************************************************/
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { FillUp } from '../../fillUp';
 import { Car } from '../../car';
+/****************************************************************************/
 
 /**
  * This component shows a car card, which displays car name and model, car avatar, 
@@ -23,7 +26,7 @@ export class CarCardComponent implements OnInit {
 	costPerMile: number;
 	costPerMonth: number;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   	// this.dataService.getCars().then((cars)=>{
@@ -38,6 +41,10 @@ export class CarCardComponent implements OnInit {
       // It changes the result (which is a string) into a number again
       // which means that it uses only as many digits as necessary.
     // });
+  }
+
+  switchToDetails(): void {
+      this.router.navigate(['carDetails']);
   }
 
   CalculateMPG(fillUps: FillUp[]): number {

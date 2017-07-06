@@ -1,0 +1,27 @@
+div {
+	border: 1px solid black;
+}
+.wrapper {
+	position: relative; /* We will want to absolutely position tabs */
+	width: 960px;
+	height: 40em;
+}
+.tab {
+	position: absolute; /* Tabs will be freely floating over the actual content */
+	width: 30px;	/* So they are absolutely positioned */
+	height: 40em;
+}
+.car {							/* Car tab to the far left */
+	left: 0;
+	right: auto;
+}
+.fill-ups {		/* Right position for fill ups means 30px from the right edge */
+	right: 30px;
+	left:  930px;
+	transition: left 0.7s, right 0.7s;
+}
+.reminders {
+	right:  0;	/* Right position for reminders means 0px from the right edge */
+	left: 960px;
+	transition: left 0.7s, right 0.7s;
+}
