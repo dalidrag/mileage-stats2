@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- Adding a reminder implemented.
 - Showing reminders implemented.
 - Code commented and formatted.
 - Redux wired in.

@@ -1,3 +1,5 @@
+import clone from 'lodash';
+
 import { Reminder } from '../common/reminder';
 
 import { ReminderActionCreators } from '../redux-action-creators/reminder.action-creators';
@@ -20,6 +22,16 @@ export const ReminderReducer = (state = INITIAL_STATE, action:any) => {
 			return Object.assign({}, state, {
 	      selectedReminder: action.selectedReminder
 	    });
+	  case ReminderActionCreators.ADD_REMINDER:
+			let newReminders = clone(action.reminders).value(); // value() unwraps a lodash wrapper object
+			newReminders.push(action.reminder);
+ 		  return Object.assign({}, state, {
+        reminders: newReminders
+      });
+     case ReminderActionCreators.DESELECT_REMINDERS:
+	  	 return Object.assign({}, state, {
+	       selectedReminder: undefined
+	     });
 		default:
 			return state;
 	}	

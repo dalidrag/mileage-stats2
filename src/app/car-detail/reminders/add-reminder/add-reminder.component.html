@@ -1,0 +1,14 @@
+<form [formGroup]="addReminderForm" (ngSubmit)="onSubmit(addReminderForm.value)" >
+	<label for="text" >Text
+		<br />
+		<input type="text" id="text" [formControl]="addReminderForm.controls['text']" autofocus />
+		<div class="error" *ngIf="addReminderForm.controls['text'].hasError('required') && addReminderForm.controls['text'].touched">You must enter remninder text</div>
+		<div class="error" *ngIf="addReminderForm.controls['text'].hasError('maxlength') && addReminderForm.controls['text'].touched">At most 20 characters</div>
+	</label>
+	<label for="date">Date
+		<br />
+		<input type="date" id="date" [formControl]="addReminderForm.controls['date']" />
+		<div class="error" *ngIf="addReminderForm.controls['date'].hasError('required') && addReminderForm.controls['date'].touched">You must enter a date</div>
+	</label>
+	<button type="submit" [disabled]="!addReminderForm.valid" >Add This Reminder</button>
+</form>

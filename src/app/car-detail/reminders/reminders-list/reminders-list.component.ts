@@ -56,12 +56,13 @@ export class RemindersListComponent implements OnInit, OnChanges, OnDestroy {
   		this.reminders.sort((reminder1, reminder2) => reminder1.date > reminder2.date ? 1 : -1);
 		}
 	}
-/*	
+	
 	addReminderClicked(): void {
 		this.router.navigate(['addReminder'], {relativeTo: this.route});
 		this.actionCreators.deselectReminders();
 	}
-*/
+
+
  /**
 	* Deletes the selected reminder
 	*

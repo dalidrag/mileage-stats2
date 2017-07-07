@@ -12,6 +12,7 @@ import { FillUpsComponent } from '../car-detail/fill-ups/fill-ups.component';
 import { FillUpDetailComponent } from '../car-detail/fill-ups/fill-up-detail/fill-up-detail.component';
 import { AddFillUpComponent } from '../car-detail/fill-ups/add-fill-up/add-fill-up.component';
 import { RemindersComponent } from '../car-detail/reminders/reminders.component';
+import { AddReminderComponent } from '../car-detail/reminders/add-reminder/add-reminder.component';
 
 import { CarsDataResolve } from './cars-data-resolver';
 import { CarDataResolve } from './car-data-resolver';
@@ -54,6 +55,12 @@ const routes: Routes = [
         path: 'reminders',
         component: RemindersComponent,
         resolve: { reminders: RemindersDataResolve, car: CarDataResolve },
+        children: [
+        {
+          path: 'addReminder',
+          component: AddReminderComponent
+        }
+        ]
       }
       ]
     }
