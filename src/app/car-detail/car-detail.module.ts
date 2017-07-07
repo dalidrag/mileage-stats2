@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule }   from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AccordionComponent } from './accordion/accordion.component';
 import { FillUpsComponent } from './fill-ups/fill-ups.component';
 import { BasicCarDataComponent } from './basic-car-data/basic-car-data.component';
 import { RemindersComponent } from './reminders/reminders.component';
+import { FillUpsListComponent } from './fill-ups/fill-ups-list/fill-ups-list.component';
+import { FillUpsListEntryComponent } from './fill-ups/fill-ups-list/fill-ups-list-entry/fill-ups-list-entry.component';
+import { FillUpDetailComponent } from './fill-ups/fill-up-detail/fill-up-detail.component';
+import { AddFillUpComponent } from './fill-ups/add-fill-up/add-fill-up.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule, ReactiveFormsModule
   ],
-  declarations: [AccordionComponent, FillUpsComponent, BasicCarDataComponent, RemindersComponent]
+  declarations: [AccordionComponent, FillUpsComponent, BasicCarDataComponent, RemindersComponent, FillUpsListComponent, FillUpsListEntryComponent, FillUpDetailComponent, AddFillUpComponent]
 })
 export class CarDetailModule { }

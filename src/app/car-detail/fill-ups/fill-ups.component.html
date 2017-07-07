@@ -1,3 +1,9 @@
-<div>
-  fill-ups works!
+<div class="fill-ups-view">
+	<div class="accordion-sub-view">
+		<button routerLink='addFillUp'>Add</button>
+		<app-fill-ups-list [fillUps]='fillUps'></app-fill-ups-list>
+	</div>
+	<div class="accordion-sub-view">
+		<router-outlet></router-outlet>
+	</div>
 </div>

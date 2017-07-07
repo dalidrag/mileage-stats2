@@ -56,6 +56,32 @@ export class DataService {
 		    .then(response => response.json().data as FillUp[])
 		    .catch(this.handleError);
 	} 
+  /**
+	* This method accepts two parameters, an id for a Fill Up,
+	* and an id for a car. It uses http GET to fetch the corresponding
+	* Fillup for a Car.
+	* It returns a Promise resolved as a FillUp object,
+	* or rejected as an error message or an error object
+	* if error message doesn't exist
+	*
+	* @method getFillUpById
+	* @param carId id of a Car to which a fill up belongs to
+	* @param id id of a fill up
+	* @return {Promise<FillUp>} The FillUp for a Car as a Promise
+	*/
+	getFillUpById(id: string): Promise<FillUp> {
+			return this.http.get(this.fillUpsUrl)
+		 	             .toPromise()
+		 	             .then(response => {
+		 	             		let fillUps = response.json().data as FillUp[];
+		 	             		for (let fillUp of fillUps) {
+		 	             			if (fillUp.id.toString() === id)
+		 	             				return fillUp;
+		 	             		}
+		 	             		return null;
+		 	             	})
+		 	             .catch(this.handleError);
+		}
 	
 	/**
 	  * @method getReminders
@@ -96,7 +122,7 @@ export class DataService {
 		return this.http
 				.post(this.fillUpsUrl, JSON.stringify(newFillUp), {headers: this.headers})
 				.toPromise()
-				.then(() => newFillUp)
+				.then(response => response.json().data as FillUp)
 				.catch(this.handleError);
 	}	
 
@@ -123,13 +149,13 @@ export class DataService {
 	* @param updatedCar Car object to update
 	* @return {Promise<Car>} Updated car as a Promise
 	*/
-	updateCar(updatedCar: Car): Promise<Car> {
+	updateCar(updatedCar: Car): Promise<any> {
 		const url = `${this.carsUrl}/${updatedCar.id}`; // TODO:_id
 		  
 		return this.http
 		  .put(url, JSON.stringify(updatedCar), {headers: this.headers})
 		  .toPromise()
-		  .then(() => updatedCar)
+		  .then(response => response)
 		  .catch(this.handleError);
 	}
 
@@ -138,13 +164,13 @@ export class DataService {
 	* @param updatedFillUp FillUp object to update
 	* @return {Promise<FillUp>} Updated fillUp as a Promise
 	*/
-	updateFillUp(updatedFillUp: FillUp): Promise<FillUp> {
+	updateFillUp(updatedFillUp: FillUp): Promise<any> {
 		const url = `${this.fillUpsUrl}/${updatedFillUp.id}`; // TODO:_id
 		  
 		return this.http
 		  .put(url, JSON.stringify(updatedFillUp), {headers: this.headers})
 		  .toPromise()
-		  .then(() => updatedFillUp)
+		  .then(response => response)
 		  .catch(this.handleError);
 	}
 
@@ -153,13 +179,13 @@ export class DataService {
 	* @param updatedReminder Reminder object to update
 	* @return {Promise<Reminder>} Updated reminder as a Promise
 	*/
-	updateReminder(updatedReminder: Reminder): Promise<Reminder> {
+	updateReminder(updatedReminder: Reminder): Promise<any> {
 		const url = `${this.remindersUrl}/${updatedReminder.id}`; // TODO:_id
 		  
 		return this.http
 		  .put(url, JSON.stringify(updatedReminder), {headers: this.headers})
 		  .toPromise()
-		  .then(() => updatedReminder)
+		  .then(response => response)
 		  .catch(this.handleError);
 	}
 	

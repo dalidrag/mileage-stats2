@@ -6,8 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- *fill-up-detail* - display of single fill up details implemented
+- *fill-ups-list*, *fill-ups-list-entry* - fill ups list basically implemented.
 - *basic-car-data-, fill-ups, reminders* - these views wired into accordion component.
 - *accordion.component.ts* - basic functionality of accordion widget.
+### Fixed
+- DataService is now returning correct data on add, update and delete operations.
 
 
 ## [0.2.0] - 2017-07-05

@@ -12,11 +12,11 @@ import { CarDetailModule } from './car-detail/car-detail.module';
 import { AppComponent } from './app.component';
 
 // The class which handles AJAX data services
-import { DataService } from './data.service';
+import { DataService } from './common/data.service';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data-service';
+import { InMemoryDataService }  from './common/in-memory-data-service';
 
 @NgModule({
   declarations: [

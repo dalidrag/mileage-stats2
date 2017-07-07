@@ -2,8 +2,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { FillUp } from '../../fillUp';
-import { Car } from '../../car';
+import { FillUp } from '../../common/fillUp';
+import { Car } from '../../common/car';
 /****************************************************************************/
 
 /**

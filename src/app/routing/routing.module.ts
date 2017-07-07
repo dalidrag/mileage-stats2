@@ -9,9 +9,13 @@ import { AddCarComponent } from '../add-car/add-car.component';
 import { AccordionComponent } from '../car-detail/accordion/accordion.component';
 import { BasicCarDataComponent } from '../car-detail/basic-car-data/basic-car-data.component';
 import { FillUpsComponent } from '../car-detail/fill-ups/fill-ups.component';
+import { FillUpDetailComponent } from '../car-detail/fill-ups/fill-up-detail/fill-up-detail.component';
+import { AddFillUpComponent } from '../car-detail/fill-ups/add-fill-up/add-fill-up.component';
 import { RemindersComponent } from '../car-detail/reminders/reminders.component';
 
 import { CarsDataResolve } from './cars-data-resolver';
+import { FillUpsDataResolve } from './fill-ups-data-resolver';
+import { FillUpDataResolve } from './fill-up-data-resolver';
 
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -24,7 +28,19 @@ const routes: Routes = [
       },
       {
         path: 'fillUps',
-        component: FillUpsComponent
+        component: FillUpsComponent,
+        resolve: { fillUps: FillUpsDataResolve },
+        children: [
+          {
+            path: 'addFillUp',
+            component: AddFillUpComponent
+          },
+          {
+            path: ':id',
+            component: FillUpDetailComponent,
+            resolve: { fillUp: FillUpDataResolve }
+          }
+        ]
       },
       {
         path: 'reminders',
@@ -39,7 +55,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [CarsDataResolve],
+  providers: [CarsDataResolve, FillUpsDataResolve, FillUpDataResolve],
   exports: [ RouterModule ]
 })
 export class RoutingModule { }

@@ -1,10 +1,20 @@
-div {		/* The whole fill ups frame within the accordion widget */
-	position: absolute;
+/* div {		
+	border: 1px solid black;
+} */
+.fill-ups-view {	/* The whole 'fill ups' frame within the accordion widget */
+	position: relative;
 	left: 60px;
-	right:  auto;
 	
 	width: 50em;
 	height: 40em;
-
-	border: 1px solid black;
+	border: 1px solid pink;
+}
+.accordion-sub-view {
+	display: inline-block; /* we want sub-views layed out horizontally */
+	position:  relative;	/* So we make them in-line block and position them relatively */
+	vertical-align: top; /* Needed for inline-block to be properly aligned to the top */
+	width: 350px;
+	height: 640px;
+	overflow: auto; /* So we have a vertical scroll bar when content overflows */
+	border: 1px solid green;
 }

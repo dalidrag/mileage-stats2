@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 
+import { FillUp } from '../common/fillUp';
 import { DataService } from '../common/data.service';
-import { Car } from '../common/car';
 
 /**
- * Fetches cars data for car cards
+ * Fetches fill ups data for a car
  *
- * @class CarsDataResolve
+ * @class FillUpsDataResolve
  */
 @Injectable()
-export class CarsDataResolve implements Resolve<Car[]> {
+export class FillUpsDataResolve implements Resolve<FillUp[]> {
 	constructor(private dataService: DataService) {}
 
-resolve(route: ActivatedRouteSnapshot): Promise<Car[]> {
-    return this.dataService.getCars().then(cars => {
-      if (cars) {
-        return cars;
+  resolve(route: ActivatedRouteSnapshot): Promise<FillUp[]> {
+    return this.dataService.getFillUps().then(fillUps => {
+      if (fillUps) {
+        return fillUps;
       } else { // an error
-        // do something, like this.router.navigate(['/dashboard']);
+        console.log('Error while fetching fillUps!');
         return null;
       }
     })

@@ -77,4 +77,13 @@ describe('DataService', () => {
     	});
    });
   });
+
+  describe('getFillUpById() method', () => {
+   it('should return a Promise resolved to a correct FillUp object', (done) => {
+    service.getFillUpById('2').then((data) => {
+     expect(data.quantity).toBe(7);
+     done();
+    });
+   });
+  });
 });

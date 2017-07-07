@@ -3,9 +3,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute }   from '@angular/router';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 
-import { DataService } from '../data.service';
+import { DataService } from '../common/data.service';
 
-import { Car } from '../car';
+import { Car } from '../common/car';
 /***********************************************************************************/
 
 /**

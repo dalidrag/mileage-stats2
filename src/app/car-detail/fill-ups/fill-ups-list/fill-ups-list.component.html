@@ -1,0 +1,3 @@
+<div>
+	<app-fill-ups-list-entry *ngFor='let fillUp of fillUps' [fillUp]='fillUp' (click)='onSelect(fillUp)' [selectedFillUp]='this.selectedFillUp'></app-fill-ups-list-entry>
+</div>
