@@ -1,27 +1,35 @@
 div {
 	border: 1px solid black;
 }
+
 .wrapper {
-	position: relative; /* We will want to absolutely position tabs */
+	position:  relative;	 /* We will want to absolutely position sliders */
 	width: 960px;
-	height: 40em;
+	height: 41em;
+	overflow: hidden; /* The sliders must not be visible when in right position */ 
+}
+.slider-car {
+	position: absolute;
+	width: 900px;
+	left: 0;					/* Car slider to the far left */
+	background-color: lightyellow;
+}
+.slider-fill-ups {			
+	position: absolute;
+	width: 900px;
+	left:  900px;	/* Right position for fill ups means 30px from the right edge */
+	background-color: lightseagreen;
+	transition: left 0.7s;
+}
+.slider-reminders {
+	position: absolute;
+	width: 900px;
+	left: 930px; /* Right position for reminders means 60px from the right edge */
+	background-color: lightskyblue;
+	transition: left 0.7s;
 }
 .tab {
-	position: absolute; /* Tabs will be freely floating over the actual content */
-	width: 30px;	/* So they are absolutely positioned */
+	position: static;
+	width: 30px;
 	height: 40em;
-}
-.car {							/* Car tab to the far left */
-	left: 0;
-	right: auto;
-}
-.fill-ups {		/* Right position for fill ups means 30px from the right edge */
-	right: 30px;
-	left:  930px;
-	transition: left 0.7s, right 0.7s;
-}
-.reminders {
-	right:  0;	/* Right position for reminders means 0px from the right edge */
-	left: 960px;
-	transition: left 0.7s, right 0.7s;
 }

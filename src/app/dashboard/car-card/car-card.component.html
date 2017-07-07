@@ -6,9 +6,9 @@
  	<div class='vehicle'>
  		<div class='avatar'></div>
  		<nav>
- 			<button>Details</button>
- 			<button>Fill ups</button>
- 			<button>Reminders</button>
+ 			<button (click)='buttonDetails($event)'>Details</button>
+ 			<button (click)="buttonFillUps($event)">Fill ups</button>
+ 			<button (click)="buttonReminders($event)">Reminders</button>
  		</nav>
  	</div>
  	<div class='statistics'>

@@ -47,6 +47,19 @@ export class CarCardComponent implements OnInit {
       this.router.navigate(['carDetails', this.car.id]);
   }
 
+  buttonDetails(event: Event): void {
+    event.stopPropagation();
+    this.router.navigate(['carDetails', this.car.id]);
+  }
+  buttonFillUps(event: Event): void {
+    event.stopPropagation();
+    this.router.navigate(['carDetails', this.car.id, 'fillUps']);
+  }
+  buttonReminders(event: Event): void {
+    event.stopPropagation();
+    this.router.navigate(['carDetails', this.car.id, 'reminders']);
+  }
+
   CalculateMPG(fillUps: FillUp[]): number {
     if (!fillUps || fillUps.length === 0) return 0;
 

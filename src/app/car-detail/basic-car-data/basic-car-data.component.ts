@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+
+import { Car } from '../../common/car';
 
 import { NotificationHubService, HubNotificationType } from '../../common/notification-hub.service';
 
@@ -13,12 +16,22 @@ import { NotificationHubService, HubNotificationType } from '../../common/notifi
   templateUrl: './basic-car-data.component.html',
   styleUrls: ['./basic-car-data.component.css']
 })
-export class BasicCarDataComponent implements OnInit {
+export class BasicCarDataComponent implements OnInit, OnDestroy {
+	car: Car;	
 
-  constructor(private notificationHubService: NotificationHubService) { }
+	sub;
 
+  constructor(private route: ActivatedRoute, private notificationHubService: NotificationHubService) { }
+  
   ngOnInit() {
-  	this.notificationHubService.emit(HubNotificationType.AppState, 'Showing basic car data');
+  	this.sub = this.route.data  /* get a fill up data from the resolver service */
+	    .subscribe((data: { car: Car }) => {
+	      this.car = data.car;
+  			this.notificationHubService.emit(HubNotificationType.AppState, 'Showing basic car data for ' + this.car.name);
+	    });
   }
 
+  ngOnDestroy() {
+  	this.sub.unsubscribe();
+  }
 }

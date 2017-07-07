@@ -24,8 +24,14 @@ const routes: Routes = [
     { path: 'addCar', component: AddCarComponent, resolve: { cars: CarsDataResolve } },
      { path: 'carDetails/:carId', component: AccordionComponent, children: [
       {
+        path: '',
+        component: BasicCarDataComponent,
+        resolve: {car: CarDataResolve}
+      },
+      {
         path: 'basicCarData',
-        component: BasicCarDataComponent
+        component: BasicCarDataComponent,
+        resolve: {car: CarDataResolve}
       },
       {
         path: 'fillUps',
