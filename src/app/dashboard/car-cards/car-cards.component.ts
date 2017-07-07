@@ -1,11 +1,13 @@
 /***********************************************************************************/
 import { Component, OnInit } from '@angular/core';
 
-// The class which handles AJAX data services
-import { DataService } from '../../common/data.service';
-
 import { Car } from '../../common/car';
 import { FillUp } from '../../common/fillUp';
+
+// The class which handles AJAX data services
+import { DataService } from '../../common/data.service';
+import { NotificationHubService, HubNotificationType } from '../../common/notification-hub.service';
+import { UtilitiesService } from '../../common/utilities.service';
 /***********************************************************************************/
 
 /**
@@ -24,14 +26,16 @@ export class CarCardsComponent implements OnInit {
 	cars: Car[];
 	fillUps: FillUp[];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService) { }
 
   ngOnInit() {
   	Promise.all([this.dataService.getCars(), this.dataService.getFillUps()])
   	.then((data) => {
   		this.cars = data[0];
   		this.fillUps = data[1];
-  	});
+      this.notificationHubService.emit(HubNotificationType.AppState, 'Showing cars');
+  	})
+    .catch(error => this.utilitiesService.handleError(error));
   }
 
 }

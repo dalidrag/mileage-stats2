@@ -3,9 +3,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute }   from '@angular/router';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 
-import { DataService } from '../common/data.service';
-
 import { Car } from '../common/car';
+
+import { DataService } from '../common/data.service';
+import { NotificationHubService, HubNotificationType } from '../common/notification-hub.service';
+import { UtilitiesService} from '../common/utilities.service';
 /***********************************************************************************/
 
 /**
@@ -29,10 +31,11 @@ export class AddCarComponent implements OnInit {
   carYearCtrl = new FormControl('', Validators.compose([Validators.required, Validators.pattern('[0-9]+'), Validators.minLength(4), Validators.maxLength(4)]));
   addCarForm: FormGroup;
 
-  constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private dataService: DataService, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   	this.car = new Car;
+    this.notificationHubService.emit(HubNotificationType.AppState, 'Adding a new car');
 
     this.addCarForm = new FormGroup({first: this.carModelCtrl, second: this.carNameCtrl, third: this.carYearCtrl});
 
@@ -48,11 +51,10 @@ export class AddCarComponent implements OnInit {
 
   writeCarData(): void {
   	this.dataService.addCar(this.car).then(() => {
-  		this.router.navigate(['dashboard']);
+  		this.notificationHubService.emit(HubNotificationType.Success, 'New car added.');  // Notify of success via event hub service
+      this.router.navigate(['dashboard']);
   	})
-    .catch((error) => {
-      console.error('An error occurred', error); // for dev purposes only; TODO: delete for prod
-    })
+    .catch(error => this.utilitiesService.handleError(error));
   }
 
   static carUnique(control: FormControl): { [s: string]: boolean } {

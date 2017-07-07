@@ -13,14 +13,18 @@ import { AppComponent } from './app.component';
 
 // The class which handles AJAX data services
 import { DataService } from './common/data.service';
+import { NotificationHubService } from './common/notification-hub.service';
+import { UtilitiesService } from './common/utilities.service';
 
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './common/in-memory-data-service';
+import { StatusBarComponent } from './status-bar/status-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StatusBarComponent
   ],
   imports: [
     RoutingModule,
@@ -32,7 +36,7 @@ import { InMemoryDataService }  from './common/in-memory-data-service';
     FormsModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
-  providers: [DataService],
+  providers: [DataService, NotificationHubService, UtilitiesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

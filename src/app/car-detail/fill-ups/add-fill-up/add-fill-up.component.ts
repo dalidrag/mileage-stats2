@@ -3,7 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, UrlSegment } from '@angular/router';
 
 import { FillUp } from '../../../common/fillUp';
+
 import { DataService } from '../../../common/data.service';
+import { NotificationHubService, HubNotificationType } from '../../../common/notification-hub.service';
+import { UtilitiesService } from '../../../common/utilities.service';
+/***********************************************************************************/
 
 @Component({
   selector: 'app-add-fill-up',
@@ -13,12 +17,12 @@ import { DataService } from '../../../common/data.service';
 export class AddFillUpComponent implements OnInit {
 	addFillUpForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private dataService: DataService) { }
+  constructor(private fb: FormBuilder, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router, private route: ActivatedRoute, private dataService: DataService) { }
 
   ngOnInit() {
   	this.addFillUpForm = this.fb.group({
-  	  		'quantity': ['', Validators.required], 'price': ['', Validators.compose([Validators.required, Validators.pattern('[0-9]*.?[0-9]+')])], 'odometer': ['', Validators.required], 'station': ['', Validators.maxLength(20)], 'date': ['', Validators.required]
-  	  	});
+  		'quantity': ['', Validators.required], 'price': ['', Validators.compose([Validators.required, Validators.pattern('[0-9]*.?[0-9]+')])], 'odometer': ['', Validators.required], 'station': ['', Validators.maxLength(20)], 'date': ['', Validators.required]
+  	});
   }
 
   onSubmit(formValues: any): void {  
@@ -31,10 +35,9 @@ export class AddFillUpComponent implements OnInit {
 
   	this.dataService.addFillUp(newFillup).then((addedFillUp: FillUp) => {
   		this.router.navigate(['../', addedFillUp.id], { relativeTo: this.route }); // Go up to parent route
-  	}).
-  	catch((error) => {
-  		console.log(error); // TODO: delete for production
-  	});
+      this.notificationHubService.emit(HubNotificationType.Success, 'FillUp Added');
+  	})
+  	.catch(error => this.utilitiesService.handleError(error));
 	}
 
 }

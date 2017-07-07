@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { Router, Resolve, ActivatedRouteSnapshot } from '@angular/router';
+
+import { Car } from '../common/car';
 
 import { DataService } from '../common/data.service';
-import { Car } from '../common/car';
+import { NotificationHubService, HubNotificationType } from '../common/notification-hub.service';
+import { UtilitiesService } from '../common/utilities.service';
+/***********************************************************************************/
 
 /**
  * Fetches cars data for car cards
@@ -11,19 +15,18 @@ import { Car } from '../common/car';
  */
 @Injectable()
 export class CarsDataResolve implements Resolve<Car[]> {
-	constructor(private dataService: DataService) {}
+	constructor(private dataService: DataService, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router) {}
 
-resolve(route: ActivatedRouteSnapshot): Promise<Car[]> {
+  resolve(route: ActivatedRouteSnapshot): Promise<Car[]> {
     return this.dataService.getCars().then(cars => {
       if (cars) {
         return cars;
       } else { // an error
-        // do something, like this.router.navigate(['/dashboard']);
+        this.notificationHubService.emit(HubNotificationType.Error, 'Error while fetching cars!');
+        this.router.navigate(['/']);
         return null;
       }
     })
-    .catch((error) => {
-      console.log(error); // TODO: delete for production
-    });
+    .catch(error => this.utilitiesService.handleError(error));
   }
 }

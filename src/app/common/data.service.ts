@@ -82,7 +82,30 @@ export class DataService {
 		 	             	})
 		 	             .catch(this.handleError);
 		}
-	
+	/**
+		* This method accepts a single integer parameter, an id for a Car,
+		* and uses it to http GET the corresponding Car data.
+		* It returns a Promise resolved as a Car object,
+		* or rejected as an error message or an error object
+		* if error message doesn't exist
+		*
+		* @method getCarById
+		* @return {Promise<Car>} Car object as a Promise
+		*/
+		getCarById(id: string): Promise<Car> {
+			return this.http.get(this.carsUrl)
+		 	             .toPromise()
+		 	             .then(response => {
+		 	             		let cars = response.json().data as Car[];
+		 	             		for (let car of cars) {
+		 	             			if (car.id.toString() === id)
+		 	             				return car;
+		 	             		}
+		 	             		return null;
+		 	             	})
+		 	             .catch(this.handleError);
+		}
+
 	/**
 	  * @method getReminders
     * @return {Promise<Reminder[]>} The array of Reminders as a Promise

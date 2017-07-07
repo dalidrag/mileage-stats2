@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NotificationHubService, HubNotificationType } from '../../common/notification-hub.service';
+
+
 /**
  * Handles reminders for selected car, inside accordion component
  *
@@ -12,9 +15,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RemindersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private notificationHubService: NotificationHubService) { }
 
   ngOnInit() {
+    this.notificationHubService.emit(HubNotificationType.AppState, 'Showing reminders');
   }
 
 }

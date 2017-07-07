@@ -44,7 +44,7 @@ export class CarCardComponent implements OnInit {
   }
 
   switchToDetails(): void {
-      this.router.navigate(['carDetails']);
+      this.router.navigate(['carDetails', this.car.id]);
   }
 
   CalculateMPG(fillUps: FillUp[]): number {
