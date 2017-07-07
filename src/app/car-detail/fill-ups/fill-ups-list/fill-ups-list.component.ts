@@ -1,9 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+/***********************************************************************************/
+import { Component, OnInit, Input, Inject, OnChanges, SimpleChanges } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 import { FillUp } from '../../../common/fillUp';
 
 import { DataService} from '../../../common/data.service';
+
+import { FillUpActionCreators } from '../../../redux-action-creators/fill-up-action-creators';
+/***********************************************************************************/
 
 /**
  * Displays a vertical list of fill ups for the selected car
@@ -15,27 +19,36 @@ import { DataService} from '../../../common/data.service';
   templateUrl: './fill-ups-list.component.html',
   styleUrls: ['./fill-ups-list.component.css']
 })
-export class FillUpsListComponent implements OnInit {
+export class FillUpsListComponent implements OnInit, OnChanges {
 	@Input()
 	fillUps: FillUp[];
 	selectedFillUp: FillUp;
 
-  constructor(private router: Router, private route: ActivatedRoute, private dataService: DataService) { }
+  unsubscribeReduxStore;
+
+  constructor(@Inject('AppStore') private appStore, public actionCreators: FillUpActionCreators, private router: Router, private route: ActivatedRoute, private dataService: DataService) { }
 
   ngOnInit() {
-    this.router.events.subscribe(val => {
-      if (val instanceof NavigationEnd) { // if succesful navigation to fillUps route happened
-        // analyze router state and refetch data if needed; we will always refresh
-        this.dataService.getFillUps().then((fillUps) => {
-          this.fillUps = fillUps;
-        }); 
-      }
+    this.unsubscribeReduxStore = this.appStore.subscribe(() => {
+      let state = this.appStore.getState();
+      this.selectedFillUp = state.fillUps.selectedFillUp;
     });
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.fillUps) {
+      this.fillUps = changes.fillUps.currentValue;
+    }
+  }
+  /**
+   * Updates fill up detail view and marks fill ups list entry as selected
+   *
+   * @method onSelect
+   */
+
   onSelect(fillUp: FillUp): void {
-  	this.selectedFillUp = fillUp;
   	this.router.navigate([fillUp.id], { relativeTo: this.route });
+    this.actionCreators.selectFillUp(fillUp);
   }
 
 }

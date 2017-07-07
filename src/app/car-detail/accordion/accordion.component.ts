@@ -90,7 +90,7 @@ export class AccordionComponent implements OnInit, OnDestroy {
      */
     getTabIndexFromRoute(): number { 
       let childRouteUrl: UrlSegment[] = this.route.snapshot.firstChild.url; // either fillups or reminders or edit car
-      if (childRouteUrl[0].toString() === 'basicCarData')
+      if (!childRouteUrl[0])
         return 0
       else if (childRouteUrl[0].toString() === 'editCar')  // if first url segment is 'editCar'
         return 0                      // tab 0 is selected

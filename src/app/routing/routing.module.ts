@@ -17,6 +17,7 @@ import { CarsDataResolve } from './cars-data-resolver';
 import { CarDataResolve } from './car-data-resolver';
 import { FillUpsDataResolve } from './fill-ups-data-resolver';
 import { FillUpDataResolve } from './fill-up-data-resolver';
+import { RemindersDataResolve } from './reminders-data-resolver';
 
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -51,7 +52,8 @@ const routes: Routes = [
       },
       {
         path: 'reminders',
-        component: RemindersComponent
+        component: RemindersComponent,
+        resolve: { reminders: RemindersDataResolve, car: CarDataResolve },
       }
       ]
     }
@@ -62,7 +64,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [CarsDataResolve, CarDataResolve, FillUpsDataResolve, FillUpDataResolve],
+  providers: [CarsDataResolve, CarDataResolve, FillUpsDataResolve, FillUpDataResolve, RemindersDataResolve],
   exports: [ RouterModule ]
 })
 export class RoutingModule { }

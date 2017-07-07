@@ -1,0 +1,3 @@
+<div>
+	<app-reminders-list-entry *ngFor='let reminder of reminders' [reminder]='reminder' (click)='onSelect(reminder)' [selectedReminder]='this.selectedReminder'></app-reminders-list-entry>
+</div>

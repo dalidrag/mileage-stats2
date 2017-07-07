@@ -9,7 +9,6 @@ import { NotificationHubService, HubNotificationType } from '../common/notificat
 import { UtilitiesService } from '../common/utilities.service';
 /***********************************************************************************/
 
-
 @Injectable()
 export class CarDataResolve implements Resolve<Car> {
 	constructor(private dataService: DataService, private utilitiesService: UtilitiesService, private router: Router, private notificationHubService: NotificationHubService) {}

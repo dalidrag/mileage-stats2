@@ -5,10 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Showing reminders implemented.
+- Code commented and formatted.
+- Redux wired in.
+- Utlilities service-error handling
+- Notification service
 ### Changed
 - Accordion widget further developed.
-- Utlilities service, error handling
-- Notification service
 
 
 ## [0.3.0] - 2017-07-07

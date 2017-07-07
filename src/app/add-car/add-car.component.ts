@@ -49,6 +49,12 @@ export class AddCarComponent implements OnInit {
     this.sub.unsubscribe();
   }
 
+  /**
+    * Writes the new car data to the database
+    * and then navigates away to show all the cars.
+    * 
+    * @method writeCarData
+    */
   writeCarData(): void {
   	this.dataService.addCar(this.car).then(() => {
   		this.notificationHubService.emit(HubNotificationType.Success, 'New car added.');  // Notify of success via event hub service
@@ -57,6 +63,13 @@ export class AddCarComponent implements OnInit {
     .catch(error => this.utilitiesService.handleError(error));
   }
 
+  /**
+   * A validator for a nick-name input field
+   *
+   * @method carUnique
+   * @param control A form control to validate
+   * @return {StringMap<string:boolean>} Returns the result of validation in the form {'carNameNotUnique': true}
+   */
   static carUnique(control: FormControl): { [s: string]: boolean } {
     for (let i = 0; i < AddCarComponent.cars.length; ++i)
         if (control.value === AddCarComponent.cars[i].name)

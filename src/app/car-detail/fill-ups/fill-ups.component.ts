@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+/***********************************************************************************/
+import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd }   from '@angular/router';
 
 import { FillUp } from '../../common/fillUp';
@@ -6,6 +7,8 @@ import { Car } from '../../common/car';
 
 import { NotificationHubService, HubNotificationType } from '../../common/notification-hub.service';
 
+import { FillUpActionCreators } from '../../redux-action-creators/fill-up-action-creators';
+/***********************************************************************************/
 
 /**
  * Handles fill ups for selected car, inside accordion component
@@ -20,18 +23,26 @@ import { NotificationHubService, HubNotificationType } from '../../common/notifi
 export class FillUpsComponent implements OnInit, OnDestroy {
 	fillUps: FillUp[];
   car: Car;
+  selectedFillup;
 
 	sub;
   unsubscribeRouterEvents;
+  unsubscribeReduxStore;
 
-  constructor(private route: ActivatedRoute, private router:Router, private notificationHubService: NotificationHubService) { }
+  constructor(@Inject('AppStore') private appStore, public actionCreators: FillUpActionCreators, private route: ActivatedRoute, private router:Router, private notificationHubService: NotificationHubService) { }
 
   ngOnInit() {
-  	this.sub = this.route.data // Get fillUps and car data from the resolver service
+  	//subscribe listener to state changes
+    this.unsubscribeReduxStore = this.appStore.subscribe(() => {
+      let state = this.appStore.getState();
+      this.fillUps = state.fillUps.fillUps;
+    });
+    this.sub = this.route.data // Get fillUps and car data from the resolver service
     .subscribe((data: { fillUps: FillUp[], car: Car }) => {
-      this.fillUps = data.fillUps;
+      this.actionCreators.loadFillUps(data.fillUps);
       this.car = data.car;
     });
+    
     // Listen to route changes to display notification message about app state
     this.unsubscribeRouterEvents = this.router.events.subscribe(val => {
       if (val instanceof NavigationEnd) { // if succesful navigation to fillUps route happened
@@ -59,6 +70,17 @@ export class FillUpsComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
   	this.sub.unsubscribe();
     this.unsubscribeRouterEvents.unsubscribe();
+    this.unsubscribeReduxStore();
+  }
+
+/**
+ * Presents add fill up component and deselects currently selected fill up
+ *
+ * @method onAddFillUpClick
+ */
+  onAddFillUpClick(): void {
+    this.router.navigate(['addFillUp'], {relativeTo: this.route});
+    this.actionCreators.deselectFillUps();
   }
 
 }

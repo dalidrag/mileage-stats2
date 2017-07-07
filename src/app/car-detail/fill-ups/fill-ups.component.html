@@ -1,6 +1,6 @@
 <div class="fill-ups-view">
 	<div class="accordion-sub-view">
-		<button routerLink='addFillUp'>Add</button>
+		<button (click)='onAddFillUpClick()' id="add-fill-up">Add</button>
 		<app-fill-ups-list [fillUps]='fillUps'></app-fill-ups-list>
 	</div>
 	<div class="accordion-sub-view">

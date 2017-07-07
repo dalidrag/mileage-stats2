@@ -1,3 +1,4 @@
+/***********************************************************************************/
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
@@ -6,6 +7,7 @@ import 'rxjs/add/operator/toPromise';
 import { Car } from './car';
 import { FillUp } from './fillUp';
 import { Reminder } from './reminder';
+/***********************************************************************************/
 
 /**
  * Provides exchange of data with a back-end database
@@ -105,7 +107,19 @@ export class DataService {
 		 	             	})
 		 	             .catch(this.handleError);
 		}
-
+		getReminderById(id: string): Promise<Reminder> {
+			return this.http.get(this.remindersUrl)
+       .toPromise()
+       .then(response => {
+       		let reminders = response.json().data as Reminder[];
+       		for (let reminder of reminders) {
+       			if (reminder.id.toString() === id)
+       				return reminder;
+       		}
+       		return null;
+       	})
+        .catch(this.handleError);
+			}
 	/**
 	  * @method getReminders
     * @return {Promise<Reminder[]>} The array of Reminders as a Promise

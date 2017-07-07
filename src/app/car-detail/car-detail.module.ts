@@ -11,6 +11,8 @@ import { FillUpsListComponent } from './fill-ups/fill-ups-list/fill-ups-list.com
 import { FillUpsListEntryComponent } from './fill-ups/fill-ups-list/fill-ups-list-entry/fill-ups-list-entry.component';
 import { FillUpDetailComponent } from './fill-ups/fill-up-detail/fill-up-detail.component';
 import { AddFillUpComponent } from './fill-ups/add-fill-up/add-fill-up.component';
+import { RemindersListComponent } from './reminders/reminders-list/reminders-list.component';
+import { RemindersListEntryComponent } from './reminders/reminders-list/reminders-list-entry/reminders-list-entry.component';
 
 @NgModule({
   imports: [
@@ -18,6 +20,6 @@ import { AddFillUpComponent } from './fill-ups/add-fill-up/add-fill-up.component
     RouterModule,
     FormsModule, ReactiveFormsModule
   ],
-  declarations: [AccordionComponent, FillUpsComponent, BasicCarDataComponent, RemindersComponent, FillUpsListComponent, FillUpsListEntryComponent, FillUpDetailComponent, AddFillUpComponent]
+  declarations: [AccordionComponent, FillUpsComponent, BasicCarDataComponent, RemindersComponent, FillUpsListComponent, FillUpsListEntryComponent, FillUpDetailComponent, AddFillUpComponent, RemindersListComponent, RemindersListEntryComponent]
 })
 export class CarDetailModule { }

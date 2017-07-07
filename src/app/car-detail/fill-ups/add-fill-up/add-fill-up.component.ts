@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+/***********************************************************************************/
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, UrlSegment } from '@angular/router';
 
@@ -7,8 +8,15 @@ import { FillUp } from '../../../common/fillUp';
 import { DataService } from '../../../common/data.service';
 import { NotificationHubService, HubNotificationType } from '../../../common/notification-hub.service';
 import { UtilitiesService } from '../../../common/utilities.service';
+
+import { FillUpActionCreators } from '../../../redux-action-creators/fill-up-action-creators';
 /***********************************************************************************/
 
+/**
+ * Controls the form for adding a fill up
+ *
+ * @class AddFillUpComponent
+ */
 @Component({
   selector: 'app-add-fill-up',
   templateUrl: './add-fill-up.component.html',
@@ -17,7 +25,7 @@ import { UtilitiesService } from '../../../common/utilities.service';
 export class AddFillUpComponent implements OnInit {
 	addFillUpForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router, private route: ActivatedRoute, private dataService: DataService) { }
+  constructor(@Inject('AppStore') private appStore, public actionCreators: FillUpActionCreators, private fb: FormBuilder, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router, private route: ActivatedRoute, private dataService: DataService) { }
 
   ngOnInit() {
   	this.addFillUpForm = this.fb.group({
@@ -25,6 +33,12 @@ export class AddFillUpComponent implements OnInit {
   	});
   }
 
+ /**
+  * Sends add fill up form values to the server
+  *
+  * @method onSubmit
+  * @param formValues The collected form values
+  */
   onSubmit(formValues: any): void {  
   	let newFillup = new FillUp;
   	newFillup.quantity = formValues.quantity;
@@ -36,6 +50,8 @@ export class AddFillUpComponent implements OnInit {
   	this.dataService.addFillUp(newFillup).then((addedFillUp: FillUp) => {
   		this.router.navigate(['../', addedFillUp.id], { relativeTo: this.route }); // Go up to parent route
       this.notificationHubService.emit(HubNotificationType.Success, 'FillUp Added');
+      this.actionCreators.addFillUp(this.appStore.getState().fillUps.fillUps, addedFillUp);
+      this.actionCreators.selectFillUp(addedFillUp);
   	})
   	.catch(error => this.utilitiesService.handleError(error));
 	}

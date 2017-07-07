@@ -14,6 +14,12 @@ export class UtilitiesService {
 
   constructor(private notificationHubService: NotificationHubService, private router: Router) {}
 
+  /**
+   * Handles all data rw errors within the application
+   *
+   * @method handleError
+   * @param error
+   */
   handleError(error): void {
 		let message = error.message || error.statusText || 'unknown error';
 

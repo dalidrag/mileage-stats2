@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 import { NotificationHubService, HubNotificationType } from '../common/notification-hub.service';
 
+/**
+ * Component for showing application state in the status bar
+ *
+ * @class StatusBarComponent
+ */
 @Component({
   selector: 'app-status-bar',
   templateUrl: './status-bar.component.html',
@@ -33,18 +38,26 @@ export class StatusBarComponent implements OnInit {
 		});
   }
 
-  // This method clears notification message after 1.5 seconds
-  scheduleNotificationClearing() {
-    setTimeout(() => {
-      this.notificationMessage = '';
-    this.fadingOut = false;
-    }, 1500);
-  }
-  // This method starts fade out of notification message after 3 seconds
+ /** 
+  * Starts fade out of notification message after 3 seconds
+  *
+  * @method scheduleNotificationFadeOut
+  */
   scheduleNotificationFadeOut() {
     setTimeout(() => {
       this.fadingOut = true;
       this.scheduleNotificationClearing();
     }, 3000)
+  }
+ /**
+  * Clears notification message after 1.5 seconds
+  * 
+  * @method scheduleNotificationClearing
+  */
+  scheduleNotificationClearing() {
+    setTimeout(() => {
+      this.notificationMessage = '';
+    this.fadingOut = false;
+    }, 1500);
   }
 }

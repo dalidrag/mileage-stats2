@@ -21,6 +21,13 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './common/in-memory-data-service';
 import { StatusBarComponent } from './status-bar/status-bar.component';
 
+import { createStore } from 'redux';
+import { rootReducer } from './redux-store/index';
+import { FillUpActionCreators } from './redux-action-creators/fill-up-action-creators';
+import { ReminderActionCreators } from './redux-action-creators/reminder.action-creators';
+
+const appStore = createStore(rootReducer);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +43,11 @@ import { StatusBarComponent } from './status-bar/status-bar.component';
     FormsModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
-  providers: [DataService, NotificationHubService, UtilitiesService],
+  providers: [
+    DataService, NotificationHubService, UtilitiesService,
+    { provide: 'AppStore', useValue: appStore },
+    FillUpActionCreators, ReminderActionCreators
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
