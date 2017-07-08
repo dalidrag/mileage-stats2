@@ -55,5 +55,34 @@ export class AddFillUpComponent implements OnInit {
   	})
   	.catch(error => this.utilitiesService.handleError(error));
 	}
-
+  /**
+    * Trims input fields on losing focus
+    *
+    * @method onBlur
+    * @param event:any
+    */
+    onBlur(event: any) {
+      event.target.value = event.target.value.trim();
+    }
+    
+  /**
+   * Listens for escape key pressed to quit the component
+   *
+   * @method onKey
+   * @param event:any
+   */
+   onKey(event:any): void { // without type info
+     if (event.key === 'Escape') {  // escape key was pressed
+        this.cancel();    
+     } 
+   }
+   /**
+   * Quits the component by routing away
+   *
+   * @method cancel
+   */
+   cancel() {
+      // Simply navigate back to reminders view
+      this.router.navigate(['../'], { relativeTo: this.route }); // Go up to parent route     
+   }
 }

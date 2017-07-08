@@ -1,14 +1,17 @@
-<label for="carModel">Car Model
-	<input id="carModel" name='carModel' [(ngModel)]='car.model' [formControl]="carModelCtrl" autofocus />
-	<span *ngIf="carModelCtrl.hasError('required') && carNameCtrl.touched">You must provide car model</span>
-</label>
-<label for="carNickName">Car Nick Name
-	<input id="carNickName" name='carNickName' [(ngModel)]='car.name' [formControl]="carNameCtrl" />
-	<span *ngIf="carNameCtrl.hasError('required') && carNameCtrl.touched">You must provide car name</span>
-	<span *ngIf="carNameCtrl.hasError('carNameNotUnique') && carModelCtrl.touched">This nick name already exists</span>
-</label>
-<label for="carYear">Car Year
-	<input id="carYear" name='carYear' [(ngModel)]='car.year' [formControl]="carYearCtrl" />
-	<span *ngIf="carYearCtrl.hasError('required') && carNameCtrl.touched">You must provide car year</span>
-</label>
-<button id="addCarButton" (click)="writeCarData()" [disabled]="!addCarForm.valid">Create This Car</button>
+<form (keyup)="onKey($event)">
+	<label for="carModel">Car Model
+		<input id="carModel" name='carModel' [(ngModel)]='car.model' [formControl]="carModelCtrl" (blur)="onBlur($event)" autofocus />
+		<span *ngIf="carModelCtrl.hasError('required') && carNameCtrl.touched">You must provide car model</span>
+	</label>
+	<label for="carNickName">Car Nick Name
+		<input id="carNickName" name='carNickName' [(ngModel)]='car.name' [formControl]="carNameCtrl" (blur)="onBlur($event)" />
+		<span *ngIf="carNameCtrl.hasError('required') && carNameCtrl.touched">You must provide car name</span>
+		<span *ngIf="carNameCtrl.hasError('carNameNotUnique') && carModelCtrl.touched">This nick name already exists</span>
+	</label>
+	<label for="carYear">Car Year
+		<input id="carYear" name='carYear' [(ngModel)]='car.year' [formControl]="carYearCtrl" (blur)="onBlur($event)" />
+		<span *ngIf="carYearCtrl.hasError('required') && carNameCtrl.touched">You must provide car year</span>
+	</label>
+	<button id="addCarButton" (click)="writeCarData()" [disabled]="!addCarForm.valid">Create This Car</button>
+</form>
+<button (click)="cancel()">Cancel</button>

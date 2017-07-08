@@ -1,0 +1,2 @@
+- Input field Angular validators messing up after trimmin text fields
+- When an input field has focus, input field Angular validators messing with the button for cancelling the whole input comonent (add reminder, add fill ups components).
