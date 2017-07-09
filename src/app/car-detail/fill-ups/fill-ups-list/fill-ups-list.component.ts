@@ -38,6 +38,8 @@ export class FillUpsListComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     if (changes.fillUps) {
       this.fillUps = changes.fillUps.currentValue;
+      // Now sort fill ups by date
+      this.fillUps.sort((fillUp1, fillUp2) => fillUp1.date < fillUp2.date ? 1 : -1);
     }
   }
   /**

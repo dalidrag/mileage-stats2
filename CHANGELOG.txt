@@ -5,7 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+
+## [0.4.0] - 2017-07-09
 ### Added
+- Sorting fill ups and reminders list.
+- *cars-list* and *car-details-view*
+- Deleting a car
 - Editing a car
 - Editing and deleting a fill up and a reminder
 - Trimming input fields and canceling input via cancel button or esc key.

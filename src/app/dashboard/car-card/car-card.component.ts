@@ -22,6 +22,10 @@ export class CarCardComponent implements OnInit {
   car: Car;
   @Input()
   fillUps: FillUp[];
+  @Input()
+  selectedCarId: string;
+  @Input()
+  showStatisticsDefault: boolean;
 	milesPerGallon: number;
 	costPerMile: number;
 	costPerMonth: number;

@@ -36,6 +36,8 @@ export class FillUpsComponent implements OnInit, OnDestroy {
     this.unsubscribeReduxStore = this.appStore.subscribe(() => {
       let state = this.appStore.getState();
       this.fillUps = state.fillUps.fillUps;
+      // Now sort fill ups by date
+      this.fillUps.sort((fillUp1, fillUp2) => fillUp1.date < fillUp2.date ? 1 : -1);
     });
     this.sub = this.route.data // Get fillUps and car data from the resolver service
     .subscribe((data: { fillUps: FillUp[], car: Car }) => {

@@ -24,6 +24,7 @@ import { EditCarComponent } from './basic-car-data/edit-car/edit-car.component';
     RouterModule,
     FormsModule, ReactiveFormsModule
   ],
-  declarations: [AccordionComponent, FillUpsComponent, BasicCarDataComponent, RemindersComponent, FillUpsListComponent, FillUpsListEntryComponent, FillUpDetailComponent, AddFillUpComponent, RemindersListComponent, RemindersListEntryComponent, AddReminderComponent, EditFillUpComponent, EditReminderComponent, EditCarComponent]
+  declarations: [AccordionComponent, FillUpsComponent, BasicCarDataComponent, RemindersComponent, FillUpsListComponent, FillUpsListEntryComponent, FillUpDetailComponent, AddFillUpComponent, RemindersListComponent, RemindersListEntryComponent, AddReminderComponent, EditFillUpComponent, EditReminderComponent, EditCarComponent],
+  exports: [AccordionComponent]
 })
 export class CarDetailModule { }

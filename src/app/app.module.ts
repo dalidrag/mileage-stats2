@@ -4,10 +4,14 @@ import { HttpModule} from '@angular/http';
 import { RouterModule }   from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { RoutingModule } from './routing/routing.module';
 import { AddCarModule } from './add-car/add-car.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { CarDetailViewComponent } from './car-detail-view/car-detail-view.component';
+import { StatusBarComponent } from './status-bar/status-bar.component';
+
 import { CarDetailModule } from './car-detail/car-detail.module';
+
+import { RoutingModule } from './routing/routing.module';
 
 import { AppComponent } from './app.component';
 
@@ -19,19 +23,21 @@ import { UtilitiesService } from './common/utilities.service';
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './common/in-memory-data-service';
-import { StatusBarComponent } from './status-bar/status-bar.component';
 
 import { createStore } from 'redux';
 import { rootReducer } from './redux-store/index';
 import { FillUpActionCreators } from './redux-action-creators/fill-up-action-creators';
 import { ReminderActionCreators } from './redux-action-creators/reminder.action-creators';
+import { CarsListComponent } from './car-detail-view/cars-list/cars-list.component';
 
 const appStore = createStore(rootReducer);
 
 @NgModule({
   declarations: [
     AppComponent,
-    StatusBarComponent
+    StatusBarComponent,
+    CarDetailViewComponent,
+    CarsListComponent
   ],
   imports: [
     RoutingModule,
@@ -51,3 +57,4 @@ const appStore = createStore(rootReducer);
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

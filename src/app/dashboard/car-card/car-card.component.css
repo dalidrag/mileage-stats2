@@ -31,3 +31,7 @@ nav {
 	vertical-align: top;	/*  Needed for proper top-alignment of an inline-block */
 	width: 10em;
 }
+
+.selected {
+	border: 2px solid red;
+}

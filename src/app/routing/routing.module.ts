@@ -17,6 +17,8 @@ import { AddReminderComponent } from '../car-detail/reminders/add-reminder/add-r
 import { EditReminderComponent } from '../car-detail/reminders/edit-reminder/edit-reminder.component';
 import { EditCarComponent } from '../car-detail/basic-car-data/edit-car/edit-car.component';
 
+import { CarDetailViewComponent } from '../car-detail-view/car-detail-view.component';
+
 import { CarsDataResolve } from './cars-data-resolver';
 import { CarDataResolve } from './car-data-resolver';
 import { FillUpsDataResolve } from './fill-ups-data-resolver';
@@ -26,9 +28,11 @@ import { ReminderDataResolve } from './reminder-data-resolver';
 
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: CarCardsComponent },
+    { path: 'dashboard', component: CarCardsComponent, resolve: { cars: CarsDataResolve, fillUps: FillUpsDataResolve } },
     { path: 'addCar', component: AddCarComponent, resolve: { cars: CarsDataResolve } },
-     { path: 'carDetails/:carId', component: AccordionComponent, children: [
+     { path: 'carDetails/:carId', component: CarDetailViewComponent,
+       resolve: { cars: CarsDataResolve, fillUps: FillUpsDataResolve },
+       children: [
       {
         path: '',
         component: BasicCarDataComponent,

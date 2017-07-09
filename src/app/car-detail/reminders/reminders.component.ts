@@ -36,6 +36,8 @@ export class RemindersComponent implements OnInit, OnDestroy {
     this.unsubscribeReduxStore = this.appStore.subscribe(() => {
       let state = this.appStore.getState();
       this.reminders = state.reminders.reminders;
+      // Now sort reminders by date
+      this.reminders.sort((reminder1, reminder2) => reminder1.date > reminder2.date ? 1 : -1);
     });
 
     this.sub = this.route.data // Get reminders and car data from the resolver service

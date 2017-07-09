@@ -16,6 +16,10 @@ import { CarCardComponent } from './car-card/car-card.component';
   declarations: [
 	  CarCardComponent,
   	CarCardsComponent
+  ],
+  exports: [
+	  CarCardComponent,
+  	CarCardsComponent
   ]
 })
 export class DashboardModule { }

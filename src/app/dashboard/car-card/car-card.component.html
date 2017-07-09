@@ -1,4 +1,4 @@
-<div class='carCard' (click)='switchToDetails()' >
+<div class='carCard' [class.selected]="selectedCarId===car.id.toString()" (click)='switchToDetails()' >
  	<div class='header'>
  		<p>{{car.model}}</p>
  		<p>{{car.name}}</p>
@@ -11,7 +11,7 @@
  			<button (click)="buttonReminders($event)">Reminders</button>
  		</nav>
  	</div>
- 	<div class='statistics'>
+ 	<div class='statistics' *ngIf="selectedCarId===car.id.toString() || showStatisticsDefault">
  	<div class='miles-per-gallon'>
  		<p>{{milesPerGallon}}</p>
  			<p>mpg</p>

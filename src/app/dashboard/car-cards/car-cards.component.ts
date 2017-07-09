@@ -1,5 +1,6 @@
 /***********************************************************************************/
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { Car } from '../../common/car';
 import { FillUp } from '../../common/fillUp';
@@ -22,20 +23,24 @@ import { UtilitiesService } from '../../common/utilities.service';
   templateUrl: './car-cards.component.html',
   styleUrls: ['./car-cards.component.css']
 })
-export class CarCardsComponent implements OnInit {
+export class CarCardsComponent implements OnInit, OnDestroy {
 	cars: Car[];
 	fillUps: FillUp[];
 
-  constructor(private dataService: DataService, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService) { }
+  sub;
+
+  constructor(private dataService: DataService, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-  	Promise.all([this.dataService.getCars(), this.dataService.getFillUps()])
-  	.then((data) => {
-  		this.cars = data[0];
-  		this.fillUps = data[1];
+  	this.sub = this.route.data  /* get cars, fill up and reminders data from the resolver service */
+    .subscribe((data: { cars: Car[], fillUps: FillUp[] }) => {
+      this.cars = data.cars;
+      this.fillUps = data.fillUps;
       this.notificationHubService.emit(HubNotificationType.AppState, 'Showing cars');
-  	})
-    .catch(error => this.utilitiesService.handleError(error));
+    });
   }
 
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 }

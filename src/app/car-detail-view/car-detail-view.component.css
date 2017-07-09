@@ -1,0 +1,10 @@
+div {
+	border: 1px solid black;
+}
+.car-details-subview {
+	display: inline-block;
+	vertical-align: top;
+}
+.left-subview {
+	width: 360px;
+}
