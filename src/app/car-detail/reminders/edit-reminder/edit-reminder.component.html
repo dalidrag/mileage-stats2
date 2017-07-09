@@ -1,0 +1,15 @@
+<form [formGroup]="editReminderForm" (ngSubmit)="onSubmit(editReminderForm.value)" (keyup)="onKey($event)">
+	<label for="text" >Text
+		<br />
+		<input type="text" id="text" [formControl]="editReminderForm.controls['text']" (blur)="onBlur($event)" autofocus />
+		<div class="error" *ngIf="editReminderForm.controls['text'].hasError('required') && editReminderForm.controls['text'].touched">You must enter remninder text</div>
+		<div class="error" *ngIf="editReminderForm.controls['text'].hasError('maxlength') && editReminderForm.controls['text'].touched">At most 20 characters</div>
+	</label>
+	<label for="date">Date
+		<br />
+		<input type="date" id="date" [formControl]="editReminderForm.controls['date']" (blur)="onBlur($event)" />
+		<div class="error" *ngIf="editReminderForm.controls['date'].hasError('required') && editReminderForm.controls['date'].touched">You must enter a date</div>
+	</label>
+	<button type="submit" [disabled]="!editReminderForm.valid" >Change This Reminder</button>
+</form>
+<button (click)="cancel()">Cancel</button>

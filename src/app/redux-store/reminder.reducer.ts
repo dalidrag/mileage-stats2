@@ -32,6 +32,22 @@ export const ReminderReducer = (state = INITIAL_STATE, action:any) => {
 	  	 return Object.assign({}, state, {
 	       selectedReminder: undefined
 	     });
+ 		case ReminderActionCreators.EDIT_REMINDER:
+ 			let editedReminders = clone(action.reminders).value();
+ 			let editedReminderId = editedReminders.findIndex(reminder => 
+ 				reminder.id === action.reminder.id
+ 			);
+ 			editedReminders[editedReminderId] = action.reminder;
+  		  return Object.assign({}, state, {
+         reminders: editedReminders
+       });
+  	case ReminderActionCreators.DELETE_REMINDER:
+			let slicedReminders = action.reminders.filter(reminder => 
+				reminder.id !== action.reminder.id
+			);
+			return Object.assign({}, state, {
+        reminders: slicedReminders
+      });
 		default:
 			return state;
 	}	

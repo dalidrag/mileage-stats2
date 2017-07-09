@@ -6,8 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
-- Adding a reminder implemented.
-- Showing reminders implemented.
+- Editing a car
+- Editing and deleting a fill up and a reminder
+- Trimming input fields and canceling input via cancel button or esc key.
+- Adding a reminder.
+- Showing reminders.
 - Code commented and formatted.
 - Redux wired in.
 - Utlilities service-error handling

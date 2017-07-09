@@ -34,7 +34,7 @@ export class AccordionComponent implements OnInit, OnDestroy {
   }
 
   basicCarDataClicked(): void {
-    this.router.navigate(['basicCarData'], { relativeTo: this.route });
+    this.router.navigate(['./'], { relativeTo: this.route });
     this.arrangeTabs(0);
   }
   fillUpsClicked(): void {

@@ -32,7 +32,7 @@ export class AddReminderComponent implements OnInit {
   	this.addReminderForm = this.fb.group({  
   	      'text': ['', Validators.compose([Validators.required, Validators.maxLength(20)])], 'date': ['', Validators.required]
   	    });
-    this.notificationHubService.emit(HubNotificationType.AppState, 'Adding a new reminder');
+    this.notificationHubService.emit(HubNotificationType.AppState, "Adding a new reminder ('ESC' to cancel)");
   }
 
  /**

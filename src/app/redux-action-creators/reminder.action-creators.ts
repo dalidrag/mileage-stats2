@@ -9,6 +9,8 @@ export class ReminderActionCreators {
 	static SELECT_REMINDER: string = 'SELECT_REMINDER';
 	static ADD_REMINDER: string = 'ADD_REMINDER';
 	static DESELECT_REMINDERS: string = 'DESELECT_REMINDERS';
+	static EDIT_REMINDER: string = 'EDIT_REMINDER';
+	static DELETE_REMINDER: string = 'DELETE_REMINDER';
 
 	loadReminders(reminders: Reminder[]) {
 		this.appStore.dispatch({
@@ -33,5 +35,19 @@ export class ReminderActionCreators {
 		this.appStore.dispatch({
 			type: ReminderActionCreators.DESELECT_REMINDERS
 		})
+	}
+	editReminder(reminders: Reminder[], reminder: Reminder) {
+		this.appStore.dispatch({
+			type: ReminderActionCreators.EDIT_REMINDER,
+			reminders,
+			reminder
+		});
+	}
+	deleteReminder(reminders: Reminder[], reminder: Reminder) {
+		this.appStore.dispatch({
+			type: ReminderActionCreators.DELETE_REMINDER,
+			reminders,
+			reminder
+		});
 	}
 }

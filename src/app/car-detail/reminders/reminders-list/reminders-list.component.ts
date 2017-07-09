@@ -67,14 +67,14 @@ export class RemindersListComponent implements OnInit, OnChanges, OnDestroy {
 	* Deletes the selected reminder
 	*
 	* @method deleteReminder
-	
+	*/
 	deleteReminder(): void {
-		this.dataService.deleteReminder(this.car.id, this.selectedReminder.id).then(()=>{
+		this.dataService.deleteReminder(this.selectedReminder.id).then(()=>{
 			this.notificationHubService.emit(HubNotificationType.Success, 'Reminder deleted');
 		  this.router.navigate(['./'], {relativeTo: this.route});
 		  this.actionCreators.deleteReminder(this.appStore.getState().reminders.reminders, this.selectedReminder);
       this.actionCreators.deselectReminders();
 		})
 		.catch(error => this.utilitiesService.handleError(error));
-	} */
+	}
 }

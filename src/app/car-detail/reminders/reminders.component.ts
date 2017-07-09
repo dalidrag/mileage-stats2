@@ -64,7 +64,7 @@ export class RemindersComponent implements OnInit, OnDestroy {
         }
       }  // Finished with all the routes
     });
-    this.notificationHubService.emit(HubNotificationType.AppState, 'Showing reminders');
+    this.notificationHubService.emit(HubNotificationType.AppState, 'Showing reminders for ' + this.car.name);
   }
 
   ngOnDestroy() {

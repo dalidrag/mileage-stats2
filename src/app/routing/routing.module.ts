@@ -11,14 +11,18 @@ import { BasicCarDataComponent } from '../car-detail/basic-car-data/basic-car-da
 import { FillUpsComponent } from '../car-detail/fill-ups/fill-ups.component';
 import { FillUpDetailComponent } from '../car-detail/fill-ups/fill-up-detail/fill-up-detail.component';
 import { AddFillUpComponent } from '../car-detail/fill-ups/add-fill-up/add-fill-up.component';
+import { EditFillUpComponent } from '../car-detail/fill-ups/edit-fill-up/edit-fill-up.component';
 import { RemindersComponent } from '../car-detail/reminders/reminders.component';
 import { AddReminderComponent } from '../car-detail/reminders/add-reminder/add-reminder.component';
+import { EditReminderComponent } from '../car-detail/reminders/edit-reminder/edit-reminder.component';
+import { EditCarComponent } from '../car-detail/basic-car-data/edit-car/edit-car.component';
 
 import { CarsDataResolve } from './cars-data-resolver';
 import { CarDataResolve } from './car-data-resolver';
 import { FillUpsDataResolve } from './fill-ups-data-resolver';
 import { FillUpDataResolve } from './fill-up-data-resolver';
 import { RemindersDataResolve } from './reminders-data-resolver';
+import { ReminderDataResolve } from './reminder-data-resolver';
 
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -31,9 +35,9 @@ const routes: Routes = [
         resolve: {car: CarDataResolve}
       },
       {
-        path: 'basicCarData',
-        component: BasicCarDataComponent,
-        resolve: {car: CarDataResolve}
+        path: 'editCar',
+        component: EditCarComponent,
+        resolve: {cars: CarsDataResolve}
       },
       {
         path: 'fillUps',
@@ -43,6 +47,11 @@ const routes: Routes = [
           {
             path: 'addFillUp',
             component: AddFillUpComponent
+          },
+          {
+            path: ':id/editFillUp',
+            component: EditFillUpComponent,
+            resolve: { fillUp: FillUpDataResolve }
           },
           {
             path: ':id',
@@ -59,6 +68,11 @@ const routes: Routes = [
         {
           path: 'addReminder',
           component: AddReminderComponent
+        },
+        {
+          path: ':id/editReminder',
+          component: EditReminderComponent,
+          resolve: { reminder: ReminderDataResolve }
         }
         ]
       }
@@ -71,7 +85,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [CarsDataResolve, CarDataResolve, FillUpsDataResolve, FillUpDataResolve, RemindersDataResolve],
+  providers: [CarsDataResolve, CarDataResolve, FillUpsDataResolve, FillUpDataResolve, RemindersDataResolve, ReminderDataResolve],
   exports: [ RouterModule ]
 })
 export class RoutingModule { }

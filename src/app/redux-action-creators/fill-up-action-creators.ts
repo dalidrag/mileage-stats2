@@ -9,6 +9,8 @@ export class FillUpActionCreators {
 	static ADD_FILLUP: string = 'ADD_FILLUP';
 	static SELECT_FILLUP: string = 'SELECT_FILLUP';
 	static DESELECT_FILLUPS: string = 'DESELECT_FILLUPS';
+	static EDIT_FILLUP: string = 'EDIT_FILLUP';
+	static DELETE_FILLUP: string = 'DELETE_FILLUP';
 
 	loadFillUps(fillUps: FillUp[]) {
 		this.appStore.dispatch({
@@ -32,6 +34,20 @@ export class FillUpActionCreators {
 	deselectFillUps() {
 		this.appStore.dispatch({
 			type: FillUpActionCreators.DESELECT_FILLUPS
+		})
+	}
+	editFillUp(fillUps: FillUp[], fillUp: FillUp) {
+		this.appStore.dispatch({
+			type: FillUpActionCreators.EDIT_FILLUP,
+			fillUps,
+			fillUp
+		});
+	}
+	deleteFillUp(fillUps: FillUp[], fillUp: FillUp) {
+		this.appStore.dispatch({
+			type: FillUpActionCreators.DELETE_FILLUP,
+			fillUps,
+			fillUp
 		})
 	}
 }
