@@ -36,7 +36,7 @@ const routes: Routes = [
       {
         path: '',
         component: BasicCarDataComponent,
-        resolve: {car: CarDataResolve}
+        resolve: {car: CarDataResolve, fillUps: FillUpsDataResolve, reminders: RemindersDataResolve }
       },
       {
         path: 'editCar',

@@ -57,4 +57,3 @@ const appStore = createStore(rootReducer);
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

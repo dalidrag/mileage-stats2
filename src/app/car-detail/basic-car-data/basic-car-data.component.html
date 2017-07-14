@@ -1,10 +1,17 @@
-<div>
-  <button routerLink="./editCar">Edit</button>
-  <button (click)="deleteCar()">Delete</button>
-  <p>Car model:</p>
-  <p>{{car.model}}<p>
-  <p>Car nick name:</p>
-  <p>{{car.name}}<p>
-  <p>Car year:</p>
-  <p>{{car.year}}<p>
+<div class="basic-car-data-view">
+	<div class="accordion-sub-view">
+		<app-basic-car-stats-charts [fillUps]="fillUps"></app-basic-car-stats-charts>
+	</div>
+	<div class="accordion-sub-view">
+	  <button routerLink='editCar'>Edit Car</button>
+	  <button (click)='deleteCar()'>Delete Car</button>
+	  <p>Car model:</p>
+	  <p>{{car.model}}<p>
+	  <p>Car nick name:</p>
+	  <p>{{car.name}}<p>
+	  <p>Car year:</p>
+	  <p>{{car.year}}<p>
+	  <app-overdue-reminders [reminders]="reminders"></app-overdue-reminders>
+	</div>
 </div>
+<div>

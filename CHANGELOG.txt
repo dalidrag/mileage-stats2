@@ -5,7 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-
+### Added
+- Overdue reminders in basic car data component
+- Highcharts charts component
 
 ## [0.4.0] - 2017-07-09
 ### Added
@@ -22,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Utlilities service-error handling
 - Notification service
 ### Changed
+- CarCards component now uses resolvers to fetch data.
 - Accordion widget further developed.
 
 

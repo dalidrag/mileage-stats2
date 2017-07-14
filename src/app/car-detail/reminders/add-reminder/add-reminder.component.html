@@ -1,8 +1,8 @@
-<form [formGroup]="addReminderForm" (ngSubmit)="onSubmit(addReminderForm.value)" (keyup)="onKey($event)">
+<form [formGroup]="addReminderForm" (ngSubmit)="onSubmit(addReminderForm.value)" (keyup)="onKey($event)" novalidate>
 	<label for="text" >Text
 		<br />
 		<input type="text" id="text" [formControl]="addReminderForm.controls['text']" (blur)="onBlur($event)" autofocus />
-		<div class="error" *ngIf="addReminderForm.controls['text'].hasError('required') && addReminderForm.controls['text'].touched">You must enter remninder text</div>
+		<div class="error" *ngIf="addReminderForm.controls['text'].hasError('required') && addReminderForm.controls['text'].touched">You must enter reminder text</div>
 		<div class="error" *ngIf="addReminderForm.controls['text'].hasError('maxlength') && addReminderForm.controls['text'].touched">At most 20 characters</div>
 	</label>
 	<label for="date">Date

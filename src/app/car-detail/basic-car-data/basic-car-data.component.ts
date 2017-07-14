@@ -3,6 +3,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { Car } from '../../common/car';
+import { FillUp } from '../../common/fillUp';
+import { Reminder } from '../../common/reminder';
 
 import { DataService } from '../../common/data.service';
 import { NotificationHubService, HubNotificationType } from '../../common/notification-hub.service';
@@ -21,6 +23,8 @@ import { UtilitiesService } from '../../common/utilities.service';
 })
 export class BasicCarDataComponent implements OnInit, OnDestroy {
 	car: Car;	
+  fillUps: FillUp[];
+  reminders: Reminder[];
 
 	sub;
 
@@ -28,8 +32,10 @@ export class BasicCarDataComponent implements OnInit, OnDestroy {
   
   ngOnInit() {
   	this.sub = this.route.data  /* get a fill up data from the resolver service */
-	    .subscribe((data: { car: Car }) => {
+	    .subscribe((data: { car: Car, fillUps: FillUp[], reminders: Reminder[] }) => {
 	      this.car = data.car;
+        this.fillUps = data.fillUps;
+        this.reminders = data.reminders;
   			this.notificationHubService.emit(HubNotificationType.AppState, 'Showing basic car data for ' + this.car.name);
 	    });
   }

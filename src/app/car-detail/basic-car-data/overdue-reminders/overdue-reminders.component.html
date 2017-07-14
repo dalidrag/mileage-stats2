@@ -1,0 +1,4 @@
+<app-reminders-list-entry *ngFor='let reminder of overdueReminders' [reminder]='reminder'></app-reminders-list-entry>
+<p *ngIf="extraReminders > 0">
+and {{extraReminders}} more {{pluralize}} overdue
+</p>
