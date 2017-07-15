@@ -5,31 +5,46 @@ div {
 .wrapper {
 	position:  relative;	 /* We will want to absolutely position sliders */
 	width: 960px;
-	height: 41em;
+	height: 59vw;
 	overflow: hidden; /* The sliders must not be visible when in right position */ 
 }
 .slider-car {
 	position: absolute;
-	width: 900px;
+	width: 100%;
 	left: 0;					/* Car slider to the far left */
 	background-color: lightyellow;
+	transition: left 0.7s, right 0.7s;
 }
 .slider-fill-ups {			
 	position: absolute;
-	width: 900px;
-	left:  900px;	/* Right position for fill ups means 30px from the right edge */
+	width: 100%;
+	left:  61vw;	/* Right position for fill ups means 30px from the right edge */
 	background-color: lightseagreen;
 	transition: left 0.7s;
 }
 .slider-reminders {
 	position: absolute;
-	width: 900px;
-	left: 930px; /* Right position for reminders means 60px from the right edge */
+	width: 100%;
+	left: 63vw; /* Right position for reminders means 60px from the right edge */
 	background-color: lightskyblue;
 	transition: left 0.7s;
 }
 .tab {
 	position: static;
-	width: 30px;
-	height: 40em;
+	width: 2vw;
+	height: 59vw;
+}
+@media screen and (min-width: 1280px) and (min-aspect-ratio: 15/9) and (orientation: landscape) {
+	.wrapper {
+		height: 48vw;
+	}
+	.tab {
+		height: 48vw;
+	}
+	.slider-fill-ups {
+		left:  51.5vw;
+	}
+	.slider-reminders {
+		left:  53.5vw;
+	}
 }

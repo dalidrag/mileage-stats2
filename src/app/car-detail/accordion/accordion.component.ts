@@ -49,6 +49,7 @@ export class AccordionComponent implements OnInit, OnDestroy {
 
   arrangeTabs(newTab: number): void {
     let element: HTMLElement;
+    let widescreen = window.matchMedia('screen and (min-width: 1280px) and (min-aspect-ratio: 15/9) and (orientation: landscape)');
 
     // Move to the left tabs that should be moved to left
     // Which ones is decided from the indexes of currently selected and newly selected tabs
@@ -56,19 +57,24 @@ export class AccordionComponent implements OnInit, OnDestroy {
       for (let i = this.previousTab + 1; i <= newTab; ++i) {
         element = document.getElementsByClassName(this.sliderName[i]).item(0) as HTMLElement; // So that compiler doesn't yell
         if (i === 1)
-          element.style.left = '30px'; 
+          element.style.left = '2vw'; 
         else
-          element.style.left = '60px';
+          element.style.left = '4vw';
       }
     }
     // Or move to the right tabs that should be moved to the right
     else if (this.previousTab > newTab) {
       for (let i = newTab + 1; i <= this.previousTab; ++i) {
         element = document.getElementsByClassName(this.sliderName[i]).item(0) as HTMLElement; // So that compiler doesn't yell
-        if (i === 1)
-          element.style.left = '900px'
-        else
-          element.style.left = '930px'; 
+        if (i === 1) {
+          if (element)
+            if (widescreen.matches) element.style.left = '51.5vw';
+            else element.style.left = '61vw';
+        }
+        else {
+            if (widescreen.matches) element.style.left = '53.5vw';
+            else element.style.left = '63vw';
+        } 
       }
     }
     //  Hide accordion content while slides are moving (for 0.7 seconds)

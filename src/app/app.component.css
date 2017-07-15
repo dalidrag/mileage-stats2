@@ -7,3 +7,12 @@
 .main-menu {
 	cursor: pointer;
 }
+
+@media screen and (min-width: 1280px) and (min-aspect-ratio: 15/9) and (orientation: landscape) {
+	.master-frame {
+		width: 85vw;
+		margin: auto;
+		border-left: 2px solid red;
+		border-right: 2px solid red;
+	}
+}
