@@ -8,3 +8,31 @@
 .right-subview {
 	width: 65%;
 }
+
+@media screen and (max-width: 1280px) {
+	.left-subview {
+		width: 22%;
+	}
+	.right-subview {
+		width: 77%;
+	}
+}
+@media screen and (max-width: 1080px) {
+	.left-subview {
+		width: 17em;
+	}
+	.right-subview {
+		width: 27em;
+	}
+}
+@media screen and (max-width: 786px) {
+	.car-details-subview {
+		display: block;
+	}
+	.left-subview {
+		width: auto;
+	}
+	.right-subview {
+		width: auto;
+	}
+}

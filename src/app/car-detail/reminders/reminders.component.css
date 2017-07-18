@@ -36,5 +36,49 @@ button {
 	}
 	.reminders-view {
 		height: 42.5vw;
+		left: 6.5vw;
+	}
+}
+@media screen  and (min-width:1081px) and (max-width: 1280px) {
+	.reminders-view {
+		height: 60vw;
+		left:  7.5rem;
+	}
+	.accordion-sub-view {
+		width: 30vw;
+	}
+}
+@media screen and (max-width: 1080px) {
+	.wrapper {
+		height: 84rem;
+	}
+	.tab {
+		height: 84rem;
+	}
+	.accordion-sub-view {
+		display:  block;
+		height: fit-content;
+		max-height: 48%;
+		width: 20rem;
+	}
+	.reminders-view {
+		height: 84rem;
+		left: 7rem;
+	}
+}
+@media screen and (max-width: 786px) {
+	.accordion-sub-view {
+		display:  block;
+		height: fit-content;
+		max-height: 48%;
+		width: 18rem;
+	}
+	.reminders-view {
+		left: 0;
+		top: 6rem;
+		height: 84rem;
+		/* Center accordion sub-view */
+		margin-left: auto;
+		margin-right: auto;
 	}
 }

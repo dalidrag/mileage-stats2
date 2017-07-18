@@ -16,3 +16,8 @@
 		border-right: 2px solid red;
 	}
 }
+@media screen and (max-width: 480px) {
+	.master-frame {
+		font-size: 12px;
+	}
+}

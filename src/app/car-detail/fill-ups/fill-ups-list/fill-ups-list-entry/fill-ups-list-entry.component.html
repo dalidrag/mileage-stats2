@@ -1,4 +1,4 @@
-<div [class.selected]='selectedFillUp && fillUp.id === selectedFillUp.id'>
+<div [class.selected]='selectedFillUp && fillUp.id === selectedFillUp.id' class="fill-ups-list-entry">
   <p>{{fillUp.date}}</p>
   <p>{{fillUp.station}}</p>
   <p>{{fillUp.quantity * fillUp.pricePerGalon}}$</p>

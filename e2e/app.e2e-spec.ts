@@ -1,14 +1,50 @@
-import { MileageStats2Page } from './app.po';
+import { MileageStatsPage } from './app.po';
 
-describe('mileage-stats2 App', () => {
-  let page: MileageStats2Page;
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 999999;
+
+describe('mileage-stats App', function() {
+  let page: MileageStatsPage;
 
   beforeEach(() => {
-    page = new MileageStats2Page();
+    page = new MileageStatsPage();
   });
 
-  it('should display welcome message', () => {
+  it('should just work with no bugs', (done) => {
+    let success = true;
+    // page.setScreenSize(800, 1080);
+    page.setScreenSize(1920, 1080);
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    page.sleep().then(() => {
+    	return page.performTest();
+    }).then(() => {
+    	return page.sleep();
+    }).then(() => {
+    	page.setScreenSize(1100, 825);
+    	page.navigateTo();
+    	return page.sleep();
+    }).then(() => {
+    	return page.performTest();
+    }).then(() => {
+    	page.setScreenSize(1280, 960);
+    	page.navigateTo();
+    	return page.sleep();
+    }).then(() => {
+    	return page.performTest();
+    }).then(() => {
+    	page.setScreenSize(1920, 1080);
+    	page.navigateTo();
+    	return page.sleep();
+    }).then(() => {
+    	return page.performTest();
+    }).then(() => {
+    	page.setScreenSize(2600, 1500);
+    	page.navigateTo();
+    	return page.sleep();
+    }).then(() => {
+    	return page.performTest();
+    }).then(() => {
+    	expect(success).toBe(true);	// we should simply reach this point without errors
+    	done();
+    })
   });
 });

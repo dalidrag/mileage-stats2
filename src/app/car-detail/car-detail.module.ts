@@ -4,7 +4,7 @@ import { RouterModule }   from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartModule } from 'angular2-highcharts'; 
 import * as highcharts from 'highcharts';
-// import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
+import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
 
 declare var require: any;
 
@@ -25,13 +25,25 @@ import { EditCarComponent } from './basic-car-data/edit-car/edit-car.component';
 import { BasicCarStatsChartsComponent } from './basic-car-data/basic-car-stats-charts/basic-car-stats-charts.component';
 import { OverdueRemindersComponent } from './basic-car-data/overdue-reminders/overdue-reminders.component';
 
+export function highchartsFactory() {
+      const hc = require('highcharts');
+      const dd = require('highcharts/modules/drilldown');
+      dd(hc);
+
+      return hc;
+}
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     FormsModule, ReactiveFormsModule,
-    ChartModule.forRoot(require('highcharts'))
+    ChartModule
   ],
+  providers: [{
+    provide: HighchartsStatic,
+    useFactory: highchartsFactory
+  }],
   declarations: [AccordionComponent, FillUpsComponent, BasicCarDataComponent, RemindersComponent, FillUpsListComponent, FillUpsListEntryComponent, FillUpDetailComponent, AddFillUpComponent, RemindersListComponent, RemindersListEntryComponent, AddReminderComponent, EditFillUpComponent, EditReminderComponent, EditCarComponent, BasicCarStatsChartsComponent, OverdueRemindersComponent],
   exports: [AccordionComponent]
 })

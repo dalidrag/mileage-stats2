@@ -22,20 +22,64 @@
 button {
 	width: 6.1rem;
 	height: 2rem;
-	margin-top: 0.125em;
-	margin-bottom: 0.125em;
+	margin-top: 0.125rem;
+	margin-bottom: 0.125rem;
 	border-width: 0;
 	background-color: darkgreen;
 }
+
 @media screen and (min-width: 1281px) and (min-aspect-ratio: 15/9) and (orientation: landscape) {
-	.basic-car-data-view {
+	.fill-ups-view {
 		height: 42.5vw;
-		left: 2.5vw;
+		left: 4.5vw;
 	}
 	button {
 		width: 5.1rem;
 	}
 	.accordion-sub-view {
 		width:  22vw;
+	}
+}
+@media screen and (min-width:1081px) and (max-width: 1280px) {
+	.fill-ups-view {
+		height: 60vw;
+		left:  5rem;
+	}
+	.accordion-sub-view {
+		width: 30vw;
+	}
+}
+@media screen and (max-width: 1080px) {
+	.wrapper {
+		height: 84rem;
+	}
+	.tab {
+		height: 84rem;
+	}
+	.accordion-sub-view {
+		display:  block;
+		height: fit-content;
+		max-height: 48%;
+		width: 20rem;
+	}
+	.fill-ups-view {
+		height: 84rem;
+		left: 4.6rem;
+	}
+}
+@media screen and (max-width: 786px) {
+	.accordion-sub-view {
+		display:  block;
+		height: fit-content;
+		max-height: 48%;
+		width: 18rem;
+	}
+	.fill-ups-view {
+		left: 0;
+		top: 4rem;
+		height: 84rem;
+		/* Center accordion sub-view */
+		margin-left: auto;
+		margin-right: auto;
 	}
 }

@@ -4,7 +4,6 @@ div {
 
 .wrapper {
 	position:  relative;	 /* We will want to absolutely position sliders */
-	width: 960px;
 	height: 59vw;
 	overflow: hidden; /* The sliders must not be visible when in right position */ 
 }
@@ -13,21 +12,21 @@ div {
 	width: 100%;
 	left: 0;					/* Car slider to the far left */
 	background-color: lightyellow;
-	transition: left 0.7s, right 0.7s;
+	transition: left 0.7s, top 0.7s;
 }
 .slider-fill-ups {			
 	position: absolute;
 	width: 100%;
 	left:  61vw;	/* Right position for fill ups means 30px from the right edge */
 	background-color: lightseagreen;
-	transition: left 0.7s;
+	transition: left 0.7s, top 0.7s;
 }
 .slider-reminders {
 	position: absolute;
 	width: 100%;
 	left: 63vw; /* Right position for reminders means 60px from the right edge */
 	background-color: lightskyblue;
-	transition: left 0.7s;
+	transition: left 0.7s, top 0.7s;
 }
 .tab {
 	position: static;
@@ -42,9 +41,65 @@ div {
 		height: 48vw;
 	}
 	.slider-fill-ups {
-		left:  51.5vw;
+		left:  51vw;
 	}
 	.slider-reminders {
-		left:  53.5vw;
+		left:  53vw;
+	}
+}
+@media screen and (min-width:1081px) and (max-width: 1280px) {
+	.wrapper {
+		height: 69vw;
+	}
+	.tab {
+		height: 69vw;
+		width: 2.5rem;
+	}
+	.slider-fill-ups {
+		left: 68.5vw;
+	}
+	.slider-reminders {
+		left: 72vw;
+	}
+}
+@media screen and (max-width: 1080px) {
+	.wrapper {
+		height: 84rem;
+	}
+	.tab {
+		height: 84rem;
+		width: 2rem;
+	}
+	.slider-fill-ups {
+		left:  23rem;
+	}
+	.slider-reminders {
+		left:  25rem;
+	}
+}
+@media screen and (max-width: 786px) {
+	.wrapper {
+		width: 27rem;
+		height: 90rem;
+		/* Center accordion widget */
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.tab {
+		width: 100%;
+		height: 2rem;
+	}
+	.slider-car {
+		height: 86rem;
+	}
+	.slider-fill-ups {
+		left: 0;
+		top: 86rem;
+		height: 86rem;
+	}
+	.slider-reminders {
+		left: 0;
+		top: 88rem;
+		height: 86rem;
 	}
 }

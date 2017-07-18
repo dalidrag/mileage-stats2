@@ -5,28 +5,28 @@ div {
 .carCard {
 	display:  inline-block;
 	width: 17.2vw;
-	min-width: 13.75em;
-	margin: 0.3em;	/* all the margins to 0.3em */
+	min-width: 13.75rem;
+	margin: 0.3rem;	/* all the margins to 0.3em */
 	background-color: lightgrey;
 }
 
 .header {
 	height: 3vw;
-	min-height: 2.9em;
+	min-height: 2.9rem;
 }
 
 .vehicle {
 	background-color: darkgray;
 	height: 9vw;
-	min-height: 6.9em;
+	min-height: 6.9rem;
 }
 
 button {
 	display: block;
 	width: 100%;
 	height: 31%;
-	margin-top: 0.125em;
-	margin-bottom: 0.125em;
+	margin-top: 0.125rem;
+	margin-bottom: 0.125rem;
 	border-width: 0;
 	background-color: darkgreen;
 }

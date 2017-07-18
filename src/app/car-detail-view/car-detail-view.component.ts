@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router'
 import { Car }  from '../common/car';
 import { FillUp } from '../common/fillUp';
 
+import { WindowResizeActionCreators } from '../redux-action-creators/window-resize.action-creators';
+
  /**
 	* This component is a view wrapper for car detail view
 	*
@@ -21,13 +23,17 @@ export class CarDetailViewComponent implements OnInit, OnDestroy {
 
   sub;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(public actionCreators: WindowResizeActionCreators, private route: ActivatedRoute) { }
 
   ngOnInit() {
   	this.sub = this.route.data  /* get cars and fill up data from the resolver service */
       .subscribe((data: { cars: Car[], fillUps: FillUp[] }) => {
         this.cars = data.cars;
         this.fillUps = data.fillUps;
+    });
+
+    window.addEventListener("resize", () => {
+      this.actionCreators.windowResized();
     });
   }
 
