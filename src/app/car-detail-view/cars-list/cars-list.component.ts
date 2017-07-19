@@ -5,10 +5,7 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Car } from '../../common/car';
 import { FillUp } from '../../common/fillUp';
 
-// The class which handles AJAX data services
-import { DataService } from '../../common/data.service';
 import { NotificationHubService, HubNotificationType } from '../../common/notification-hub.service';
-import { UtilitiesService } from '../../common/utilities.service';
 /***********************************************************************************/
 
 /**
@@ -32,7 +29,7 @@ export class CarsListComponent implements OnInit, OnDestroy {
 
 	sub;
 
-  constructor(private dataService: DataService, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService,
+  constructor(private notificationHubService: NotificationHubService,
   	private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {

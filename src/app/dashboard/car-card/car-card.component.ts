@@ -1,5 +1,5 @@
 /****************************************************************************/
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnChanges, SimpleChanges, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { FillUp } from '../../common/fillUp';
@@ -17,7 +17,7 @@ import { Car } from '../../common/car';
   templateUrl: './car-card.component.html',
   styleUrls: ['./car-card.component.css']
 })
-export class CarCardComponent implements OnInit {
+export class CarCardComponent implements OnChanges {
 	@Input()
   car: Car;
   @Input()
@@ -32,19 +32,16 @@ export class CarCardComponent implements OnInit {
 
   constructor(private router:Router) { }
 
-  ngOnInit() {
-  	// this.dataService.getCars().then((cars)=>{
-  	// 	this.carName = cars[0].name;
-  	// 	this.carModel = cars[0].model;
-  	// });
-   //  this.dataService.getFillUps().then((fillUps) => {
+  ngOnChanges(changes: SimpleChanges) {
+    this.fillUps = changes.fillUps && changes.fillUps.currentValue;
+
+      this.fillUps.sort((fillUp1, fillUp2) => fillUp1.date > fillUp2.date ? 1 : -1);
       this.milesPerGallon = +this.CalculateMPG(this.fillUps).toFixed(2);
       this.costPerMile = +this.CalculateDPM(this.fillUps).toFixed(2);
       this.costPerMonth = +this.CalculateDPMonth(this.fillUps).toFixed(2);
       // Note the plus sign that drops any "extra" zeroes at the end.
       // It changes the result (which is a string) into a number again
       // which means that it uses only as many digits as necessary.
-    // });
   }
 
   switchToDetails(): void {

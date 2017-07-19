@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, UrlSegment } from '@angular/router';
 
 import { FillUp } from '../../../common/fillUp';
+import { Car } from '../../../common/car';
 
 import { DataService } from '../../../common/data.service';
 import { NotificationHubService, HubNotificationType } from '../../../common/notification-hub.service';
@@ -26,6 +27,7 @@ import { FillUpActionCreators } from '../../../redux-action-creators/fill-up-act
 export class EditFillUpComponent implements OnInit, OnDestroy {
  	fillUp: FillUp;
  	editFillUpForm: FormGroup;
+  carId: string;
 
   unsubscribe;
 
@@ -33,8 +35,9 @@ export class EditFillUpComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   	this.unsubscribe = this.route.data  /* get a fill up data from the resolver service */
-    .subscribe((data: { fillUp: FillUp }) => {
+    .subscribe((data: { fillUp: FillUp, car: Car }) => {
       this.fillUp = data.fillUp;
+      this.carId = data.car.id;
 
 	  	this.editFillUpForm = this.fb.group({  
 	    	      'quantity': [this.fillUp.quantity, Validators.required], 'price': [this.fillUp.pricePerGalon, Validators.compose([Validators.required, Validators.pattern('[0-9]*.?[0-9]+')])],
@@ -62,7 +65,7 @@ export class EditFillUpComponent implements OnInit, OnDestroy {
   	editedFillUp.date = formValues.date.toString();
   	editedFillUp.id = this.fillUp.id;
 
-  	this.dataService.updateFillUp(editedFillUp).then((response) => {
+  	this.dataService.updateFillUp(this.carId, editedFillUp).then((response) => {
   		this.router.navigate(['../'], { relativeTo: this.route }); // Go up to parent route
       this.notificationHubService.emit(HubNotificationType.Success, 'FillUp Updated');
       this.actionCreators.editFillUp(this.appStore.getState().fillUps.fillUps, editedFillUp);

@@ -15,7 +15,7 @@ export class ReminderDataResolve implements Resolve<Reminder> {
 
   // gets data for a reminder reading the reminder id from the route
   resolve(route: ActivatedRouteSnapshot): Promise<Reminder> {
-    return this.dataService.getReminderById(route.params['id']).then(reminder => {
+    return this.dataService.getReminderById(route.pathFromRoot[1].params['carId'], route.params['id']).then(reminder => {
       if (reminder) {
         return reminder;
       } else { // an error

@@ -2,25 +2,24 @@
 import { Injectable } from '@angular/core';
 import { Router, Resolve, ActivatedRouteSnapshot } from '@angular/router';
 
-import { Reminder } from '../common/reminder';
-
 import { DataService } from '../common/data.service';
+
 import { NotificationHubService, HubNotificationType } from '../common/notification-hub.service';
 import { UtilitiesService } from '../common/utilities.service';
 /***********************************************************************************/
 
 
 @Injectable()
-export class RemindersDataResolve implements Resolve<Reminder[]> {
-	constructor(private dataService: DataService, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router) {}
+export class AllFillUpsDataResolve implements Resolve<Object> {
+	constructor(private utilitiesService: UtilitiesService, private dataService: DataService, private notificationHubService: NotificationHubService, private router: Router) {}
 
-  // gets reminders data
-  resolve(route: ActivatedRouteSnapshot): Promise<Reminder[]> {
-    return this.dataService.getReminders(route.pathFromRoot[1].params['carId']).then(reminders => {
-      if (reminders) {
-        return reminders;
+  // gets data for cars
+  resolve(route: ActivatedRouteSnapshot): Promise<Object> {
+    return this.dataService.getAllFillUps().then(fillUps => {
+      if (fillUps) {
+        return fillUps;
       } else { // an error
-        this.notificationHubService.emit(HubNotificationType.Error, 'Error while fetching reminders!');
+        this.notificationHubService.emit(HubNotificationType.Error, 'Error while fetching fill ups!');
         this.router.navigate(['/']);
         return null;
       }

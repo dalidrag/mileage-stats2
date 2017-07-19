@@ -56,7 +56,7 @@ export class AddCarComponent implements OnInit {
     * @method writeCarData
     */
   writeCarData(): void {
-  	this.dataService.addCar(this.car).then(() => {
+  	this.dataService.addCar(this.car, null).then(() => {
   		this.notificationHubService.emit(HubNotificationType.Success, 'New car added.');  // Notify of success via event hub service
       this.router.navigate(['dashboard']);
   	})

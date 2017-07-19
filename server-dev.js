@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var session = require('express-session');
 
-var mongoose = require( 'mongoose' );
+var mongoose = require('mongoose');
 
 var mongoDBConfig = require('./server/MongoDBConfig');
 var DBLink = require('./server/DBLink.js');
@@ -95,7 +95,7 @@ app.put('/api/user/update', (req, res) => {
 });
 // Fetch all cars of a user of a given name
 app.get('/api/cars', (req, res) => {
-	DBLink.getCars('dalibor').then((cars) => {
+	DBLink.getCars('sample').then((cars) => {
 		var data = cars.map((car) => {
   	         			let oCar = car.toObject();
   	         			oCar.id = oCar._id;
@@ -107,7 +107,7 @@ app.get('/api/cars', (req, res) => {
 });
 // Fetch user of given username
 app.get('/api/user', (req, res) => {
-	DBLink.getUser('dalibor').then((user) => {
+	DBLink.getUser('sample').then((user) => {
 		res.send({ok: true, data: user});
 	})
 	.catch(err => handleError(err, res));
@@ -251,7 +251,7 @@ app.delete('/api/reminders/:carId/:reminderId', (req, res) => {
 // Save new car
 app.post('/api/cars', (req, res) => {
 		var newCar = { name: req.body.name, model: req.body.model, year: req.body.year }
-		DBLink.addCar('dalibor', newCar, req.body.base64Image).then(addedCar => {
+		DBLink.addCar('sample', newCar, req.body.base64Image).then(addedCar => {
 			let oaddedCar = addedCar.toObject();
 			oaddedCar.id = oaddedCar._id;
 
@@ -269,7 +269,7 @@ app.put('/api/cars', (req, res) => {
 });
 // Delete car of given id
 app.delete('/api/cars/:carId', (req, res) => {
-	DBLink.deleteCar('dalibor', req.params.carId).then(() => {
+	DBLink.deleteCar('sample', req.params.carId).then(() => {
 		res.send({ok: true});
 	})
 	.catch(err => handleError(err, res));

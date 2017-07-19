@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, UrlSegment } from '@angular/router';
 
 import { Reminder } from '../../../common/reminder';
+import { Car } from '../../../common/car';
 
 import { DataService } from '../../../common/data.service';
 import { NotificationHubService, HubNotificationType } from '../../../common/notification-hub.service';
@@ -26,6 +27,7 @@ import { ReminderActionCreators } from '../../../redux-action-creators/reminder.
 export class EditReminderComponent implements OnInit , OnDestroy {
   reminder: Reminder;
 	editReminderForm: FormGroup;
+  carId: string;
 
   unsubscribe;
 
@@ -33,8 +35,9 @@ export class EditReminderComponent implements OnInit , OnDestroy {
   
   ngOnInit() {
   	this.unsubscribe = this.route.data  /* get a reminder data from the resolver service */
-    .subscribe((data: { reminder: Reminder }) => {
+    .subscribe((data: { reminder: Reminder, car: Car }) => {
       this.reminder = data.reminder;
+      this.carId = data.car.id;
 
       this.editReminderForm = this.fb.group({  
     	      'text': [this.reminder.text, Validators.compose([Validators.required, Validators.maxLength(20)])],
@@ -60,7 +63,7 @@ export class EditReminderComponent implements OnInit , OnDestroy {
   	editedReminder.date = formValues.date.toString();
     editedReminder.id = this.reminder.id;
 
-  	this.dataService.updateReminder(editedReminder).then(() => {
+  	this.dataService.updateReminder(this.carId, editedReminder).then(() => {
   		this.notificationHubService.emit(HubNotificationType.Success, 'Reminder Changed');
       this.router.navigate(['../../'], { relativeTo: this.route }); // Go up to parent route and append
       this.actionCreators.editReminder(this.appStore.getState().reminders.reminders, editedReminder);

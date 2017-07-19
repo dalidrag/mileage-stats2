@@ -21,10 +21,6 @@ import { DataService } from './common/data.service';
 import { NotificationHubService } from './common/notification-hub.service';
 import { UtilitiesService } from './common/utilities.service';
 
-// Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './common/in-memory-data-service';
-
 import { createStore, Store } from 'redux';
 import { rootReducer } from './redux-store/index';
 import { FillUpActionCreators } from './redux-action-creators/fill-up-action-creators';
@@ -49,8 +45,7 @@ export function appStoreFactory() {
     AddCarModule,
     BrowserModule,
     HttpModule,
-    FormsModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    FormsModule
   ],
   providers: [
     DataService, NotificationHubService, UtilitiesService,

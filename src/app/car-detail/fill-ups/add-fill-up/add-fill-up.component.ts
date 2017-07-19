@@ -1,9 +1,10 @@
 /***********************************************************************************/
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, UrlSegment } from '@angular/router';
 
 import { FillUp } from '../../../common/fillUp';
+import { Car } from '../../../common/car';
 
 import { DataService } from '../../../common/data.service';
 import { NotificationHubService, HubNotificationType } from '../../../common/notification-hub.service';
@@ -22,15 +23,26 @@ import { FillUpActionCreators } from '../../../redux-action-creators/fill-up-act
   templateUrl: './add-fill-up.component.html',
   styleUrls: ['./add-fill-up.component.css']
 })
-export class AddFillUpComponent implements OnInit {
+export class AddFillUpComponent implements OnInit, OnDestroy {
 	addFillUpForm: FormGroup;
+  carId: string;
+  unsubscribe;
 
   constructor(@Inject('AppStore') private appStore, public actionCreators: FillUpActionCreators, private fb: FormBuilder, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router, private route: ActivatedRoute, private dataService: DataService) { }
 
   ngOnInit() {
-  	this.addFillUpForm = this.fb.group({
+  	this.unsubscribe = this.route.data    // Get car data from the resolver service
+        .subscribe((data: { car: Car }) => {
+          this.carId = data.car.id;
+        });
+
+    this.addFillUpForm = this.fb.group({
   		'quantity': ['', Validators.required], 'price': ['', Validators.compose([Validators.required, Validators.pattern('[0-9]*.?[0-9]+')])], 'odometer': ['', Validators.required], 'station': ['', Validators.maxLength(20)], 'date': ['', Validators.required]
   	});
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe.unsubscribe();
   }
 
  /**
@@ -47,7 +59,7 @@ export class AddFillUpComponent implements OnInit {
   	newFillup.station = formValues.station;
   	newFillup.date = formValues.date.toString();
 
-  	this.dataService.addFillUp(newFillup).then((addedFillUp: FillUp) => {
+  	this.dataService.addFillUp(this.carId, newFillup).then((addedFillUp: FillUp) => {
   		this.router.navigate(['../', addedFillUp.id], { relativeTo: this.route }); // Go up to parent route
       this.notificationHubService.emit(HubNotificationType.Success, 'FillUp Added');
       this.actionCreators.addFillUp(this.appStore.getState().fillUps.fillUps, addedFillUp);

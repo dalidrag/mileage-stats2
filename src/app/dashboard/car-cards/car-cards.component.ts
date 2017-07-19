@@ -6,7 +6,6 @@ import { Car } from '../../common/car';
 import { FillUp } from '../../common/fillUp';
 
 // The class which handles AJAX data services
-import { DataService } from '../../common/data.service';
 import { NotificationHubService, HubNotificationType } from '../../common/notification-hub.service';
 import { UtilitiesService } from '../../common/utilities.service';
 /***********************************************************************************/
@@ -29,7 +28,7 @@ export class CarCardsComponent implements OnInit, OnDestroy {
 
   sub;
 
-  constructor(private dataService: DataService, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private route: ActivatedRoute) { }
+  constructor(private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private route: ActivatedRoute) { }
 
   ngOnInit() {
   	this.sub = this.route.data  /* get cars, fill up and reminders data from the resolver service */

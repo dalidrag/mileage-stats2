@@ -4,8 +4,6 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 import { FillUp } from '../../../common/fillUp';
 
-import { DataService} from '../../../common/data.service';
-
 import { FillUpActionCreators } from '../../../redux-action-creators/fill-up-action-creators';
 /***********************************************************************************/
 
@@ -26,7 +24,7 @@ export class FillUpsListComponent implements OnInit, OnChanges {
 
   unsubscribeReduxStore;
 
-  constructor(@Inject('AppStore') private appStore, public actionCreators: FillUpActionCreators, private router: Router, private route: ActivatedRoute, private dataService: DataService) { }
+  constructor(@Inject('AppStore') private appStore, public actionCreators: FillUpActionCreators, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.unsubscribeReduxStore = this.appStore.subscribe(() => {

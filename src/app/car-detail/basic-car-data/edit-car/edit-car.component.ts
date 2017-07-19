@@ -66,7 +66,7 @@ export class EditCarComponent implements OnInit {
     * @method writeCarData
     */
   writeCarData(): void {
-  	this.dataService.updateCar(this.car).then(() => {
+  	this.dataService.updateCar(this.car, null).then(() => {
   		this.notificationHubService.emit(HubNotificationType.Success, 'Car updated.');  // Notify of success via event hub service
       this.router.navigate(['dashboard']);
   	})

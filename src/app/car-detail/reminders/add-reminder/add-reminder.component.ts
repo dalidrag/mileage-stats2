@@ -1,9 +1,10 @@
 /***********************************************************************************/
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, UrlSegment } from '@angular/router';
 
 import { Reminder } from '../../../common/reminder';
+import { Car } from '../../../common/car';
 
 import { DataService } from '../../../common/data.service';
 import { NotificationHubService, HubNotificationType } from '../../../common/notification-hub.service';
@@ -23,16 +24,27 @@ import { ReminderActionCreators } from '../../../redux-action-creators/reminder.
   templateUrl: './add-reminder.component.html',
   styleUrls: ['./add-reminder.component.css']
 })
-export class AddReminderComponent implements OnInit {
+export class AddReminderComponent implements OnInit, OnDestroy {
 	addReminderForm: FormGroup;
+  carId: string;
+  unsubscribe;
 
   constructor(@Inject('AppStore') private appStore, public actionCreators: ReminderActionCreators, private fb: FormBuilder, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router, private route: ActivatedRoute, private dataService: DataService) { }
 
   ngOnInit() {
+    this.unsubscribe = this.route.data    // Get car data from the resolver service
+        .subscribe((data: { car: Car }) => {
+          this.carId = data.car.id;
+        });
+
   	this.addReminderForm = this.fb.group({  
   	      'text': ['', Validators.compose([Validators.required, Validators.maxLength(20)])], 'date': ['', Validators.required]
   	    });
     this.notificationHubService.emit(HubNotificationType.AppState, "Adding a new reminder ('ESC' to cancel)");
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe.unsubscribe();
   }
 
  /**
@@ -46,7 +58,7 @@ export class AddReminderComponent implements OnInit {
   	newReminder.text = formValues.text.trim();
   	newReminder.date = formValues.date.toString();
 
-  	this.dataService.addReminder(newReminder).then((addedReminder: Reminder) => {
+  	this.dataService.addReminder(this.carId, newReminder).then((addedReminder: Reminder) => {
   		this.notificationHubService.emit(HubNotificationType.Success, 'Reminder Added');
       this.router.navigate(['../'], { relativeTo: this.route }); // Go up to parent route
       this.actionCreators.addReminder(this.appStore.getState().reminders.reminders, addedReminder);

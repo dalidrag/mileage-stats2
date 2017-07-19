@@ -18,7 +18,7 @@ export class FillUpsDataResolve implements Resolve<FillUp[]> {
 	constructor(private dataService: DataService, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router) {}
 
   resolve(route: ActivatedRouteSnapshot): Promise<FillUp[]> {
-    return this.dataService.getFillUps().then(fillUps => {
+    return this.dataService.getFillUps(route.pathFromRoot[1].params['carId']).then(fillUps => {
       if (fillUps) {
         return fillUps;
       } else { // an error

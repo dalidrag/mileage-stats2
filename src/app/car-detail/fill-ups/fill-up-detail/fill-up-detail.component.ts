@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { FillUp } from '../../../common/fillUp';
+import { Car } from '../../../common/car';
 
 import { DataService } from '../../../common/data.service';
 import { NotificationHubService, HubNotificationType } from '../../../common/notification-hub.service';
@@ -24,6 +25,7 @@ import { FillUpActionCreators } from '../../../redux-action-creators/fill-up-act
 export class FillUpDetailComponent implements OnInit, OnDestroy {
 	fillUp: FillUp;
 	fillUpId: string;
+  carId: string;
 
 	sub;
 	sub2;
@@ -32,8 +34,9 @@ export class FillUpDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   	this.sub2 = this.route.data	/* get a fill up data from the resolver service */
-  	    .subscribe((data: { fillUp: FillUp }) => {
+  	    .subscribe((data: { fillUp: FillUp, car: Car }) => {
   	      this.fillUp = data.fillUp;
+          this.carId = data.car.id;
   	    });
 
   	this.sub = this.route.params
@@ -48,7 +51,7 @@ export class FillUpDetailComponent implements OnInit, OnDestroy {
   }
 
   deleteFillUp(): void {
-    this.dataService.deleteFillUp(this.fillUp.id).then(()=>{
+    this.dataService.deleteFillUp(this.carId, this.fillUp.id).then(()=>{
       this.notificationHubService.emit(HubNotificationType.Success, 'Fill up deleted');
       this.router.navigate(['../'], {relativeTo: this.route});
       this.actionCreators.deleteFillUp(this.appStore.getState().fillUps.fillUps, this.fillUp);
