@@ -6,10 +6,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- Server written and tested
+
+
+## [0.5.0] - 2017-07-18
+### Added
 - Responsive layout with four break-points
 - Responsive sizing of all the elements
 - Overdue reminders in basic car data component
 - Highcharts charts component
+
 
 ## [0.4.0] - 2017-07-09
 ### Added
