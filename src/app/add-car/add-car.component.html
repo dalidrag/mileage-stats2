@@ -13,6 +13,16 @@
 			<input id="carYear" name='carYear' [(ngModel)]='car.year' [formControl]="carYearCtrl" (blur)="onBlur($event)" />
 			<span *ngIf="carYearCtrl.hasError('required') && carNameCtrl.touched">You must provide car year</span>
 		</label>
+		<label for="carAvatar">Car Image
+			<div class="file-upload">
+				<span class="text">upload</span>
+				<input id="carAvatar" name="carAvatar" type="file" (change)="fileChangeListener($event)" />
+			</div>
+		</label>
+
+		<img-cropper [image]="data" [settings]="cropperSettings"></img-cropper>
+		<div *ngIf="!imageValid">Image must be at least 110px x 110px</div>
+
 		<button id="addCarButton" (click)="writeCarData()" [disabled]="!addCarForm.valid">Create This Car</button>
 	</form>
 	<button (click)="cancel()">Cancel</button>

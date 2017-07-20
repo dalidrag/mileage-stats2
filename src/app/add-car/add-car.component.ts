@@ -1,7 +1,9 @@
 /***********************************************************************************/
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute }   from '@angular/router';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+
+import { ImageCropperComponent, CropperSettings } from 'ng2-img-cropper';
 
 import { Car } from '../common/car';
 
@@ -20,9 +22,14 @@ import { UtilitiesService} from '../common/utilities.service';
   templateUrl: './add-car.component.html',
   styleUrls: ['./add-car.component.css']
 })
-export class AddCarComponent implements OnInit {
-	car: Car;
+export class AddCarComponent implements OnInit, OnDestroy {
+	@ViewChild(ImageCropperComponent) cropper:ImageCropperComponent;
+  data: any;
+  cropperSettings: CropperSettings;
+
+  car: Car;
   static cars: Car[] = [{id: '0', model: '', name: '', year:''}];
+  imageValid = false;
 
   sub;
 
@@ -43,6 +50,30 @@ export class AddCarComponent implements OnInit {
     .subscribe((data: { cars: Car[] }) => {
       AddCarComponent.cars = data.cars;
     });
+
+    let element = document.getElementsByClassName("add-car-view")[0];
+    let width = parseInt(window.getComputedStyle(element,"").width);
+
+    // Setting for the cropper component
+    this.cropperSettings = new CropperSettings();
+    this.cropperSettings.canvasWidth = width * 0.9;
+    this.cropperSettings.canvasHeight = width * 0.4;
+
+    this.cropperSettings.width = width * 0.1;
+    this.cropperSettings.height = width * 0.1;
+
+    this.cropperSettings.croppedWidth = 110;
+    this.cropperSettings.croppedHeight = 110;
+
+    this.cropperSettings.rounded = false;
+
+    this.cropperSettings.cropperDrawSettings.strokeColor = 'rgba(255,255,255,1)';
+    this.cropperSettings.cropperDrawSettings.strokeWidth = 2;
+
+    this.cropperSettings.noFileInput = true;
+    this.cropperSettings.fileType = 'png';
+
+    this.data = {}
   }
 
   ngOnDestroy() {
@@ -56,11 +87,42 @@ export class AddCarComponent implements OnInit {
     * @method writeCarData
     */
   writeCarData(): void {
-  	this.dataService.addCar(this.car, null).then(() => {
+  	let base64Image: string;
+    if (this.imageValid) base64Image = this.data.image;
+
+    this.dataService.addCar(this.car, base64Image).then(() => {
   		this.notificationHubService.emit(HubNotificationType.Success, 'New car added.');  // Notify of success via event hub service
       this.router.navigate(['dashboard']);
   	})
     .catch(error => this.utilitiesService.handleError(error));
+  }
+
+ /**
+  * Used to send the car image to image cropper
+  *
+  * @param $event
+  * @method fileChangeListener
+  */
+  fileChangeListener($event) {
+    let imageCache:any = new Image();
+
+     let file:File = $event.target.files[0];
+     let myReader:FileReader = new FileReader();
+     let image = document.getElementById('uploadedImage') as HTMLImageElement;
+    
+     myReader.onloadend = (loadEvent:any) => {
+        imageCache.src = loadEvent.target.result;
+        imageCache.onload = () => {
+           if (imageCache.width < 110 || imageCache.height < 110)
+             this.imageValid = false;
+           else {
+             this.imageValid = true;
+             this.cropper.setImage(imageCache);
+           }
+         }
+      }
+
+     myReader.readAsDataURL(file);
   }
 
    /**

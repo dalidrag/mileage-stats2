@@ -1,7 +1,9 @@
 /***********************************************************************************/
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute }   from '@angular/router';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+
+import { ImageCropperComponent, CropperSettings } from 'ng2-img-cropper';
 
 import { Car } from '../../../common/car';
 
@@ -22,7 +24,13 @@ import { UtilitiesService} from '../../../common/utilities.service';
   styleUrls: ['./edit-car.component.css']
 })
 export class EditCarComponent implements OnInit {
-	car: Car = new Car;
+	@ViewChild(ImageCropperComponent)
+  cropper: ImageCropperComponent;
+  imageValid = false;
+  data: any;
+  cropperSettings: CropperSettings;
+
+  car: Car = new Car;
   static cars: Car[] = [{id: '0', model: '', name: '', year:''}];
 	static carId:string;
 
@@ -52,6 +60,31 @@ export class EditCarComponent implements OnInit {
   		this.carYearCtrl = new FormControl('', Validators.compose([Validators.required, Validators.pattern('[0-9]+'), Validators.minLength(4), Validators.maxLength(4)]));
 
 			this.editCarForm = new FormGroup({first: this.carModelCtrl, second: this.carNameCtrl, third: this.carYearCtrl});
+
+      // Get width of container element
+    let element = document.getElementsByClassName("edit-car-view")[0] as HTMLElement;
+    let width = parseInt(window.getComputedStyle(element,"").width);
+
+    // Setting for the cropper component
+    this.cropperSettings = new CropperSettings();
+    this.cropperSettings.canvasWidth = width * 0.9;
+    this.cropperSettings.canvasHeight = width * 0.4;
+
+    this.cropperSettings.width = width * 0.1;
+    this.cropperSettings.height = width * 0.1;
+
+    this.cropperSettings.croppedWidth = 110;
+    this.cropperSettings.croppedHeight = 110;
+
+    this.cropperSettings.rounded = false;
+
+    this.cropperSettings.cropperDrawSettings.strokeColor = 'rgba(255,255,255,1)';
+    this.cropperSettings.cropperDrawSettings.strokeWidth = 2;
+
+    this.cropperSettings.noFileInput = true;
+    this.cropperSettings.fileType = 'png';
+
+    this.data = {};
     });
   }
 
@@ -66,12 +99,45 @@ export class EditCarComponent implements OnInit {
     * @method writeCarData
     */
   writeCarData(): void {
-  	this.dataService.updateCar(this.car, null).then(() => {
-  		this.notificationHubService.emit(HubNotificationType.Success, 'Car updated.');  // Notify of success via event hub service
+  	let base64Image: string;
+    if (this.imageValid) base64Image = this.data.image;
+
+    this.car.model = this.car.model.trim();
+    this.car.name = this.car.name.trim();
+    this.car.year = this.car.year.trim();
+
+    this.dataService.updateCar(this.car, base64Image).then(() => {
+  		// the following is a string which will be appended to image src URL in car component
+      this.utilitiesService.avatarURLFragment = '?' + Date.now().toString(); // image cache busting fragment
+      this.notificationHubService.emit(HubNotificationType.Success, 'Car updated.');  // Notify of success via event hub service
       this.router.navigate(['dashboard']);
   	})
     .catch(error => this.utilitiesService.handleError(error));
   }
+
+  /**
+     * Used to send image to the image cropper component
+     * 
+     * @method fileChangeListener
+     * @param $event
+     */
+    fileChangeListener($event) {
+      let imageCache:any = new Image();
+      let file:File = $event.target.files[0];
+      let myReader:FileReader = new FileReader();
+      myReader.onloadend = (loadEvent:any) => {
+          imageCache.src = loadEvent.target.result;
+          imageCache.onload = () => {
+            if (imageCache.width < 110 || imageCache.height < 110)
+              this.imageValid = false;
+            else {
+              this.imageValid = true;
+              this.cropper.setImage(imageCache);
+            }
+          }
+      };
+      myReader.readAsDataURL(file);
+    }
 
    /**
     * Trims input fields on losing focus

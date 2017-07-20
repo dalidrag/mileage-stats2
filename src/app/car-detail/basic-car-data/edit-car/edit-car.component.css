@@ -8,6 +8,40 @@ div { /* The whole edit car frame within the accordion widget */
 
 	border: 1px solid black;
 }
+.file-upload {	/* Customize image upload button */
+	position: relative;	
+	overflow: hidden;
+
+	display: flex;	/* Span text must be centered*/
+  justify-content: center;
+  align-items: center;
+
+	width: 7.6vw;	/* 'Button' style */
+	min-width: 6.1em;
+	height: 2.6vw;
+	min-height: 2em;
+	margin-top: 0.125em;
+	margin-bottom: 0.125em;
+	background-color: darkgreen;
+}
+
+input[type='file'] {	/* This will be clickable*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;	/* but invisible*/
+  cursor: pointer;
+
+	width: 7.6vw;
+	min-width: 6.1em;
+	height: 2.6vw;
+	min-height: 2em;
+}
+
+#uploadedImage {
+	width: 90%;
+}
+
 @media screen and (max-width: 786px) {
 	div {
 		width: 18rem;

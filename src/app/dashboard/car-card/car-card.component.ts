@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 
 import { FillUp } from '../../common/fillUp';
 import { Car } from '../../common/car';
+
+import { UtilitiesService} from '../../common/utilities.service';
 /****************************************************************************/
 
 /**
@@ -30,7 +32,7 @@ export class CarCardComponent implements OnChanges {
 	costPerMile: number;
 	costPerMonth: number;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private utilitiesService:UtilitiesService) { }
 
   ngOnChanges(changes: SimpleChanges) {
     this.fillUps = changes.fillUps && changes.fillUps.currentValue;

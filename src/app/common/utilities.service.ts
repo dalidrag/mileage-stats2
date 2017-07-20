@@ -11,6 +11,7 @@ import { NotificationHubService, HubNotificationType } from './notification-hub.
  */
 @Injectable()
 export class UtilitiesService {
+  public avatarURLFragment: string;
 
   constructor(private notificationHubService: NotificationHubService, private router: Router) {}
 

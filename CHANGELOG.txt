@@ -5,9 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+
+## [0.6.0] - 2017-07-20
 ### Added
+- Adding and changing car picture, with cropping ability
 - Node server and database client added
 - Server written and tested
+### Fixed
+- Appropriate car card is selected after switching to details view (no car card was being marked as selected before)
 
 
 ## [0.5.0] - 2017-07-18

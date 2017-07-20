@@ -33,9 +33,10 @@ export class CarsListComponent implements OnInit, OnDestroy {
   	private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-  	this.sub = this.router.events.subscribe((val) => {
-  		if (val instanceof NavigationEnd) {
-  			this.selectedCarId = this.route.snapshot.params['carId'];
+		this.selectedCarId = this.route.snapshot.params['carId'];
+    this.sub = this.router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        this.selectedCarId = this.route.snapshot.params['carId'];
   		}
   	})
   }

@@ -4,7 +4,7 @@
  		<p>{{car.name}}</p>
  	</div>
  	<div class='vehicle'>
- 		<div class='avatar'></div>
+ 		<img class='avatar' alt='car avatar' src='http://localhost:3000/api/cars/{{car.id}}/image{{utilitiesService.avatarURLFragment}}'/>
  		<nav>
  			<button (click)='buttonDetails($event)'>Details</button>
  			<button (click)="buttonFillUps($event)">Fill ups</button>

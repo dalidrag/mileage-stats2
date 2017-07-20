@@ -6,6 +6,8 @@ import { ChartModule } from 'angular2-highcharts';
 import * as highcharts from 'highcharts';
 import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
 
+import { ImageCropperModule } from '../image-cropper/image-cropper.module';
+
 declare var require: any;
 
 import { AccordionComponent } from './accordion/accordion.component';
@@ -38,7 +40,8 @@ export function highchartsFactory() {
     CommonModule,
     RouterModule,
     FormsModule, ReactiveFormsModule,
-    ChartModule
+    ChartModule,
+    ImageCropperModule
   ],
   providers: [{
     provide: HighchartsStatic,
