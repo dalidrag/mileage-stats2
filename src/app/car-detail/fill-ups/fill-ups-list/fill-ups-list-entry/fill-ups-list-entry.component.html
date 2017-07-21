@@ -1,5 +1,5 @@
 <div [class.selected]='selectedFillUp && fillUp.id === selectedFillUp.id' class="fill-ups-list-entry">
-  <p>{{fillUp.date}}</p>
+  <a href="javascript:void(0)">{{fillUp.date}}</a>
   <p>{{fillUp.station}}</p>
   <p>{{fillUp.quantity * fillUp.pricePerGalon}}$</p>
 </div>

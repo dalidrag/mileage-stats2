@@ -94,6 +94,8 @@ export class AddFillUpComponent implements OnInit, OnDestroy {
    * @method cancel
    */
    cancel() {
+      event.preventDefault();
+      event.stopPropagation();
       // Simply navigate back to reminders view
       this.router.navigate(['../'], { relativeTo: this.route }); // Go up to parent route     
    }

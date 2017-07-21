@@ -11,8 +11,7 @@ describe('mileage-stats App', function() {
 
   it('should just work with no bugs', (done) => {
     let success = true;
-    // page.setScreenSize(800, 1080);
-    page.setScreenSize(1920, 1080);
+    page.setScreenSize(800, 1080);
     page.navigateTo();
     page.sleep().then(() => {
     	return page.performTest();

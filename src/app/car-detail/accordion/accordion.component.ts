@@ -28,8 +28,7 @@ export class AccordionComponent implements OnInit, OnDestroy {
       let state = this.appStore.getState();
       this.windowResized = state.windowResized.windowResized;
       if (this.windowResized) {
-        console.log('Drawing tabs...');
-        this.arrangeTabs(this.getTabIndexFromRoute());
+        this.drawSliders();
       }
     });
 

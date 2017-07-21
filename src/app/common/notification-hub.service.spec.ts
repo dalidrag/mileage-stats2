@@ -19,7 +19,7 @@ describe('NotificationHubService', () => {
   describe('emit method', () => {
   	it('should properly emit events when called', (done) => {
   		service.eventStream.subscribe(value => {
-  			expect(value).toBe('Hello!');
+  			expect(value.message).toBe('Hello!');
   			done();
   		});
   		service.emit(HubNotificationType.AppState, 'Hello!')

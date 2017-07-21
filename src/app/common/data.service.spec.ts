@@ -1,87 +1,85 @@
-import { TestBed, inject } from '@angular/core/testing';
+/* tslint:disable:no-unused-variable */
+
+import { TestBed, inject, getTestBed } from '@angular/core/testing';
 import { HttpModule } from '@angular/http';
 
 import { DataService } from './data.service';
 
-import { Car } from './car';
-
-// Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data-service';
-
 describe('DataService', () => {
   let service: DataService;
+  let carId, fillUpId, reminderId: string;
 
   beforeEach(() => {
     const injector = TestBed.configureTestingModule({
       imports: [
-      	HttpModule,
-      	InMemoryWebApiModule.forRoot(InMemoryDataService)
+       HttpModule
       ],
       providers: [DataService]
     });
     service = injector.get(DataService);
   });
 
-  it('should be created', inject([DataService], (service: DataService) => {
+  it('should be a service', () => {
     expect(service).toBeTruthy();
-  }));
-
-  describe('getCars method', () => {
-  	it('should return an array of 3 items', (done) => {
-  	 service.getCars().then(function (data) {
-  	  expect(data.length).toBe(3); // because the fake http server initializes Car 											 
-  	  														 // collection with 3 entries
-  	 	done();
-  	 });
-  	});
   });
 
-  describe('addCars method', () => {
-  	it('should add a car to cars collection', (done) => {
-  	 let newCar = new Car();
-  	 service.addCar(newCar)
-  	 .then(() => service.getCars())
-  	 .then((data) => {
-  	  expect(data.length).toBe(4); // because the fake http server initializes Car 											 
-  	  														 // collection with 3 entries
-  	 	done();
-  	 });
-  	});
-  });
-
-  describe('updateCar() method', () => {
-   it('should update car with id 1', (done) => {
-    let updatedCar = new Car();
-    updatedCar.id = '1';
-    updatedCar.model = 'Yugo';
-    updatedCar.name = 'Loud Lawnmower';
-    updatedCar.year = '1992';
-
-    service.updateCar(updatedCar)
-    .then(() => service.getCars())
-    .then((data) => {
-    	expect(data[0].name).toBe('Loud Lawnmower');
-    	done();
-    })
+  describe('getCars method', () => { //
+   it('should return a Promise resolved to correct car data', (done) => {
+    service.getCars().then((data) => {
+     expect(data[0].name).toBe('Hot Rod');  // because the test base's first car are named 'Hot Rod'
+     carId = data[0].id.toString();
+     done();
+    });
    });
   });
 
-  describe('deleteCar() method', () => {
-   it('should delete car with id 1', (done) => {
-    service.deleteCar('2')
-    	.then(() => service.getCars())
-    	.then((data) => {
-    		expect(data.length).toBe(2);
-    		done();
-    	});
+  describe('getCarById() method', () => {
+   it('should return a Promise resolved to correct car data', (done) => {
+    service.getCarById(carId).then((data) => {
+     expect(data.name).toBe('Hot Rod');  // because the test base's first car are named 'Hot Rod'
+     done();
+    });
    });
   });
-
+  
+  describe('getFillUps() method', () => {
+   it('should return a Promise resolved to an array with 3 elements', (done) => {
+    service.getFillUps(carId).then((data) => {
+     expect(data.length).toBe(3);  // because the test base's first car have 3 FillUps entries
+     fillUpId = data[0].id.toString();
+     done();
+    });
+   });
+  });
   describe('getFillUpById() method', () => {
    it('should return a Promise resolved to a correct FillUp object', (done) => {
-    service.getFillUpById('2').then((data) => {
-     expect(data.quantity).toBe(7);
+    service.getFillUpById(carId, fillUpId).then((data) => {
+     expect(data.quantity).toBe(11);  // first fill up of first car has quantity 11
+     done();
+    });
+   });
+  });
+  describe('getAllFillUps() method', () => {
+   it('should return a Promise resolved to correct values', (done) => {
+    service.getAllFillUps().then((data) => {
+     expect(data[carId][0].odometer).toBe(15455);  // odometer of the first fill up from the test base
+     done();
+    });
+   });
+  });
+  describe('getReminders() method', () => {
+   it('should return a Promise resolved to an array with 1 element', (done) => {
+    service.getReminders(carId).then((data) => {
+     expect(data.length).toBe(1);  // because the test base's first car have 4 FillUps entries
+     reminderId = data[0].id.toString();
+     done();
+    });
+   });
+  });
+  describe('getReminderById() method', () => {
+   it('should return a Promise resolved to a correct Reminder object', (done) => {
+    service.getReminderById(carId, reminderId).then((data) => {
+     expect(data.text).toBe('Check Fluid');  // first fill up of first car has quantity 11
      done();
     });
    });
