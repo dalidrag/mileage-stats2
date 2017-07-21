@@ -1,6 +1,19 @@
-<button (click)="addReminderClicked()" id="add-reminder">Add</button>
-<button *ngIf="selectedReminder" routerLink="{{selectedReminder.id}}/editReminder" id="edit-reminder">Edit</button>
-<button *ngIf="selectedReminder" (click)="deleteReminder()">Delete</button>
 <div>
-	<app-reminders-list-entry *ngFor='let reminder of reminders' [reminder]='reminder' (click)='onSelect(reminder)' [selectedReminder]='this.selectedReminder'></app-reminders-list-entry>
+	<div class="buttons">
+		<button (click)="addReminderClicked()" id="add-reminder">
+			<img class="button-image" src="/assets/images/button-add.png" />
+			<img class="button-image" src="/assets/images/command-glass.png" />
+		</button>
+		<button *ngIf="selectedReminder" routerLink="{{selectedReminder.id}}/editReminder" id="edit-reminder">
+			<img class="button-image" src="/assets/images/button-edit.png" />
+			<img class="button-image" src="/assets/images/command-glass.png" />
+		</button>
+		<button *ngIf="selectedReminder" (click)="deleteReminder()">
+			<img class="button-image" src="/assets/images/button-delete.png" />
+			<img class="button-image" src="/assets/images/command-glass.png" />
+		</button>
+	</div>
+	<div class="list">
+		<app-reminders-list-entry *ngFor='let reminder of reminders' [reminder]='reminder' (click)='onSelect(reminder)' [selectedReminder]='this.selectedReminder'></app-reminders-list-entry>
+	</div>
 </div>

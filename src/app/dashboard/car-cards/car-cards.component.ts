@@ -35,7 +35,7 @@ export class CarCardsComponent implements OnInit, OnDestroy {
     .subscribe((data: { cars: Car[], fillUps: FillUp[] }) => {
       this.cars = data.cars;
       this.fillUps = data.fillUps;
-      this.notificationHubService.emit(HubNotificationType.AppState, 'Showing cars');
+      this.notificationHubService.emit(HubNotificationType.AppState, 'Dashboard');
     });
   }
 

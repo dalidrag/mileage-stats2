@@ -27,7 +27,9 @@ export class CarCardComponent implements OnChanges {
   @Input()
   selectedCarId: string;
   @Input()
-  showStatisticsDefault: boolean;
+  showStatisticsDefault: boolean;   // Whether to show statistics at the bottom of the car card
+  @Input()
+  selectedCommand: number;
 	milesPerGallon: number;
 	costPerMile: number;
 	costPerMonth: number;
@@ -35,19 +37,20 @@ export class CarCardComponent implements OnChanges {
   constructor(private router:Router, private utilitiesService:UtilitiesService) { }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.fillUps = changes.fillUps && changes.fillUps.currentValue;
-
-      this.fillUps.sort((fillUp1, fillUp2) => fillUp1.date > fillUp2.date ? 1 : -1);
-      this.milesPerGallon = +this.CalculateMPG(this.fillUps).toFixed(2);
-      this.costPerMile = +this.CalculateDPM(this.fillUps).toFixed(2);
-      this.costPerMonth = +this.CalculateDPMonth(this.fillUps).toFixed(2);
-      // Note the plus sign that drops any "extra" zeroes at the end.
-      // It changes the result (which is a string) into a number again
-      // which means that it uses only as many digits as necessary.
+    if (changes.fillUps) this.fillUps = changes.fillUps.currentValue;
+    if (changes.selectedCommand) this.selectedCommand = changes.selectedCommand.currentValue;
+    
+    this.fillUps.sort((fillUp1, fillUp2) => fillUp1.date > fillUp2.date ? 1 : -1);
+    this.milesPerGallon =  Math.round(+this.CalculateMPG(this.fillUps).toFixed(2));
+    this.costPerMile = +this.CalculateDPM(this.fillUps).toFixed(2);
+    this.costPerMonth = +this.CalculateDPMonth(this.fillUps).toFixed(2);
+    // Note the plus sign that drops any "extra" zeroes at the end.
+    // It changes the result (which is a string) into a number again
+    // which means that it uses only as many digits as necessary.
   }
 
   switchToDetails(): void {
-      this.router.navigate(['carDetails', this.car.id]);
+    this.router.navigate(['carDetails', this.car.id]);
   }
 
   buttonDetails(event: Event): void {

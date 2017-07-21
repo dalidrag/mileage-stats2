@@ -42,7 +42,7 @@ export class AddCarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   	this.car = new Car;
-    this.notificationHubService.emit(HubNotificationType.AppState, 'Adding a new car');
+    this.notificationHubService.emit(HubNotificationType.AppState, "Adding a new car ('ESC' to cancel)");
 
     this.addCarForm = new FormGroup({first: this.carModelCtrl, second: this.carNameCtrl, third: this.carYearCtrl});
 
@@ -91,7 +91,7 @@ export class AddCarComponent implements OnInit, OnDestroy {
     if (this.imageValid) base64Image = this.data.image;
 
     this.dataService.addCar(this.car, base64Image).then(() => {
-  		this.notificationHubService.emit(HubNotificationType.Success, 'New car added.');  // Notify of success via event hub service
+  		this.notificationHubService.emit(HubNotificationType.Success, 'New car added');  // Notify of success via event hub service
       this.router.navigate(['dashboard']);
   	})
     .catch(error => this.utilitiesService.handleError(error));

@@ -52,13 +52,13 @@ export class RemindersComponent implements OnInit, OnDestroy {
       if (val instanceof NavigationEnd) { // if succesful navigation to reminders route happened
         if (this.route.children[0]) {  // check if there are subroutes
           if (this.route.children[0].snapshot.url[0].toString() === 'addReminder') {
-            this.notificationHubService.emit(HubNotificationType.AppState, 'Adding a new reminder for ' + this.car.name);
+            this.notificationHubService.emit(HubNotificationType.AppState, 'Adding a new reminder for ' + this.car.name + " ('ESC' to cancel)");
           }
           else if (this.route.children[0].children[0] == undefined && this.route.children[0].snapshot.url.length === 1) { // if no further content after /reminders/<number>
             this.notificationHubService.emit(HubNotificationType.AppState, 'A reminder for ' + this.car.name);  // update app state write up
           }
           else {  // we are editing a reminder
-            this.notificationHubService.emit(HubNotificationType.AppState, 'Editing a reminder for ' + this.car.name);  // update app state write up            
+            this.notificationHubService.emit(HubNotificationType.AppState, 'Editing a reminder for ' + this.car.name + " ('ESC' to cancel)");  // update app state write up            
           }
         }  // finished with sub routes
         else  { // no subroutes, we are showing reminders list
@@ -66,7 +66,7 @@ export class RemindersComponent implements OnInit, OnDestroy {
         }
       }  // Finished with all the routes
     });
-    this.notificationHubService.emit(HubNotificationType.AppState, 'Showing reminders for ' + this.car.name);
+    this.notificationHubService.emit(HubNotificationType.AppState, 'Reminders for ' + this.car.name);
   }
 
   ngOnDestroy() {

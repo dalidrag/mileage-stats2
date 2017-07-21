@@ -64,7 +64,7 @@ export class EditReminderComponent implements OnInit , OnDestroy {
     editedReminder.id = this.reminder.id;
 
   	this.dataService.updateReminder(this.carId, editedReminder).then(() => {
-  		this.notificationHubService.emit(HubNotificationType.Success, 'Reminder Changed');
+  		this.notificationHubService.emit(HubNotificationType.Success, 'Reminder updated');
       this.router.navigate(['../../'], { relativeTo: this.route }); // Go up to parent route and append
       this.actionCreators.editReminder(this.appStore.getState().reminders.reminders, editedReminder);
       this.actionCreators.selectReminder(editedReminder);

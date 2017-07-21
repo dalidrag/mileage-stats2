@@ -8,5 +8,8 @@
 	opacity: 0;
 }
 p {
+	margin: 0;
+	font-size: 1.3em;
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 	transition: opacity 1.5s;
 }

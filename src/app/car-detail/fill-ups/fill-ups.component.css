@@ -1,70 +1,74 @@
-/* div {		
-	border: 1px solid black;
-} */
 .fill-ups-view {	/* The whole 'fill ups' frame within the accordion widget */
 	position: relative;
-	left:  4vw;
-	
-	width: 50em;
-	height: 50vw;
+	top: 2rem;
+	left:  6vw;
 	width: fit-content;
-	border: 1px solid pink;
+	height: 50vw;
 }
+/* This frame has two sub-views */
 .accordion-sub-view {
-	display: inline-block; /* we want sub-views layed out horizontally */
-	position:  relative;	/* So we make them in-line block and position them relatively */
-	vertical-align: top; /* Needed for inline-block to be properly aligned to the top */
-	width: 28vw;
+	position: relative; /* we want sub-views layed out horizontally */
+	display: inline-block; /* So we make them in-line block and position them relatively */
+	vertical-align: top; /* Needed for inline-blick to be propperly aligned to the top */
+	text-align: center;
+	width: 26vw;
 	height: 100%;
-	overflow: auto; /* So we have a vertical scroll bar when content overflows */
-	border: 1px solid green;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 button {
-	width: 6.1rem;
-	height: 2rem;
-	margin-top: 0.125rem;
-	margin-bottom: 0.125rem;
+	display: inline-block;
+	position: relative;
+	width: 5rem;
+	height: 1.9rem;
 	border-width: 0;
 	background-color: darkgreen;
+	background-image: url("/assets/images/command-background.jpg");
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+button:hover {
+	background-image: url("/assets/images/command-hover.jpg");
+}
+.button-image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
 }
 
-@media screen and (min-width: 1281px) and (min-aspect-ratio: 15/9) and (orientation: landscape) {
+@media screen and (min-width: 1280px) and (min-aspect-ratio: 15/9) and (orientation: landscape) {
+	.accordion-sub-view {
+		width: 22vw;
+	}
+	.button {
+		width: 6.5vw;
+		height:  2.2vw;
+	}
 	.fill-ups-view {
 		height: 42.5vw;
-		left: 4.5vw;
-	}
-	button {
-		width: 5.1rem;
-	}
-	.accordion-sub-view {
-		width:  22vw;
 	}
 }
-@media screen and (min-width:1081px) and (max-width: 1280px) {
+@media screen and (min-width: 1081px) and (max-width: 1280px) {
 	.fill-ups-view {
 		height: 60vw;
-		left:  5rem;
+		left: 6em;
 	}
 	.accordion-sub-view {
 		width: 30vw;
 	}
 }
-@media screen and (max-width: 1080px) {
-	.wrapper {
-		height: 84rem;
-	}
-	.tab {
-		height: 84rem;
-	}
+@media screen and (min-width: 787px) and (max-width: 1080px) {
 	.accordion-sub-view {
 		display:  block;
+		width: 18em;
 		height: fit-content;
 		max-height: 48%;
-		width: 20rem;
 	}
 	.fill-ups-view {
-		height: 84rem;
-		left: 4.6rem;
+		left: 5em;
+		height: 67.5rem;
 	}
 }
 @media screen and (max-width: 786px) {
@@ -72,12 +76,12 @@ button {
 		display:  block;
 		height: fit-content;
 		max-height: 48%;
-		width: 18rem;
+		width: 18em;
 	}
 	.fill-ups-view {
 		left: 0;
 		top: 4rem;
-		height: 84rem;
+		height: 65rem;
 		/* Center accordion sub-view */
 		margin-left: auto;
 		margin-right: auto;

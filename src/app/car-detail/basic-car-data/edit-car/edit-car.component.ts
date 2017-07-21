@@ -62,29 +62,31 @@ export class EditCarComponent implements OnInit {
 			this.editCarForm = new FormGroup({first: this.carModelCtrl, second: this.carNameCtrl, third: this.carYearCtrl});
 
       // Get width of container element
-    let element = document.getElementsByClassName("edit-car-view")[0] as HTMLElement;
-    let width = parseInt(window.getComputedStyle(element,"").width);
+      let element = document.getElementsByClassName("edit-car-view")[0] as HTMLElement;
+      let width = parseInt(window.getComputedStyle(element,"").width);
 
-    // Setting for the cropper component
-    this.cropperSettings = new CropperSettings();
-    this.cropperSettings.canvasWidth = width * 0.9;
-    this.cropperSettings.canvasHeight = width * 0.4;
+      // Setting for the cropper component
+      this.cropperSettings = new CropperSettings();
+      this.cropperSettings.canvasWidth = width * 0.9;
+      this.cropperSettings.canvasHeight = width * 0.4;
 
-    this.cropperSettings.width = width * 0.1;
-    this.cropperSettings.height = width * 0.1;
+      this.cropperSettings.width = width * 0.1;
+      this.cropperSettings.height = width * 0.1;
 
-    this.cropperSettings.croppedWidth = 110;
-    this.cropperSettings.croppedHeight = 110;
+      this.cropperSettings.croppedWidth = 110;
+      this.cropperSettings.croppedHeight = 110;
 
-    this.cropperSettings.rounded = false;
+      this.cropperSettings.rounded = false;
 
-    this.cropperSettings.cropperDrawSettings.strokeColor = 'rgba(255,255,255,1)';
-    this.cropperSettings.cropperDrawSettings.strokeWidth = 2;
+      this.cropperSettings.cropperDrawSettings.strokeColor = 'rgba(255,255,255,1)';
+      this.cropperSettings.cropperDrawSettings.strokeWidth = 2;
 
-    this.cropperSettings.noFileInput = true;
-    this.cropperSettings.fileType = 'png';
+      this.cropperSettings.noFileInput = true;
+      this.cropperSettings.fileType = 'png';
 
-    this.data = {};
+      this.data = {};
+
+      this.notificationHubService.emit(HubNotificationType.AppState, 'Editing ' + this.car.name + " ('ESC' to cancel)");
     });
   }
 
@@ -109,7 +111,7 @@ export class EditCarComponent implements OnInit {
     this.dataService.updateCar(this.car, base64Image).then(() => {
   		// the following is a string which will be appended to image src URL in car component
       this.utilitiesService.avatarURLFragment = '?' + Date.now().toString(); // image cache busting fragment
-      this.notificationHubService.emit(HubNotificationType.Success, 'Car updated.');  // Notify of success via event hub service
+      this.notificationHubService.emit(HubNotificationType.Success, 'Car updated');  // Notify of success via event hub service
       this.router.navigate(['dashboard']);
   	})
     .catch(error => this.utilitiesService.handleError(error));
@@ -166,8 +168,8 @@ export class EditCarComponent implements OnInit {
    * @method cancel
    */
    cancel() {
-      // Simply navigate back to reminders view
-      this.router.navigate(['dashboard']); // Go up to parent route     
+      // Simply navigate back
+      this.router.navigate(['../'], { relativeTo: this.route }); // Go up to parent route          
    }
 
   /**

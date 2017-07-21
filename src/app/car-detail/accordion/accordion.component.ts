@@ -111,7 +111,7 @@ export class AccordionComponent implements OnInit, OnDestroy {
            element.style.left = '0rem';
          }
          else if (smallerScreen.matches) {
-           element.style.left = '2.5rem'
+           element.style.left = '2.8rem'
            element.style.top = '0rem';
          }
          else if (smallScreen.matches) {
@@ -119,7 +119,7 @@ export class AccordionComponent implements OnInit, OnDestroy {
            element.style.top = '0rem';
          }
          else {
-           element.style.left = '2vw'; 
+           element.style.left = '3vw'; 
            element.style.top = '0rem';
          }
        }
@@ -127,15 +127,15 @@ export class AccordionComponent implements OnInit, OnDestroy {
      else {
        if (element) {
          if (smallestScreen.matches) {
-           element.style.top = '86rem';
+           element.style.top = '67rem';
            element.style.left = '0rem';
          }
          else if (widescreen.matches) {
-           element.style.left = '51vw';
+           element.style.left = '50vw';
            element.style.top = '0rem';
          }
          else if (smallerScreen.matches) {
-           element.style.left = '68.5vw';
+           element.style.left = '69.3vw';
            element.style.top = '0rem';
          }
          else if (smallScreen.matches) {
@@ -143,7 +143,7 @@ export class AccordionComponent implements OnInit, OnDestroy {
            element.style.top = '0rem';
          }
          else {
-           element.style.left = '61vw';
+           element.style.left = '58.5vw';
            element.style.top = '0rem';
          }
        }
@@ -156,7 +156,7 @@ export class AccordionComponent implements OnInit, OnDestroy {
             element.style.left = '0rem';
           }
           else if (smallerScreen.matches) {
-            element.style.left = '5rem'; 
+            element.style.left = '5.5rem'; 
             element.style.top = '0rem';
           }
           else if (smallScreen.matches) {
@@ -164,7 +164,7 @@ export class AccordionComponent implements OnInit, OnDestroy {
             element.style.top = '0rem';
           }
           else {
-            element.style.left = '4vw';
+            element.style.left = '6vw';
             element.style.top = '0rem';
           }
        }
@@ -172,15 +172,15 @@ export class AccordionComponent implements OnInit, OnDestroy {
      else {
        if (element) {
          if (smallestScreen.matches) {
-           element.style.top = '88rem';
+           element.style.top = '69rem';
            element.style.left = '0rem';
          }
          else if (widescreen.matches) {
-           element.style.left = '53vw';
+           element.style.left = '52.5vw';
            element.style.top = '0rem';
          }
          else if (smallerScreen.matches) {
-           element.style.left = '72vw';
+           element.style.left = '72.8vw';
            element.style.top = '0rem';
          }
          else if (smallScreen.matches) {
@@ -188,7 +188,7 @@ export class AccordionComponent implements OnInit, OnDestroy {
            element.style.top = '0rem';
          }
          else {
-           element.style.left = '63vw';
+           element.style.left = '61.5vw';
            element.style.top = '0rem';
          }
        }

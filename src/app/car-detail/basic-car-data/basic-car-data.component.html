@@ -3,15 +3,27 @@
 		<app-basic-car-stats-charts [fillUps]="fillUps"></app-basic-car-stats-charts>
 	</div>
 	<div class="accordion-sub-view">
-	  <button routerLink='editCar' id="edit-car">Edit Car</button>
-	  <button (click)='deleteCar()'>Delete Car</button>
-	  <p>Car model:</p>
-	  <p>{{car.model}}<p>
-	  <p>Car nick name:</p>
-	  <p>{{car.name}}<p>
-	  <p>Car year:</p>
-	  <p>{{car.year}}<p>
-	  <app-overdue-reminders [reminders]="reminders"></app-overdue-reminders>
+	  <button routerLink='editCar' id="edit-car">
+			<img class="button-image" src="/assets/images/button-edit.png" />
+			<img class="button-image" src="/assets/images/command-glass.png" />
+		</button>
+		<button (click)='deleteCar()'>
+			<img class="button-image" src="/assets/images/button-delete.png" />
+			<img class="button-image" src="/assets/images/command-glass.png" />
+		</button>
+	  <div class="data">
+		  <p class="field">VEHICLE NAME</p>
+		  <p class="value">{{car.name}}<p>
+		  <p class="field">VEHICLE YEAR</p>
+		  <p class="value">{{car.year}}<p>
+		  <p class="field">MODEL</p>
+		  <p class="value">{{car.model}}<p>
+			<p *ngIf="fillUps[fillUps.length-1]" class="field">ODOMETER</p>
+		  <p *ngIf="fillUps[fillUps.length-1]" class="value">{{fillUps[fillUps.length-1] && fillUps[fillUps.length-1].odometer}} miles</p>
+		</div>
+	  <div class="overdue-reminders">
+	  	<app-overdue-reminders [reminders]="reminders"></app-overdue-reminders>
+	  </div>
 	</div>
 </div>
 <div>

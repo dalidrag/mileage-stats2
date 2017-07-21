@@ -3,6 +3,9 @@
 	justify-content: space-between;
 	align-items: center;
 	background-color: lightgrey;
+	background-image: url("/assets/images/application-top.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 }
 .main-menu {
 	cursor: pointer;

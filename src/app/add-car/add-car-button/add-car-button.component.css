@@ -1,16 +1,24 @@
 .wrapper {
-	display: inline-flex;	/* So that we can easily vertically center the button */
-	vertical-align: top;		/* Needed to properly align inline-flex to the top */
+	display: inline-flex;		/* So that we can easily vertically center the button */
+	vertical-align: top;		/* Needed to propperly align inline-flex to the top */
 	align-items: center;		/* horizontally center the button */
 	width: 17.2vw;
 	min-width: 13.75em;
 	height: 20vw;
-	min-height: 16em; 
-	margin: 0.3em;	/* all the margins to 0.3em */
+	min-height: 16em;
 }
 .add-car-button {
 	width: 100%;
 	text-align: center;	/* vertically center the button */
+	padding: 0.6rem;
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+	color: mediumblue;
+	background-color: FloralWhite;
+	background-clip: padding-box;
+	border-width: 0.5em;
+	border-style: solid;
+	border-color: rgba(200, 200, 200, 0.55);
+	border-radius: 0.4em;
 }
 @media screen and (min-width: 1280px) and (min-aspect-ratio: 15/9) and (orientation: landscape) {
 	.wrapper{

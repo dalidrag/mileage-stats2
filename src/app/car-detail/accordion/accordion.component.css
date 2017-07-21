@@ -1,36 +1,38 @@
-div {
-	border: 1px solid black;
-}
-
 .wrapper {
-	position:  relative;	 /* We will want to absolutely position sliders */
+	position:  relative;
 	height: 59vw;
-	overflow: hidden; /* The sliders must not be visible when in right position */ 
+	overflow: hidden;
 }
 .slider-car {
 	position: absolute;
 	width: 100%;
 	left: 0;					/* Car slider to the far left */
-	background-color: lightyellow;
+	background-color: lightgray;
+	background-image: url("/assets/images/details-pane.jpg");
+	background-size: 100%;
 	transition: left 0.7s, top 0.7s;
 }
 .slider-fill-ups {			
 	position: absolute;
 	width: 100%;
-	left:  61vw;	/* Right position for fill ups means 30px from the right edge */
-	background-color: lightseagreen;
+	left:  58vw;	/* Right position for fill ups means 6vw from the right edge */
+	background-color: lightgray;
+	background-image: url("/assets/images/fillups-pane.jpg");
+	background-size: 100%;
 	transition: left 0.7s, top 0.7s;
 }
 .slider-reminders {
 	position: absolute;
 	width: 100%;
-	left: 63vw; /* Right position for reminders means 60px from the right edge */
-	background-color: lightskyblue;
+	left: 61vw;	/* Right position for fill ups means 3vw from the right edge */
+	background-color: lightgray;
+	background-image: url("/assets/images/reminders-pane.jpg");
+	background-size: 100%;
 	transition: left 0.7s, top 0.7s;
 }
 .tab {
-	position: static;
-	width: 2vw;
+	width: 3vw;
+	min-width: 2em;
 	height: 59vw;
 }
 @media screen and (min-width: 1280px) and (min-aspect-ratio: 15/9) and (orientation: landscape) {
@@ -39,48 +41,60 @@ div {
 	}
 	.tab {
 		height: 48vw;
+		width: 2.5vw;
 	}
 	.slider-fill-ups {
-		left:  51vw;
+		left:  50vw;
 	}
 	.slider-reminders {
-		left:  53vw;
+		left:  52.5vw;
 	}
 }
 @media screen and (min-width:1081px) and (max-width: 1280px) {
 	.wrapper {
-		height: 69vw;
+		height: 59vw;
 	}
 	.tab {
-		height: 69vw;
-		width: 2.5rem;
+		width: 3.5vw;
+		height: 59vw;
 	}
 	.slider-fill-ups {
-		left: 68.5vw;
+		left: 69.3vw;
 	}
 	.slider-reminders {
-		left: 72vw;
+		left: 72.8vw;
 	}
 }
 @media screen and (max-width: 1080px) {
-	.wrapper {
-		height: 84rem;
-	}
-	.tab {
-		height: 84rem;
-		width: 2rem;
+	.slider-car {
+		background-size: 685px;
 	}
 	.slider-fill-ups {
-		left:  23rem;
+		background-size: 685px;
 	}
 	.slider-reminders {
-		left:  25rem;
+		background-size: 685px;
+	}
+}
+@media screen and (min-width: 787px) and (max-width: 1080px) {
+	.wrapper {
+		width: 27em;
+		height: 66.5rem;
+	}
+	.tab {
+		height: 66.5rem;
+	}
+	.slider-fill-ups {
+		left:  23em;
+	}
+	.slider-reminders {
+		left:  25em;
 	}
 }
 @media screen and (max-width: 786px) {
 	.wrapper {
-		width: 27rem;
-		height: 90rem;
+		width: 27em;
+		height: 71rem;
 		/* Center accordion widget */
 		margin-left: auto;
 		margin-right: auto;
@@ -90,16 +104,16 @@ div {
 		height: 2rem;
 	}
 	.slider-car {
-		height: 86rem;
+		height: 67rem;
 	}
 	.slider-fill-ups {
 		left: 0;
-		top: 86rem;
-		height: 86rem;
+		top: 67rem;
+		height: 67rem;
 	}
 	.slider-reminders {
 		left: 0;
-		top: 88rem;
-		height: 86rem;
+		top: 69rem;
+		height: 67rem;
 	}
 }

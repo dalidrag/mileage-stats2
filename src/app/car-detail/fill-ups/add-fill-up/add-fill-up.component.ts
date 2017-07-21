@@ -61,7 +61,7 @@ export class AddFillUpComponent implements OnInit, OnDestroy {
 
   	this.dataService.addFillUp(this.carId, newFillup).then((addedFillUp: FillUp) => {
   		this.router.navigate(['../', addedFillUp.id], { relativeTo: this.route }); // Go up to parent route
-      this.notificationHubService.emit(HubNotificationType.Success, 'FillUp Added');
+      this.notificationHubService.emit(HubNotificationType.Success, 'FillUp added');
       this.actionCreators.addFillUp(this.appStore.getState().fillUps.fillUps, addedFillUp);
       this.actionCreators.selectFillUp(addedFillUp);
   	})
@@ -96,7 +96,7 @@ export class AddFillUpComponent implements OnInit, OnDestroy {
    cancel() {
       event.preventDefault();
       event.stopPropagation();
-      // Simply navigate back to reminders view
+      // Simply navigate back
       this.router.navigate(['../'], { relativeTo: this.route }); // Go up to parent route     
    }
 }

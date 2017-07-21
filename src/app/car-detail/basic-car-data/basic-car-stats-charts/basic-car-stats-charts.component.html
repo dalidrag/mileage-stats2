@@ -1,9 +1,14 @@
-<p>Last 12 Months</p>
-<p>Average Fuel Efficiency</p>
-<chart [options]="fuelOptions" (load)="saveChart($event.target)">
-</chart>
-<p>Total Distance Travelled</p>
-<chart [options]="distanceOptions" (load)="saveChart($event.target)"></chart>
-<p>Total Cost</p>
-<chart [options]="costOptions" (load)="saveChart($event.target)"></chart>
-<p><em>powered by Highcharts</em></p>
+<div class="charts">
+	<p class="title">Last 12 Months</p>
+	<p class="chart-legend">Average Fuel Efficiency</p>
+	<chart [options]="fuelOptions" (load)="saveChart($event.target)">
+	          <!-- <series (hide)="onSeriesHide($event.context)"> -->
+	           <!-- <point (select)="onPointSelect($event.context)"></point> -->
+	          <!-- </series> -->
+	</chart>
+	<p class="chart-legend">Total Distance Travelled</p>
+	<chart [options]="distanceOptions" (load)="saveChart($event.target)"></chart>
+	<p class="chart-legend">Total Cost</p>
+	<chart [options]="costOptions" (load)="saveChart($event.target)"></chart>
+	<p class="highcharts-credit"><em>powered by Highcharts</em></p>
+</div>

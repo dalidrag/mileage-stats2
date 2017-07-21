@@ -1,16 +1,69 @@
-label,
-button {
-	display: block;
-}
-span {
-	color:  red;
+/* For "Madoka" Inputs */
+* {
+	box-sizing: border-box;
 }
 .add-car-view {
-	width: 53vw;
-	height: 49vw;
-	min-width: 30em;	/* So that it never becomes too small */
+	width: 61vw;
+	height: 55vw;
+	min-width: 30em;
 	min-height: 27.5em;
+
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	margin-left: 1rem;
+	
 	background-color: wheat;
+	background-image: url("/assets/images/add-vehicle-pane.jpg");
+	background-size: 100%;
+}
+.form {
+	font-size: 1.5rem;
+
+	margin-left: 3rem;
+}
+
+label {
+	display: block;
+}
+button {
+	display: block;
+	position: relative;
+	width: 5rem;
+	height: 1.9rem;
+	margin-top: 1rem;
+	margin-bottom: 0.125em;
+	border-width: 0;
+	background-color: darkgreen;
+	background-image: url("/assets/images/command-background.jpg");
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+button:hover {
+	background-image: url("/assets/images/command-hover.jpg");
+}
+.button-image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.error {
+	color:  red;
+	text-align: left;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 70.25%;
+	font-weight: bold;
+	margin-top: 0.5rem;
+	margin-bottom: -0.8rem;
+}
+.image-text {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 70.25%;
+	font-weight: bold;
+	color: #6a7989;
 }
 .file-upload {	/* Customize image upload button */
 	position: relative;	
@@ -24,11 +77,21 @@ span {
 	min-width: 6.1em;
 	height: 2.6vw;
 	min-height: 2em;
-	margin-top: 0.125em;
-	margin-bottom: 0.125em;
-	background-color: darkgreen;
-}
 
+	margin-top: 2rem;
+	margin-bottom: 0.125em;
+
+	text-align: center;
+	font-size: 1.2rem;
+
+	background-color: darkgreen;
+	background-image: url("/assets/images/command-background.jpg");
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+.file-upload:hover {
+	background-image: url("/assets/images/command-hover.jpg");
+}
 input[type='file'] {	/* This will be clickable*/
   position: absolute;
   top: 0;
@@ -41,14 +104,16 @@ input[type='file'] {	/* This will be clickable*/
 	height: 2.6vw;
 	min-height: 2em;
 }
-
+.text {
+	cursor: pointer;
+	font-size: 0.9rem;
+}
 #uploadedImage {
 	width: 90%;
 }
-
 @media screen and (min-width: 1280px) and (min-aspect-ratio: 15/9) and (orientation: landscape) {
 	.add-car-view{
-		width: 45vw;
-		height: 41.6vw;
+		width: 52vw;
+		height: 47vw;
 	}
 }

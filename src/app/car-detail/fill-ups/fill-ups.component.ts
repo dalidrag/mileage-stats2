@@ -49,20 +49,18 @@ export class FillUpsComponent implements OnInit, OnDestroy {
     this.unsubscribeRouterEvents = this.router.events.subscribe(val => {
       if (val instanceof NavigationEnd) { // if succesful navigation to fillUps route happened
         if (this.route.children[0]) {  // check if there are subroutes
-          console.log('There are subroutes');
           if (this.route.children[0].snapshot.url[0].toString() === 'addFillUp') {
-            this.notificationHubService.emit(HubNotificationType.AppState, 'Adding a new fill up for ' + this.car.name);
+            this.notificationHubService.emit(HubNotificationType.AppState, 'Adding a new fill up for ' + this.car.name + " ('ESC' to cancel)");
           }
           else if (this.route.children[0].children[0] == undefined && this.route.children[0].snapshot.url.length === 1) { // if no further content after /fillUps/<number>
             this.notificationHubService.emit(HubNotificationType.AppState, 'A fill up for ' + this.car.name);  // update app state write up
           }
           else {  // we are editing a fill up
-            this.notificationHubService.emit(HubNotificationType.AppState, 'Editing a fill up for ' + this.car.name);  // update app state write up            
+            this.notificationHubService.emit(HubNotificationType.AppState, 'Editing a fill up for ' + this.car.name  + " ('ESC' to cancel)");  // update app state write up            
           }
         }  // finished with sub routes
         else  {  // no subroutes, we are showing fill ups list
           this.notificationHubService.emit(HubNotificationType.AppState, 'Fill ups for ' + this.car.name);  // update app state write up
-          console.log('There are no subroutes');
         }
       } // Finished with all the routes
     });

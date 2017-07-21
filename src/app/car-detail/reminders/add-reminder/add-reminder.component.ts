@@ -40,7 +40,6 @@ export class AddReminderComponent implements OnInit, OnDestroy {
   	this.addReminderForm = this.fb.group({  
   	      'text': ['', Validators.compose([Validators.required, Validators.maxLength(20)])], 'date': ['', Validators.required]
   	    });
-    this.notificationHubService.emit(HubNotificationType.AppState, "Adding a new reminder ('ESC' to cancel)");
   }
 
   ngOnDestroy() {
@@ -59,7 +58,7 @@ export class AddReminderComponent implements OnInit, OnDestroy {
   	newReminder.date = formValues.date.toString();
 
   	this.dataService.addReminder(this.carId, newReminder).then((addedReminder: Reminder) => {
-  		this.notificationHubService.emit(HubNotificationType.Success, 'Reminder Added');
+  		this.notificationHubService.emit(HubNotificationType.Success, 'Reminder added');
       this.router.navigate(['../'], { relativeTo: this.route }); // Go up to parent route
       this.actionCreators.addReminder(this.appStore.getState().reminders.reminders, addedReminder);
       this.actionCreators.selectReminder(addedReminder);

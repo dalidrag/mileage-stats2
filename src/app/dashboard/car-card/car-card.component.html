@@ -1,27 +1,37 @@
-<div class='carCard' [class.selected]="selectedCarId===car.id.toString()" (click)='switchToDetails()' >
+<div class='car-card' [class.selected]="selectedCarId===car.id" (click)='switchToDetails()' >
  	<div class='header'>
- 		<p>{{car.model}}</p>
- 		<p>{{car.name}}</p>
+ 		<img class="title-image" src="assets/images/title-glass.png" />
+ 		<p class='model'>{{car.model}}</p>
+ 		<p class='name'>{{car.name}}</p>
  	</div>
  	<div class='vehicle'>
  		<img class='avatar' alt='car avatar' src='http://localhost:3000/api/cars/{{car.id}}/image{{utilitiesService.avatarURLFragment}}'/>
  		<nav>
- 			<button (click)='buttonDetails($event)'>Details</button>
- 			<button (click)="buttonFillUps($event)">Fill ups</button>
- 			<button (click)="buttonReminders($event)">Reminders</button>
+ 			<button class="button-details" [class.active]="selectedCarId===car.id && selectedCommand===0" (click)='buttonDetails($event)'>
+				<img class="button-image" src="/assets/images/command-details.png" />
+				<img class="button-image" src="/assets/images/command-glass.png" />
+ 			</button>
+ 			<button class="button-fill-ups" [class.active]="selectedCarId===car.id && selectedCommand===1" (click)="buttonFillUps($event)">
+				<img class="button-image" src="/assets/images/command-fillups.png" />
+				<img class="button-image" src="/assets/images/command-glass.png" />
+ 			</button>
+ 			<button class="button-reminders" [class.active]="selectedCarId===car.id && selectedCommand===2" (click)="buttonReminders($event)">
+				<img class="button-image" src="/assets/images/command-reminders.png" />
+				<img class="button-image" src="/assets/images/command-glass.png" />
+ 			</button>
  		</nav>
  	</div>
- 	<div class='statistics' *ngIf="selectedCarId===car.id.toString() || showStatisticsDefault">
- 	<div class='miles-per-gallon'>
- 		<p>{{milesPerGallon}}</p>
- 			<p>mpg</p>
+ 	<div class='statistics' *ngIf="selectedCarId===car.id || showStatisticsDefault">
+ 		<div class='miles-per-gallon'>
+ 			<p class="value">{{milesPerGallon}}</p>
+ 			<p class="metric">mpg</p>
  		</div>
  		<div class='right-pane'>
- 	 		<p>{{costPerMile}}</p>
- 			<p>cost per mile</p>
+	 		<p class="value">{{costPerMile}}&cent;</p>
+ 			<p class="metric">per mile</p>
  			<div class='dollars-per-month'>
- 				<p>{{costPerMonth}}</p>
- 				<p>dollars per month</p>
+ 				<p class="value">${{costPerMonth}}</p>
+	 			<p class="metric">per month</p>
  			</div>
  		</div>
  	</div>

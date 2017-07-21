@@ -1,15 +1,30 @@
-<form [formGroup]="addReminderForm" (ngSubmit)="onSubmit(addReminderForm.value)" (keyup)="onKey($event)" novalidate>
-	<label for="text" >Text
-		<br />
-		<input type="text" id="text" [formControl]="addReminderForm.controls['text']" (blur)="onBlur($event)" autofocus />
-		<div class="error" *ngIf="addReminderForm.controls['text'].hasError('required') && addReminderForm.controls['text'].touched">You must enter reminder text</div>
-		<div class="error" *ngIf="addReminderForm.controls['text'].hasError('maxlength') && addReminderForm.controls['text'].touched">At most 20 characters</div>
-	</label>
-	<label for="date">Date
-		<br />
-		<input type="date" id="date" [formControl]="addReminderForm.controls['date']" (blur)="onBlur($event)" />
-		<div class="error" *ngIf="addReminderForm.controls['date'].hasError('required') && addReminderForm.controls['date'].touched">You must enter a date</div>
-	</label>
-	<button type="submit" [disabled]="!addReminderForm.valid" >Add This Reminder</button>
+<form [formGroup]="addReminderForm" (ngSubmit)="onSubmit(addReminderForm.value)" (keyup)="onKey($event)">
+
+	<span class="input input--madoka" [class.input--filled]="text.value !== ''" >
+		<input #text class="input__field input__field--madoka" type="text" id="text" [formControl]="addReminderForm.controls['text']" (blur)="onBlur($event)" autofocus />
+		<label class="input__label input__label--madoka" for="text">
+			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
+			</svg>
+			<span class="input__label-content input__label-content--madoka">Reminder text</span>
+		</label>
+	</span>
+	<div class="error" *ngIf="addReminderForm.controls['text'].hasError('required') && addReminderForm.controls['text'].touched">You must provide reminder text</div>
+	<div class="error" *ngIf="addReminderForm.controls['text'].hasError('maxlength') && addReminderForm.controls['text'].touched">At most 20 characters</div>
+
+	<span class="input input--madoka" [class.input--filled]="date.value !== ''" >
+		<input #date class="input__field input__field--madoka" type="date" id="date" [formControl]="addReminderForm.controls['date']" />
+		<label class="input__label input__label--madoka" for="date">
+			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
+			</svg>
+			<span class="input__label-content input__label-content--madoka"></span>
+		</label>
+	</span>
+	<div class="error" *ngIf="addReminderForm.controls['date'].hasError('required') && addReminderForm.controls['date'].touched">You must enter a date</div>
+
+	<button type="submit" [disabled]="!addReminderForm.valid">
+		<img class="button-image" src="/assets/images/button-add.png" />
+		<img class="button-image" src="/assets/images/command-glass.png" />
+	</button>
 </form>
-<button (click)="cancel()">Cancel</button>

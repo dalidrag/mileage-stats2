@@ -26,6 +26,7 @@ export class CarsListComponent implements OnInit, OnDestroy {
 	@Input()
 	fillUps: FillUp[];
 	selectedCarId: string;
+  selectedCommand: number;
 
 	sub;
 
@@ -34,10 +35,15 @@ export class CarsListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 		this.selectedCarId = this.route.snapshot.params['carId'];
+    this.checkActiveCommand();
+
     this.sub = this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
+        this.checkActiveCommand();
+        
         this.selectedCarId = this.route.snapshot.params['carId'];
-  		}
+
+   		}
   	})
   }
 
@@ -45,4 +51,19 @@ export class CarsListComponent implements OnInit, OnDestroy {
   	this.sub.unsubscribe();
   }
 
+  checkActiveCommand() {
+    if (this.route.children[0].snapshot.url[0]) {  // check if there are subroutes
+      if (this.route.children[0].snapshot.url[0].toString() === 'fillUps') {
+        // Fill ups are selected
+        this.selectedCommand = 1;
+      }
+      else if (this.route.children[0].snapshot.url[0].toString() === 'reminders') {
+        // Reminders are selected
+        this.selectedCommand = 2;
+      }
+    }  // finished with sub routes
+    else  {  // no subroutes, details are selected
+      this.selectedCommand = 0;
+    }
+  }
 }

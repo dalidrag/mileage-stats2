@@ -1,31 +1,63 @@
-<form [formGroup]="editFillUpForm" (ngSubmit)="onSubmit(editFillUpForm.value)" (keyup)="onKey($event)">
-	<label for="quantity" >Quantity
-		<br />
-		<input type="number" id="quantity" [formControl]="editFillUpForm.controls['quantity']" (blur)="onBlur($event)" autofocus />
-		<div class="error" *ngIf="editFillUpForm.controls['quantity'].hasError('required') && editFillUpForm.controls['quantity'].touched">You must provide fuel quantity</div>
-	</label>
-	<label for="price">Price per gallon
-		<br />
-		<input id="price" [formControl]="editFillUpForm.controls['price']" (blur)="onBlur($event)" />
-		<div class="error" *ngIf="editFillUpForm.controls['price'].hasError('required') && editFillUpForm.controls['price'].touched">You must provide fuel price</div>
-		<div class="error" *ngIf="editFillUpForm.controls['price'].hasError('pattern') && editFillUpForm.controls['price'].touched">Not a valid number</div>
-	</label>
-	<label for="odometer">Odometer
-		<br />
-		<input type="number" id="odometer" [formControl]="editFillUpForm.controls['odometer']" (blur)="onBlur($event)" />
-		<div class="error" *ngIf="editFillUpForm.controls['odometer'].hasError('required') && editFillUpForm.controls['odometer'].touched">You must provide odometer value</div>
-	</label>
-	<label for="station">Station
-		<br />
-		<input id="station" [formControl]="editFillUpForm.controls['station']" (blur)="onBlur($event)" />
-		<div class="error" *ngIf="editFillUpForm.controls['station'].hasError('maxlength') && editFillUpForm.controls['station'].touched">At most 20 characters</div>
-	</label>
-	<label for="date">Date
-		<br />
-		<input type="date" id="date" [formControl]="editFillUpForm.controls['date']" (blur)="onBlur($event)" />
-		<div class="error" *ngIf="editFillUpForm.controls['date'].hasError('required') && editFillUpForm.controls['date'].touched">You must enter date</div>
-	</label>
-	<button type="submit" [disabled]="!editFillUpForm.valid" >Update This Fill Up</button>
-</form>
-<button (click)="cancel()">Cancel</button>
+<form [formGroup]="editFillUpForm" (ngSubmit)="onSubmit(editFillUpForm.value)" (keyup)="onKey($event)" >
+	
+	<span class="input input--madoka" [class.input--filled]="quantity.value !== ''" >
+		<input #quantity class="input__field input__field--madoka" type="number" id="quantity" [formControl]="editFillUpForm.controls['quantity']" (blur)="onBlur($event)" autofocus />
+		<label class="input__label input__label--madoka" for="quantity">
+			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
+			</svg>
+			<span class="input__label-content input__label-content--madoka">Gallons</span>
+		</label>
+	</span>
+	<div class="error" *ngIf="editFillUpForm.controls['quantity'].hasError('required') && editFillUpForm.controls['quantity'].touched">You must provide fuel quantity</div>
 
+	<span class="input input--madoka" [class.input--filled]="price.value !== ''" >
+		<input #price class="input__field input__field--madoka" type="text" id="price" [formControl]="editFillUpForm.controls['price']" (blur)="onBlur($event)" />
+		<label class="input__label input__label--madoka" for="price">
+			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
+			</svg>
+			<span class="input__label-content input__label-content--madoka">Price per gallon</span>
+		</label>
+	</span>
+	<div class="error" *ngIf="editFillUpForm.controls['price'].hasError('required') && editFillUpForm.controls['price'].touched">You must provide fuel price</div>
+	<div class="error" *ngIf="editFillUpForm.controls['price'].hasError('pattern') && editFillUpForm.controls['price'].touched">Not a valid number</div>
+	
+	<span class="input input--madoka" [class.input--filled]="odometer.value !== ''" >
+		<input #odometer class="input__field input__field--madoka" type="number" id="odometer" [formControl]="editFillUpForm.controls['odometer']" (blur)="onBlur($event)" />
+		<label class="input__label input__label--madoka" for="odometer">
+			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
+			</svg>
+			<span class="input__label-content input__label-content--madoka">Odometer</span>
+		</label>
+	</span>
+	<div class="error" *ngIf="editFillUpForm.controls['odometer'].hasError('required') && editFillUpForm.controls['odometer'].touched">You must provide odometer value</div>
+	
+	<span class="input input--madoka" [class.input--filled]="station.value !== ''" >
+		<input #station class="input__field input__field--madoka" type="text" id="station" [formControl]="editFillUpForm.controls['station']" (blur)="onBlur($event)" />
+		<label class="input__label input__label--madoka" for="station">
+			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
+			</svg>
+			<span class="input__label-content input__label-content--madoka">Station</span>
+		</label>
+	</span>
+	<div class="error" *ngIf="editFillUpForm.controls['station'].hasError('maxlength') && editFillUpForm.controls['station'].touched">At most 20 characters</div>
+
+	<span class="input input--madoka" [class.input--filled]="date.value !== ''" >
+		<input #date class="input__field input__field--madoka" type="date" id="date" [formControl]="editFillUpForm.controls['date']" />
+		<label class="input__label input__label--madoka" for="date">
+			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
+			</svg>
+			<span class="input__label-content input__label-content--madoka"></span>
+		</label>
+	</span>
+	<div class="error" *ngIf="editFillUpForm.controls['date'].hasError('required') && editFillUpForm.controls['date'].touched">You must enter a date</div>
+
+	<button type="submit" [disabled]="!editFillUpForm.valid" >
+		<img class="button-image" src="/assets/images/button-save.png" />
+		<img class="button-image" src="/assets/images/command-glass.png" />
+	</button>
+</form>

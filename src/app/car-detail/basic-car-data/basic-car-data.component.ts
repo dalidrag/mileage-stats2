@@ -36,7 +36,7 @@ export class BasicCarDataComponent implements OnInit, OnDestroy {
 	      this.car = data.car;
         this.fillUps = data.fillUps;
         this.reminders = data.reminders;
-  			this.notificationHubService.emit(HubNotificationType.AppState, 'Showing basic car data for ' + this.car.name);
+  			this.notificationHubService.emit(HubNotificationType.AppState, 'Basic data for ' + this.car.name);
 	    });
   }
 

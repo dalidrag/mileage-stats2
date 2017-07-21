@@ -67,7 +67,7 @@ export class EditFillUpComponent implements OnInit, OnDestroy {
 
   	this.dataService.updateFillUp(this.carId, editedFillUp).then((response) => {
   		this.router.navigate(['../'], { relativeTo: this.route }); // Go up to parent route
-      this.notificationHubService.emit(HubNotificationType.Success, 'FillUp Updated');
+      this.notificationHubService.emit(HubNotificationType.Success, 'FillUp updated');
       this.actionCreators.editFillUp(this.appStore.getState().fillUps.fillUps, editedFillUp);
       this.actionCreators.selectFillUp(editedFillUp);
   	})

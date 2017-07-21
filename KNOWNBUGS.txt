@@ -1,2 +1,3 @@
+- While editing car, on escacpe new values are written
 - Input field Angular validators messing up after trimming text fields
 - When an input field has focus, input field Angular validators messing with the button for canceling the whole input component (add reminder, add fill ups components).

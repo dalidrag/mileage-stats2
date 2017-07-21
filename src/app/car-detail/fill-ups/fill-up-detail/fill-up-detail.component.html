@@ -1,9 +1,26 @@
-<div>
-	<button routerLink='./editFillUp' id="edit-fill-up">Edit</button>
-	<button (click)='deleteFillUp()'>Delete</button>
-  <p>Fill Up Quantity: {{fillUp.quantity}}</p>
-  <p>Fill Up pricePerGalon: {{fillUp.pricePerGalon}}</p>
-  <p>Fill Up date: {{fillUp.date}}</p>
-  <p>Fill Up station: {{fillUp.station}}</p>
-  <p>Fill Up odometer: {{fillUp.odometer}}</p>
+<div class="component">
+	<div class="buttons">
+		<button routerLink='./editFillUp' id="edit-fill-up">
+			<img class="button-image" src="/assets/images/button-edit.png" />
+			<img class="button-image" src="/assets/images/command-glass.png" />
+		</button>
+		<button (click)='deleteFillUp()'>
+			<img class="button-image" src="/assets/images/button-delete.png" />
+			<img class="button-image" src="/assets/images/command-glass.png" />
+		</button>
+	</div>
+	<div class="data">
+	  <p class="field">DATE</p>
+	  <p class="value">{{fillUp.date | date:'longDate'}}</p>
+	  <p class="field">TOTAL COST</p>
+	  <p class="value">${{fillUp.quantity * fillUp.pricePerGalon}}</p>
+	  <p class="field">TOTAL GALLONS</p>
+	  <p class="value">{{fillUp.quantity}}</p>
+	  <p class="field">PRICE PER GALLON</p>
+	  <p class="value">{{fillUp.pricePerGalon}}</p>
+	  <p class="field">FILL UP STATION</p>
+	  <p class="value">{{fillUp.station}}</p>
+	  <p class="field">ODOMETER</p>
+	  <p class="value">{{fillUp.odometer}}</p>
+	</div>
 </div>

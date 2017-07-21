@@ -1,69 +1,47 @@
-div {		
-	border: 1px solid black;
-} 
-.reminders-view {	/* The whole 'fill ups' frame within the accordion widget */
+.reminders-view {	/* The whole 'reminders' frame within the accordion widget */
 	position: relative;
-	left:  6vw;
-	
-	width: 50em;
-	height: 50vw;
+	top: 2.5rem;
+	left:  9vw;
 	width: fit-content;
-	border: 1px solid pink;
+	height: 50vw;
 }
+/* This frame has two sub-views */
 .accordion-sub-view {
-	display: inline-block; /* we want sub-views layed out horizontally */
-	position:  relative;	/* So we make them in-line block and position them relatively */
-	vertical-align: top; /* Needed for inline-block to be properly aligned to the top */
-	width: 28vw;
+	position: relative; /* we want sub-views layed out horizontally */
+	display: inline-block; /* So we make them in-line block and position them relatively */
+	vertical-align: top; /* Needed for inline-blick to be propperly aligned to the top */
+	width: 26vw;
 	height: 100%;
-	overflow: auto; /* So we have a vertical scroll bar when content overflows */
-	border: 1px solid green;
-}
-button {
-	width: 6.1rem;
-	height: 2rem;
-	margin-top: 0.125em;
-	margin-bottom: 0.125em;
-	border-width: 0;
-	background-color: darkgreen;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 @media screen and (min-width: 1280px) and (min-aspect-ratio: 15/9) and (orientation: landscape) {
 	.accordion-sub-view {
 		width: 22vw;
 	}
-	button {
-		width: 5.1rem;
-	}
 	.reminders-view {
 		height: 42.5vw;
-		left: 6.5vw;
 	}
 }
-@media screen  and (min-width:1081px) and (max-width: 1280px) {
+@media screen and (min-width: 1081px) and (max-width: 1280px) {
 	.reminders-view {
 		height: 60vw;
-		left:  7.5rem;
+		left: 9em;
 	}
 	.accordion-sub-view {
 		width: 30vw;
 	}
 }
-@media screen and (max-width: 1080px) {
-	.wrapper {
-		height: 84rem;
-	}
-	.tab {
-		height: 84rem;
-	}
+@media screen and (min-width: 787px) and (max-width: 1080px) {
 	.accordion-sub-view {
 		display:  block;
-		height: fit-content;
+		width: 18em;
+  	height: fit-content;
 		max-height: 48%;
-		width: 20rem;
 	}
-	.reminders-view {
-		height: 84rem;
-		left: 7rem;
+	.reminders-view  {
+		left: 7.5em;
+		height: 66.5rem;
 	}
 }
 @media screen and (max-width: 786px) {
@@ -71,12 +49,12 @@ button {
 		display:  block;
 		height: fit-content;
 		max-height: 48%;
-		width: 18rem;
+		width: 18em;
 	}
 	.reminders-view {
 		left: 0;
 		top: 6rem;
-		height: 84rem;
+		height: 65rem;
 		/* Center accordion sub-view */
 		margin-left: auto;
 		margin-right: auto;

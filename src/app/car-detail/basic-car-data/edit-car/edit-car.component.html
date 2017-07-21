@@ -1,30 +1,54 @@
-<div class="edit-car-view">
-	<form (keyup)="onKey($event)">
-		<label for="carModel">Car Model
-			<input id="carModel" name='carModel' [(ngModel)]='car.model' [formControl]="carModelCtrl" (blur)="onBlur($event)" autofocus />
-			<span *ngIf="carModelCtrl.hasError('required') && carNameCtrl.touched">You must provide car model</span>
-		</label>
-		<label for="carNickName">Car Nick Name
-			<input id="carNickName" name='carNickName' [(ngModel)]='car.name' [formControl]="carNameCtrl" (blur)="onBlur($event)" />
-			<span *ngIf="carNameCtrl.hasError('required') && carNameCtrl.touched">You must provide car name</span>
-			<span *ngIf="carNameCtrl.hasError('carNameNotUnique') && carModelCtrl.touched">This nick name already exists</span>
-		</label>
-		<label for="carYear">Car Year
-			<input id="carYear" name='carYear' [(ngModel)]='car.year' [formControl]="carYearCtrl" (blur)="onBlur($event)" />
-			<span *ngIf="carYearCtrl.hasError('required') && carNameCtrl.touched">You must provide car year</span>
-		</label>
+<div class="edit-car-view" (keyup)="onKey($event)">
 
-		<label for="carAvatar">Car Image
-			<div class="file-upload">
-				<span class="text">upload</span>
-				<input id="carAvatar" name="carAvatar" type="file" (change)="fileChangeListener($event)" />
-			</div>
+	<span class="input input--madoka" [class.input--filled]="carModel.value !== ''" >
+		<input #carModel class="input__field input__field--madoka" type="text" id="car-model" [(ngModel)]='car.model' [formControl]="carModelCtrl" (blur)="onBlur($event)" autofocus />
+		<label class="input__label input__label--madoka" for="car-model">
+			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
+			</svg>
+			<span class="input__label-content input__label-content--madoka">Car Model</span>
 		</label>
+	</span>
+	<div class="error" *ngIf="carModelCtrl.hasError('required') && carModelCtrl.touched">You must provide car model</div>
+	<div class="error" *ngIf="carModelCtrl.hasError('maxlength') && carModelCtrl.touched">You can enter at most twenty characters</div>
 
-		<img-cropper [image]="data" [settings]="cropperSettings"></img-cropper>
-		<div *ngIf="!imageValid">Image must be at least 110px x 110px</div>
+	<span class="input input--madoka" [class.input--filled]="carName.value !== ''" >
+		<input #carName class="input__field input__field--madoka" type="text" id="car-name" [(ngModel)]='car.name' [formControl]="carNameCtrl" (blur)="onBlur($event)" />
+		<label class="input__label input__label--madoka" for="car-name">
+			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
+			</svg>
+			<span class="input__label-content input__label-content--madoka">Car Nick Name</span>
+		</label>
+	</span>
+	<div class="error" *ngIf="carNameCtrl.hasError('required') && carNameCtrl.touched">You must provide car name</div>
+	<div class="error" *ngIf="carNameCtrl.hasError('maxlength') && carNameCtrl.touched">You can enter at most twenty characters</div>
+	<div class="error" *ngIf="carNameCtrl.hasError('carNameNotUnique') && carModelCtrl.touched">This nick name already exists</div>
 
-		<button id="editCarButton" (click)="writeCarData()" [disabled]="!editCarForm.valid">Update This Car</button>
-	</form>
-	<button (click)="cancel()">Cancel</button>
+	<span class="input input--madoka" [class.input--filled]="carYear.value !== ''" >
+		<input #carYear class="input__field input__field--madoka" type="text" id="car-year" [(ngModel)]='car.year' [formControl]="carYearCtrl" (blur)="onBlur($event)" />
+		<label class="input__label input__label--madoka" for="car-year">
+			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
+			</svg>
+			<span class="input__label-content input__label-content--madoka">Car Year</span>
+		</label>
+	</span>
+	<div class="error" *ngIf="carYearCtrl.hasError('required') && carYearCtrl.touched">You must provide car year</div>
+	<div class="error" *ngIf="carYearCtrl.hasError('pattern') && carYearCtrl.touched">Year can contain only digits</div>
+	<div class="error" *ngIf="carYearCtrl.hasError('minlength') && carYearCtrl.touched">You must enter exactly four characters</div>
+	<div class="error" *ngIf="carYearCtrl.hasError('maxlength') && carYearCtrl.touched">You must enter exactly four characters</div>
+
+	<div class="file-upload">
+		<span class="text">Upload Image</span>
+		<img class="button-image" src="/assets/images/command-glass.png" />
+		<input id="car-avatar" name="carAvatar" type="file" (change)="fileChangeListener($event)" />
+	</div>
+	
+	<img-cropper [image]="data" [settings]="cropperSettings"></img-cropper>
+	<div class="image-text" *ngIf="!imageValid">Image must be at least 110px x 110px</div>
+	<button id="updateCarButton" (click)="writeCarData()" [disabled]="!editCarForm.valid">
+		<img class="button-image" src="/assets/images/button-save.png" />
+		<img class="button-image" src="/assets/images/command-glass.png" />
+	</button>
 </div>

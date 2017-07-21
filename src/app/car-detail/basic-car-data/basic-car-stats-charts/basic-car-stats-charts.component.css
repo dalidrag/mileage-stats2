@@ -1,0 +1,21 @@
+p {
+	color: dimgray;
+	margin: 1rem 0;
+}
+.title {
+	font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+.chart-legend,
+.highcharts-credit {
+	font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+}
+.charts {
+	margin-left: 2rem;
+}
+@media screen and (max-width: 1080px) {
+	.charts {
+		margin-left: 0;
+	}
+}

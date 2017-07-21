@@ -1,6 +1,9 @@
 <div class="fill-ups-view">
 	<div class="accordion-sub-view">
-		<button (click)='onAddFillUpClick()' id="add-fill-up">Add</button>
+		<button (click)='onAddFillUpClick()' id="add-fill-up">
+			<img class="button-image" src="/assets/images/button-add.png" />
+			<img class="button-image" src="/assets/images/command-glass.png" />
+		</button>
 		<app-fill-ups-list [fillUps]='fillUps'></app-fill-ups-list>
 	</div>
 	<div class="accordion-sub-view">
