@@ -89,6 +89,7 @@ p {
 .name {
 	padding-left: 0.5rem;
 	font-size: 1.4em;
+	font-family: "Arial Narrow", Arial, sans-serif;
 	color: midnightblue;
 }
 .model {

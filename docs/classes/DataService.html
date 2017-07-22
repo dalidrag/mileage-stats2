@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DataService</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AddCarButtonComponent.html">AddCarButtonComponent</a></li>
+                                <li><a href="../classes/AddCarComponent.html">AddCarComponent</a></li>
+                                <li><a href="../classes/AddFillUpComponent.html">AddFillUpComponent</a></li>
+                                <li><a href="../classes/AddReminderComponent.html">AddReminderComponent</a></li>
+                                <li><a href="../classes/AppComponent.html">AppComponent</a></li>
+                                <li><a href="../classes/AuthModule.html">AuthModule</a></li>
+                                <li><a href="../classes/AuthService.html">AuthService</a></li>
+                                <li><a href="../classes/CarComponent.html">CarComponent</a></li>
+                                <li><a href="../classes/CarDetailViewComponent.html">CarDetailViewComponent</a></li>
+                                <li><a href="../classes/CarsComponent.html">CarsComponent</a></li>
+                                <li><a href="../classes/CarsDataResolve.html">CarsDataResolve</a></li>
+                                <li><a href="../classes/CarsListComponent.html">CarsListComponent</a></li>
+                                <li><a href="../classes/ChromeComponent.html">ChromeComponent</a></li>
+                                <li><a href="../classes/CompleteRegistrationComponent.html">CompleteRegistrationComponent</a></li>
+                                <li><a href="../classes/DataService.html">DataService</a></li>
+                                <li><a href="../classes/EditCarComponent.html">EditCarComponent</a></li>
+                                <li><a href="../classes/EditFillUpComponent.html">EditFillUpComponent</a></li>
+                                <li><a href="../classes/EditReminderComponent.html">EditReminderComponent</a></li>
+                                <li><a href="../classes/FillUpDetailComponent.html">FillUpDetailComponent</a></li>
+                                <li><a href="../classes/FillUpsComponent.html">FillUpsComponent</a></li>
+                                <li><a href="../classes/FillUpsDataResolve.html">FillUpsDataResolve</a></li>
+                                <li><a href="../classes/FillUpsListComponent.html">FillUpsListComponent</a></li>
+                                <li><a href="../classes/FillUpsListEntryComponent.html">FillUpsListEntryComponent</a></li>
+                                <li><a href="../classes/NotificationHubService.html">NotificationHubService</a></li>
+                                <li><a href="../classes/ProfileComponent.html">ProfileComponent</a></li>
+                                <li><a href="../classes/RemindersComponent.html">RemindersComponent</a></li>
+                                <li><a href="../classes/RemindersListComponent.html">RemindersListComponent</a></li>
+                                <li><a href="../classes/RemindersListEntryComponent.html">RemindersListEntryComponent</a></li>
+                                <li><a href="../classes/SignInComponent.html">SignInComponent</a></li>
+                                <li><a href="../classes/SignUpComponent.html">SignUpComponent</a></li>
+                                <li><a href="../classes/StatusBarComponent.html">StatusBarComponent</a></li>
+                                <li><a href="../classes/SummaryComponent.html">SummaryComponent</a></li>
+                                <li><a href="../classes/UtilitiesService.html">UtilitiesService</a></li>
+                                <li><a href="../classes/WellcomeComponent.html">WellcomeComponent</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>DataService Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/src_app_common_data.service.ts.html#l11"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:11</code></a>
+        </div>
+
+
+</div>
+
+
+<div class="box intro">
+    <p>Provides exchange of data with a back-end database
+via the HTTP server. Three collections are implemented:
+cars, fillups and reminders, with CRUD methods for each.
+Caching is implemented for all the collections.
+A single method handles eventual errors.</p>
+
+</div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#method_addCar">addCar</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_addFillUp">addFillUp</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_addReminder">addReminder</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_deleteCar">deleteCar</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_deleteFillUp">deleteFillUp</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_deleteReminder">deleteReminder</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getAllFillUps">getAllFillUps</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getAllReminders">getAllReminders</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getCarById">getCarById</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getCars">getCars</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getFillUpById">getFillUpById</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getFillUps">getFillUps</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getReminderById">getReminderById</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getReminders">getReminders</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_updateCar">updateCar</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_updateFillUp">updateFillUp</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_updateReminder">updateReminder</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_updateUser">updateUser</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_addCar" class="method item">
+    <h3 class="name"><code>addCar</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>newCar</code>
+                </li>
+                <li class="arg">
+                        <code>base64Image</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Promise<Car></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l125"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:125</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts a Car parameter and base64 encoded image
+and uses http to POST new  Car to the server-side database.
+It returns a Promise resolved as a Car object,
+or rejected as an error message or
+an error object if error message doesn't exist</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">newCar</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>a Car to add</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">base64Image</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>car avatar</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<Car></span>:
+                    <p>Added Car as a Promise</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_addFillUp" class="method item">
+    <h3 class="name"><code>addFillUp</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>carId</code>
+                </li>
+                <li class="arg">
+                        <code>newFillUp</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Promise<FillUp></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l281"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:281</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts a car id and a FillUp object as a parameter and uses
+http POST to add a fill up to a Car. It returns a Promise resolved
+to a FillUp object, or rejected as an error message or an error object
+if error message doesn't exist</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">carId</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Id of the car to which the new fill up is to be added</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">newFillUp</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The Fillup to be added</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<FillUp></span>:
+                    <p>The FillUp added as a Promise</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_addReminder" class="method item">
+    <h3 class="name"><code>addReminder</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>newReminder</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type"></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l424"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:424</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts a parameter of Reminder type and calls http to POST this new Reminder
+to a database. It returns a Promise resolved as the added Reminder on success, and on
+error it returns error message or an error object if error message doesn't exist</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">newReminder</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Reminder to be added</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                    <p>Promise<Reminder> The added Reminder</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_deleteCar" class="method item">
+    <h3 class="name"><code>deleteCar</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>carId</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Promise<any></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l174"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:174</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts a parameter of number type and uses http to DELETE Car
+of this id from the server-side database. It returns a Promise resolved
+as server response object, or rejected as an error message or
+an error object if error message doesn't exist</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">carId</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p><a href="http://Car.id">Car.id</a> of the Car object to delete</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<any></span>:
+                    <p>Server response as a promise</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_deleteFillUp" class="method item">
+    <h3 class="name"><code>deleteFillUp</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>carId</code>
+                </li>
+                <li class="arg">
+                        <code>fillUpId</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Promise<FillUp></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l323"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:323</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts <a href="http://car.id">car.id</a> and <a href="http://FillUp.id">FillUp.id</a> as parameters and deletes the corresponding
+entry in the database using http DELETE. It returns server response as a Promise
+on success, and rejects with an error message or an error object
+if error message doesn't exist</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">carId</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>id of the car to which fill up belongs to</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">fillUpId</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>id of the FillUp to be deleted</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<FillUp></span>:
+                    <p>The deleted FillUp</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_deleteReminder" class="method item">
+    <h3 class="name"><code>deleteReminder</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>reminderId</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Promise<Reminder></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l464"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:464</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts <a href="http://Reminder.id">Reminder.id</a> as a parameter and deletes the corresponding entry
+in the database using http DELETE. It returns server response as a Promise
+on success, and rejects with an error message or an error object
+if error message doesn't exist</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">reminderId</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>id of the Reminder to be deleted</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<Reminder></span>:
+                    <p>The deleted Reminder</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getAllFillUps" class="method item">
+    <h3 class="name"><code>getAllFillUps</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Promise<Object></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l252"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:252</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts no parameters and returns an object containing
+arrays of all fill ups for all the cars. Object keys are car ids, and
+values are arrays of Fill Ups. Method returns a Promise
+which on error is rejected as an error message or an error object
+if error message doesn't exist</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<Object></span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getAllReminders" class="method item">
+    <h3 class="name"><code>getAllReminders</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Promise<Object></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l395"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:395</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts no parameters and returns an object containing
+arrays of all reminders for all the cars. Object keys are car ids, and
+values are arrays of Reminders. Method returns a Promise
+which on error is rejected as an error message or an error object
+if error message doesn't exist</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<Object></span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getCarById" class="method item">
+    <h3 class="name"><code>getCarById</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Promise<Car></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l98"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:98</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts a single integer parameter, an id for a Car,
+and uses it to http GET the corresponding Car data.
+It returns a Promise resolved as a Car object,
+or rejected as an error message or an error object
+if error message doesn't exist</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<Car></span>:
+                    <p>Car object as a Promise</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getCars" class="method item">
+    <h3 class="name"><code>getCars</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Promise<Car></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l74"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:74</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts no parameters and uses http to GET
+all the Cars of a user from the server. It returns a Promise resolved
+as an array of Cars, or rejected as an error message or
+an error object if error message doesn't exist</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<Car></span>:
+                    <p>The array of Cars as a Promise</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getFillUpById" class="method item">
+    <h3 class="name"><code>getFillUpById</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>carId</code>
+                </li>
+                <li class="arg">
+                        <code>id</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Promise<FillUp></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l222"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:222</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts two parameters, an id for a Fill Up,
+and an id for a car. It uses http GET to fetch the corresponding
+Fillup for a Car.
+It returns a Promise resolved as a FillUp object,
+or rejected as an error message or an error object
+if error message doesn't exist</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">carId</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>id of a Car to which a fill up belongs to</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">id</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>id of a fill up</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<FillUp></span>:
+                    <p>The FillUp for a Car as a Promise</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getFillUps" class="method item">
+    <h3 class="name"><code>getFillUps</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Promise<FillUp></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l197"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:197</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts car id as a parameter and uses http
+to GET all the Fillups for a Car. It returns a Promise
+resolved as an array of FillUps,
+or rejected as an error message or an error object
+if error message doesn't exist</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<FillUp></span>:
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getReminderById" class="method item">
+    <h3 class="name"><code>getReminderById</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Promise<Reminder></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l367"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:367</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts two parameters, an id for a Reminder,
+and an id for a car. It uses http GET to fetch the corresponding
+Reminder for a Car.
+It returns a Promise resolved as a Reminder object,
+or rejected as an error message or an error object
+if error message doesn't exist</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<Reminder></span>:
+                    <p>The Reminder for a Car as a Promise</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_getReminders" class="method item">
+    <h3 class="name"><code>getReminders</code></h3>
+
+        <span class="paren">()</span>
+
+        <span class="returns-inline">
+            <span class="type">Promise<Reminder></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l344"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:344</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts car id as a parameter and returns all reminders
+of a car by issuing a http GET request. It returns an array
+of Reminder objects as a Promise. On error it rejects
+with an error message, or an error object if error message doesn't exist</p>
+
+    </div>
+
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<Reminder></span>:
+                    <p>All the reminders of a car as a Promise</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_updateCar" class="method item">
+    <h3 class="name"><code>updateCar</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>updatedCar</code>
+                </li>
+                <li class="arg">
+                        <code>base64Image</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Promise</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l150"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:150</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts a Car parameter and base64 encoded image
+and uses http to PUT a Car object to update the server-side database.
+It returns server response as a Promise, or rejects as an error message
+or an error object if error message doesn't exist</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">updatedCar</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Car object to update</p>
+
+                    </div>
+
+                </li>
+                <li class="param">
+                        <code class="param-name">base64Image</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>car avatar</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise</span>:
+                    <p>Server response</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_updateFillUp" class="method item">
+    <h3 class="name"><code>updateFillUp</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>updatedFillUp</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Promise<any></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l302"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:302</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts car Id and a FillUp object as parameters
+and uses http to PUT updated FillUp to the database.
+It returns server response as a Promise on success,
+or rejected as an error message or an error object
+if error message doesn't exist</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">updatedFillUp</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The Fillup to be updated</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<any></span>:
+                    <p>The server response, as a Promise</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_updateReminder" class="method item">
+    <h3 class="name"><code>updateReminder</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>updatedReminder</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Promise<any></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l443"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:443</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts car Id and a Reminder object as parameters
+and uses http to PUT updated Reminder to the database.
+It returns server response as a Promise on success,
+or rejected as an error message or an error object
+if error message doesn't exist</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">updatedReminder</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The Reminder to be updated</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise<any></span>:
+                    <p>The server response, as a Promise</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_updateUser" class="method item">
+    <h3 class="name"><code>updateUser</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>updatedUser</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Promise</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_common_data.service.ts.html#l57"><code>src&#x2F;app&#x2F;common&#x2F;data.service.ts:57</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>This method accepts an User parameter
+and uses http to PUT an User object to update the server-side database.
+It returns server response as a Promise, or rejects as an error message
+or an error object if error message doesn't exist</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">updatedUser</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>User object to update</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Promise</span>:
+                    <p>Server response</p>
+
+            </div>
+        </div>
+
+
+</div>
+            </div>
+
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

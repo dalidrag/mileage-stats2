@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>EditCarComponent</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AddCarButtonComponent.html">AddCarButtonComponent</a></li>
+                                <li><a href="../classes/AddCarComponent.html">AddCarComponent</a></li>
+                                <li><a href="../classes/AddFillUpComponent.html">AddFillUpComponent</a></li>
+                                <li><a href="../classes/AddReminderComponent.html">AddReminderComponent</a></li>
+                                <li><a href="../classes/AppComponent.html">AppComponent</a></li>
+                                <li><a href="../classes/AuthModule.html">AuthModule</a></li>
+                                <li><a href="../classes/AuthService.html">AuthService</a></li>
+                                <li><a href="../classes/CarComponent.html">CarComponent</a></li>
+                                <li><a href="../classes/CarDetailViewComponent.html">CarDetailViewComponent</a></li>
+                                <li><a href="../classes/CarsComponent.html">CarsComponent</a></li>
+                                <li><a href="../classes/CarsDataResolve.html">CarsDataResolve</a></li>
+                                <li><a href="../classes/CarsListComponent.html">CarsListComponent</a></li>
+                                <li><a href="../classes/ChromeComponent.html">ChromeComponent</a></li>
+                                <li><a href="../classes/CompleteRegistrationComponent.html">CompleteRegistrationComponent</a></li>
+                                <li><a href="../classes/DataService.html">DataService</a></li>
+                                <li><a href="../classes/EditCarComponent.html">EditCarComponent</a></li>
+                                <li><a href="../classes/EditFillUpComponent.html">EditFillUpComponent</a></li>
+                                <li><a href="../classes/EditReminderComponent.html">EditReminderComponent</a></li>
+                                <li><a href="../classes/FillUpDetailComponent.html">FillUpDetailComponent</a></li>
+                                <li><a href="../classes/FillUpsComponent.html">FillUpsComponent</a></li>
+                                <li><a href="../classes/FillUpsDataResolve.html">FillUpsDataResolve</a></li>
+                                <li><a href="../classes/FillUpsListComponent.html">FillUpsListComponent</a></li>
+                                <li><a href="../classes/FillUpsListEntryComponent.html">FillUpsListEntryComponent</a></li>
+                                <li><a href="../classes/NotificationHubService.html">NotificationHubService</a></li>
+                                <li><a href="../classes/ProfileComponent.html">ProfileComponent</a></li>
+                                <li><a href="../classes/RemindersComponent.html">RemindersComponent</a></li>
+                                <li><a href="../classes/RemindersListComponent.html">RemindersListComponent</a></li>
+                                <li><a href="../classes/RemindersListEntryComponent.html">RemindersListEntryComponent</a></li>
+                                <li><a href="../classes/SignInComponent.html">SignInComponent</a></li>
+                                <li><a href="../classes/SignUpComponent.html">SignUpComponent</a></li>
+                                <li><a href="../classes/StatusBarComponent.html">StatusBarComponent</a></li>
+                                <li><a href="../classes/SummaryComponent.html">SummaryComponent</a></li>
+                                <li><a href="../classes/UtilitiesService.html">UtilitiesService</a></li>
+                                <li><a href="../classes/WellcomeComponent.html">WellcomeComponent</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>EditCarComponent Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/src_app_car-detail_basic-car-data_edit-car_edit-car.component.ts.html#l15"><code>src&#x2F;app&#x2F;car-detail&#x2F;basic-car-data&#x2F;edit-car&#x2F;edit-car.component.ts:15</code></a>
+        </div>
+
+
+</div>
+
+
+<div class="box intro">
+    <p>Presents form for editing a car</p>
+
+</div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#method_cancel">cancel</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_carUnique">carUnique</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_createArrayOfDatedFillUps">createArrayOfDatedFillUps</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_createAverageEfficiencyArray">createAverageEfficiencyArray</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_createDistanceTravelledArray">createDistanceTravelledArray</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_createTotalCostArray">createTotalCostArray</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_fileChangeListener">fileChangeListener</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_onBlur">onBlur</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_writeCarData">writeCarData</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+<div id="method_cancel" class="method item">
+    <h3 class="name"><code>cancel</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_car-detail_basic-car-data_edit-car_edit-car.component.ts.html#l169"><code>src&#x2F;app&#x2F;car-detail&#x2F;basic-car-data&#x2F;edit-car&#x2F;edit-car.component.ts:169</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Quits the component by routing away</p>
+
+    </div>
+
+
+
+
+</div>
+<div id="method_carUnique" class="method item">
+    <h3 class="name"><code>carUnique</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>control</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">StringMap<string:boolean></span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_car-detail_basic-car-data_edit-car_edit-car.component.ts.html#l182"><code>src&#x2F;app&#x2F;car-detail&#x2F;basic-car-data&#x2F;edit-car&#x2F;edit-car.component.ts:182</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>A validator for a nick-name input field</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">control</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>A form control to validate</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">StringMap<string:boolean></span>:
+                    <p>Returns the result of validation in the form {'carNameNotUnique': true}</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_createArrayOfDatedFillUps" class="method item">
+    <h3 class="name"><code>createArrayOfDatedFillUps</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>allFillUps</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_car-detail_basic-car-data_basic-car-stats-charts_basic-car-stats-charts.component.ts.html#l166"><code>src&#x2F;app&#x2F;car-detail&#x2F;basic-car-data&#x2F;basic-car-stats-charts&#x2F;basic-car-stats-charts.component.ts:166</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">allFillUps</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>All fill ups for the car</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>Arrays of fill ups for the car from the last 12 months</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_createAverageEfficiencyArray" class="method item">
+    <h3 class="name"><code>createAverageEfficiencyArray</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>datedFillUps</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_car-detail_basic-car-data_basic-car-stats-charts_basic-car-stats-charts.component.ts.html#l106"><code>src&#x2F;app&#x2F;car-detail&#x2F;basic-car-data&#x2F;basic-car-stats-charts&#x2F;basic-car-stats-charts.component.ts:106</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates array of average fuel spending efficiency to insert into a chart</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">datedFillUps</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Fill ups, sorted by date, which will be used for calculations</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>Elements of the array are tuples [date, efficiency]</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_createDistanceTravelledArray" class="method item">
+    <h3 class="name"><code>createDistanceTravelledArray</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>datedFillUps</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_car-detail_basic-car-data_basic-car-stats-charts_basic-car-stats-charts.component.ts.html#l130"><code>src&#x2F;app&#x2F;car-detail&#x2F;basic-car-data&#x2F;basic-car-stats-charts&#x2F;basic-car-stats-charts.component.ts:130</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates array of distance travelled to insert into a chart</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">datedFillUps</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Fill ups, sorted by date, which will be used for calculations</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>Elements of the array are tuples [date, distance travelled]</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_createTotalCostArray" class="method item">
+    <h3 class="name"><code>createTotalCostArray</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>datedFillUps</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_car-detail_basic-car-data_basic-car-stats-charts_basic-car-stats-charts.component.ts.html#l153"><code>src&#x2F;app&#x2F;car-detail&#x2F;basic-car-data&#x2F;basic-car-stats-charts&#x2F;basic-car-stats-charts.component.ts:153</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Creates array of total cost to insert into a chart</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">datedFillUps</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>Fill ups, sorted by date, which will be used for calculations</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                        <span class="type">Array</span>:
+                    <p>Elements of the array are tuples [date, cost]</p>
+
+            </div>
+        </div>
+
+
+</div>
+<div id="method_fileChangeListener" class="method item">
+    <h3 class="name"><code>fileChangeListener</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>$event</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_car-detail_basic-car-data_edit-car_edit-car.component.ts.html#l135"><code>src&#x2F;app&#x2F;car-detail&#x2F;basic-car-data&#x2F;edit-car&#x2F;edit-car.component.ts:135</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Used to send image to the image cropper component</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">$event</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_onBlur" class="method item">
+    <h3 class="name"><code>onBlur</code></h3>
+
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+                <li class="arg">
+                        <code>event:any</code>
+                </li>
+            </ul><span class="paren">)</span>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_car-detail_basic-car-data_edit-car_edit-car.component.ts.html#l159"><code>src&#x2F;app&#x2F;car-detail&#x2F;basic-car-data&#x2F;edit-car&#x2F;edit-car.component.ts:159</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Trims input fields on losing focus</p>
+
+    </div>
+
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">event:any</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                         
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+</div>
+<div id="method_writeCarData" class="method item">
+    <h3 class="name"><code>writeCarData</code></h3>
+
+        <span class="paren">()</span>
+
+
+
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/src_app_car-detail_basic-car-data_edit-car_edit-car.component.ts.html#l112"><code>src&#x2F;app&#x2F;car-detail&#x2F;basic-car-data&#x2F;edit-car&#x2F;edit-car.component.ts:112</code></a>
+        </p>
+
+
+
+    </div>
+
+    <div class="description">
+        <p>Writes the new car data to the database
+and then navigates away to show all the cars.</p>
+
+    </div>
+
+
+
+
+</div>
+            </div>
+
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

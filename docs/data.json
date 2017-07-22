@@ -1,0 +1,2475 @@
+{
+    "project": {},
+    "files": {
+        "src/app/add-car/add-car-button/add-car-button.component.ts": {
+            "name": "src/app/add-car/add-car-button/add-car-button.component.ts",
+            "modules": {},
+            "classes": {
+                "AddCarButtonComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/add-car/add-car.component.ts": {
+            "name": "src/app/add-car/add-car.component.ts",
+            "modules": {},
+            "classes": {
+                "AddCarComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/auth/profile/profile.component.ts": {
+            "name": "src/app/auth/profile/profile.component.ts",
+            "modules": {},
+            "classes": {
+                "ProfileComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/auth/sign-in/sign-in.component.ts": {
+            "name": "src/app/auth/sign-in/sign-in.component.ts",
+            "modules": {},
+            "classes": {
+                "SignInComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/auth/sign-up/sign-up.component.ts": {
+            "name": "src/app/auth/sign-up/sign-up.component.ts",
+            "modules": {},
+            "classes": {
+                "SignUpComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/auth/auth.module.ts": {
+            "name": "src/app/auth/auth.module.ts",
+            "modules": {},
+            "classes": {
+                "AuthModule": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/accordion/accordion.component.ts": {
+            "name": "src/app/car-detail/accordion/accordion.component.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/basic-car-data/basic-car-stats-charts/basic-car-stats-charts.component.ts": {
+            "name": "src/app/car-detail/basic-car-data/basic-car-stats-charts/basic-car-stats-charts.component.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/basic-car-data/edit-car/edit-car.component.ts": {
+            "name": "src/app/car-detail/basic-car-data/edit-car/edit-car.component.ts",
+            "modules": {},
+            "classes": {
+                "EditCarComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/basic-car-data/overdue-reminders/overdue-reminders.component.ts": {
+            "name": "src/app/car-detail/basic-car-data/overdue-reminders/overdue-reminders.component.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/basic-car-data/basic-car-data.component.ts": {
+            "name": "src/app/car-detail/basic-car-data/basic-car-data.component.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/fill-ups/add-fill-up/add-fill-up.component.ts": {
+            "name": "src/app/car-detail/fill-ups/add-fill-up/add-fill-up.component.ts",
+            "modules": {},
+            "classes": {
+                "AddFillUpComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/fill-ups/edit-fill-up/edit-fill-up.component.ts": {
+            "name": "src/app/car-detail/fill-ups/edit-fill-up/edit-fill-up.component.ts",
+            "modules": {},
+            "classes": {
+                "EditFillUpComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/fill-ups/fill-up-detail/fill-up-detail.component.ts": {
+            "name": "src/app/car-detail/fill-ups/fill-up-detail/fill-up-detail.component.ts",
+            "modules": {},
+            "classes": {
+                "FillUpDetailComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/fill-ups/fill-ups-list/fill-ups-list-entry/fill-ups-list-entry.component.ts": {
+            "name": "src/app/car-detail/fill-ups/fill-ups-list/fill-ups-list-entry/fill-ups-list-entry.component.ts",
+            "modules": {},
+            "classes": {
+                "FillUpsListEntryComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/fill-ups/fill-ups-list/fill-ups-list.component.ts": {
+            "name": "src/app/car-detail/fill-ups/fill-ups-list/fill-ups-list.component.ts",
+            "modules": {},
+            "classes": {
+                "FillUpsListComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/fill-ups/fill-ups.component.ts": {
+            "name": "src/app/car-detail/fill-ups/fill-ups.component.ts",
+            "modules": {},
+            "classes": {
+                "FillUpsComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/reminders/add-reminder/add-reminder.component.ts": {
+            "name": "src/app/car-detail/reminders/add-reminder/add-reminder.component.ts",
+            "modules": {},
+            "classes": {
+                "AddReminderComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/reminders/edit-reminder/edit-reminder.component.ts": {
+            "name": "src/app/car-detail/reminders/edit-reminder/edit-reminder.component.ts",
+            "modules": {},
+            "classes": {
+                "EditReminderComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/reminders/reminders-list/reminders-list-entry/reminders-list-entry.component.ts": {
+            "name": "src/app/car-detail/reminders/reminders-list/reminders-list-entry/reminders-list-entry.component.ts",
+            "modules": {},
+            "classes": {
+                "RemindersListEntryComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/reminders/reminders-list/reminders-list.component.ts": {
+            "name": "src/app/car-detail/reminders/reminders-list/reminders-list.component.ts",
+            "modules": {},
+            "classes": {
+                "RemindersListComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail/reminders/reminders.component.ts": {
+            "name": "src/app/car-detail/reminders/reminders.component.ts",
+            "modules": {},
+            "classes": {
+                "RemindersComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail-view/cars-list/cars-list.component.ts": {
+            "name": "src/app/car-detail-view/cars-list/cars-list.component.ts",
+            "modules": {},
+            "classes": {
+                "CarsListComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/car-detail-view/car-detail-view.component.ts": {
+            "name": "src/app/car-detail-view/car-detail-view.component.ts",
+            "modules": {},
+            "classes": {
+                "CarDetailViewComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/chrome/chrome.component.ts": {
+            "name": "src/app/chrome/chrome.component.ts",
+            "modules": {},
+            "classes": {
+                "ChromeComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/common/auth.service.ts": {
+            "name": "src/app/common/auth.service.ts",
+            "modules": {},
+            "classes": {
+                "AuthService": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/common/data.service.ts": {
+            "name": "src/app/common/data.service.ts",
+            "modules": {},
+            "classes": {
+                "DataService": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/common/notification-hub.service.ts": {
+            "name": "src/app/common/notification-hub.service.ts",
+            "modules": {},
+            "classes": {
+                "NotificationHubService": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/common/utilities.service.ts": {
+            "name": "src/app/common/utilities.service.ts",
+            "modules": {},
+            "classes": {
+                "UtilitiesService": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/dashboard/car-card/car-card.component.ts": {
+            "name": "src/app/dashboard/car-card/car-card.component.ts",
+            "modules": {},
+            "classes": {
+                "CarComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/dashboard/car-cards/car-cards.component.ts": {
+            "name": "src/app/dashboard/car-cards/car-cards.component.ts",
+            "modules": {},
+            "classes": {
+                "CarsComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/dashboard/summary/complete-registration/complete-registration.component.ts": {
+            "name": "src/app/dashboard/summary/complete-registration/complete-registration.component.ts",
+            "modules": {},
+            "classes": {
+                "CompleteRegistrationComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/dashboard/summary/overdue-reminders/overdue-reminders.component.ts": {
+            "name": "src/app/dashboard/summary/overdue-reminders/overdue-reminders.component.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/dashboard/summary/summary-stat/summary-stat.component.ts": {
+            "name": "src/app/dashboard/summary/summary-stat/summary-stat.component.ts",
+            "modules": {},
+            "classes": {
+                "AppComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/dashboard/summary/summary.component.ts": {
+            "name": "src/app/dashboard/summary/summary.component.ts",
+            "modules": {},
+            "classes": {
+                "SummaryComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/dashboard/dashboard.component.ts": {
+            "name": "src/app/dashboard/dashboard.component.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/routing/all-fill-ups-resolver.ts": {
+            "name": "src/app/routing/all-fill-ups-resolver.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/routing/all-reminders-data-resolve.service.ts": {
+            "name": "src/app/routing/all-reminders-data-resolve.service.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/routing/auth.guard.ts": {
+            "name": "src/app/routing/auth.guard.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/routing/car-data-resolver.ts": {
+            "name": "src/app/routing/car-data-resolver.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/routing/cars-data-resolver.ts": {
+            "name": "src/app/routing/cars-data-resolver.ts",
+            "modules": {},
+            "classes": {
+                "CarsDataResolve": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/routing/fill-up-data-resolver.ts": {
+            "name": "src/app/routing/fill-up-data-resolver.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/routing/fill-ups-data-resolver.ts": {
+            "name": "src/app/routing/fill-ups-data-resolver.ts",
+            "modules": {},
+            "classes": {
+                "FillUpsDataResolve": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/routing/reminder-data-resolver.ts": {
+            "name": "src/app/routing/reminder-data-resolver.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/routing/reminders-data-resolver.ts": {
+            "name": "src/app/routing/reminders-data-resolver.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/routing/signed-in.guard.ts": {
+            "name": "src/app/routing/signed-in.guard.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/routing/user-data-resolve.service.ts": {
+            "name": "src/app/routing/user-data-resolve.service.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/status-bar/status-bar.component.ts": {
+            "name": "src/app/status-bar/status-bar.component.ts",
+            "modules": {},
+            "classes": {
+                "StatusBarComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/app/wellcome/wellcome.component.ts": {
+            "name": "src/app/wellcome/wellcome.component.ts",
+            "modules": {},
+            "classes": {
+                "WellcomeComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/polyfills.ts": {
+            "name": "src/polyfills.ts",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "AddCarButtonComponent": {
+            "name": "AddCarButtonComponent",
+            "shortname": "AddCarButtonComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/add-car/add-car-button/add-car-button.component.ts",
+            "line": 3,
+            "description": "Presents 'add new car' button that links\nto addCar view'"
+        },
+        "AddCarComponent": {
+            "name": "AddCarComponent",
+            "shortname": "AddCarComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/add-car/add-car.component.ts",
+            "line": 17,
+            "description": "Presents form for adding new car"
+        },
+        "ProfileComponent": {
+            "name": "ProfileComponent",
+            "shortname": "ProfileComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/auth/profile/profile.component.ts",
+            "line": 17,
+            "description": "Displays user profile form for viewing and changing\nuser profile data."
+        },
+        "SignInComponent": {
+            "name": "SignInComponent",
+            "shortname": "SignInComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/auth/sign-in/sign-in.component.ts",
+            "line": 7,
+            "description": "Handles sign-in process by displaying and managing sign-in form"
+        },
+        "SignUpComponent": {
+            "name": "SignUpComponent",
+            "shortname": "SignUpComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/auth/sign-up/sign-up.component.ts",
+            "line": 13,
+            "description": "Handles sign up by displaying and managing sign-up form"
+        },
+        "AuthModule": {
+            "name": "AuthModule",
+            "shortname": "AuthModule",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/auth/auth.module.ts",
+            "line": 11,
+            "description": "Contains all the authentication and user profile functionality."
+        },
+        "FillUpsComponent": {
+            "name": "FillUpsComponent",
+            "shortname": "FillUpsComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail/fill-ups/fill-ups.component.ts",
+            "line": 13,
+            "description": "Handles fill ups for selected car, inside accordion component"
+        },
+        "EditCarComponent": {
+            "name": "EditCarComponent",
+            "shortname": "EditCarComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail/basic-car-data/edit-car/edit-car.component.ts",
+            "line": 15,
+            "description": "Presents form for editing a car"
+        },
+        "AddFillUpComponent": {
+            "name": "AddFillUpComponent",
+            "shortname": "AddFillUpComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail/fill-ups/add-fill-up/add-fill-up.component.ts",
+            "line": 16,
+            "description": "Controls the form for adding a fill up"
+        },
+        "EditFillUpComponent": {
+            "name": "EditFillUpComponent",
+            "shortname": "EditFillUpComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail/fill-ups/edit-fill-up/edit-fill-up.component.ts",
+            "line": 16,
+            "description": "Controls the form for editing a fill up"
+        },
+        "FillUpDetailComponent": {
+            "name": "FillUpDetailComponent",
+            "shortname": "FillUpDetailComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail/fill-ups/fill-up-detail/fill-up-detail.component.ts",
+            "line": 13,
+            "description": "Shows all the details of the selected fill up\nAlso handles deletion of a fill up"
+        },
+        "FillUpsListEntryComponent": {
+            "name": "FillUpsListEntryComponent",
+            "shortname": "FillUpsListEntryComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail/fill-ups/fill-ups-list/fill-ups-list-entry/fill-ups-list-entry.component.ts",
+            "line": 5,
+            "description": "Displays single entry in fill ups list"
+        },
+        "FillUpsListComponent": {
+            "name": "FillUpsListComponent",
+            "shortname": "FillUpsListComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail/fill-ups/fill-ups-list/fill-ups-list.component.ts",
+            "line": 10,
+            "description": "Displays a vertical list of fill ups for the selected car"
+        },
+        "AddReminderComponent": {
+            "name": "AddReminderComponent",
+            "shortname": "AddReminderComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail/reminders/add-reminder/add-reminder.component.ts",
+            "line": 16,
+            "description": "Controls the form for adding a reminder"
+        },
+        "EditReminderComponent": {
+            "name": "EditReminderComponent",
+            "shortname": "EditReminderComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail/reminders/edit-reminder/edit-reminder.component.ts",
+            "line": 16,
+            "description": "Controls the form for editing a reminder"
+        },
+        "RemindersListEntryComponent": {
+            "name": "RemindersListEntryComponent",
+            "shortname": "RemindersListEntryComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail/reminders/reminders-list/reminders-list-entry/reminders-list-entry.component.ts",
+            "line": 5,
+            "description": "Shows an individual reminder in the reminders list"
+        },
+        "RemindersListComponent": {
+            "name": "RemindersListComponent",
+            "shortname": "RemindersListComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail/reminders/reminders-list/reminders-list.component.ts",
+            "line": 16,
+            "description": "Shows a list of all reminder by using RemindersListEntry component for individual reminders\nIt also handles add reminder click and deletion of the selected reminder"
+        },
+        "RemindersComponent": {
+            "name": "RemindersComponent",
+            "shortname": "RemindersComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail/reminders/reminders.component.ts",
+            "line": 13,
+            "description": "A container component for reminders accordion sub-view\nFetches reminder data for all other reminder components"
+        },
+        "CarsListComponent": {
+            "name": "CarsListComponent",
+            "shortname": "CarsListComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail-view/cars-list/cars-list.component.ts",
+            "line": 13,
+            "description": "This component displays the list of all the cars by iterating\ncars array and sending each car to car component\nfor display"
+        },
+        "CarDetailViewComponent": {
+            "name": "CarDetailViewComponent",
+            "shortname": "CarDetailViewComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/car-detail-view/car-detail-view.component.ts",
+            "line": 9,
+            "description": "This component is a view wrapper for car detail view"
+        },
+        "ChromeComponent": {
+            "name": "ChromeComponent",
+            "shortname": "ChromeComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/chrome/chrome.component.ts",
+            "line": 7,
+            "description": "The chrome of the whole application\nShows status bar at the top of the screen and car data below"
+        },
+        "AuthService": {
+            "name": "AuthService",
+            "shortname": "AuthService",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/common/auth.service.ts",
+            "line": 10,
+            "description": "Performs actual authentication operations used by auth module and elsewhere"
+        },
+        "DataService": {
+            "name": "DataService",
+            "shortname": "DataService",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/common/data.service.ts",
+            "line": 11,
+            "description": "Provides exchange of data with a back-end database\nvia the HTTP server. Three collections are implemented:\ncars, fillups and reminders, with CRUD methods for each.\nCaching is implemented for all the collections.\nA single method handles eventual errors."
+        },
+        "NotificationHubService": {
+            "name": "NotificationHubService",
+            "shortname": "NotificationHubService",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/common/notification-hub.service.ts",
+            "line": 3,
+            "description": "This service is notification hub for the application\nIt exposes a method which any part of code can use to emit an event\nAnd any component can subsribe to listen to events emitted from the hub"
+        },
+        "UtilitiesService": {
+            "name": "UtilitiesService",
+            "shortname": "UtilitiesService",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/common/utilities.service.ts",
+            "line": 10,
+            "description": "Contains common utilities services such as handling errors\nand different calculations used on several places in the app"
+        },
+        "CarComponent": {
+            "name": "CarComponent",
+            "shortname": "CarComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/dashboard/car-card/car-card.component.ts",
+            "line": 11,
+            "description": "This component shows a car card, which displays car name and model, car avatar, \nthree navigational buttons and three fields with basic statistics"
+        },
+        "CarsComponent": {
+            "name": "CarsComponent",
+            "shortname": "CarsComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/dashboard/car-cards/car-cards.component.ts",
+            "line": 15,
+            "description": "This component displays all the cars by iterating\ncars array and sending each car to car component\nfor display"
+        },
+        "CompleteRegistrationComponent": {
+            "name": "CompleteRegistrationComponent",
+            "shortname": "CompleteRegistrationComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/dashboard/summary/complete-registration/complete-registration.component.ts",
+            "line": 15,
+            "description": "This component displays the complete registration form"
+        },
+        "SummaryComponent": {
+            "name": "SummaryComponent",
+            "shortname": "SummaryComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/dashboard/summary/summary.component.ts",
+            "line": 10,
+            "description": "This component displays the Mileage Stats summary pane"
+        },
+        "AppComponent": {
+            "name": "AppComponent",
+            "shortname": "AppComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/dashboard/summary/summary-stat/summary-stat.component.ts",
+            "line": 5,
+            "description": "The Chrome of The Application"
+        },
+        "CarsDataResolve": {
+            "name": "CarsDataResolve",
+            "shortname": "CarsDataResolve",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/routing/cars-data-resolver.ts",
+            "line": 11,
+            "description": "Fetches cars data for car cards"
+        },
+        "FillUpsDataResolve": {
+            "name": "FillUpsDataResolve",
+            "shortname": "FillUpsDataResolve",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/routing/fill-ups-data-resolver.ts",
+            "line": 11,
+            "description": "Fetches fill ups data for a car"
+        },
+        "StatusBarComponent": {
+            "name": "StatusBarComponent",
+            "shortname": "StatusBarComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/status-bar/status-bar.component.ts",
+            "line": 5,
+            "description": "Component for showing application state in the status bar"
+        },
+        "WellcomeComponent": {
+            "name": "WellcomeComponent",
+            "shortname": "WellcomeComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/app/wellcome/wellcome.component.ts",
+            "line": 8,
+            "description": "Shows 'wellcome, <user>' message in the status bar"
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "src/app/add-car/add-car.component.ts",
+            "line": 1,
+            "class": "AddCarComponent"
+        },
+        {
+            "file": "src/app/add-car/add-car.component.ts",
+            "line": 15,
+            "class": "AddCarComponent"
+        },
+        {
+            "file": "src/app/add-car/add-car.component.ts",
+            "line": 101,
+            "description": "Writes the new car data to the database\nand then navigates away to show all the cars.",
+            "itemtype": "method",
+            "name": "writeCarData",
+            "class": "AddCarComponent"
+        },
+        {
+            "file": "src/app/add-car/add-car.component.ts",
+            "line": 118,
+            "description": "Used to send the car image to image cropper",
+            "params": [
+                {
+                    "name": "$event",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "fileChangeListener",
+            "class": "AddCarComponent"
+        },
+        {
+            "file": "src/app/add-car/add-car.component.ts",
+            "line": 146,
+            "description": "Trims input fields on losing focus",
+            "itemtype": "method",
+            "name": "onBlur",
+            "params": [
+                {
+                    "name": "event:any",
+                    "description": ""
+                }
+            ],
+            "class": "AddCarComponent"
+        },
+        {
+            "file": "src/app/add-car/add-car.component.ts",
+            "line": 156,
+            "description": "Quits the component by routing away",
+            "itemtype": "method",
+            "name": "cancel",
+            "class": "AddCarComponent"
+        },
+        {
+            "file": "src/app/add-car/add-car.component.ts",
+            "line": 166,
+            "description": "A validator for a nick-name input field",
+            "itemtype": "method",
+            "name": "carUnique",
+            "params": [
+                {
+                    "name": "control",
+                    "description": "A form control to validate"
+                }
+            ],
+            "return": {
+                "description": "Returns the result of validation in the form {'carNameNotUnique': true}",
+                "type": "StringMap<string:boolean>"
+            },
+            "class": "AddCarComponent"
+        },
+        {
+            "file": "src/app/auth/profile/profile.component.ts",
+            "line": 1,
+            "class": "ProfileComponent"
+        },
+        {
+            "file": "src/app/auth/profile/profile.component.ts",
+            "line": 15,
+            "class": "ProfileComponent"
+        },
+        {
+            "file": "src/app/auth/profile/profile.component.ts",
+            "line": 73,
+            "description": "This method sends edit user form values to the server",
+            "itemtype": "method",
+            "name": "onSubmit",
+            "params": [
+                {
+                    "name": "formValues",
+                    "description": "The collected form values"
+                }
+            ],
+            "class": "ProfileComponent"
+        },
+        {
+            "file": "src/app/auth/profile/profile.component.ts",
+            "line": 99,
+            "description": "Trims input fields on losing focus",
+            "itemtype": "method",
+            "name": "onBlur",
+            "params": [
+                {
+                    "name": "event:any",
+                    "description": ""
+                }
+            ],
+            "class": "ProfileComponent"
+        },
+        {
+            "file": "src/app/auth/profile/profile.component.ts",
+            "line": 109,
+            "description": "Quits the component by routing away",
+            "itemtype": "method",
+            "name": "cancel",
+            "class": "ProfileComponent"
+        },
+        {
+            "file": "src/app/auth/sign-in/sign-in.component.ts",
+            "line": 33,
+            "description": "Listens for enter key pressed to submit user name",
+            "itemtype": "method",
+            "name": "onKey",
+            "params": [
+                {
+                    "name": "event:any",
+                    "description": ""
+                }
+            ],
+            "class": "SignInComponent"
+        },
+        {
+            "file": "src/app/auth/sign-in/sign-in.component.ts",
+            "line": 45,
+            "description": "Tries to sign-in user whose username is collected from the sign-in form",
+            "itemtype": "method",
+            "name": "onSignIn",
+            "class": "SignInComponent"
+        },
+        {
+            "file": "src/app/auth/sign-up/sign-up.component.ts",
+            "line": 49,
+            "description": "Triggers the search if entered username exists on the server\nObservables are used; the logic itself is contained in ngOnInit method",
+            "itemtype": "method",
+            "name": "search",
+            "class": "SignUpComponent"
+        },
+        {
+            "file": "src/app/auth/sign-up/sign-up.component.ts",
+            "line": 60,
+            "description": "Listens for enter key pressed to submit user name",
+            "itemtype": "method",
+            "name": "onKey",
+            "params": [
+                {
+                    "name": "event:any",
+                    "description": ""
+                }
+            ],
+            "class": "SignUpComponent"
+        },
+        {
+            "file": "src/app/auth/sign-up/sign-up.component.ts",
+            "line": 71,
+            "description": "Tries to create new user account collecting username from the sign-up form",
+            "itemtype": "method",
+            "name": "onSignUp",
+            "class": "SignUpComponent"
+        },
+        {
+            "file": "src/app/car-detail/accordion/accordion.component.ts",
+            "line": 101,
+            "description": "Moves accordion sliders on theirs place",
+            "itemtype": "method",
+            "name": "drawSliders",
+            "class": "FillUpsComponent"
+        },
+        {
+            "file": "src/app/car-detail/accordion/accordion.component.ts",
+            "line": 205,
+            "description": "Returns the index of accordion tab from the selected routes",
+            "itemtype": "method",
+            "name": "getTabIndexFromRoute",
+            "return": {
+                "description": "The index of selected tab",
+                "type": "Number"
+            },
+            "class": "FillUpsComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/basic-car-stats-charts/basic-car-stats-charts.component.ts",
+            "line": 106,
+            "description": "Creates array of average fuel spending efficiency to insert into a chart",
+            "itemtype": "method",
+            "name": "createAverageEfficiencyArray",
+            "params": [
+                {
+                    "name": "datedFillUps",
+                    "description": "Fill ups, sorted by date, which will be used for calculations"
+                }
+            ],
+            "return": {
+                "description": "Elements of the array are tuples [date, efficiency]",
+                "type": "Array"
+            },
+            "class": "EditCarComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/basic-car-stats-charts/basic-car-stats-charts.component.ts",
+            "line": 130,
+            "description": "Creates array of distance travelled to insert into a chart",
+            "itemtype": "method",
+            "name": "createDistanceTravelledArray",
+            "params": [
+                {
+                    "name": "datedFillUps",
+                    "description": "Fill ups, sorted by date, which will be used for calculations"
+                }
+            ],
+            "return": {
+                "description": "Elements of the array are tuples [date, distance travelled]",
+                "type": "Array"
+            },
+            "class": "EditCarComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/basic-car-stats-charts/basic-car-stats-charts.component.ts",
+            "line": 153,
+            "description": "Creates array of total cost to insert into a chart",
+            "itemtype": "method",
+            "name": "createTotalCostArray",
+            "params": [
+                {
+                    "name": "datedFillUps",
+                    "description": "Fill ups, sorted by date, which will be used for calculations"
+                }
+            ],
+            "return": {
+                "description": "Elements of the array are tuples [date, cost]",
+                "type": "Array"
+            },
+            "class": "EditCarComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/basic-car-stats-charts/basic-car-stats-charts.component.ts",
+            "line": 166,
+            "itemtype": "method",
+            "name": "createArrayOfDatedFillUps",
+            "params": [
+                {
+                    "name": "allFillUps",
+                    "description": "All fill ups for the car"
+                }
+            ],
+            "return": {
+                "description": "Arrays of fill ups for the car from the last 12 months",
+                "type": "Array"
+            },
+            "class": "EditCarComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/edit-car/edit-car.component.ts",
+            "line": 1,
+            "class": "EditCarComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/edit-car/edit-car.component.ts",
+            "line": 13,
+            "class": "EditCarComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/edit-car/edit-car.component.ts",
+            "line": 112,
+            "description": "Writes the new car data to the database\nand then navigates away to show all the cars.",
+            "itemtype": "method",
+            "name": "writeCarData",
+            "class": "EditCarComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/edit-car/edit-car.component.ts",
+            "line": 135,
+            "description": "Used to send image to the image cropper component",
+            "itemtype": "method",
+            "name": "fileChangeListener",
+            "params": [
+                {
+                    "name": "$event",
+                    "description": ""
+                }
+            ],
+            "class": "EditCarComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/edit-car/edit-car.component.ts",
+            "line": 159,
+            "description": "Trims input fields on losing focus",
+            "itemtype": "method",
+            "name": "onBlur",
+            "params": [
+                {
+                    "name": "event:any",
+                    "description": ""
+                }
+            ],
+            "class": "EditCarComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/edit-car/edit-car.component.ts",
+            "line": 169,
+            "description": "Quits the component by routing away",
+            "itemtype": "method",
+            "name": "cancel",
+            "class": "EditCarComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/edit-car/edit-car.component.ts",
+            "line": 182,
+            "description": "A validator for a nick-name input field",
+            "itemtype": "method",
+            "name": "carUnique",
+            "params": [
+                {
+                    "name": "control",
+                    "description": "A form control to validate"
+                }
+            ],
+            "return": {
+                "description": "Returns the result of validation in the form {'carNameNotUnique': true}",
+                "type": "StringMap<string:boolean>"
+            },
+            "class": "EditCarComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/overdue-reminders/overdue-reminders.component.ts",
+            "line": 31,
+            "description": "Filters reminders for the car to show only over-due ones",
+            "itemtype": "method",
+            "name": "setOverdueReminders",
+            "class": "FillUpsComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/basic-car-data.component.ts",
+            "line": 1,
+            "class": "FillUpsComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/basic-car-data.component.ts",
+            "line": 12,
+            "class": "FillUpsComponent"
+        },
+        {
+            "file": "src/app/car-detail/basic-car-data/basic-car-data.component.ts",
+            "line": 47,
+            "description": "Deletes car from the database and navigates to dashboard.",
+            "itemtype": "method",
+            "name": "deleteCar()",
+            "class": "FillUpsComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/add-fill-up/add-fill-up.component.ts",
+            "line": 1,
+            "class": "AddFillUpComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/add-fill-up/add-fill-up.component.ts",
+            "line": 14,
+            "class": "AddFillUpComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/add-fill-up/add-fill-up.component.ts",
+            "line": 59,
+            "description": "Sends add fill up form values to the server",
+            "itemtype": "method",
+            "name": "onSubmit",
+            "params": [
+                {
+                    "name": "formValues",
+                    "description": "The collected form values"
+                }
+            ],
+            "class": "AddFillUpComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/add-fill-up/add-fill-up.component.ts",
+            "line": 81,
+            "description": "Trims input fields on losing focus",
+            "itemtype": "method",
+            "name": "onBlur",
+            "params": [
+                {
+                    "name": "event:any",
+                    "description": ""
+                }
+            ],
+            "class": "AddFillUpComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/add-fill-up/add-fill-up.component.ts",
+            "line": 91,
+            "description": "Quits the component by routing away",
+            "itemtype": "method",
+            "name": "cancel",
+            "class": "AddFillUpComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/edit-fill-up/edit-fill-up.component.ts",
+            "line": 1,
+            "class": "EditFillUpComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/edit-fill-up/edit-fill-up.component.ts",
+            "line": 14,
+            "class": "EditFillUpComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/edit-fill-up/edit-fill-up.component.ts",
+            "line": 63,
+            "description": "Sends add fill up form values to the server",
+            "itemtype": "method",
+            "name": "onSubmit",
+            "params": [
+                {
+                    "name": "formValues",
+                    "description": "The collected form values"
+                }
+            ],
+            "class": "EditFillUpComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/edit-fill-up/edit-fill-up.component.ts",
+            "line": 86,
+            "description": "Trims input fields on losing focus",
+            "itemtype": "method",
+            "name": "onBlur",
+            "params": [
+                {
+                    "name": "event:any",
+                    "description": ""
+                }
+            ],
+            "class": "EditFillUpComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/edit-fill-up/edit-fill-up.component.ts",
+            "line": 96,
+            "description": "Quits the component by routing away",
+            "itemtype": "method",
+            "name": "cancel",
+            "class": "EditFillUpComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/fill-ups-list/fill-ups-list.component.ts",
+            "line": 1,
+            "class": "FillUpsListComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/fill-ups-list/fill-ups-list.component.ts",
+            "line": 8,
+            "class": "FillUpsListComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/fill-ups-list/fill-ups-list.component.ts",
+            "line": 43,
+            "description": "Updates fill up detail view and marks fill ups list entry as selected",
+            "itemtype": "method",
+            "name": "onSelect",
+            "class": "FillUpsListComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/fill-ups.component.ts",
+            "line": 1,
+            "class": "FillUpsComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/fill-ups.component.ts",
+            "line": 11,
+            "class": "FillUpsComponent"
+        },
+        {
+            "file": "src/app/car-detail/fill-ups/fill-ups.component.ts",
+            "line": 76,
+            "description": "Presents add fill up component and deselects currently selected fill up",
+            "itemtype": "method",
+            "name": "onAddFillUpClick",
+            "class": "FillUpsComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/add-reminder/add-reminder.component.ts",
+            "line": 1,
+            "class": "AddReminderComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/add-reminder/add-reminder.component.ts",
+            "line": 14,
+            "class": "AddReminderComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/add-reminder/add-reminder.component.ts",
+            "line": 59,
+            "description": "Writes the collected reminder form values into the database",
+            "itemtype": "method",
+            "name": "onSubmit",
+            "params": [
+                {
+                    "name": "formValues",
+                    "description": ""
+                }
+            ],
+            "class": "AddReminderComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/add-reminder/add-reminder.component.ts",
+            "line": 79,
+            "description": "Trims input fields on losing focus",
+            "itemtype": "method",
+            "name": "onBlur",
+            "params": [
+                {
+                    "name": "event:any",
+                    "description": ""
+                }
+            ],
+            "class": "AddReminderComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/add-reminder/add-reminder.component.ts",
+            "line": 89,
+            "description": "Quits the component by routing away",
+            "itemtype": "method",
+            "name": "cancel",
+            "class": "AddReminderComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/edit-reminder/edit-reminder.component.ts",
+            "line": 1,
+            "class": "EditReminderComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/edit-reminder/edit-reminder.component.ts",
+            "line": 14,
+            "class": "EditReminderComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/edit-reminder/edit-reminder.component.ts",
+            "line": 63,
+            "description": "Writes the collected edit reminder form values\ninto the database",
+            "itemtype": "method",
+            "name": "onSubmit",
+            "params": [
+                {
+                    "name": "formValues",
+                    "description": ""
+                }
+            ],
+            "class": "EditReminderComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/edit-reminder/edit-reminder.component.ts",
+            "line": 85,
+            "description": "Trims input fields on losing focus",
+            "itemtype": "method",
+            "name": "onBlur",
+            "params": [
+                {
+                    "name": "event:any",
+                    "description": ""
+                }
+            ],
+            "class": "EditReminderComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/edit-reminder/edit-reminder.component.ts",
+            "line": 94,
+            "description": "Quits the component by routing away",
+            "itemtype": "method",
+            "name": "cancel",
+            "class": "EditReminderComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/reminders-list/reminders-list.component.ts",
+            "line": 1,
+            "class": "RemindersListComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/reminders-list/reminders-list.component.ts",
+            "line": 14,
+            "class": "RemindersListComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/reminders-list/reminders-list.component.ts",
+            "line": 66,
+            "description": "Deletes the selected reminder",
+            "itemtype": "method",
+            "name": "deleteReminder",
+            "class": "RemindersListComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/reminders.component.ts",
+            "line": 1,
+            "class": "RemindersComponent"
+        },
+        {
+            "file": "src/app/car-detail/reminders/reminders.component.ts",
+            "line": 11,
+            "class": "RemindersComponent"
+        },
+        {
+            "file": "src/app/car-detail-view/cars-list/cars-list.component.ts",
+            "line": 1,
+            "class": "CarsListComponent"
+        },
+        {
+            "file": "src/app/car-detail-view/cars-list/cars-list.component.ts",
+            "line": 11,
+            "class": "CarsListComponent"
+        },
+        {
+            "file": "src/app/common/auth.service.ts",
+            "line": 23,
+            "description": "Tries to log in a user",
+            "itemtype": "method",
+            "name": "logIn",
+            "params": [
+                {
+                    "name": "username",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "Will resolve to true if log in succeeded",
+                "type": "Promise<boolean>"
+            },
+            "class": "AuthService"
+        },
+        {
+            "file": "src/app/common/auth.service.ts",
+            "line": 44,
+            "description": "Tells whether a user is logged in",
+            "itemtype": "method",
+            "name": "isLoggedIn",
+            "return": {
+                "description": "Will resolve to true if user is logged in",
+                "type": "Promise<boolean>"
+            },
+            "class": "AuthService"
+        },
+        {
+            "file": "src/app/common/auth.service.ts",
+            "line": 65,
+            "description": "Checks whether a user name exists in the back-end database",
+            "itemtype": "method",
+            "name": "nameExists",
+            "params": [
+                {
+                    "name": "name",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Observable<boolean>"
+            },
+            "class": "AuthService"
+        },
+        {
+            "file": "src/app/common/auth.service.ts",
+            "line": 82,
+            "description": "Tries to register a new user",
+            "itemtype": "method",
+            "name": "signUp",
+            "params": [
+                {
+                    "name": "username",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "Will resolve to true if sign up succeeded",
+                "type": "Promise<boolean>"
+            },
+            "class": "AuthService"
+        },
+        {
+            "file": "src/app/common/auth.service.ts",
+            "line": 104,
+            "description": "Tries to log out a user",
+            "itemtype": "method",
+            "name": "logout",
+            "return": {
+                "description": "Will resolve to true if log out succeeded",
+                "type": "Promise<boolean>"
+            },
+            "class": "AuthService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 57,
+            "description": "This method accepts an User parameter\nand uses http to PUT an User object to update the server-side database.\nIt returns server response as a Promise, or rejects as an error message\nor an error object if error message doesn't exist",
+            "itemtype": "method",
+            "name": "updateUser",
+            "params": [
+                {
+                    "name": "updatedUser",
+                    "description": "User object to update"
+                }
+            ],
+            "return": {
+                "description": "Server response",
+                "type": "Promise"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 74,
+            "description": "This method accepts no parameters and uses http to GET\nall the Cars of a user from the server. It returns a Promise resolved\nas an array of Cars, or rejected as an error message or\nan error object if error message doesn't exist",
+            "itemtype": "method",
+            "name": "getCars",
+            "return": {
+                "description": "The array of Cars as a Promise",
+                "type": "Promise<Car[]>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 98,
+            "description": "This method accepts a single integer parameter, an id for a Car,\nand uses it to http GET the corresponding Car data.\nIt returns a Promise resolved as a Car object,\nor rejected as an error message or an error object\nif error message doesn't exist",
+            "itemtype": "method",
+            "name": "getCarById",
+            "return": {
+                "description": "Car object as a Promise",
+                "type": "Promise<Car>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 125,
+            "description": "This method accepts a Car parameter and base64 encoded image\nand uses http to POST new  Car to the server-side database.\nIt returns a Promise resolved as a Car object,\nor rejected as an error message or\nan error object if error message doesn't exist",
+            "itemtype": "method",
+            "name": "addCar",
+            "params": [
+                {
+                    "name": "newCar",
+                    "description": "a Car to add"
+                },
+                {
+                    "name": "base64Image",
+                    "description": "car avatar"
+                }
+            ],
+            "return": {
+                "description": "Added Car as a Promise",
+                "type": "Promise<Car>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 150,
+            "description": "This method accepts a Car parameter and base64 encoded image\nand uses http to PUT a Car object to update the server-side database.\nIt returns server response as a Promise, or rejects as an error message\nor an error object if error message doesn't exist",
+            "itemtype": "method",
+            "name": "updateCar",
+            "params": [
+                {
+                    "name": "updatedCar",
+                    "description": "Car object to update"
+                },
+                {
+                    "name": "base64Image",
+                    "description": "car avatar"
+                }
+            ],
+            "return": {
+                "description": "Server response",
+                "type": "Promise"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 174,
+            "description": "This method accepts a parameter of number type and uses http to DELETE Car \nof this id from the server-side database. It returns a Promise resolved\nas server response object, or rejected as an error message or\nan error object if error message doesn't exist",
+            "itemtype": "method",
+            "name": "deleteCar",
+            "params": [
+                {
+                    "name": "carId",
+                    "description": "Car.id of the Car object to delete"
+                }
+            ],
+            "return": {
+                "description": "Server response as a promise",
+                "type": "Promise<any>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 197,
+            "description": "This method accepts car id as a parameter and uses http\nto GET all the Fillups for a Car. It returns a Promise\nresolved as an array of FillUps,\nor rejected as an error message or an error object\nif error message doesn't exist",
+            "itemtype": "method",
+            "name": "getFillUps",
+            "return": {
+                "description": "",
+                "type": "Promise<FillUp[]>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 222,
+            "description": "This method accepts two parameters, an id for a Fill Up,\nand an id for a car. It uses http GET to fetch the corresponding\nFillup for a Car.\nIt returns a Promise resolved as a FillUp object,\nor rejected as an error message or an error object\nif error message doesn't exist",
+            "itemtype": "method",
+            "name": "getFillUpById",
+            "params": [
+                {
+                    "name": "carId",
+                    "description": "id of a Car to which a fill up belongs to"
+                },
+                {
+                    "name": "id",
+                    "description": "id of a fill up"
+                }
+            ],
+            "return": {
+                "description": "The FillUp for a Car as a Promise",
+                "type": "Promise<FillUp>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 252,
+            "description": "This method accepts no parameters and returns an object containing\narrays of all fill ups for all the cars. Object keys are car ids, and\nvalues are arrays of Fill Ups. Method returns a Promise \nwhich on error is rejected as an error message or an error object\nif error message doesn't exist",
+            "itemtype": "method",
+            "name": "getAllFillUps",
+            "return": {
+                "description": "",
+                "type": "Promise<Object>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 281,
+            "description": "This method accepts a car id and a FillUp object as a parameter and uses\nhttp POST to add a fill up to a Car. It returns a Promise resolved\nto a FillUp object, or rejected as an error message or an error object\nif error message doesn't exist",
+            "itemtype": "method",
+            "name": "addFillUp",
+            "params": [
+                {
+                    "name": "carId",
+                    "description": "Id of the car to which the new fill up is to be added"
+                },
+                {
+                    "name": "newFillUp",
+                    "description": "The Fillup to be added"
+                }
+            ],
+            "return": {
+                "description": "The FillUp added as a Promise",
+                "type": "Promise<FillUp>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 302,
+            "description": "This method accepts car Id and a FillUp object as parameters\nand uses http to PUT updated FillUp to the database.\nIt returns server response as a Promise on success,\nor rejected as an error message or an error object\nif error message doesn't exist",
+            "itemtype": "method",
+            "name": "updateFillUp",
+            "params": [
+                {
+                    "name": "updatedFillUp",
+                    "description": "The Fillup to be updated"
+                }
+            ],
+            "return": {
+                "description": "The server response, as a Promise",
+                "type": "Promise<any>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 323,
+            "description": "This method accepts car.id and FillUp.id as parameters and deletes the corresponding\nentry in the database using http DELETE. It returns server response as a Promise\non success, and rejects with an error message or an error object\nif error message doesn't exist",
+            "itemtype": "method",
+            "name": "deleteFillUp",
+            "params": [
+                {
+                    "name": "carId",
+                    "description": "id of the car to which fill up belongs to"
+                },
+                {
+                    "name": "fillUpId",
+                    "description": "id of the FillUp to be deleted"
+                }
+            ],
+            "return": {
+                "description": "The deleted FillUp",
+                "type": "Promise<FillUp>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 344,
+            "description": "This method accepts car id as a parameter and returns all reminders\nof a car by issuing a http GET request. It returns an array\nof Reminder objects as a Promise. On error it rejects\nwith an error message, or an error object if error message doesn't exist",
+            "itemtype": "method",
+            "name": "getReminders",
+            "return": {
+                "description": "All the reminders of a car as a Promise",
+                "type": "Promise<Reminder[]>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 367,
+            "description": "This method accepts two parameters, an id for a Reminder,\nand an id for a car. It uses http GET to fetch the corresponding\nReminder for a Car.\nIt returns a Promise resolved as a Reminder object,\nor rejected as an error message or an error object\nif error message doesn't exist",
+            "itemtype": "method",
+            "name": "getReminderById",
+            "return": {
+                "description": "The Reminder for a Car as a Promise",
+                "type": "Promise<Reminder>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 395,
+            "description": "This method accepts no parameters and returns an object containing\narrays of all reminders for all the cars. Object keys are car ids, and\nvalues are arrays of Reminders. Method returns a Promise \nwhich on error is rejected as an error message or an error object\nif error message doesn't exist",
+            "itemtype": "method",
+            "name": "getAllReminders",
+            "return": {
+                "description": "",
+                "type": "Promise<Object>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 424,
+            "description": "This method accepts a parameter of Reminder type and calls http to POST this new Reminder\nto a database. It returns a Promise resolved as the added Reminder on success, and on\nerror it returns error message or an error object if error message doesn't exist",
+            "itemtype": "method",
+            "name": "addReminder",
+            "params": [
+                {
+                    "name": "newReminder",
+                    "description": "Reminder to be added"
+                }
+            ],
+            "return": {
+                "description": "Promise<Reminder> The added Reminder"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 443,
+            "description": "This method accepts car Id and a Reminder object as parameters\nand uses http to PUT updated Reminder to the database.\nIt returns server response as a Promise on success,\nor rejected as an error message or an error object\nif error message doesn't exist",
+            "itemtype": "method",
+            "name": "updateReminder",
+            "params": [
+                {
+                    "name": "updatedReminder",
+                    "description": "The Reminder to be updated"
+                }
+            ],
+            "return": {
+                "description": "The server response, as a Promise",
+                "type": "Promise<any>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/data.service.ts",
+            "line": 464,
+            "description": "This method accepts Reminder.id as a parameter and deletes the corresponding entry\nin the database using http DELETE. It returns server response as a Promise \non success, and rejects with an error message or an error object\nif error message doesn't exist",
+            "itemtype": "method",
+            "name": "deleteReminder",
+            "params": [
+                {
+                    "name": "reminderId",
+                    "description": "id of the Reminder to be deleted"
+                }
+            ],
+            "return": {
+                "description": "The deleted Reminder",
+                "type": "Promise<Reminder>"
+            },
+            "class": "DataService"
+        },
+        {
+            "file": "src/app/common/notification-hub.service.ts",
+            "line": 16,
+            "description": "This method is called whenever a part of application wants to\nuse the Notification Hub to present a message",
+            "itemtype": "method",
+            "name": "emit",
+            "params": [
+                {
+                    "name": "HubNotificationType",
+                    "description": "a type of message to present"
+                },
+                {
+                    "name": "message",
+                    "description": "The contents of the message"
+                }
+            ],
+            "class": "NotificationHubService"
+        },
+        {
+            "file": "src/app/common/utilities.service.ts",
+            "line": 22,
+            "description": "Handles all data rw errors within the application",
+            "itemtype": "method",
+            "name": "handleError",
+            "params": [
+                {
+                    "name": "error",
+                    "description": ""
+                }
+            ],
+            "class": "UtilitiesService"
+        },
+        {
+            "file": "src/app/common/utilities.service.ts",
+            "line": 36,
+            "description": "This method calculates Miles Per Gallon for a car based on its fill ups data",
+            "itemtype": "method",
+            "name": "CalculateMPG",
+            "params": [
+                {
+                    "name": "fillUps",
+                    "description": "FillUps[] array"
+                }
+            ],
+            "return": {
+                "description": "Miles per gallon for this car",
+                "type": "Number"
+            },
+            "class": "UtilitiesService"
+        },
+        {
+            "file": "src/app/common/utilities.service.ts",
+            "line": 53,
+            "description": "This method calculates Dollars Per Mile for a car based on its fill ups data",
+            "itemtype": "method",
+            "name": "CalculateDPM",
+            "params": [
+                {
+                    "name": "fillUps",
+                    "description": "FillUps[] array"
+                }
+            ],
+            "return": {
+                "description": "Dollars per mile for this car",
+                "type": "Number"
+            },
+            "class": "UtilitiesService"
+        },
+        {
+            "file": "src/app/common/utilities.service.ts",
+            "line": 73,
+            "description": "This method calculates Dollars Per Month for a car based on its fill ups data",
+            "itemtype": "method",
+            "name": "CalculateDPMonth",
+            "params": [
+                {
+                    "name": "fillUps",
+                    "description": "FillUps[] array"
+                }
+            ],
+            "return": {
+                "description": "Dollars per month for this car",
+                "type": "Number"
+            },
+            "class": "UtilitiesService"
+        },
+        {
+            "file": "src/app/common/utilities.service.ts",
+            "line": 94,
+            "description": "This method calculates difference in months between the two dates\nFirst and last month are not counted if partial",
+            "itemtype": "method",
+            "name": "monthDiff",
+            "params": [
+                {
+                    "name": "sD1",
+                    "description": "Beginning date string"
+                },
+                {
+                    "name": "sD2",
+                    "description": "Ending date string"
+                }
+            ],
+            "return": {
+                "description": "Number of months between the given two dates",
+                "type": "Number"
+            },
+            "class": "UtilitiesService"
+        },
+        {
+            "file": "src/app/dashboard/car-card/car-card.component.ts",
+            "line": 1,
+            "class": "CarComponent"
+        },
+        {
+            "file": "src/app/dashboard/car-card/car-card.component.ts",
+            "line": 9,
+            "class": "CarComponent"
+        },
+        {
+            "file": "src/app/dashboard/car-cards/car-cards.component.ts",
+            "line": 1,
+            "class": "CarsComponent"
+        },
+        {
+            "file": "src/app/dashboard/car-cards/car-cards.component.ts",
+            "line": 13,
+            "class": "CarsComponent"
+        },
+        {
+            "file": "src/app/dashboard/summary/complete-registration/complete-registration.component.ts",
+            "line": 1,
+            "class": "CompleteRegistrationComponent"
+        },
+        {
+            "file": "src/app/dashboard/summary/complete-registration/complete-registration.component.ts",
+            "line": 12,
+            "class": "CompleteRegistrationComponent"
+        },
+        {
+            "file": "src/app/dashboard/summary/complete-registration/complete-registration.component.ts",
+            "line": 49,
+            "description": "This method sends edit user form values to the server",
+            "itemtype": "method",
+            "name": "onSubmit",
+            "params": [
+                {
+                    "name": "formValues",
+                    "description": "The collected form values"
+                }
+            ],
+            "class": "CompleteRegistrationComponent"
+        },
+        {
+            "file": "src/app/dashboard/summary/complete-registration/complete-registration.component.ts",
+            "line": 83,
+            "description": "Trims input fields on losing focus",
+            "itemtype": "method",
+            "name": "onBlur",
+            "params": [
+                {
+                    "name": "event:any",
+                    "description": ""
+                }
+            ],
+            "class": "CompleteRegistrationComponent"
+        },
+        {
+            "file": "src/app/dashboard/summary/overdue-reminders/overdue-reminders.component.ts",
+            "line": 1,
+            "class": "SummaryComponent"
+        },
+        {
+            "file": "src/app/dashboard/summary/overdue-reminders/overdue-reminders.component.ts",
+            "line": 6,
+            "class": "SummaryComponent"
+        },
+        {
+            "file": "src/app/dashboard/summary/summary.component.ts",
+            "line": 1,
+            "class": "SummaryComponent"
+        },
+        {
+            "file": "src/app/dashboard/summary/summary.component.ts",
+            "line": 7,
+            "class": "SummaryComponent"
+        },
+        {
+            "file": "src/app/dashboard/dashboard.component.ts",
+            "line": 1,
+            "class": "CarsDataResolve"
+        },
+        {
+            "file": "src/app/dashboard/dashboard.component.ts",
+            "line": 10,
+            "class": "CarsDataResolve"
+        },
+        {
+            "file": "src/app/routing/all-fill-ups-resolver.ts",
+            "line": 1,
+            "class": "CarsDataResolve"
+        },
+        {
+            "file": "src/app/routing/all-fill-ups-resolver.ts",
+            "line": 9,
+            "class": "CarsDataResolve"
+        },
+        {
+            "file": "src/app/routing/all-reminders-data-resolve.service.ts",
+            "line": 1,
+            "class": "CarsDataResolve"
+        },
+        {
+            "file": "src/app/routing/all-reminders-data-resolve.service.ts",
+            "line": 9,
+            "class": "CarsDataResolve"
+        },
+        {
+            "file": "src/app/routing/auth.guard.ts",
+            "line": 1,
+            "class": "CarsDataResolve"
+        },
+        {
+            "file": "src/app/routing/auth.guard.ts",
+            "line": 11,
+            "class": "CarsDataResolve"
+        },
+        {
+            "file": "src/app/routing/car-data-resolver.ts",
+            "line": 1,
+            "class": "CarsDataResolve"
+        },
+        {
+            "file": "src/app/routing/car-data-resolver.ts",
+            "line": 10,
+            "class": "CarsDataResolve"
+        },
+        {
+            "file": "src/app/routing/cars-data-resolver.ts",
+            "line": 9,
+            "class": "CarsDataResolve"
+        },
+        {
+            "file": "src/app/routing/fill-up-data-resolver.ts",
+            "line": 9,
+            "class": "FillUpsDataResolve"
+        },
+        {
+            "file": "src/app/routing/fill-ups-data-resolver.ts",
+            "line": 9,
+            "class": "FillUpsDataResolve"
+        },
+        {
+            "file": "src/app/routing/reminder-data-resolver.ts",
+            "line": 1,
+            "class": "StatusBarComponent"
+        },
+        {
+            "file": "src/app/routing/reminder-data-resolver.ts",
+            "line": 10,
+            "class": "StatusBarComponent"
+        },
+        {
+            "file": "src/app/routing/reminders-data-resolver.ts",
+            "line": 1,
+            "class": "StatusBarComponent"
+        },
+        {
+            "file": "src/app/routing/reminders-data-resolver.ts",
+            "line": 10,
+            "class": "StatusBarComponent"
+        },
+        {
+            "file": "src/app/routing/signed-in.guard.ts",
+            "line": 1,
+            "class": "StatusBarComponent"
+        },
+        {
+            "file": "src/app/routing/signed-in.guard.ts",
+            "line": 13,
+            "class": "StatusBarComponent"
+        },
+        {
+            "file": "src/app/routing/user-data-resolve.service.ts",
+            "line": 1,
+            "class": "StatusBarComponent"
+        },
+        {
+            "file": "src/app/routing/user-data-resolve.service.ts",
+            "line": 10,
+            "class": "StatusBarComponent"
+        },
+        {
+            "file": "src/app/status-bar/status-bar.component.ts",
+            "line": 41,
+            "description": "Starts fade out of notification message after 3 seconds",
+            "itemtype": "method",
+            "name": "scheduleNotificationFadeOut",
+            "class": "StatusBarComponent"
+        },
+        {
+            "file": "src/app/status-bar/status-bar.component.ts",
+            "line": 52,
+            "description": "Clears notification message after 1.5 seconds",
+            "itemtype": "method",
+            "name": "scheduleNotificationClearing",
+            "class": "StatusBarComponent"
+        },
+        {
+            "file": "src/polyfills.ts",
+            "line": 1,
+            "description": "This file includes polyfills needed by Angular and is loaded before the app.\nYou can add your own extra polyfills to this file.\n\nThis file is divided into 2 sections:\n  1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.\n  2. Application imports. Files imported after ZoneJS that should be loaded before your main\n     file.\n\nThe current setup is for so-called \"evergreen\" browsers; the last versions of browsers that\nautomatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),\nEdge >= 13 on the desktop, and iOS 10 and Chrome on mobile.\n\nLearn more in https://angular.io/docs/ts/latest/guide/browser-support.html",
+            "class": ""
+        },
+        {
+            "file": "src/polyfills.ts",
+            "line": 17,
+            "description": "BROWSER POLYFILLS",
+            "class": ""
+        },
+        {
+            "file": "src/polyfills.ts",
+            "line": 21,
+            "class": ""
+        },
+        {
+            "file": "src/polyfills.ts",
+            "line": 37,
+            "class": ""
+        },
+        {
+            "file": "src/polyfills.ts",
+            "line": 40,
+            "class": ""
+        },
+        {
+            "file": "src/polyfills.ts",
+            "line": 44,
+            "class": ""
+        },
+        {
+            "file": "src/polyfills.ts",
+            "line": 49,
+            "class": ""
+        },
+        {
+            "file": "src/polyfills.ts",
+            "line": 54,
+            "description": "Zone JS is required by Angular itself.",
+            "class": ""
+        },
+        {
+            "file": "src/polyfills.ts",
+            "line": 61,
+            "description": "APPLICATION IMPORTS",
+            "class": ""
+        },
+        {
+            "file": "src/polyfills.ts",
+            "line": 65,
+            "description": "Date, currency, decimal and percent pipes.\nNeeded for: All but Chrome, Firefox, Edge, IE11 and Safari 10",
+            "class": ""
+        },
+        {
+            "file": "src/polyfills.ts",
+            "line": 70,
+            "description": "Need to import at least one locale-data with intl.",
+            "class": ""
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type",
+            "line": " src/app/add-car/add-car.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/add-car/add-car.component.ts:15"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/auth/profile/profile.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/auth/profile/profile.component.ts:15"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/basic-car-data/edit-car/edit-car.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/basic-car-data/edit-car/edit-car.component.ts:13"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/basic-car-data/basic-car-data.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/basic-car-data/basic-car-data.component.ts:12"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/fill-ups/add-fill-up/add-fill-up.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/fill-ups/add-fill-up/add-fill-up.component.ts:14"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/fill-ups/edit-fill-up/edit-fill-up.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/fill-ups/edit-fill-up/edit-fill-up.component.ts:14"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/fill-ups/fill-ups-list/fill-ups-list.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/fill-ups/fill-ups-list/fill-ups-list.component.ts:8"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/fill-ups/fill-ups.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/fill-ups/fill-ups.component.ts:11"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/reminders/add-reminder/add-reminder.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/reminders/add-reminder/add-reminder.component.ts:14"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/reminders/edit-reminder/edit-reminder.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/reminders/edit-reminder/edit-reminder.component.ts:14"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/reminders/reminders-list/reminders-list.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/reminders/reminders-list/reminders-list.component.ts:14"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/reminders/reminders.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail/reminders/reminders.component.ts:11"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail-view/cars-list/cars-list.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/car-detail-view/cars-list/cars-list.component.ts:11"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/dashboard/car-card/car-card.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/dashboard/car-card/car-card.component.ts:9"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/dashboard/car-cards/car-cards.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/dashboard/car-cards/car-cards.component.ts:13"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/dashboard/summary/complete-registration/complete-registration.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/dashboard/summary/complete-registration/complete-registration.component.ts:12"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/dashboard/summary/overdue-reminders/overdue-reminders.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/dashboard/summary/overdue-reminders/overdue-reminders.component.ts:6"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/dashboard/summary/summary.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/dashboard/summary/summary.component.ts:7"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/dashboard/dashboard.component.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/dashboard/dashboard.component.ts:10"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/all-fill-ups-resolver.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/all-fill-ups-resolver.ts:9"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/all-reminders-data-resolve.service.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/all-reminders-data-resolve.service.ts:9"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/auth.guard.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/auth.guard.ts:11"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/car-data-resolver.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/car-data-resolver.ts:10"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/cars-data-resolver.ts:9"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/fill-up-data-resolver.ts:9"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/fill-ups-data-resolver.ts:9"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/reminder-data-resolver.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/reminder-data-resolver.ts:10"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/reminders-data-resolver.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/reminders-data-resolver.ts:10"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/signed-in.guard.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/signed-in.guard.ts:13"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/user-data-resolve.service.ts:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/app/routing/user-data-resolve.service.ts:10"
+        },
+        {
+            "message": "Missing item type\nThis file includes polyfills needed by Angular and is loaded before the app.\nYou can add your own extra polyfills to this file.\n\nThis file is divided into 2 sections:\n  1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.\n  2. Application imports. Files imported after ZoneJS that should be loaded before your main\n     file.\n\nThe current setup is for so-called \"evergreen\" browsers; the last versions of browsers that\nautomatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),\nEdge >= 13 on the desktop, and iOS 10 and Chrome on mobile.\n\nLearn more in https://angular.io/docs/ts/latest/guide/browser-support.html",
+            "line": " src/polyfills.ts:1"
+        },
+        {
+            "message": "Missing item type\nBROWSER POLYFILLS",
+            "line": " src/polyfills.ts:17"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/polyfills.ts:21"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/polyfills.ts:37"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/polyfills.ts:40"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/polyfills.ts:44"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/polyfills.ts:49"
+        },
+        {
+            "message": "Missing item type\nZone JS is required by Angular itself.",
+            "line": " src/polyfills.ts:54"
+        },
+        {
+            "message": "Missing item type\nAPPLICATION IMPORTS",
+            "line": " src/polyfills.ts:61"
+        },
+        {
+            "message": "Missing item type\nDate, currency, decimal and percent pipes.\nNeeded for: All but Chrome, Firefox, Edge, IE11 and Safari 10",
+            "line": " src/polyfills.ts:65"
+        },
+        {
+            "message": "Missing item type\nNeed to import at least one locale-data with intl.",
+            "line": " src/polyfills.ts:70"
+        }
+    ]
+}
