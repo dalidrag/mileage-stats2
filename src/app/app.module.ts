@@ -11,6 +11,8 @@ import { AuthModule } from './auth/auth.module';
 import { CarDetailViewComponent } from './car-detail-view/car-detail-view.component';
 import { StatusBarComponent } from './status-bar/status-bar.component';
 import { CarsListComponent } from './car-detail-view/cars-list/cars-list.component';
+import { WellcomeComponent } from './wellcome/wellcome.component';
+import { ChromeComponent } from './chrome/chrome.component';
 
 import { CarDetailModule } from './car-detail/car-detail.module';
 
@@ -29,8 +31,8 @@ import { rootReducer } from './redux-store/index';
 import { FillUpActionCreators } from './redux-action-creators/fill-up-action-creators';
 import { ReminderActionCreators } from './redux-action-creators/reminder.action-creators';
 import { WindowResizeActionCreators } from './redux-action-creators/window-resize.action-creators';
-import { WellcomeComponent } from './wellcome/wellcome.component';
-import { ChromeComponent } from './chrome/chrome.component';
+import { UserActionCreators } from './redux-action-creators/user.action-creators';
+
 
 export function appStoreFactory() {
  return createStore(rootReducer);
@@ -58,7 +60,7 @@ export function appStoreFactory() {
   providers: [
     DataService, NotificationHubService, UtilitiesService, AuthService,
     { provide: 'AppStore', useFactory: appStoreFactory },
-    FillUpActionCreators, ReminderActionCreators, WindowResizeActionCreators
+    FillUpActionCreators, ReminderActionCreators, UserActionCreators, WindowResizeActionCreators
   ],
   bootstrap: [AppComponent]
 })

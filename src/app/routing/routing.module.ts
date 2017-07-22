@@ -23,6 +23,8 @@ import { EditCarComponent } from '../car-detail/basic-car-data/edit-car/edit-car
 
 import { CarDetailViewComponent } from '../car-detail-view/car-detail-view.component';
 
+import { ProfileComponent } from '../auth/profile/profile.component';
+
 import { CarsDataResolve } from './cars-data-resolver';
 import { CarDataResolve } from './car-data-resolver';
 import { FillUpsDataResolve } from './fill-ups-data-resolver';
@@ -30,18 +32,23 @@ import { FillUpDataResolve } from './fill-up-data-resolver';
 import { RemindersDataResolve } from './reminders-data-resolver';
 import { ReminderDataResolve } from './reminder-data-resolver';
 import { AllFillUpsDataResolve } from './all-fill-ups-resolver';
+import { UserDataResolve } from './user-data-resolve.service';
+
+import { AuthGuard } from './auth.guard';
+import { SignedInGuard } from './signed-in.guard';
 
 const routes: Routes = [
     { path: 'landing', component: AuthComponent,
-      /* canActivate: [SignedInGuard], canActivateChild: [SignedInGuard], */
+      canActivate: [SignedInGuard], canActivateChild: [SignedInGuard],
       children: [
         { path: 'signIn', component:SignInComponent },
         { path: 'signUp', component:SignUpComponent }
       ]
     },
     { path: '', component: ChromeComponent,
-    /*  canActivate: [AuthGuard], canActivateChild: [AuthGuard], */
+      canActivate: [AuthGuard], canActivateChild: [AuthGuard],
       children: [
+      { path: 'profile', component: ProfileComponent, resolve: {user: UserDataResolve} },
       { path: 'dashboard', component: CarCardsComponent, resolve: { cars: CarsDataResolve, fillUps: AllFillUpsDataResolve } },
       { path: 'addCar', component: AddCarComponent, resolve: { cars: CarsDataResolve } },
       { path: 'carDetails/:carId', component: CarDetailViewComponent,
@@ -107,7 +114,18 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [CarsDataResolve, CarDataResolve, FillUpsDataResolve, FillUpDataResolve, RemindersDataResolve, ReminderDataResolve, AllFillUpsDataResolve],
+  providers: [
+    CarsDataResolve,
+    CarDataResolve,
+    FillUpsDataResolve,
+    FillUpDataResolve,
+    RemindersDataResolve,
+    ReminderDataResolve,
+    AllFillUpsDataResolve,
+    UserDataResolve,
+    AuthGuard,
+    SignedInGuard
+   ],
   exports: [ RouterModule ]
 })
 export class RoutingModule { }

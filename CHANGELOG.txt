@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+##[0.8.0] - 2017-07-22
+### Added
+- Authentication.
+
 
 ## [0.7.0] - 2017-07-22
 ### Added
