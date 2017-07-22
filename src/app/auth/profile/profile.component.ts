@@ -47,12 +47,13 @@ export class ProfileComponent implements OnInit, OnDestroy {
     .subscribe((data: { user: User }) => {
       this.user = data.user;
       this.notificationHubService.emit(HubNotificationType.AppState, "User profile ('Esc' to cancel)");
-    });
 
-    this.editUserForm = this.fb.group({  
+      this.editUserForm = this.fb.group({  
     	      'username': [this.user.username], 'displayName': [this.user.displayName, Validators.maxLength(40)],
     				'country': [this.user.country, Validators.maxLength(50)], 'postalCode': [this.user.postalCode]
     	    });
+    });
+
   }
 
   ngOnDestroy() {

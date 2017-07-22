@@ -1,0 +1,15 @@
+.value {
+	font-size: 2.5rem;
+	font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+}
+.metric {
+	font-weight: bold;
+}
+p {
+	margin: 0;
+}
+#header {
+	font-size: 1.3rem;
+	margin-bottom: 0.5rem;
+	color: rgb(60, 60, 60);
+}

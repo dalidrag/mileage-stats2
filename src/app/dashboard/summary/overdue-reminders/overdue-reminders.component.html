@@ -1,0 +1,6 @@
+<p *ngIf="overdueReminders.length > 0" id="reminders-header">Reminders</p>
+<div *ngFor='let reminder of overdueReminders'>
+	<p class="text">{{reminder.text}}</p>
+	<p class="small">on {{reminder.date}}</p>
+	<p class="small">{{cars[reminder.car].model}}</p>
+</div>

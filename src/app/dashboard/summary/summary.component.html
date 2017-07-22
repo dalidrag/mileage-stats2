@@ -1,0 +1,7 @@
+<div id="wrapper">
+	<div id="content">
+		<app-complete-registration *ngIf="!user.registrationCompleted" [user]='user'></app-complete-registration>
+		<app-summary-stat [cars]="cars" [fillUps]="fillUps"></app-summary-stat>
+		<app-overdue-reminders [cars]="cars" [reminders]="reminders"></app-overdue-reminders>
+	</div>
+</div>

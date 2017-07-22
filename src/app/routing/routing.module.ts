@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CarCardsComponent} from '../dashboard/car-cards/car-cards.component';
 import { AddCarComponent } from '../add-car/add-car.component';
 import { ChromeComponent } from '../chrome/chrome.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 import { AuthComponent } from '../auth/auth.component';
 import { SignInComponent } from '../auth/sign-in/sign-in.component';
@@ -32,6 +33,7 @@ import { FillUpDataResolve } from './fill-up-data-resolver';
 import { RemindersDataResolve } from './reminders-data-resolver';
 import { ReminderDataResolve } from './reminder-data-resolver';
 import { AllFillUpsDataResolve } from './all-fill-ups-resolver';
+import { AllRemindersDataResolve } from './all-reminders-data-resolve.service';
 import { UserDataResolve } from './user-data-resolve.service';
 
 import { AuthGuard } from './auth.guard';
@@ -49,7 +51,7 @@ const routes: Routes = [
       canActivate: [AuthGuard], canActivateChild: [AuthGuard],
       children: [
       { path: 'profile', component: ProfileComponent, resolve: {user: UserDataResolve} },
-      { path: 'dashboard', component: CarCardsComponent, resolve: { cars: CarsDataResolve, fillUps: AllFillUpsDataResolve } },
+      { path: 'dashboard', component: DashboardComponent, resolve: { user: UserDataResolve, cars: CarsDataResolve, fillUps: AllFillUpsDataResolve, reminders: AllRemindersDataResolve } },
       { path: 'addCar', component: AddCarComponent, resolve: { cars: CarsDataResolve } },
       { path: 'carDetails/:carId', component: CarDetailViewComponent,
         resolve: { cars: CarsDataResolve, fillUps: FillUpsDataResolve },
@@ -123,6 +125,7 @@ const routes: Routes = [
     ReminderDataResolve,
     AllFillUpsDataResolve,
     UserDataResolve,
+    AllRemindersDataResolve,
     AuthGuard,
     SignedInGuard
    ],

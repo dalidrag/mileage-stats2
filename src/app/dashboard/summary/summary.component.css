@@ -1,0 +1,19 @@
+#wrapper {
+	width: 20em;
+	height: 37.36em;
+	margin: 0 1.2em 0.6em 0.6em;
+	border-width: 0.5em;
+	border-style: solid;
+	border-color: rgba(200, 200, 200, 0.55);
+	border-radius: 0.4em;
+	background-clip: content-box;
+	background-color: lightgrey;
+	background-image: url("/assets/images/summary-pane.jpg");
+}
+#content {
+	margin-left: 3rem;
+	margin-top: 1rem;
+	height: 95%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
