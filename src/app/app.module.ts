@@ -31,7 +31,7 @@ import { createStore, Store } from 'redux';
 import { rootReducer } from './redux-store/index';
 import { FillUpActionCreators } from './redux-action-creators/fill-up-action-creators';
 import { ReminderActionCreators } from './redux-action-creators/reminder.action-creators';
-import { WindowResizeActionCreators } from './redux-action-creators/window-resize.action-creators';
+import { SystemActionCreators } from './redux-action-creators/system.action-creators';
 import { UserActionCreators } from './redux-action-creators/user.action-creators';
 
 
@@ -62,7 +62,7 @@ export function appStoreFactory() {
   providers: [
     DataService, NotificationHubService, UtilitiesService, AuthService,
     { provide: 'AppStore', useFactory: appStoreFactory },
-    FillUpActionCreators, ReminderActionCreators, UserActionCreators, WindowResizeActionCreators
+    FillUpActionCreators, ReminderActionCreators, UserActionCreators, SystemActionCreators
   ],
   bootstrap: [AppComponent]
 })

@@ -30,6 +30,7 @@ export class EditReminderComponent implements OnInit , OnDestroy {
   carId: string;
 
   unsubscribe;
+  unsubscribeStore;
 
   constructor(@Inject('AppStore') private appStore, public actionCreators: ReminderActionCreators, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private dataService: DataService) {}
   
@@ -44,10 +45,19 @@ export class EditReminderComponent implements OnInit , OnDestroy {
             'date': [this.reminder.date, Validators.required]
     	    });
     });
+
+    // Listens for escape key pressed to quit the component
+    //subscribe to Redux store state changes
+    this.unsubscribeStore = this.appStore.subscribe(() => {
+      let state = this.appStore.getState();
+      if (state.system.escKeyPressed)
+        this.cancel();
+    });
   }
 
   ngOnDestroy() {
     this.unsubscribe.unsubscribe();
+    this.unsubscribeStore();
   }
 
  /**
@@ -82,15 +92,12 @@ export class EditReminderComponent implements OnInit , OnDestroy {
      event.target.value = event.target.value.trim();
    }
   /**
-   * Listens for escape key pressed to quit the component
+   * Quits the component by routing away
    *
-   * @method onKey
-   * @param event:any
+   * @method cancel
    */
-   onKey(event:any): void { // without type info
-     if (event.key === 'Escape') {  // escape key was pressed
+   cancel(): void { 
        // Simply navigate back to reminders view
        this.router.navigate(['../../'], { relativeTo: this.route }); // Go up to parent route
-     } 
    }
 }

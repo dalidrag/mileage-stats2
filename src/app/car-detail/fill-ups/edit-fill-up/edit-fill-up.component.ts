@@ -30,6 +30,7 @@ export class EditFillUpComponent implements OnInit, OnDestroy {
   carId: string;
 
   unsubscribe;
+  unsubscribeStore;
 
   constructor(@Inject('AppStore') private appStore, public actionCreators: FillUpActionCreators, private fb: FormBuilder, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router, private route: ActivatedRoute, private dataService: DataService) { }
 
@@ -44,10 +45,19 @@ export class EditFillUpComponent implements OnInit, OnDestroy {
 	    				'odometer': [this.fillUp.odometer, Validators.required], 'station': [this.fillUp.station, Validators.maxLength(20)], 'date': [this.fillUp.date, Validators.required]
 	    	    });
 	    });
+
+    // Listens for escape key pressed to quit the component
+    //subscribe to Redux store state changes
+    this.unsubscribeStore = this.appStore.subscribe(() => {
+      let state = this.appStore.getState();
+      if (state.system.escKeyPressed)
+        this.cancel();
+    });
   }
 
   ngOnDestroy() {
     this.unsubscribe.unsubscribe();
+    this.unsubscribeStore();
   }
 
  /**
@@ -84,17 +94,6 @@ export class EditFillUpComponent implements OnInit, OnDestroy {
     }
     
   /**
-   * Listens for escape key pressed to quit the component
-   *
-   * @method onKey
-   * @param event:any
-   */
-   onKey(event:any): void { // without type info
-     if (event.key === 'Escape') {  // escape key was pressed
-        this.cancel();    
-     } 
-   }
-   /**
    * Quits the component by routing away
    *
    * @method cancel

@@ -1,5 +1,5 @@
 <div class="add-car-view">
-	<div class="form" (keyup)="onKey($event)">
+	<div class="form">
 		<span class="input input--madoka" [class.input--filled]="carModel.value !== ''" >
 			<input #carModel class="input__field input__field--madoka" type="text" id="car-model" [(ngModel)]='car.model' [formControl]="carModelCtrl" (blur)="onBlur($event)" autofocus />
 			<label class="input__label input__label--madoka" for="car-model">

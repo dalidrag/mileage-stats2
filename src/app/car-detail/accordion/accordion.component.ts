@@ -33,7 +33,7 @@ export class AccordionComponent implements OnInit, OnDestroy {
     //subscribe to Redux store state changes
     this.unsubscribeStore = this.appStore.subscribe(() => {
       let state = this.appStore.getState();
-      this.windowResized = state.windowResized.windowResized;
+      this.windowResized = state.system.windowResized;
       if (this.windowResized) {
         this.drawSliders();
       }

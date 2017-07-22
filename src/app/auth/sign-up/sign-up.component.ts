@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/switchMap';
 
 import { AuthService } from '../../common/auth.service';
 
@@ -20,8 +23,8 @@ import { AuthService } from '../../common/auth.service';
 export class SignUpComponent implements OnInit {
 	private username: string;
   showError: any;
-  private userNames = new Subject<string>();
-	usernameTaken = new Observable<boolean>();
+  private userNames: Subject<string> = new Subject<string>();
+	usernameTaken: Observable<boolean> = new Observable<boolean>();
 
   nameCtrl = new FormControl('', Validators.compose([Validators.required, Validators.maxLength(20)]));
 
@@ -34,12 +37,7 @@ export class SignUpComponent implements OnInit {
   	    .switchMap(name =>    // switch to new observable each time
   	      // return the http search observable
   	      this.auth.nameExists(name)
-  	    )
-  	    .catch(error => {
-  	      // TODO: real error handling
-  	      console.log(error);
-  	      return Observable.of<boolean>(false);
-  	    });
+  	    ) 
   }
 
   onInputChange(event: any): void {

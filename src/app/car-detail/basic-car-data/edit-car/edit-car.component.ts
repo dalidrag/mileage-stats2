@@ -1,5 +1,5 @@
 /***********************************************************************************/
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, Inject } from '@angular/core';
 import { Router, ActivatedRoute }   from '@angular/router';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 
@@ -36,13 +36,14 @@ export class EditCarComponent implements OnInit {
 	static carId:string;
 
   sub;
+  unsubscribeStore;
 
   carModelCtrl: FormControl;
   carNameCtrl: FormControl;
   carYearCtrl: FormControl;
   editCarForm: FormGroup;
 
-  constructor(private dataService: DataService, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router, private route: ActivatedRoute) { }
+  constructor(@Inject('AppStore') private appStore, private dataService: DataService, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.sub = this.route.data
@@ -93,10 +94,19 @@ export class EditCarComponent implements OnInit {
 
       this.notificationHubService.emit(HubNotificationType.AppState, 'Editing ' + this.car.name + " ('ESC' to cancel)");
     });
+
+    // Listens for escape key pressed to quit the component
+    //subscribe to Redux store state changes
+    this.unsubscribeStore = this.appStore.subscribe(() => {
+      let state = this.appStore.getState();
+      if (state.system.escKeyPressed)
+        this.cancel();
+    });
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+    this.unsubscribeStore();
   }
 
   /**
@@ -157,17 +167,6 @@ export class EditCarComponent implements OnInit {
     }
     
   /**
-   * Listens for escape key pressed to quit the component
-   *
-   * @method onKey
-   * @param event:any
-   */
-   onKey(event:any): void { // without type info
-     if (event.key === 'Escape') {  // escape key was pressed
-        this.cancel();    
-     } 
-   }
-   /**
    * Quits the component by routing away
    *
    * @method cancel

@@ -1,5 +1,5 @@
 /***********************************************************************************/
-import { Component, OnInit, OnDestroy, HostBinding } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostBinding, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router'
 
@@ -30,12 +30,14 @@ export class ProfileComponent implements OnInit, OnDestroy {
 	user: User;
 	editUserForm: FormGroup;
 	unsubscribe;
+  unsubscribeStore;
   @HostBinding('@routeAnimation') routeAnimation = true;
   @HostBinding('style.display')   display = 'block';
   @HostBinding('style.position')  position = 'absolute';
   @HostBinding('style.top')  top = '0px';
 
-  constructor(private fb: FormBuilder, private dataService: DataService,
+  constructor(@Inject('AppStore') private appStore,
+              private fb: FormBuilder, private dataService: DataService,
   						public actionCreators: UserActionCreators, private router: Router,
   						private notificationHubService: NotificationHubService,
   						private utilitiesService: UtilitiesService, private route: ActivatedRoute)
@@ -54,10 +56,18 @@ export class ProfileComponent implements OnInit, OnDestroy {
     	    });
     });
 
+    // Listens for escape key pressed to quit the component
+    //subscribe to Redux store state changes
+    this.unsubscribeStore = this.appStore.subscribe(() => {
+      let state = this.appStore.getState();
+      if (state.system.escKeyPressed)
+        this.cancel();
+    });
   }
 
   ngOnDestroy() {
     this.unsubscribe.unsubscribe();
+    this.unsubscribeStore();
   }
 
   /**
@@ -95,16 +105,14 @@ export class ProfileComponent implements OnInit, OnDestroy {
    onBlur(event: any) {
      event.target.value = event.target.value.trim();
    }
-   /**
-  * Listens for escape key to quit the component
-  *
-  * @method onKey
-  * @param event:any
-  */
-  onKey(event:any): void { // without type info
-    if (event.key === 'Escape') {  // escape key was pressed
-      // Simply navigate back to dashboard view
-      this.router.navigate(['/dashboard']);
-    } 
-  }
+  
+  /**
+   * Quits the component by routing away
+   *
+   * @method cancel
+   */
+   cancel() {
+      // Simply navigate back to reminders view
+      this.router.navigate(['dashboard']); // Go up to parent route     
+   }
 }

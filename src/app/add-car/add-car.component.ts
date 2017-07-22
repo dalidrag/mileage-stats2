@@ -1,5 +1,5 @@
 /***********************************************************************************/
-import { Component, OnInit, OnDestroy, ViewChild, HostBinding } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, HostBinding, Inject } from '@angular/core';
 import { Router, ActivatedRoute }   from '@angular/router';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 
@@ -35,6 +35,7 @@ export class AddCarComponent implements OnInit, OnDestroy {
   imageValid = false;
 
   sub;
+  unsubscribeStore;
 
   @HostBinding('@routeAnimation') routeAnimation = true;
   @HostBinding('style.display')   display = 'block';
@@ -46,7 +47,7 @@ export class AddCarComponent implements OnInit, OnDestroy {
   carYearCtrl = new FormControl('', Validators.compose([Validators.required, Validators.pattern('[0-9]+'), Validators.minLength(4), Validators.maxLength(4)]));
   addCarForm: FormGroup;
 
-  constructor(private dataService: DataService, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router, private route: ActivatedRoute) { }
+  constructor(@Inject('AppStore') private appStore, private dataService: DataService, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
   	this.car = new Car;
@@ -57,6 +58,14 @@ export class AddCarComponent implements OnInit, OnDestroy {
     this.sub = this.route.data
     .subscribe((data: { cars: Car[] }) => {
       AddCarComponent.cars = data.cars;
+    });
+
+    // Listens for escape key pressed to quit the component
+    //subscribe to Redux store state changes
+    this.unsubscribeStore = this.appStore.subscribe(() => {
+      let state = this.appStore.getState();
+      if (state.system.escKeyPressed)
+        this.cancel();
     });
 
     let element = document.getElementsByClassName("add-car-view")[0];
@@ -86,6 +95,7 @@ export class AddCarComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+    this.unsubscribeStore();
   }
 
   /**
@@ -144,17 +154,6 @@ export class AddCarComponent implements OnInit, OnDestroy {
     }
     
   /**
-   * Listens for escape key pressed to quit the component
-   *
-   * @method onKey
-   * @param event:any
-   */
-   onKey(event:any): void { // without type info
-     if (event.key === 'Escape') {  // escape key was pressed
-        this.cancel();    
-     } 
-   }
-   /**
    * Quits the component by routing away
    *
    * @method cancel

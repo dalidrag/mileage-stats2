@@ -1,4 +1,4 @@
-<form [formGroup]="editUserForm" (ngSubmit)="onSubmit(editUserForm.value)" (keyup)="onKey($event)" >
+<form [formGroup]="editUserForm" (ngSubmit)="onSubmit(editUserForm.value)" >
 <div class="data">
 	<span class="input input--madoka" [class.input--filled]="username.value !== ''" >
 		<input #username readonly class="input__field input__field--madoka" type="text" id="username" [formControl]="editUserForm.controls['username']" />

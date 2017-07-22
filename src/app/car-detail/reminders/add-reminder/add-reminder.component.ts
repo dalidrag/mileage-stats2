@@ -28,6 +28,7 @@ export class AddReminderComponent implements OnInit, OnDestroy {
 	addReminderForm: FormGroup;
   carId: string;
   unsubscribe;
+  unsubscribeStore;
 
   constructor(@Inject('AppStore') private appStore, public actionCreators: ReminderActionCreators, private fb: FormBuilder, private utilitiesService: UtilitiesService, private notificationHubService: NotificationHubService, private router: Router, private route: ActivatedRoute, private dataService: DataService) { }
 
@@ -40,10 +41,19 @@ export class AddReminderComponent implements OnInit, OnDestroy {
   	this.addReminderForm = this.fb.group({  
   	      'text': ['', Validators.compose([Validators.required, Validators.maxLength(20)])], 'date': ['', Validators.required]
   	    });
+
+     // Listens for escape key pressed to quit the component
+    //subscribe to Redux store state changes
+    this.unsubscribeStore = this.appStore.subscribe(() => {
+      let state = this.appStore.getState();
+      if (state.system.escKeyPressed)
+        this.cancel();
+    });
   }
 
   ngOnDestroy() {
     this.unsubscribe.unsubscribe();
+    this.unsubscribeStore();
   }
 
  /**
@@ -77,17 +87,6 @@ export class AddReminderComponent implements OnInit, OnDestroy {
     }
     
 	/**
-	 * Listens for escape key pressed to quit the component
-	 *
-	 * @method onKey
-	 * @param event:any
-	 */
-	 onKey(event:any): void { // without type info
-	   if (event.key === 'Escape') {  // escape key was pressed
-	 		 this.cancel();    
-	   } 
-	 }
-	 /**
 	 * Quits the component by routing away
 	 *
 	 * @method cancel
