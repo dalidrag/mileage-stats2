@@ -5,8 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+
+## [1.0] - 2017-07-22
 ### Added
 - Animation on routing
+### Changed
+- e2e tests start from landing/signin page, entering 'sample' in username field
 ### Fixed
 - Esc quit key bug.
 - Sign up component observables bug.
