@@ -3,11 +3,11 @@
 	<span class="title-text">Sign In / Register</span>
 	<p>To register, just choose your username. This is not the same as your display name, which you can set later. </p>
 	<input class="username" type="text" (input)="onInputChange($event)" [formControl]="nameCtrl" (keyup)="onKey($event)" #name />
-	<button (click)="onSignUp()" [disabled]="!nameCtrl.valid || name.value.trim() === ''">
+	<button class="green-button" (click)="onSignUp()" [disabled]="!nameCtrl.valid || name.value.trim() === ''">
 		<img class="button-image" src="/assets/images/register-text.png" />
 		<img class="button-image" src="/assets/images/command-glass.png" />
 	</button>
-	<button routerLink="/landing/signIn" >
+	<button class="blue-button" routerLink="/landing/signIn" >
 		<img class="button-image" src="/assets/images/signin-text.png" />
 		<img class="button-image" src="/assets/images/command-glass.png" />
 	</button>

@@ -1,4 +1,4 @@
-<form [formGroup]="addFillUpForm" (ngSubmit)="onSubmit(addFillUpForm.value)" (keyup)="onKey($event)">
+<form [formGroup]="addFillUpForm" (ngSubmit)="onSubmit(addFillUpForm.value)">
 	
 	<span class="input input--madoka" [class.input--filled]="quantity.value !== ''" >
 		<input #quantity class="input__field input__field--madoka" type="number" id="quantity" [formControl]="addFillUpForm.controls['quantity']" (blur)="onBlur($event)" autofocus />

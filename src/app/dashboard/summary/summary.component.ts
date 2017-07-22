@@ -1,7 +1,7 @@
 /***********************************************************************************/
 import { Component, Input, HostBinding } from '@angular/core';
 
-// import { slideFromLeftToRightAnimation } from '../../common/componentAnimations';
+import { slideFromLeftToRightAnimation } from '../../common/componentAnimations';
 
 import { User } from '../../common/user';
 /***********************************************************************************/
@@ -17,7 +17,7 @@ import { User } from '../../common/user';
   selector: 'app-summary',
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.css'],
-//  animations: [ slideFromLeftToRightAnimation ]
+  animations: [ slideFromLeftToRightAnimation ]
 })
 export class SummaryComponent {
 	@Input()
@@ -28,9 +28,9 @@ export class SummaryComponent {
 	fillUps;
 	@Input()
 	reminders;
-	// @HostBinding('@routeAnimation') routeAnimation = true;
- //  @HostBinding('style.display')   display = 'block';
- //  @HostBinding('style.position')  position = 'absolute';
+	@HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.position')  position = 'absolute';
 	
 	constructor() { }
 }

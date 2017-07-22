@@ -1,5 +1,5 @@
 /***********************************************************************************/
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Car } from '../../common/car';
@@ -8,6 +8,8 @@ import { FillUp } from '../../common/fillUp';
 // The class which handles AJAX data services
 import { NotificationHubService, HubNotificationType } from '../../common/notification-hub.service';
 import { UtilitiesService } from '../../common/utilities.service';
+
+import { slideFromRightToLeftAnimation } from '../../common/componentAnimations';
 /***********************************************************************************/
 
 /**
@@ -20,13 +22,17 @@ import { UtilitiesService } from '../../common/utilities.service';
 @Component({
   selector: 'app-car-cards',
   templateUrl: './car-cards.component.html',
-  styleUrls: ['./car-cards.component.css']
+  styleUrls: ['./car-cards.component.css'],
+  animations: [ slideFromRightToLeftAnimation ]
 })
 export class CarCardsComponent {
 	@Input()
   cars: Car[];
 	@Input()
   fillUps: {};
+	@HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.position')  position = 'relative';
 
   constructor() {}
 }

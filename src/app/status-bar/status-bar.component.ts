@@ -22,7 +22,7 @@ export class StatusBarComponent implements OnInit {
 
   ngOnInit() {
   	this.notificationHubService.eventStream.subscribe(value => {  // Show messages 
-      if (this.notificationType !== HubNotificationType.AppState)
+      if (value.eventType !== HubNotificationType.AppState)
         this.notificationType = value.eventType;
       if (value.eventType === HubNotificationType.Success || value.eventType === HubNotificationType.Error) {
         this.notificationMessage = value.message;

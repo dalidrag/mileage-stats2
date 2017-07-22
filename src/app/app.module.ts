@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule} from '@angular/http';
 import { RouterModule }   from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AddCarModule } from './add-car/add-car.module';
 import { DashboardModule } from './dashboard/dashboard.module';
@@ -30,7 +31,7 @@ import { createStore, Store } from 'redux';
 import { rootReducer } from './redux-store/index';
 import { FillUpActionCreators } from './redux-action-creators/fill-up-action-creators';
 import { ReminderActionCreators } from './redux-action-creators/reminder.action-creators';
-import { WindowResizeActionCreators } from './redux-action-creators/window-resize.action-creators';
+import { SystemActionCreators } from './redux-action-creators/system.action-creators';
 import { UserActionCreators } from './redux-action-creators/user.action-creators';
 
 
@@ -55,12 +56,13 @@ export function appStoreFactory() {
     AuthModule,
     BrowserModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     DataService, NotificationHubService, UtilitiesService, AuthService,
     { provide: 'AppStore', useFactory: appStoreFactory },
-    FillUpActionCreators, ReminderActionCreators, UserActionCreators, WindowResizeActionCreators
+    FillUpActionCreators, ReminderActionCreators, UserActionCreators, SystemActionCreators
   ],
   bootstrap: [AppComponent]
 })

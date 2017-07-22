@@ -2,8 +2,7 @@
 	.master-frame {
 		width: 85vw;
 		margin: auto;
-		border-left: 2px solid red;
-		border-right: 2px solid red;
+		overflow: hidden;
 	}
 }
 @media screen and (max-width: 480px) {

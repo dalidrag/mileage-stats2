@@ -35,20 +35,20 @@ carImage.save(function(err){
 });
 
 var fillUps = [
-	[	new MongoFillUp({quantity: 11, pricePerGalon: 2.81, date:'2016-04-28', station: 'Fabrikam', odometer: 15455}),
-		new MongoFillUp({quantity: 7, pricePerGalon: 3, date:'2016-06-12', station: 'Joe', odometer: 15843}),
-		new MongoFillUp({quantity: 20, pricePerGalon: 3, date:'2016-07-12', station: 'Miriam', odometer: 16000}),
+	[	new MongoFillUp({quantity: 11, pricePerGalon: 2.81, date:'2017-04-28', station: 'Fabrikam', odometer: 15455}),
+		new MongoFillUp({quantity: 7, pricePerGalon: 3, date:'2017-06-12', station: 'Joe', odometer: 15843}),
+		new MongoFillUp({quantity: 20, pricePerGalon: 3, date:'2017-07-12', station: 'Miriam', odometer: 16000}),
 	],
-	[ new MongoFillUp({quantity: 11, pricePerGalon: 2.81, date:'2016-04-28', station: 'Fabrikam', odometer: 15455}),
-		new MongoFillUp({quantity: 15, pricePerGalon: 2, date:'2016-06-28', station: 'Fabrikam', odometer: 15923}),
-		new MongoFillUp({quantity: 8, pricePerGalon: 2.81, date:'2016-08-28', station: 'Fabrikam', odometer: 16213}),
-		new MongoFillUp({quantity: 23, pricePerGalon: 1.7, date:'2016-09-28', station: 'Fabrikam', odometer: 16455})
+	[ new MongoFillUp({quantity: 11, pricePerGalon: 2.81, date:'2017-02-28', station: 'Fabrikam', odometer: 15455}),
+		new MongoFillUp({quantity: 15, pricePerGalon: 2, date:'2017-03-28', station: 'Fabrikam', odometer: 15923}),
+		new MongoFillUp({quantity: 8, pricePerGalon: 2.81, date:'2017-04-28', station: 'Fabrikam', odometer: 16213}),
+		new MongoFillUp({quantity: 23, pricePerGalon: 1.7, date:'2017-06-28', station: 'Fabrikam', odometer: 16455})
 	],
-	[	new MongoFillUp({quantity: 11, pricePerGalon: 2.81, date:'2016-04-28', station: 'Fabrikam', odometer: 15455}),
-		new MongoFillUp({quantity: 7, pricePerGalon: 3, date:'2016-06-12', station: 'Joe', odometer: 15843}),
-		new MongoFillUp({quantity: 10, pricePerGalon: 2.81, date:'2016-08-12', station: 'Fabrikam', odometer: 16223}),
-		new MongoFillUp({quantity: 4, pricePerGalon: 2.61, date:'2016-09-23', station: 'Cheepo', odometer: 16589}),
-		new MongoFillUp({quantity: 24, pricePerGalon: 2, date:'2016-09-23', station: 'Cheepo', odometer: 16678})
+	[	new MongoFillUp({quantity: 11, pricePerGalon: 2.81, date:'2017-01-28', station: 'Fabrikam', odometer: 15455}),
+		new MongoFillUp({quantity: 7, pricePerGalon: 3, date:'2017-02-12', station: 'Joe', odometer: 15843}),
+		new MongoFillUp({quantity: 10, pricePerGalon: 2.81, date:'2017-04-12', station: 'Fabrikam', odometer: 16223}),
+		new MongoFillUp({quantity: 4, pricePerGalon: 2.61, date:'2017-05-23', station: 'Cheepo', odometer: 16589}),
+		new MongoFillUp({quantity: 24, pricePerGalon: 2, date:'2017-06-23', station: 'Cheepo', odometer: 16678})
 	]
 ];
 var reminders = [

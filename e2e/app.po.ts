@@ -2,7 +2,7 @@ import { browser, element, by } from 'protractor';
 
 export class MileageStatsPage {
   navigateTo() {
-    return browser.get('/');
+    return browser.get('/landing/signIn');
   }
 
 	setScreenSize(width: number, height:number) {
@@ -13,39 +13,53 @@ export class MileageStatsPage {
   }
 
   performTest() {
-		this.clickAddCarButton().then(() => {
-			return this.clickDashboardLink();
-		}).then(() => {
-			return this.clickCarCard();
-		}).then(() => {
-			return this.clickEditCar();
-		}).then(() => {
-			return this.clickFillUpsTab();
-		}).then(() => {
-			return this.selectFillUp();
-		}).then(() => {
-			return this.clickEditFillUp();
-		}).then(() => {
-			return this.clickAddFillUp();
-		}).then(() => {
-			return this.clickRemindersTab();
-		}).then(() => {
-			return this.selectReminder();
-		}).then(() => {
-			return this.clickEditReminder();
-		}).then(() => {
-			return this.clickAddReminder();
-		}).then(() => {
-			return this.clickCarDetailsTab();
-		}).then(() => {
-			return this.clickRemindersTab();
-		}).then(() => {
-			return this.clickFillUpsTab();
-		})
+  	this.enterUserName().then(() => 
+  		this.clickSignInButton()	
+  	).then(() =>
+  		this.clickAddCarButton()
+  	).then(() => 
+			this.clickDashboardLink()
+		).then(() => 
+			this.clickCarCard()
+		).then(() => 
+			this.clickEditCar()
+		).then(() => 
+			this.clickFillUpsTab()
+		).then(() => 
+			this.selectFillUp()
+		).then(() => 
+			this.clickEditFillUp()
+		).then(() => 
+			this.clickAddFillUp()
+		).then(() => 
+			this.clickRemindersTab()
+		).then(() => 
+			this.selectReminder()
+		).then(() => 
+			this.clickEditReminder()
+		).then(() => 
+			this.clickAddReminder()
+		).then(() => 
+			this.clickCarDetailsTab()
+		).then(() => 
+			this.clickRemindersTab()
+		).then(() => 
+			this.clickFillUpsTab()
+		)
 		.catch((error) => {
 			let message = error.message || error;
 			console.log('Error' + message);
 		}) 
+  }
+
+  enterUserName() {
+  	element(by.css('.username')).sendKeys('sample');
+  	return this.sleep();
+  }
+
+  clickSignInButton() {
+  	element(by.css('.green-button')).click();
+  	return this.sleep();
   }
 
   clickAddCarButton() {

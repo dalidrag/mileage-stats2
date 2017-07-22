@@ -1,12 +1,15 @@
-.car-details-subview {
-	display: inline-block;
-	vertical-align: top;
-}
 .left-subview {
 	width: 33%;
 }
+
 .right-subview {
+	position: absolute;
+	top: 0;
+	left: 34%;
 	width: 65%;
+	min-width: 18em;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 @media screen and (max-width: 1280px) {
@@ -15,6 +18,7 @@
 	}
 	.right-subview {
 		width: 77%;
+		left: 23%;
 	}
 }
 @media screen and (max-width: 1080px) {
@@ -23,6 +27,7 @@
 	}
 	.right-subview {
 		width: 27em;
+		left: 18em;
 	}
 }
 @media screen and (max-width: 786px) {
@@ -30,9 +35,11 @@
 		display: block;
 	}
 	.left-subview {
-		width: auto;
+		width: 100%;
 	}
 	.right-subview {
-		width: auto;
+		left: 0;
+		top: 20rem;
+		width: 100%;
 	}
 }

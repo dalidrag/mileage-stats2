@@ -27,7 +27,8 @@ export class CompleteRegistrationComponent implements OnInit {
 	@Input()
 	user: User;
 	editUserForm: FormGroup;
-		
+	formSubmitted = false;
+
   constructor(private fb: FormBuilder, private dataService: DataService,
   						public actionCreators: UserActionCreators, private notificationHubService: NotificationHubService,
   						private utilitiesService: UtilitiesService) { }
@@ -56,14 +57,25 @@ export class CompleteRegistrationComponent implements OnInit {
 
     let editedUser = new User;
    	editedUser.username = this.user.username;
-   	editedUser.displayName = formValues.displayName && formValues.displayName.trim();
-   	editedUser.country = formValues.country && formValues.country.trim();
-   	editedUser.postalCode = formValues.postalCode;
+   	if (!this.user.displayName)
+      editedUser.displayName = formValues.displayName && formValues.displayName.trim();
+    else
+      editedUser.displayName = this.user.displayName;
+   	if (!this.user.country)
+      editedUser.country = formValues.country && formValues.country.trim();
+    else
+      editedUser.country = this.user.country;
+   	if (!this.user.postalCode)
+      editedUser.postalCode = formValues.postalCode;
+    else
+      editedUser.postalCode = this.user.postalCode;
+    
    	editedUser.registrationCompleted = true;
    	
    	this.dataService.updateUser(editedUser).then(() => {
-   			this.notificationHubService.emit(HubNotificationType.Success, 'User Data Saved');
+   			this.notificationHubService.emit(HubNotificationType.Success, 'User data saved');
    			this.actionCreators.editUser(editedUser);
+        this.formSubmitted = true;
   	 	})
 	  	.catch(error => this.utilitiesService.handleError(error));
    }

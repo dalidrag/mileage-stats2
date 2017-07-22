@@ -1,4 +1,4 @@
-<form [formGroup]="editReminderForm" (ngSubmit)="onSubmit(editReminderForm.value)" (keyup)="onKey($event)">
+<form [formGroup]="editReminderForm" (ngSubmit)="onSubmit(editReminderForm.value)">
 
 	<span class="input input--madoka" [class.input--filled]="text.value !== ''" >
 		<input #text class="input__field input__field--madoka" type="text" id="text" [formControl]="editReminderForm.controls['text']" (blur)="onBlur($event)" autofocus />

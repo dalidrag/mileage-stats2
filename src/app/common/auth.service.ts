@@ -3,6 +3,7 @@ import { Headers, Http } from '@angular/http';
 
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 
 import { DataService } from './data.service';
 
@@ -77,7 +78,6 @@ export class AuthService {
   						}
   						else return false;
   					})
-  					.catch(this.handleError);
   }
   /**
    * Tries to register a new user

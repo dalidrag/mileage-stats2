@@ -1,4 +1,4 @@
-<div class="edit-car-view" (keyup)="onKey($event)">
+<form class="edit-car-view" id="edit-car-form">
 
 	<span class="input input--madoka" [class.input--filled]="carModel.value !== ''" >
 		<input #carModel class="input__field input__field--madoka" type="text" id="car-model" [(ngModel)]='car.model' [formControl]="carModelCtrl" (blur)="onBlur($event)" autofocus />
@@ -51,4 +51,4 @@
 		<img class="button-image" src="/assets/images/button-save.png" />
 		<img class="button-image" src="/assets/images/command-glass.png" />
 	</button>
-</div>
+</form>
