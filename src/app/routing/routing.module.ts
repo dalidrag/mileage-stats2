@@ -3,8 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { CarCardsComponent} from '../dashboard/car-cards/car-cards.component';
-
 import { AddCarComponent } from '../add-car/add-car.component';
+
+import { AuthComponent } from '../auth/auth.component';
+import { SignInComponent } from '../auth/sign-in/sign-in.component';
+import { SignUpComponent } from '../auth/sign-up/sign-up.component';
 
 import { AccordionComponent } from '../car-detail/accordion/accordion.component';
 import { BasicCarDataComponent } from '../car-detail/basic-car-data/basic-car-data.component';
@@ -29,6 +32,13 @@ import { AllFillUpsDataResolve } from './all-fill-ups-resolver';
 
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+    { path: 'landing', component: AuthComponent,
+      /* canActivate: [SignedInGuard], canActivateChild: [SignedInGuard], */
+      children: [
+        { path: 'signIn', component:SignInComponent },
+        { path: 'signUp', component:SignUpComponent }
+      ]
+    },
     { path: 'dashboard', component: CarCardsComponent, resolve: { cars: CarsDataResolve, fillUps: AllFillUpsDataResolve } },
     { path: 'addCar', component: AddCarComponent, resolve: { cars: CarsDataResolve } },
      { path: 'carDetails/:carId', component: CarDetailViewComponent,

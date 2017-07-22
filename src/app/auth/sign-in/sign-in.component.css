@@ -1,0 +1,65 @@
+.wrapper {
+	text-align: center;
+}
+.auth-image {
+	width: 2em;
+}
+span {
+	font-size: 1.5em;
+	color: floralwhite;
+	font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+}
+p {
+	text-align: left;
+	padding: 0 1em;
+	color: floralwhite;
+	font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+}
+.username {
+	width: 90%;
+}
+button {
+	position: relative;
+	width: 7.6vw;
+	min-width: 5em;
+	height: 2.6vw;
+	min-height: 2em;
+	margin: 1em auto;
+	border: none;
+	background-color: darkgreen;
+	background-image: url("/assets/images/command-background.jpg");
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+button:hover {
+	background-image: url("/assets/images/command-hover.jpg");
+}
+.button-image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.error {
+	color: darkred;
+}
+@media screen and (min-width: 1280px) and (min-aspect-ratio: 15/9) and (orientation: landscape) {
+	button {
+		width: 6.5vw;
+		height:  2.2vw;
+	}
+}
+@media screen and (max-width: 786px) {
+	.wrapper {
+		font-size: 0.8rem;
+	}
+	span {
+		font-size: 1.3em;
+	}
+}
+@media screen and (max-width: 580px) {
+	button {
+		margin: 0.5em auto;
+	}
+}
