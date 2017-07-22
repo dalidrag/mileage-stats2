@@ -16,12 +16,12 @@ export class RemindersDataResolve implements Resolve<Reminder[]> {
 
   // gets reminders data
   resolve(route: ActivatedRouteSnapshot): Promise<Reminder[]> {
-    return this.dataService.getReminders(route.pathFromRoot[1].params['carId']).then(reminders => {
+    return this.dataService.getReminders(route.pathFromRoot[2].params['carId']).then(reminders => {
       if (reminders) {
         return reminders;
       } else { // an error
         this.notificationHubService.emit(HubNotificationType.Error, 'Error while fetching reminders!');
-        this.router.navigate(['/']);
+        this.router.navigate(['/dashboard']);
         return null;
       }
     })

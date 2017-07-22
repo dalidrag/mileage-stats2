@@ -83,7 +83,7 @@ export class SignUpComponent implements OnInit {
   		if (error) 
   			this.showError = error;  // show that sign up didn't succeed
   		else
-  			this.router.navigate(['/']);  // go to application
+  			this.router.navigate(['/dashboard']);  // go to application
   	});
   }
 

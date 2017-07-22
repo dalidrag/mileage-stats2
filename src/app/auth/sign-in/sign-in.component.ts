@@ -52,7 +52,7 @@ export class SignInComponent implements OnInit {
 
     this.auth.logIn(this.username).then(loggedIn => {
   		if (!loggedIn) this.showError = true;  // show that name is taken
-  		else this.router.navigate(['/']);  // go to application
+  		else this.router.navigate(['/dashboard']);  // go to application
   	});
   }
 }

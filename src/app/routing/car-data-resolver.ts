@@ -15,12 +15,12 @@ export class CarDataResolve implements Resolve<Car> {
 
   // gets data for a car reading the car id from a route
   resolve(route: ActivatedRouteSnapshot): Promise<Car> {
-    return this.dataService.getCarById(route.pathFromRoot[1].params['carId']).then(car => {
+    return this.dataService.getCarById(route.pathFromRoot[2].params['carId']).then(car => {
       if (car) {
         return car;
       } else { // an error
         this.notificationHubService.emit(HubNotificationType.Error, 'Error while fetching a car of id: ' + route.pathFromRoot[1].params['carId']);
-        this.router.navigate(['/']);
+        this.router.navigate(['/dashboard']);
         return null;
       }
     })

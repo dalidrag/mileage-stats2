@@ -20,7 +20,7 @@ export class AllFillUpsDataResolve implements Resolve<Object> {
         return fillUps;
       } else { // an error
         this.notificationHubService.emit(HubNotificationType.Error, 'Error while fetching fill ups!');
-        this.router.navigate(['/']);
+        this.router.navigate(['/dashboard']);
         return null;
       }
     })

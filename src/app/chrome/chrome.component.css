@@ -1,0 +1,50 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: lightgrey;
+	background-image: url("/assets/images/application-top.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.status-bar {
+	margin-left: 1.5em;
+}
+.wellcome {
+	margin-right: 1.5em;
+	margin-left: auto;	/* This will push the flex item to the far right */
+	margin-top: 0.15rem; /* Just to perfectly align with menu text to the right */
+}
+.main-menu {
+	margin-right: 1.5em;
+}
+.main-menu a {
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 0.8em;
+	font-weight: bold;
+	color: darkcyan;
+	cursor: pointer;
+}
+.main-menu span {
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+.application {
+	position: relative;
+	height: 100vh;
+	background-image: url("/assets/images/background.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+@media screen and (max-width: 1080px) {
+	.application {
+		height: 120vh;
+		background-size: 1280px 100%;
+	}
+}
+@media screen and (max-width: 786px) {
+	.application {
+		height: 160vh;
+	}
+}

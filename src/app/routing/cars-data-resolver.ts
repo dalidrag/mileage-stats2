@@ -23,7 +23,7 @@ export class CarsDataResolve implements Resolve<Car[]> {
         return cars;
       } else { // an error
         this.notificationHubService.emit(HubNotificationType.Error, 'Error while fetching cars!');
-        this.router.navigate(['/']);
+        this.router.navigate(['/dashboard']);
         return null;
       }
     })

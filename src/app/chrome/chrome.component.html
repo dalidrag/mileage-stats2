@@ -1,0 +1,18 @@
+<div class="header">
+	<app-status-bar class="status-bar"></app-status-bar>
+	<div class="wellcome">
+		<app-wellcome></app-wellcome>
+	</div>
+	<div class="main-menu">
+		<span>[</span>
+		<a routerLink="/dashboard" id="menu-dashboard">Dashboard</a>
+		<span>|</span>
+		<a routerLink="/profile">Profile</a>
+		<span>|</span>
+		<a (click)="signOut()">Sign out</a>
+		<span>]</span>
+	</div>
+</div>
+<div class="application">
+	<router-outlet></router-outlet>
+</div>

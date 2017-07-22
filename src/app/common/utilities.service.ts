@@ -26,6 +26,6 @@ export class UtilitiesService {
 
 		this.notificationHubService.emit(HubNotificationType.UnknownError, 'Error: ' + message);
 
-		this.router.navigate(['/']);
+		this.router.navigate(['/dashboard']);
 	}
 }

@@ -38,10 +38,10 @@ app.use(session({
 app.post('/api/signUp', (req,res) => {
 	DBLink.createUser(req.body.username).then(response => {
 		if (response) {	// Creating user didn't succeed
-			res.send(response);
+			res.send({authMessage: response});
 		}
 		else
-			res.send(false);
+			res.send({authMessage: false});
 	})
 	.catch(err => handleError(err, res));
 });
@@ -51,33 +51,33 @@ app.post('/api/login', (req, res) => {
 		if (user) {
 			// req.session.username = user.username;
 			req.session.username = user.username;
-			res.send(true);
+			res.send({authMessage: true});
 		}
 		else
-			res.send(false);
+			res.send({authMessage: false});
 	})
 	.catch(err => handleError(err, res));
 });
 // Log out (stub version)
 app.get('/api/logout', (req, res) => {
 	// delete req.session.username;
-	res.send('ok');
+	res.send({authMessage: 'ok'});
 });
 // Check if user name exists
 app.post('/api/userExists', (req, res) => {
 	DBLink.findUser(req.body.username).then(user => {
 		if (user) 
-			res.send(true);
+			res.send({authMessage: true});
 		else
-			res.send(false);
+			res.send({authMessage: false});
 	})
 });
 // Check if user is logged in
 app.get('/api/loggedIn', (req, res) => {
 	if (req.session.username) {
-		res.send(true);
+		res.send({authMessage: true});
 	}
-	else res.send(false);
+	else res.send({authMessage: false});
 });
 // Update user data
 app.put('/api/user/update', (req, res) => {

@@ -52,7 +52,7 @@ export class BasicCarDataComponent implements OnInit, OnDestroy {
     deleteCar(): void {
       this.dataService.deleteCar(this.car.id).then(() => {
         this.notificationHubService.emit(HubNotificationType.Success, 'Car deleted');
-        this.router.navigate(['/']);
+        this.router.navigate(['/dashboard']);
       })
       .catch(error => this.utilitiesService.handleError(error));
     }

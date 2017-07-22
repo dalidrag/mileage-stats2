@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CarCardsComponent} from '../dashboard/car-cards/car-cards.component';
 import { AddCarComponent } from '../add-car/add-car.component';
+import { ChromeComponent } from '../chrome/chrome.component';
 
 import { AuthComponent } from '../auth/auth.component';
 import { SignInComponent } from '../auth/sign-in/sign-in.component';
@@ -31,7 +32,6 @@ import { ReminderDataResolve } from './reminder-data-resolver';
 import { AllFillUpsDataResolve } from './all-fill-ups-resolver';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'landing', component: AuthComponent,
       /* canActivate: [SignedInGuard], canActivateChild: [SignedInGuard], */
       children: [
@@ -39,62 +39,67 @@ const routes: Routes = [
         { path: 'signUp', component:SignUpComponent }
       ]
     },
-    { path: 'dashboard', component: CarCardsComponent, resolve: { cars: CarsDataResolve, fillUps: AllFillUpsDataResolve } },
-    { path: 'addCar', component: AddCarComponent, resolve: { cars: CarsDataResolve } },
-     { path: 'carDetails/:carId', component: CarDetailViewComponent,
-       resolve: { cars: CarsDataResolve, fillUps: FillUpsDataResolve },
-       children: [
-      {
-        path: '',
-        component: BasicCarDataComponent,
-        resolve: {car: CarDataResolve, fillUps: FillUpsDataResolve, reminders: RemindersDataResolve }
-      },
-      {
-        path: 'editCar',
-        component: EditCarComponent,
-        resolve: {cars: CarsDataResolve}
-      },
-      {
-        path: 'fillUps',
-        component: FillUpsComponent,
-        resolve: { fillUps: FillUpsDataResolve, car: CarDataResolve },
+    { path: '', component: ChromeComponent,
+    /*  canActivate: [AuthGuard], canActivateChild: [AuthGuard], */
+      children: [
+      { path: 'dashboard', component: CarCardsComponent, resolve: { cars: CarsDataResolve, fillUps: AllFillUpsDataResolve } },
+      { path: 'addCar', component: AddCarComponent, resolve: { cars: CarsDataResolve } },
+      { path: 'carDetails/:carId', component: CarDetailViewComponent,
+        resolve: { cars: CarsDataResolve, fillUps: FillUpsDataResolve },
         children: [
-          {
-            path: 'addFillUp',
-            component: AddFillUpComponent,
-            resolve: { car: CarDataResolve }
-          },
-          {
-            path: ':id/editFillUp',
-            component: EditFillUpComponent,
-            resolve: { fillUp: FillUpDataResolve, car: CarDataResolve }
-          },
-          {
-            path: ':id',
-            component: FillUpDetailComponent,
-            resolve: { fillUp: FillUpDataResolve, car: CarDataResolve }
-          }
-        ]
-      },
-      {
-        path: 'reminders',
-        component: RemindersComponent,
-        resolve: { reminders: RemindersDataResolve, car: CarDataResolve },
-        children: [
-        {
-          path: 'addReminder',
-          component: AddReminderComponent,
-          resolve: { car: CarDataResolve }
+       {
+         path: '',
+         component: BasicCarDataComponent,
+         resolve: {car: CarDataResolve, fillUps: FillUpsDataResolve, reminders: RemindersDataResolve }
+       },
+       {
+         path: 'editCar',
+         component: EditCarComponent,
+         resolve: {cars: CarsDataResolve}
+       },
+       {
+         path: 'fillUps',
+         component: FillUpsComponent,
+         resolve: { fillUps: FillUpsDataResolve, car: CarDataResolve },
+         children: [
+           {
+             path: 'addFillUp',
+             component: AddFillUpComponent,
+             resolve: { car: CarDataResolve }
+           },
+           {
+             path: ':id/editFillUp',
+             component: EditFillUpComponent,
+             resolve: { fillUp: FillUpDataResolve, car: CarDataResolve }
+           },
+           {
+             path: ':id',
+             component: FillUpDetailComponent,
+             resolve: { fillUp: FillUpDataResolve, car: CarDataResolve }
+           }
+         ]
         },
-        {
-          path: ':id/editReminder',
-          component: EditReminderComponent,
-          resolve: { reminder: ReminderDataResolve, car: CarDataResolve }
-        }
-        ]
-      }
+       {
+         path: 'reminders',
+         component: RemindersComponent,
+         resolve: { reminders: RemindersDataResolve, car: CarDataResolve },
+         children: [
+         {
+           path: 'addReminder',
+           component: AddReminderComponent,
+           resolve: { car: CarDataResolve }
+         },
+         {
+           path: ':id/editReminder',
+           component: EditReminderComponent,
+           resolve: { reminder: ReminderDataResolve, car: CarDataResolve }
+         }
+         ]
+       }
       ]
-    }
+     }
+     ]
+   }
 ];
 
 @NgModule({

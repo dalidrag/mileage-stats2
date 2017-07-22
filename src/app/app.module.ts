@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AddCarModule } from './add-car/add-car.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { AuthModule } from './auth/auth.module';
+
 import { CarDetailViewComponent } from './car-detail-view/car-detail-view.component';
 import { StatusBarComponent } from './status-bar/status-bar.component';
 import { CarsListComponent } from './car-detail-view/cars-list/cars-list.component';
@@ -20,12 +22,15 @@ import { AppComponent } from './app.component';
 import { DataService } from './common/data.service';
 import { NotificationHubService } from './common/notification-hub.service';
 import { UtilitiesService } from './common/utilities.service';
+import { AuthService } from './common/auth.service';
 
 import { createStore, Store } from 'redux';
 import { rootReducer } from './redux-store/index';
 import { FillUpActionCreators } from './redux-action-creators/fill-up-action-creators';
 import { ReminderActionCreators } from './redux-action-creators/reminder.action-creators';
 import { WindowResizeActionCreators } from './redux-action-creators/window-resize.action-creators';
+import { WellcomeComponent } from './wellcome/wellcome.component';
+import { ChromeComponent } from './chrome/chrome.component';
 
 export function appStoreFactory() {
  return createStore(rootReducer);
@@ -36,19 +41,22 @@ export function appStoreFactory() {
     AppComponent,
     StatusBarComponent,
     CarDetailViewComponent,
-    CarsListComponent
+    CarsListComponent,
+    WellcomeComponent,
+    ChromeComponent
   ],
   imports: [
     RoutingModule,
     DashboardModule,
     CarDetailModule,
     AddCarModule,
+    AuthModule,
     BrowserModule,
     HttpModule,
     FormsModule
   ],
   providers: [
-    DataService, NotificationHubService, UtilitiesService,
+    DataService, NotificationHubService, UtilitiesService, AuthService,
     { provide: 'AppStore', useFactory: appStoreFactory },
     FillUpActionCreators, ReminderActionCreators, WindowResizeActionCreators
   ],

@@ -31,7 +31,7 @@ export class AuthService {
 			.post(this.authUrl + 'login', JSON.stringify({username: username}), {headers: this.headers})
       .toPromise()		// Because Angular http service returns observable
 	    .then(response => {
-	    	if (response._body === "true") {
+        if (response.json().authMessage) {
 	    		this.loggedIn = true;
 	    		return true;
 	    	}
@@ -50,7 +50,7 @@ export class AuthService {
   	return this.http.get(this.authUrl + 'loggedIn')
   						.toPromise()
   						.then(response => {
-  							if (response._body === "true") {
+  							if (response.json().authMessage) {
                   this.loggedIn = true;
                   return true;
                 }
@@ -72,7 +72,7 @@ export class AuthService {
   	return this.http
   					.post(this.authUrl + 'userExists',  JSON.stringify({username: name}), {headers: this.headers})
   					.map(response => {
-  						if (response._body === "true") {
+  						if (response.json().authMessage) {
   							return true;
   						}
   						else return false;
@@ -91,10 +91,10 @@ export class AuthService {
   		.post(this.authUrl + 'signUp', JSON.stringify({username: username}), {headers: this.headers})
   		.toPromise()
   		.then(response => {
-  			if (response._body === "false") // if no errors
+  			if (!response.json().authMessage) // if no errors
   				return !this.logIn(username);	// logIn returns true on success, where we need true on errors
   			else
-  				return Promise.resolve(response._body);
+  				return Promise.resolve(response.json().authMessage);
   		})
   		.then(response => {
   			return response;
@@ -111,7 +111,7 @@ export class AuthService {
     return this.http.get(this.authUrl + 'logout')
             .toPromise()
             .then(response => {
-              if (response._body === 'ok') {
+              if (response.json().authMessage === 'ok') {
                   this.loggedIn = false;
                   this.dataService.clearCache();
                   return true;
