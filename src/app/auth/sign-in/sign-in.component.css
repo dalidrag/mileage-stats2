@@ -26,13 +26,22 @@ button {
 	min-height: 2em;
 	margin: 1em auto;
 	border: none;
-	background-color: darkgreen;
-	background-image: url("/assets/images/command-background.jpg");
 	background-size: 100% 100%;
 	cursor: pointer;
 }
-button:hover {
+.green-button {
+	background-color: darkgreen;
+	background-image: url("/assets/images/command-background.jpg");
+}
+.blue-button {
+	background-color: darkblue;
+	background-image: url("/assets/images/command-background-blue.jpg");
+}
+.green-button:hover {
 	background-image: url("/assets/images/command-hover.jpg");
+}
+.blue-button:hover {
+	background-image: url("/assets/images/command-hover-blue.jpg");
 }
 .button-image {
 	position: absolute;

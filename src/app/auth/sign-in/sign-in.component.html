@@ -3,11 +3,11 @@
 	<span class="title-text">Sign In / Register</span>
 	<p>This application doesn't have a fully fledged back-end. Your only identification is your username.</p>
 	<input class="username" type="text" (input)="onInputChange($event)" [formControl]="nameCtrl" (keyup)="onKey($event)" />
-	<button (click)="onSignIn()" [disabled]="!nameCtrl.valid">
+	<button class="green-button" (click)="onSignIn()" [disabled]="!nameCtrl.valid">
 		<img class="button-image" src="/assets/images/signin-text.png" />
 		<img class="button-image" src="/assets/images/command-glass.png" />
 	</button>
-	<button routerLink="/landing/signUp">
+	<button class="blue-button" routerLink="/landing/signUp">
 		<img class="button-image" src="/assets/images/register-text.png" />
 		<img class="button-image" src="/assets/images/command-glass.png" />
 	</button>
