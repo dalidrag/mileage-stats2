@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Animation on routing
 ### Fixed
+- A bug when cancelling car editing fixed.
 - Complete your registration form now dissapears after hitting the save button
 
 

@@ -31,6 +31,7 @@ export class EditCarComponent implements OnInit {
   cropperSettings: CropperSettings;
 
   car: Car = new Car;
+  pristineCar: Car = new Car;  // used to reset values
   static cars: Car[] = [{id: '0', model: '', name: '', year:''}];
 	static carId:string;
 
@@ -52,6 +53,10 @@ export class EditCarComponent implements OnInit {
 			for (let car of EditCarComponent.cars)
 				if (car.id.toString() === EditCarComponent.carId) {
 	    		this.car = car;
+          this.pristineCar.model = this.car.model;
+          this.pristineCar.name = this.car.name;
+          this.pristineCar.year = this.car.year;
+
 	    		break;
 				}
 
@@ -168,6 +173,9 @@ export class EditCarComponent implements OnInit {
    * @method cancel
    */
    cancel() {
+      this.car.model = this.pristineCar.model;
+      this.car.year = this.pristineCar.year;
+      this.car.name = this.pristineCar.name;
       // Simply navigate back
       this.router.navigate(['../'], { relativeTo: this.route }); // Go up to parent route          
    }
