@@ -27,7 +27,8 @@ export class CompleteRegistrationComponent implements OnInit {
 	@Input()
 	user: User;
 	editUserForm: FormGroup;
-		
+	formSubmitted = false;
+
   constructor(private fb: FormBuilder, private dataService: DataService,
   						public actionCreators: UserActionCreators, private notificationHubService: NotificationHubService,
   						private utilitiesService: UtilitiesService) { }
@@ -62,8 +63,9 @@ export class CompleteRegistrationComponent implements OnInit {
    	editedUser.registrationCompleted = true;
    	
    	this.dataService.updateUser(editedUser).then(() => {
-   			this.notificationHubService.emit(HubNotificationType.Success, 'User Data Saved');
+   			this.notificationHubService.emit(HubNotificationType.Success, 'User data saved');
    			this.actionCreators.editUser(editedUser);
+        this.formSubmitted = true;
   	 	})
 	  	.catch(error => this.utilitiesService.handleError(error));
    }

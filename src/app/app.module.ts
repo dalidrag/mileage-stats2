@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule} from '@angular/http';
 import { RouterModule }   from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AddCarModule } from './add-car/add-car.module';
 import { DashboardModule } from './dashboard/dashboard.module';
@@ -55,7 +56,8 @@ export function appStoreFactory() {
     AuthModule,
     BrowserModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     DataService, NotificationHubService, UtilitiesService, AuthService,

@@ -1,5 +1,5 @@
 /***********************************************************************************/
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, HostBinding } from '@angular/core';
 import { Router, ActivatedRoute }   from '@angular/router';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 
@@ -10,6 +10,8 @@ import { Car } from '../common/car';
 import { DataService } from '../common/data.service';
 import { NotificationHubService, HubNotificationType } from '../common/notification-hub.service';
 import { UtilitiesService} from '../common/utilities.service';
+
+import { slideFromLeftToRightAnimation } from '../common/componentAnimations';
 /***********************************************************************************/
 
 /**
@@ -20,7 +22,8 @@ import { UtilitiesService} from '../common/utilities.service';
 @Component({
   selector: 'app-add-car',
   templateUrl: './add-car.component.html',
-  styleUrls: ['./add-car.component.css']
+  styleUrls: ['./add-car.component.css'],
+  animations: [ slideFromLeftToRightAnimation ]
 })
 export class AddCarComponent implements OnInit, OnDestroy {
 	@ViewChild(ImageCropperComponent) cropper:ImageCropperComponent;
@@ -32,6 +35,11 @@ export class AddCarComponent implements OnInit, OnDestroy {
   imageValid = false;
 
   sub;
+
+  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.position')  position = 'absolute';
+  @HostBinding('style.top')  top = '0px';
 
   carModelCtrl = new FormControl('', Validators.compose([Validators.required, Validators.maxLength(20)]));
   carNameCtrl = new FormControl('', Validators.compose([Validators.required, Validators.maxLength(20), AddCarComponent.carUnique]));

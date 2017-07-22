@@ -1,5 +1,7 @@
-import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, HostBinding } from '@angular/core';
 import { Router, ActivatedRoute, UrlSegment, NavigationEnd }   from '@angular/router';
+
+import { slideFromRightToLeftAnimation } from '../../common/componentAnimations';
 
 /**
  * Displays accordion component, which handles all the car detail data
@@ -9,7 +11,8 @@ import { Router, ActivatedRoute, UrlSegment, NavigationEnd }   from '@angular/ro
 @Component({
   selector: 'app-accordion',
   templateUrl: './accordion.component.html',
-  styleUrls: ['./accordion.component.css']
+  styleUrls: ['./accordion.component.css'],
+  animations: [ slideFromRightToLeftAnimation ]
 })
 export class AccordionComponent implements OnInit, OnDestroy {
 	previousTab: number = 0;
@@ -19,6 +22,10 @@ export class AccordionComponent implements OnInit, OnDestroy {
   
   sub;
   unsubscribeStore;
+
+  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.position')  position = 'absolute';
 
   constructor(@Inject('AppStore') private appStore, private router: Router, private route: ActivatedRoute) { }
 

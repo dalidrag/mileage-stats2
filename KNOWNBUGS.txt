@@ -1,4 +1,3 @@
-- Complete your registration form doesn't dissapear after hitting the save button
 - Both sign up and sign in button are the same color and appearance.
 - While editing car, on escacpe new values are written
 - Input field Angular validators messing up after trimming text fields

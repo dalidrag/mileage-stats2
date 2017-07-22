@@ -1,11 +1,13 @@
 /***********************************************************************************/
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, HostBinding } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 import { Car } from '../../common/car';
 import { FillUp } from '../../common/fillUp';
 
 import { NotificationHubService, HubNotificationType } from '../../common/notification-hub.service';
+
+import { slideFromLeftToRightAnimation } from '../../common/componentAnimations';
 /***********************************************************************************/
 
 /**
@@ -18,7 +20,8 @@ import { NotificationHubService, HubNotificationType } from '../../common/notifi
 @Component({
   selector: 'app-cars-list',
   templateUrl: './cars-list.component.html',
-  styleUrls: ['./cars-list.component.css']
+  styleUrls: ['./cars-list.component.css'],
+  animations: [ slideFromLeftToRightAnimation ]
 })
 export class CarsListComponent implements OnInit, OnDestroy {
 	@Input()
@@ -29,6 +32,10 @@ export class CarsListComponent implements OnInit, OnDestroy {
   selectedCommand: number;
 
 	sub;
+
+  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('style.display')   display = 'block';
+  @HostBinding('style.position')  position = 'relative';
 
   constructor(private notificationHubService: NotificationHubService,
   	private router: Router, private route: ActivatedRoute) { }

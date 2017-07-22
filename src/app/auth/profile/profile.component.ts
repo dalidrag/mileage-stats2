@@ -9,7 +9,7 @@ import { UtilitiesService } from '../../common/utilities.service';
 
 import { UserActionCreators } from '../../redux-action-creators/user.action-creators';
 
-// import { slideFromLeftToRightAnimation } from '../../common/componentAnimations';
+import { slideFromLeftToRightAnimation } from '../../common/componentAnimations';
 
 import { User }  from '../../common/user';
 /***********************************************************************************/
@@ -24,16 +24,16 @@ import { User }  from '../../common/user';
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
-//  animations: [ slideFromLeftToRightAnimation ]
+ animations: [ slideFromLeftToRightAnimation ]
 })
 export class ProfileComponent implements OnInit, OnDestroy {
 	user: User;
 	editUserForm: FormGroup;
 	unsubscribe;
-/*  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('@routeAnimation') routeAnimation = true;
   @HostBinding('style.display')   display = 'block';
   @HostBinding('style.position')  position = 'absolute';
-  @HostBinding('style.top')  top = '0px'; */
+  @HostBinding('style.top')  top = '0px';
 
   constructor(private fb: FormBuilder, private dataService: DataService,
   						public actionCreators: UserActionCreators, private router: Router,
