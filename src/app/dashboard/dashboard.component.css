@@ -1,0 +1,26 @@
+#car-cards-pane {
+	position: absolute;
+	top: 0;
+	left: 23em;
+	width: calc(100vw - 25em);
+	min-width: 18em;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+@media screen and (min-width: 1280px) {
+	#car-cards-pane {
+		width: calc(85vw - 25em);
+	}
+}
+@media screen and (max-width: 786px) {
+	#car-cards-pane {
+		width: calc(100vw - 20em);
+		max-height: 90vh;
+	}
+}
+@media screen and (max-width: 650px) {
+	#car-cards-pane {
+		left: 0;
+		top: 40em;
+	}
+}
