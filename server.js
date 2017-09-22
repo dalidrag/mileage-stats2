@@ -54,7 +54,7 @@ app.post('/api/login', (req, res) => {
 	})
 	.catch(err => handleError(err, res));
 });
-// Log out (stub version)
+// Log out
 app.get('/api/logout', (req, res) => {
 	delete req.session.username;
 	res.send({authMessage: 'ok'});
@@ -92,11 +92,6 @@ app.put('/api/user/update', (req, res) => {
 // Fetch all cars of a user of a given name
 app.get('/api/cars', (req, res) => {
 	DBLink.getCars(req.session.username).then((cars) => {
-		var data = cars.map((car) => {
-  	         			let oCar = car.toObject();
-  	         			oCar.id = oCar._id;
-  	             	return oCar;
-  	           });
 		res.send({ok: true, data: cars});
 	})
 	.catch(err => handleError(err, res));
@@ -221,9 +216,6 @@ app.delete('/api/reminders/:carId/:reminderId', (req, res) => {
 app.post('/api/cars', (req, res) => {
 		var newCar = { name: req.body.name, model: req.body.model, year: req.body.year }
 		DBLink.addCar(req.session.username, newCar, req.body.base64Image).then(addedCar => {
-			let oaddedCar = addedCar.toObject();
-			oaddedCar.id = oaddedCar._id;
-
 			res.send({ok: true, data: addedCar});
 		})
 		.catch(err => handleError(err, res));
