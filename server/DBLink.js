@@ -146,7 +146,7 @@ var DBLink = {
 					user.cars.push(car);
 					user.save(err => {
 						if (err) reject(err);
-						resolve(car);
+						resolve(this.convert_idToid(car));
 					})
 				});
 			});
@@ -233,7 +233,7 @@ var DBLink = {
 				.populate('cars')
 				.exec((err, foundUser) => {
 				if (err) reject(err);
-				else resolve(foundUser.cars);
+				else resolve(this.convert_idToid(foundUser.cars));
 			});
 		});
 	},
@@ -250,7 +250,7 @@ var DBLink = {
 		return new Promise((resolve, reject) => {
 			MongoCar.findById(carId, (err, car) => {
 				if (err) reject(err);
-				else resolve(car);
+				else resolve(this.convert_idToid(car));
 			});
 		});
 	},
@@ -340,7 +340,7 @@ var DBLink = {
 				.populate('fillUps')
 				.exec((err, foundCar) => {
 				if (err) reject(err);
-				else resolve(foundCar.fillUps);
+				else resolve(this.convert_idToid(foundCar.fillUps));
 			});
 		});
 	},
@@ -357,7 +357,7 @@ var DBLink = {
 		return new Promise((resolve, reject) => {
 			MongoFillUp.findById(fillUpId, (err, fillUp) => {
 				if (err) reject(err);
-				else resolve(fillUp);
+				else resolve(this.convert_idToid(fillUp));
 			});
 		});
 	},
@@ -380,7 +380,7 @@ var DBLink = {
 					car.fillUps.push(newFillUp);
 					car.save((err, car) => {
 						if (err) reject(err);
-						resolve(newFillUp);
+						resolve(this.convert_idToid(newFillUp));
 					})
 				});
 			})
@@ -444,7 +444,7 @@ var DBLink = {
 				.populate('reminders')
 				.exec((err, foundCar) => {
 				if (err) reject(err);
-				else resolve(foundCar.reminders);
+				else resolve(this.convert_idToid(foundCar.reminders));
 			});
 		});
 	},
@@ -461,7 +461,7 @@ var DBLink = {
 		return new Promise((resolve, reject) => {
 			MongoReminder.findById(reminderId, (err, reminder) => {
 				if (err) reject(err);
-				else resolve(reminder);
+				else resolve(this.convert_idToid(reminder));
 			});
 		});
 	},
@@ -484,7 +484,7 @@ var DBLink = {
 					car.reminders.push(newReminder);
 					car.save((err, car) => {
 						if (err) reject(err);
-						resolve(newReminder);
+						resolve(this.convert_idToid(newReminder));
 					})
 				});
 			})
@@ -560,6 +560,29 @@ var DBLink = {
 				}
 			});
 		});
+	},
+	/**
+ 	* This method accepts object or an array
+ 	* and copies _id property of object or of all elements of the array
+ 	* into id property
+	*
+	* @method convert_idToid
+	* @param Object|Array
+	* @return {Object|Array}
+	*/
+	convert_idToid(o) {
+		if (Array.isArray(o)) {
+			return o.map((el) => {
+	  	 		let oEl = el.toObject();
+	  	 		oEl.id = oEl._id;
+	  	   	return oEl;
+	  	});
+		}
+		else {
+			let oo = o.toObject();
+			oo.id = oo._id;
+			return oo;
+		}
 	}
 }
 

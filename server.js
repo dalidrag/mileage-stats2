@@ -97,7 +97,7 @@ app.get('/api/cars', (req, res) => {
   	         			oCar.id = oCar._id;
   	             	return oCar;
   	           });
-		res.send({ok: true, data: data});
+		res.send({ok: true, data: cars});
 	})
 	.catch(err => handleError(err, res));
 });
@@ -111,56 +111,35 @@ app.get('/api/user', (req, res) => {
 // Fetch car of given id
 app.get('/api/cars/:id', (req, res) => {
 	DBLink.getCarById(req.params.id).then((car) => {
-		let oCar = car.toObject();
-		oCar.id = oCar._id;
-
-		res.send({ok: true, data: oCar});
+		res.send({ok: true, data: car});
 	})
 	.catch(err => handleError(err, res));
 });
 // Fetch all fill ups of a car based on car id
 app.get('/api/fillUps/:carId', (req, res) => {
 	DBLink.getFillUps(req.params.carId).then((fillUps) => {
-		var data = fillUps.map((fillUp) => {
-           				let oFillUp = fillUp.toObject();
-           				oFillUp.id = oFillUp._id;
-           	    	return oFillUp;
-  	           });
-  	           
-		res.send({ok: true, data: data});
+		res.send({ok: true, data: fillUps});
 	})
 	.catch(err => handleError(err, res));
 });
 // Fetch a fill up of given id
 app.get('/api/fillUps/one/:id', (req, res) => {
 	DBLink.getFillUpById(req.params.id).then((fillUp) => {
-		let oFillUp = fillUp.toObject();
-    oFillUp.id = oFillUp._id;
-    
-		res.send({ok: true, data: oFillUp});
+		res.send({ok: true, data: fillUp});
 	})
 	.catch(err => handleError(err, res));
 });
 // Fetch all reminders of a car based on car id
 app.get('/api/reminders/:carId', (req, res) => {
 	DBLink.getReminders(req.params.carId).then((reminders) => {
-		var data = reminders.map((reminder) => {
-           				let oReminder = reminder.toObject();
-           				oReminder.id = oReminder._id;
-           	    	return oReminder;
-  	           });
-  	           
-		res.send({ok: true, data: data});
+		res.send({ok: true, data: reminders});
 	})
 	.catch(err => handleError(err, res));
 });
 // Fetch a reminder of given id
 app.get('/api/reminders/one/:id', (req, res) => {
 	DBLink.getReminderById(req.params.id).then((reminder) => {
-		let oReminder = reminder.toObject();
-		oReminder.id = oReminder._id;
-		  	           
-		res.send({ok: true, data: oReminder});
+		res.send({ok: true, data: reminder});
 	})
 	.catch(err => handleError(err, res));
 });
@@ -182,10 +161,7 @@ app.post('/api/fillUps/:carId', (req, res) => {
 		odometer: req.body.odometer
 	}
 	DBLink.addFillUp(req.params.carId, newFillUp).then(savedFillUp => {
-		let osavedFillUp = savedFillUp.toObject();
-		osavedFillUp.id = osavedFillUp._id;
-
-		res.send({ok: true, data: osavedFillUp});
+		res.send({ok: true, data: savedFillUp});
 	})
 	.catch(err => handleError(err, res));
 });
@@ -218,10 +194,7 @@ app.post('/api/reminders/:carId', (req, res) => {
 		date: req.body.date
 	}
 	DBLink.addReminder(req.params.carId, newReminder).then(savedReminder => {
-		let osavedReminder = savedReminder.toObject();
-		osavedReminder.id = osavedReminder._id;
-
-		res.send({ok: true, data: osavedReminder});
+		res.send({ok: true, data: savedReminder});
 	})
 	.catch(err => handleError(err, res));
 });
@@ -251,7 +224,7 @@ app.post('/api/cars', (req, res) => {
 			let oaddedCar = addedCar.toObject();
 			oaddedCar.id = oaddedCar._id;
 
-			res.send({ok: true, data: oaddedCar});
+			res.send({ok: true, data: addedCar});
 		})
 		.catch(err => handleError(err, res));
 });
