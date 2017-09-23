@@ -77,16 +77,6 @@ export class AddReminderComponent implements OnInit, OnDestroy {
   }
 
   /**
-    * Trims input fields on losing focus
-    *
-    * @method onBlur
-    * @param event:any
-    */
-    onBlur(event: any) {
-      event.target.value = event.target.value.trim();
-    }
-    
-	/**
 	 * Quits the component by routing away
 	 *
 	 * @method cancel

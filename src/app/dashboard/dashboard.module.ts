@@ -13,6 +13,11 @@ import { OverdueRemindersComponent } from './summary/overdue-reminders/overdue-r
 import { CompleteRegistrationComponent } from './summary/complete-registration/complete-registration.component';
 import { DashboardComponent } from './dashboard.component';
 
+/**
+ * Shows dashboard components
+ *
+ * @module DashboardModule
+ */
 @NgModule({
   imports: [
     CommonModule,

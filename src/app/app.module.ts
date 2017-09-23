@@ -39,6 +39,11 @@ export function appStoreFactory() {
  return createStore(rootReducer);
 }
 
+/**
+ * Main application module
+ *
+ * @module AppModule
+ */
 @NgModule({
   declarations: [
     AppComponent,

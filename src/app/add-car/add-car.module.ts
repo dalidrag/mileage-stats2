@@ -9,6 +9,11 @@ import { AddCarButtonComponent } from './add-car-button/add-car-button.component
 import { AddCarComponent } from './add-car.component';
 
 
+/**
+ * Shows add car screen
+ *
+ * @module AddCarModule
+ */
 @NgModule({
   imports: [
     CommonModule,

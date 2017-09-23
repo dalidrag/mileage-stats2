@@ -143,16 +143,6 @@ export class AddCarComponent implements OnInit, OnDestroy {
      myReader.readAsDataURL(file);
   }
 
-   /**
-    * Trims input fields on losing focus
-    *
-    * @method onBlur
-    * @param event:any
-    */
-    onBlur(event: any) {
-      event.target.value = event.target.value.trim();
-    }
-    
   /**
    * Quits the component by routing away
    *

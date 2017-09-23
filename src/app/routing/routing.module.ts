@@ -111,6 +111,12 @@ const routes: Routes = [
    }
 ];
 
+/**
+ * Contains application routing data
+ *
+ * @module RoutingModule
+ */
+
 @NgModule({
   imports: [
     CommonModule,

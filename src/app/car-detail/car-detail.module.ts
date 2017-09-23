@@ -35,6 +35,11 @@ export function highchartsFactory() {
       return hc;
 }
 
+/**
+ * Shows details about a car using accordion widget
+ *
+ * @module CarDetailModule
+ */
 @NgModule({
   imports: [
     CommonModule,
