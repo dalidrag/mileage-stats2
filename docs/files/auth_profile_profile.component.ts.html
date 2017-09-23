@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>auth/profile/profile.component.ts</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/AddCarButtonComponent.html">AddCarButtonComponent</a></li>
+                                <li><a href="../classes/AddCarComponent.html">AddCarComponent</a></li>
+                                <li><a href="../classes/AddFillUpComponent.html">AddFillUpComponent</a></li>
+                                <li><a href="../classes/AddReminderComponent.html">AddReminderComponent</a></li>
+                                <li><a href="../classes/AppComponent.html">AppComponent</a></li>
+                                <li><a href="../classes/AuthService.html">AuthService</a></li>
+                                <li><a href="../classes/CarComponent.html">CarComponent</a></li>
+                                <li><a href="../classes/CarDetailViewComponent.html">CarDetailViewComponent</a></li>
+                                <li><a href="../classes/CarsComponent.html">CarsComponent</a></li>
+                                <li><a href="../classes/CarsDataResolve.html">CarsDataResolve</a></li>
+                                <li><a href="../classes/CarsListComponent.html">CarsListComponent</a></li>
+                                <li><a href="../classes/ChromeComponent.html">ChromeComponent</a></li>
+                                <li><a href="../classes/CompleteRegistrationComponent.html">CompleteRegistrationComponent</a></li>
+                                <li><a href="../classes/DataService.html">DataService</a></li>
+                                <li><a href="../classes/EditCarComponent.html">EditCarComponent</a></li>
+                                <li><a href="../classes/EditFillUpComponent.html">EditFillUpComponent</a></li>
+                                <li><a href="../classes/EditReminderComponent.html">EditReminderComponent</a></li>
+                                <li><a href="../classes/FillUpDetailComponent.html">FillUpDetailComponent</a></li>
+                                <li><a href="../classes/FillUpsComponent.html">FillUpsComponent</a></li>
+                                <li><a href="../classes/FillUpsDataResolve.html">FillUpsDataResolve</a></li>
+                                <li><a href="../classes/FillUpsListComponent.html">FillUpsListComponent</a></li>
+                                <li><a href="../classes/FillUpsListEntryComponent.html">FillUpsListEntryComponent</a></li>
+                                <li><a href="../classes/NotificationHubService.html">NotificationHubService</a></li>
+                                <li><a href="../classes/ProfileComponent.html">ProfileComponent</a></li>
+                                <li><a href="../classes/RemindersComponent.html">RemindersComponent</a></li>
+                                <li><a href="../classes/RemindersListComponent.html">RemindersListComponent</a></li>
+                                <li><a href="../classes/RemindersListEntryComponent.html">RemindersListEntryComponent</a></li>
+                                <li><a href="../classes/SignInComponent.html">SignInComponent</a></li>
+                                <li><a href="../classes/SignUpComponent.html">SignUpComponent</a></li>
+                                <li><a href="../classes/StatusBarComponent.html">StatusBarComponent</a></li>
+                                <li><a href="../classes/SummaryComponent.html">SummaryComponent</a></li>
+                                <li><a href="../classes/UtilitiesService.html">UtilitiesService</a></li>
+                                <li><a href="../classes/WellcomeComponent.html">WellcomeComponent</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/AddCarModule.html">AddCarModule</a></li>
+                                <li><a href="../modules/AppModule.html">AppModule</a></li>
+                                <li><a href="../modules/AuthModule.html">AuthModule</a></li>
+                                <li><a href="../modules/CarDetailModule.html">CarDetailModule</a></li>
+                                <li><a href="../modules/DashboardModule.html">DashboardModule</a></li>
+                                <li><a href="../modules/RoutingModule.html">RoutingModule</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: auth/profile/profile.component.ts</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/***********************************************************************************/
+import { Component, OnInit, OnDestroy, HostBinding, Inject } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;
+
+import { DataService } from &#x27;../../common/data.service&#x27;;
+import { NotificationHubService, HubNotificationType } from &#x27;../../common/notification-hub.service&#x27;;
+import { UtilitiesService } from &#x27;../../common/utilities.service&#x27;;
+
+import { UserActionCreators } from &#x27;../../redux-action-creators/user.action-creators&#x27;;
+
+import { slideFromLeftToRightAnimation } from &#x27;../../common/componentAnimations&#x27;;
+
+import { User }  from &#x27;../../common/user&#x27;;
+/***********************************************************************************/
+
+/**
+ * Displays user profile form for viewing and changing
+ * user profile data.
+ *
+ * @class ProfileComponent
+ */
+@Component({
+  selector: &#x27;app-profile&#x27;,
+  templateUrl: &#x27;./profile.component.html&#x27;,
+  styleUrls: [&#x27;./profile.component.css&#x27;],
+ animations: [ slideFromLeftToRightAnimation ]
+})
+export class ProfileComponent implements OnInit, OnDestroy {
+	user: User;
+	editUserForm: FormGroup;
+	unsubscribe;
+  unsubscribeStore;
+  @HostBinding(&#x27;@routeAnimation&#x27;) routeAnimation = true;
+  @HostBinding(&#x27;style.display&#x27;)   display = &#x27;block&#x27;;
+  @HostBinding(&#x27;style.position&#x27;)  position = &#x27;absolute&#x27;;
+  @HostBinding(&#x27;style.top&#x27;)  top = &#x27;0px&#x27;;
+
+  constructor(@Inject(&#x27;AppStore&#x27;) private appStore,
+              private fb: FormBuilder, private dataService: DataService,
+  						public actionCreators: UserActionCreators, private router: Router,
+  						private notificationHubService: NotificationHubService,
+  						private utilitiesService: UtilitiesService, private route: ActivatedRoute)
+  { }
+
+  ngOnInit() {
+		// Collect user data
+    this.unsubscribe = this.route.data
+    .subscribe((data: { user: User }) =&gt; {
+      this.user = data.user;
+      this.notificationHubService.emit(HubNotificationType.AppState, &quot;User profile (&#x27;Esc&#x27; to cancel)&quot;);
+
+      this.editUserForm = this.fb.group({  
+    	      &#x27;username&#x27;: [this.user.username], &#x27;displayName&#x27;: [this.user.displayName, Validators.maxLength(40)],
+    				&#x27;country&#x27;: [this.user.country, Validators.maxLength(50)], &#x27;postalCode&#x27;: [this.user.postalCode]
+    	    });
+    });
+
+    // Listens for escape key pressed to quit the component
+    //subscribe to Redux store state changes
+    this.unsubscribeStore = this.appStore.subscribe(() =&gt; {
+      let state = this.appStore.getState();
+      if (state.system.escKeyPressed)
+        this.cancel();
+    });
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe.unsubscribe();
+    this.unsubscribeStore();
+  }
+
+  /**
+   * This method sends edit user form values to the server
+   *
+   * @method onSubmit
+   * @param formValues The collected form values
+   */
+   onSubmit(formValues: any): void {  
+   	if (!this.editUserForm.valid) return;
+
+    let editedUser = new User;
+   	editedUser.username = formValues.username;
+   	editedUser.displayName = formValues.displayName &amp;&amp; formValues.displayName.trim();
+   	editedUser.country = formValues.country &amp;&amp; formValues.country.trim();
+   	editedUser.postalCode = formValues.postalCode;
+
+    if (editedUser.username &amp;&amp; editedUser.displayName &amp;&amp; editedUser.country &amp;&amp; editedUser.postalCode)
+      editedUser.registrationCompleted = true;
+   	
+   	this.dataService.updateUser(editedUser).then(() =&gt; {
+   		this.notificationHubService.emit(HubNotificationType.Success, &#x27;User data saved&#x27;);
+   		this.actionCreators.editUser(editedUser);
+      this.router.navigate([&#x27;/dashboard&#x27;]);
+  	 	})
+	  	.catch(error =&gt; this.utilitiesService.handleError(error));
+   }
+
+  /**
+   * Trims input fields on losing focus
+   *
+   * @method onBlur
+   * @param event:any
+   */
+   onBlur(event: any) {
+     event.target.value = event.target.value.trim();
+   }
+  
+  /**
+   * Quits the component by routing away
+   *
+   * @method cancel
+   */
+   cancel() {
+      // Simply navigate back to reminders view
+      this.router.navigate([&#x27;dashboard&#x27;]); // Go up to parent route     
+   }
+}
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
