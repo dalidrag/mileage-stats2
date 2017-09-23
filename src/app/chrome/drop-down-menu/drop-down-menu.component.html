@@ -1,0 +1,7 @@
+<button (click)="MenuClick()">
+</button>
+<div *ngIf="displayed" class="main-menu">
+	<a routerLink="/dashboard">Dashboard</a>
+	<a routerLink="/profile">Profile</a>
+	<a (click)="SignOutClick()">Sign out</a>
+</div>

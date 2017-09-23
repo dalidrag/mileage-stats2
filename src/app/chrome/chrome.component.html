@@ -12,6 +12,7 @@
 		<a (click)="signOut()">Sign out</a>
 		<span>]</span>
 	</div>
+	<app-drop-down-menu (onSignOutClick)="signOut()" class="main-menu-icon"></app-drop-down-menu>
 </div>
 <div class="application">
 	<router-outlet></router-outlet>
