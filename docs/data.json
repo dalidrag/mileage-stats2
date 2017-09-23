@@ -227,6 +227,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "chrome/drop-down-menu/drop-down-menu.component.ts": {
+            "name": "chrome/drop-down-menu/drop-down-menu.component.ts",
+            "modules": {},
+            "classes": {
+                "DropDownMenuComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "chrome/chrome.component.ts": {
             "name": "chrome/chrome.component.ts",
             "modules": {},
@@ -509,6 +518,7 @@
             "classes": {
                 "CarsListComponent": 1,
                 "CarDetailViewComponent": 1,
+                "DropDownMenuComponent": 1,
                 "ChromeComponent": 1,
                 "AuthService": 1,
                 "DataService": 1,
@@ -566,7 +576,7 @@
             "namespaces": {},
             "tag": "module",
             "file": "app.module.ts",
-            "line": 42,
+            "line": 43,
             "description": "Main application module"
         }
     },
@@ -834,6 +844,20 @@
             "file": "car-detail-view/car-detail-view.component.ts",
             "line": 9,
             "description": "This component is a view wrapper for car detail view"
+        },
+        "DropDownMenuComponent": {
+            "name": "DropDownMenuComponent",
+            "shortname": "DropDownMenuComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "CarDetailModule",
+            "namespace": "",
+            "file": "chrome/drop-down-menu/drop-down-menu.component.ts",
+            "line": 3,
+            "description": "Provides drop-down main menu for narrow screens"
         },
         "ChromeComponent": {
             "name": "ChromeComponent",

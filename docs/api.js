@@ -15,6 +15,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "ChromeComponent",
         "CompleteRegistrationComponent",
         "DataService",
+        "DropDownMenuComponent",
         "EditCarComponent",
         "EditFillUpComponent",
         "EditReminderComponent",
