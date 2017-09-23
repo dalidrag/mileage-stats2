@@ -1,7 +1,7 @@
 <form class="edit-car-view" id="edit-car-form">
 
 	<span class="input input--madoka" [class.input--filled]="carModel.value !== ''" >
-		<input #carModel class="input__field input__field--madoka" type="text" id="car-model" [(ngModel)]='car.model' [formControl]="carModelCtrl" (blur)="onBlur($event)" autofocus />
+		<input #carModel class="input__field input__field--madoka" type="text" id="car-model" [(ngModel)]='car.model' [formControl]="carModelCtrl" autofocus />
 		<label class="input__label input__label--madoka" for="car-model">
 			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
 				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
@@ -13,7 +13,7 @@
 	<div class="error" *ngIf="carModelCtrl.hasError('maxlength') && carModelCtrl.touched">You can enter at most twenty characters</div>
 
 	<span class="input input--madoka" [class.input--filled]="carName.value !== ''" >
-		<input #carName class="input__field input__field--madoka" type="text" id="car-name" [(ngModel)]='car.name' [formControl]="carNameCtrl" (blur)="onBlur($event)" />
+		<input #carName class="input__field input__field--madoka" type="text" id="car-name" [(ngModel)]='car.name' [formControl]="carNameCtrl" />
 		<label class="input__label input__label--madoka" for="car-name">
 			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
 				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
@@ -26,7 +26,7 @@
 	<div class="error" *ngIf="carNameCtrl.hasError('carNameNotUnique') && carModelCtrl.touched">This nick name already exists</div>
 
 	<span class="input input--madoka" [class.input--filled]="carYear.value !== ''" >
-		<input #carYear class="input__field input__field--madoka" type="text" id="car-year" [(ngModel)]='car.year' [formControl]="carYearCtrl" (blur)="onBlur($event)" />
+		<input #carYear class="input__field input__field--madoka" type="text" id="car-year" [(ngModel)]='car.year' [formControl]="carYearCtrl" />
 		<label class="input__label input__label--madoka" for="car-year">
 			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
 				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>

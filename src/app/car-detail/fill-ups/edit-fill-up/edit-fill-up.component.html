@@ -1,7 +1,7 @@
 <form [formGroup]="editFillUpForm" (ngSubmit)="onSubmit(editFillUpForm.value)">
 	
 	<span class="input input--madoka" [class.input--filled]="quantity.value !== ''" >
-		<input #quantity class="input__field input__field--madoka" type="number" id="quantity" [formControl]="editFillUpForm.controls['quantity']" (blur)="onBlur($event)" autofocus />
+		<input #quantity class="input__field input__field--madoka" type="number" id="quantity" [formControl]="editFillUpForm.controls['quantity']" autofocus />
 		<label class="input__label input__label--madoka" for="quantity">
 			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
 				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
@@ -12,7 +12,7 @@
 	<div class="error" *ngIf="editFillUpForm.controls['quantity'].hasError('required') && editFillUpForm.controls['quantity'].touched">You must provide fuel quantity</div>
 
 	<span class="input input--madoka" [class.input--filled]="price.value !== ''" >
-		<input #price class="input__field input__field--madoka" type="text" id="price" [formControl]="editFillUpForm.controls['price']" (blur)="onBlur($event)" />
+		<input #price class="input__field input__field--madoka" type="text" id="price" [formControl]="editFillUpForm.controls['price']" />
 		<label class="input__label input__label--madoka" for="price">
 			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
 				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
@@ -24,7 +24,7 @@
 	<div class="error" *ngIf="editFillUpForm.controls['price'].hasError('pattern') && editFillUpForm.controls['price'].touched">Not a valid number</div>
 	
 	<span class="input input--madoka" [class.input--filled]="odometer.value !== ''" >
-		<input #odometer class="input__field input__field--madoka" type="number" id="odometer" [formControl]="editFillUpForm.controls['odometer']" (blur)="onBlur($event)" />
+		<input #odometer class="input__field input__field--madoka" type="number" id="odometer" [formControl]="editFillUpForm.controls['odometer']" />
 		<label class="input__label input__label--madoka" for="odometer">
 			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
 				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
@@ -35,7 +35,7 @@
 	<div class="error" *ngIf="editFillUpForm.controls['odometer'].hasError('required') && editFillUpForm.controls['odometer'].touched">You must provide odometer value</div>
 	
 	<span class="input input--madoka" [class.input--filled]="station.value !== ''" >
-		<input #station class="input__field input__field--madoka" type="text" id="station" [formControl]="editFillUpForm.controls['station']" (blur)="onBlur($event)" />
+		<input #station class="input__field input__field--madoka" type="text" id="station" [formControl]="editFillUpForm.controls['station']" />
 		<label class="input__label input__label--madoka" for="station">
 			<svg class="graphic graphic--madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
 				<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>

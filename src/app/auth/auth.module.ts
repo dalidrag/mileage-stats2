@@ -11,7 +11,7 @@ import { ProfileComponent } from './profile/profile.component';
 /**
  * Contains all the authentication and user profile functionality.
  *
- * @class AuthModule
+ * @module AuthModule
  */
 @NgModule({
   imports: [
