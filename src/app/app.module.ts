@@ -14,6 +14,7 @@ import { StatusBarComponent } from './status-bar/status-bar.component';
 import { CarsListComponent } from './car-detail-view/cars-list/cars-list.component';
 import { WellcomeComponent } from './wellcome/wellcome.component';
 import { ChromeComponent } from './chrome/chrome.component';
+import { DropDownMenuComponent } from './chrome/drop-down-menu/drop-down-menu.component';
 
 import { CarDetailModule } from './car-detail/car-detail.module';
 
@@ -51,7 +52,8 @@ export function appStoreFactory() {
     CarDetailViewComponent,
     CarsListComponent,
     WellcomeComponent,
-    ChromeComponent
+    ChromeComponent,
+    DropDownMenuComponent
   ],
   imports: [
     RoutingModule,

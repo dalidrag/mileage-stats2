@@ -37,6 +37,9 @@
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
+.main-menu-icon {
+	display: none;
+}
 @media screen and (max-width: 1080px) {
 	.application {
 		height: 120vh;
@@ -46,5 +49,11 @@
 @media screen and (max-width: 786px) {
 	.application {
 		height: 160vh;
+	}
+	.main-menu-icon {
+		display: block;
+	}
+	.main-menu {
+		display: none;
 	}
 }
