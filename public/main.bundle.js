@@ -101,7 +101,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/add-car/add-car.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"add-car-view\">\n\t<div class=\"form\">\n\t\t<span class=\"input input--madoka\" [class.input--filled]=\"carModel.value !== ''\" >\n\t\t\t<input #carModel class=\"input__field input__field--madoka\" type=\"text\" id=\"car-model\" [(ngModel)]='car.model' [formControl]=\"carModelCtrl\" (blur)=\"onBlur($event)\" autofocus />\n\t\t\t<label class=\"input__label input__label--madoka\" for=\"car-model\">\n\t\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t\t</svg>\n\t\t\t\t<span class=\"input__label-content input__label-content--madoka\">Car Model</span>\n\t\t\t</label>\n\t\t</span>\n\t\t<div class=\"error\" *ngIf=\"carModelCtrl.hasError('required') && carModelCtrl.touched\">You must provide car model</div>\n\t\t<div class=\"error\" *ngIf=\"carModelCtrl.hasError('maxlength') && carModelCtrl.touched\">You can enter at most twenty characters</div>\n\n\t\t<span class=\"input input--madoka\" [class.input--filled]=\"carName.value !== ''\" >\n\t\t\t<input #carName class=\"input__field input__field--madoka\" type=\"text\" id=\"car-name\" [(ngModel)]='car.name' [formControl]=\"carNameCtrl\" (blur)=\"onBlur($event)\" />\n\t\t\t<label class=\"input__label input__label--madoka\" for=\"car-name\">\n\t\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t\t</svg>\n\t\t\t\t<span class=\"input__label-content input__label-content--madoka\">Car Nick Name</span>\n\t\t\t</label>\n\t\t</span>\n\t\t<div class=\"error\" *ngIf=\"carNameCtrl.hasError('required') && carNameCtrl.touched\">You must provide car name</div>\n\t\t<div class=\"error\" *ngIf=\"carNameCtrl.hasError('maxlength') && carNameCtrl.touched\">You can enter at most twenty characters</div>\n\t\t<div class=\"error\" *ngIf=\"carNameCtrl.hasError('carNameNotUnique') && carModelCtrl.touched\">This nick name already exists</div>\n\n\t\t<span class=\"input input--madoka\" [class.input--filled]=\"carYear.value !== ''\" >\n\t\t\t<input #carYear class=\"input__field input__field--madoka\" type=\"text\" id=\"car-year\" [(ngModel)]='car.year' [formControl]=\"carYearCtrl\" (blur)=\"onBlur($event)\"  />\n\t\t\t<label class=\"input__label input__label--madoka\" for=\"car-year\">\n\t\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t\t</svg>\n\t\t\t\t<span class=\"input__label-content input__label-content--madoka\">Car Year</span>\n\t\t\t</label>\n\t\t</span>\n\t\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('required') && carYearCtrl.touched\">You must provide car year</div>\n\t\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('pattern') && carYearCtrl.touched\">Year can contain only digits</div>\n\t\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('minlength') && carYearCtrl.touched\">You must enter exactly four characters</div>\n\t\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('maxlength') && carYearCtrl.touched\">You must enter exactly four characters</div>\n\n\t\t<div class=\"file-upload\">\n\t\t\t<span class=\"text\">Upload Image</span>\n\t\t\t<input id=\"car-avatar\" name=\"carAvatar\" type=\"file\" (change)=\"fileChangeListener($event)\" />\n\t\t</div>\n\n\t\t<img-cropper [image]=\"data\" [settings]=\"cropperSettings\"></img-cropper>\n\t\t<div class=\"image-text\" *ngIf=\"!imageValid\">Image must be at least 110px x 110px</div>\n\t\t<button id=\"addCarButton\" (click)=\"writeCarData()\" [disabled]=\"!addCarForm.valid\">\n\t\t\t<img class=\"button-image\" src=\"/assets/images/button-add.png\" />\n\t\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t\t</button>\n\t</div>\n</div>"
+module.exports = "<div class=\"add-car-view\">\n\t<div class=\"form\">\n\t\t<span class=\"input input--madoka\" [class.input--filled]=\"carModel.value !== ''\" >\n\t\t\t<input #carModel class=\"input__field input__field--madoka\" type=\"text\" id=\"car-model\" [(ngModel)]='car.model' [formControl]=\"carModelCtrl\" autofocus />\n\t\t\t<label class=\"input__label input__label--madoka\" for=\"car-model\">\n\t\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t\t</svg>\n\t\t\t\t<span class=\"input__label-content input__label-content--madoka\">Car Model</span>\n\t\t\t</label>\n\t\t</span>\n\t\t<div class=\"error\" *ngIf=\"carModelCtrl.hasError('required') && carModelCtrl.touched\">You must provide car model</div>\n\t\t<div class=\"error\" *ngIf=\"carModelCtrl.hasError('maxlength') && carModelCtrl.touched\">You can enter at most twenty characters</div>\n\n\t\t<span class=\"input input--madoka\" [class.input--filled]=\"carName.value !== ''\" >\n\t\t\t<input #carName class=\"input__field input__field--madoka\" type=\"text\" id=\"car-name\" [(ngModel)]='car.name' [formControl]=\"carNameCtrl\" />\n\t\t\t<label class=\"input__label input__label--madoka\" for=\"car-name\">\n\t\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t\t</svg>\n\t\t\t\t<span class=\"input__label-content input__label-content--madoka\">Car Nick Name</span>\n\t\t\t</label>\n\t\t</span>\n\t\t<div class=\"error\" *ngIf=\"carNameCtrl.hasError('required') && carNameCtrl.touched\">You must provide car name</div>\n\t\t<div class=\"error\" *ngIf=\"carNameCtrl.hasError('maxlength') && carNameCtrl.touched\">You can enter at most twenty characters</div>\n\t\t<div class=\"error\" *ngIf=\"carNameCtrl.hasError('carNameNotUnique') && carModelCtrl.touched\">This nick name already exists</div>\n\n\t\t<span class=\"input input--madoka\" [class.input--filled]=\"carYear.value !== ''\" >\n\t\t\t<input #carYear class=\"input__field input__field--madoka\" type=\"text\" id=\"car-year\" [(ngModel)]='car.year' [formControl]=\"carYearCtrl\" />\n\t\t\t<label class=\"input__label input__label--madoka\" for=\"car-year\">\n\t\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t\t</svg>\n\t\t\t\t<span class=\"input__label-content input__label-content--madoka\">Car Year</span>\n\t\t\t</label>\n\t\t</span>\n\t\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('required') && carYearCtrl.touched\">You must provide car year</div>\n\t\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('pattern') && carYearCtrl.touched\">Year can contain only digits</div>\n\t\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('minlength') && carYearCtrl.touched\">You must enter exactly four characters</div>\n\t\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('maxlength') && carYearCtrl.touched\">You must enter exactly four characters</div>\n\n\t\t<div class=\"file-upload\">\n\t\t\t<span class=\"text\">Upload Image</span>\n\t\t\t<input id=\"car-avatar\" name=\"carAvatar\" type=\"file\" (change)=\"fileChangeListener($event)\" />\n\t\t</div>\n\n\t\t<img-cropper [image]=\"data\" [settings]=\"cropperSettings\"></img-cropper>\n\t\t<div class=\"image-text\" *ngIf=\"!imageValid\">Image must be at least 110px x 110px</div>\n\t\t<button id=\"addCarButton\" (click)=\"writeCarData()\" [disabled]=\"!addCarForm.valid\">\n\t\t\t<img class=\"button-image\" src=\"/assets/images/button-add.png\" />\n\t\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t\t</button>\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -244,15 +244,6 @@ var AddCarComponent = AddCarComponent_1 = (function () {
         myReader.readAsDataURL(file);
     };
     /**
-     * Trims input fields on losing focus
-     *
-     * @method onBlur
-     * @param event:any
-     */
-    AddCarComponent.prototype.onBlur = function (event) {
-        event.target.value = event.target.value.trim();
-    };
-    /**
      * Quits the component by routing away
      *
      * @method cancel
@@ -337,6 +328,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+/**
+ * Shows add car screen
+ *
+ * @module AddCarModule
+ */
 var AddCarModule = (function () {
     function AddCarModule() {
     }
@@ -446,19 +442,20 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__car_detail_view_cars_list_cars_list_component__ = __webpack_require__("../../../../../src/app/car-detail-view/cars-list/cars-list.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__wellcome_wellcome_component__ = __webpack_require__("../../../../../src/app/wellcome/wellcome.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__chrome_chrome_component__ = __webpack_require__("../../../../../src/app/chrome/chrome.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__car_detail_car_detail_module__ = __webpack_require__("../../../../../src/app/car-detail/car-detail.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__routing_routing_module__ = __webpack_require__("../../../../../src/app/routing/routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__common_data_service__ = __webpack_require__("../../../../../src/app/common/data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__common_notification_hub_service__ = __webpack_require__("../../../../../src/app/common/notification-hub.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__common_utilities_service__ = __webpack_require__("../../../../../src/app/common/utilities.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_redux__ = __webpack_require__("../../../../redux/es/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__redux_store_index__ = __webpack_require__("../../../../../src/app/redux-store/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__redux_action_creators_fill_up_action_creators__ = __webpack_require__("../../../../../src/app/redux-action-creators/fill-up-action-creators.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__redux_action_creators_reminder_action_creators__ = __webpack_require__("../../../../../src/app/redux-action-creators/reminder.action-creators.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__redux_action_creators_system_action_creators__ = __webpack_require__("../../../../../src/app/redux-action-creators/system.action-creators.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__redux_action_creators_user_action_creators__ = __webpack_require__("../../../../../src/app/redux-action-creators/user.action-creators.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__chrome_drop_down_menu_drop_down_menu_component__ = __webpack_require__("../../../../../src/app/chrome/drop-down-menu/drop-down-menu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__car_detail_car_detail_module__ = __webpack_require__("../../../../../src/app/car-detail/car-detail.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__routing_routing_module__ = __webpack_require__("../../../../../src/app/routing/routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__common_data_service__ = __webpack_require__("../../../../../src/app/common/data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__common_notification_hub_service__ = __webpack_require__("../../../../../src/app/common/notification-hub.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__common_utilities_service__ = __webpack_require__("../../../../../src/app/common/utilities.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_redux__ = __webpack_require__("../../../../redux/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__redux_store_index__ = __webpack_require__("../../../../../src/app/redux-store/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__redux_action_creators_fill_up_action_creators__ = __webpack_require__("../../../../../src/app/redux-action-creators/fill-up-action-creators.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__redux_action_creators_reminder_action_creators__ = __webpack_require__("../../../../../src/app/redux-action-creators/reminder.action-creators.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__redux_action_creators_system_action_creators__ = __webpack_require__("../../../../../src/app/redux-action-creators/system.action-creators.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__redux_action_creators_user_action_creators__ = __webpack_require__("../../../../../src/app/redux-action-creators/user.action-creators.ts");
 /* unused harmony export appStoreFactory */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -467,6 +464,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -495,8 +493,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 function appStoreFactory() {
-    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_20_redux__["a" /* createStore */])(__WEBPACK_IMPORTED_MODULE_21__redux_store_index__["a" /* rootReducer */]);
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_21_redux__["a" /* createStore */])(__WEBPACK_IMPORTED_MODULE_22__redux_store_index__["a" /* rootReducer */]);
 }
+/**
+ * Main application module
+ *
+ * @module AppModule
+ */
 var AppModule = (function () {
     function AppModule() {
     }
@@ -505,17 +508,18 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_15__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_9__status_bar_status_bar_component__["a" /* StatusBarComponent */],
             __WEBPACK_IMPORTED_MODULE_8__car_detail_view_car_detail_view_component__["a" /* CarDetailViewComponent */],
             __WEBPACK_IMPORTED_MODULE_10__car_detail_view_cars_list_cars_list_component__["a" /* CarsListComponent */],
             __WEBPACK_IMPORTED_MODULE_11__wellcome_wellcome_component__["a" /* WellcomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__chrome_chrome_component__["a" /* ChromeComponent */]
+            __WEBPACK_IMPORTED_MODULE_12__chrome_chrome_component__["a" /* ChromeComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__chrome_drop_down_menu_drop_down_menu_component__["a" /* DropDownMenuComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_14__routing_routing_module__["a" /* RoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_15__routing_routing_module__["a" /* RoutingModule */],
             __WEBPACK_IMPORTED_MODULE_6__dashboard_dashboard_module__["a" /* DashboardModule */],
-            __WEBPACK_IMPORTED_MODULE_13__car_detail_car_detail_module__["a" /* CarDetailModule */],
+            __WEBPACK_IMPORTED_MODULE_14__car_detail_car_detail_module__["a" /* CarDetailModule */],
             __WEBPACK_IMPORTED_MODULE_5__add_car_add_car_module__["a" /* AddCarModule */],
             __WEBPACK_IMPORTED_MODULE_7__auth_auth_module__["a" /* AuthModule */],
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -524,11 +528,11 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_16__common_data_service__["a" /* DataService */], __WEBPACK_IMPORTED_MODULE_17__common_notification_hub_service__["a" /* NotificationHubService */], __WEBPACK_IMPORTED_MODULE_18__common_utilities_service__["a" /* UtilitiesService */], __WEBPACK_IMPORTED_MODULE_19__common_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_17__common_data_service__["a" /* DataService */], __WEBPACK_IMPORTED_MODULE_18__common_notification_hub_service__["a" /* NotificationHubService */], __WEBPACK_IMPORTED_MODULE_19__common_utilities_service__["a" /* UtilitiesService */], __WEBPACK_IMPORTED_MODULE_20__common_auth_service__["a" /* AuthService */],
             { provide: 'AppStore', useFactory: appStoreFactory },
-            __WEBPACK_IMPORTED_MODULE_22__redux_action_creators_fill_up_action_creators__["a" /* FillUpActionCreators */], __WEBPACK_IMPORTED_MODULE_23__redux_action_creators_reminder_action_creators__["a" /* ReminderActionCreators */], __WEBPACK_IMPORTED_MODULE_25__redux_action_creators_user_action_creators__["a" /* UserActionCreators */], __WEBPACK_IMPORTED_MODULE_24__redux_action_creators_system_action_creators__["a" /* SystemActionCreators */]
+            __WEBPACK_IMPORTED_MODULE_23__redux_action_creators_fill_up_action_creators__["a" /* FillUpActionCreators */], __WEBPACK_IMPORTED_MODULE_24__redux_action_creators_reminder_action_creators__["a" /* ReminderActionCreators */], __WEBPACK_IMPORTED_MODULE_26__redux_action_creators_user_action_creators__["a" /* UserActionCreators */], __WEBPACK_IMPORTED_MODULE_25__redux_action_creators_system_action_creators__["a" /* SystemActionCreators */]
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_15__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_16__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -627,7 +631,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 /**
  * Contains all the authentication and user profile functionality.
  *
- * @class AuthModule
+ * @module AuthModule
  */
 var AuthModule = (function () {
     function AuthModule() {
@@ -1921,7 +1925,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/car-detail/basic-car-data/edit-car/edit-car.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"edit-car-view\" id=\"edit-car-form\">\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"carModel.value !== ''\" >\n\t\t<input #carModel class=\"input__field input__field--madoka\" type=\"text\" id=\"car-model\" [(ngModel)]='car.model' [formControl]=\"carModelCtrl\" (blur)=\"onBlur($event)\" autofocus />\n\t\t<label class=\"input__label input__label--madoka\" for=\"car-model\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Car Model</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"carModelCtrl.hasError('required') && carModelCtrl.touched\">You must provide car model</div>\n\t<div class=\"error\" *ngIf=\"carModelCtrl.hasError('maxlength') && carModelCtrl.touched\">You can enter at most twenty characters</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"carName.value !== ''\" >\n\t\t<input #carName class=\"input__field input__field--madoka\" type=\"text\" id=\"car-name\" [(ngModel)]='car.name' [formControl]=\"carNameCtrl\" (blur)=\"onBlur($event)\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"car-name\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Car Nick Name</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"carNameCtrl.hasError('required') && carNameCtrl.touched\">You must provide car name</div>\n\t<div class=\"error\" *ngIf=\"carNameCtrl.hasError('maxlength') && carNameCtrl.touched\">You can enter at most twenty characters</div>\n\t<div class=\"error\" *ngIf=\"carNameCtrl.hasError('carNameNotUnique') && carModelCtrl.touched\">This nick name already exists</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"carYear.value !== ''\" >\n\t\t<input #carYear class=\"input__field input__field--madoka\" type=\"text\" id=\"car-year\" [(ngModel)]='car.year' [formControl]=\"carYearCtrl\" (blur)=\"onBlur($event)\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"car-year\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Car Year</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('required') && carYearCtrl.touched\">You must provide car year</div>\n\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('pattern') && carYearCtrl.touched\">Year can contain only digits</div>\n\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('minlength') && carYearCtrl.touched\">You must enter exactly four characters</div>\n\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('maxlength') && carYearCtrl.touched\">You must enter exactly four characters</div>\n\n\t<div class=\"file-upload\">\n\t\t<span class=\"text\">Upload Image</span>\n\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t\t<input id=\"car-avatar\" name=\"carAvatar\" type=\"file\" (change)=\"fileChangeListener($event)\" />\n\t</div>\n\t\n\t<img-cropper [image]=\"data\" [settings]=\"cropperSettings\"></img-cropper>\n\t<div class=\"image-text\" *ngIf=\"!imageValid\">Image must be at least 110px x 110px</div>\n\t<button id=\"updateCarButton\" (click)=\"writeCarData()\" [disabled]=\"!editCarForm.valid\">\n\t\t<img class=\"button-image\" src=\"/assets/images/button-save.png\" />\n\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t</button>\n</form>\n"
+module.exports = "<form class=\"edit-car-view\" id=\"edit-car-form\">\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"carModel.value !== ''\" >\n\t\t<input #carModel class=\"input__field input__field--madoka\" type=\"text\" id=\"car-model\" [(ngModel)]='car.model' [formControl]=\"carModelCtrl\" autofocus />\n\t\t<label class=\"input__label input__label--madoka\" for=\"car-model\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Car Model</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"carModelCtrl.hasError('required') && carModelCtrl.touched\">You must provide car model</div>\n\t<div class=\"error\" *ngIf=\"carModelCtrl.hasError('maxlength') && carModelCtrl.touched\">You can enter at most twenty characters</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"carName.value !== ''\" >\n\t\t<input #carName class=\"input__field input__field--madoka\" type=\"text\" id=\"car-name\" [(ngModel)]='car.name' [formControl]=\"carNameCtrl\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"car-name\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Car Nick Name</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"carNameCtrl.hasError('required') && carNameCtrl.touched\">You must provide car name</div>\n\t<div class=\"error\" *ngIf=\"carNameCtrl.hasError('maxlength') && carNameCtrl.touched\">You can enter at most twenty characters</div>\n\t<div class=\"error\" *ngIf=\"carNameCtrl.hasError('carNameNotUnique') && carModelCtrl.touched\">This nick name already exists</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"carYear.value !== ''\" >\n\t\t<input #carYear class=\"input__field input__field--madoka\" type=\"text\" id=\"car-year\" [(ngModel)]='car.year' [formControl]=\"carYearCtrl\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"car-year\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Car Year</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('required') && carYearCtrl.touched\">You must provide car year</div>\n\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('pattern') && carYearCtrl.touched\">Year can contain only digits</div>\n\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('minlength') && carYearCtrl.touched\">You must enter exactly four characters</div>\n\t<div class=\"error\" *ngIf=\"carYearCtrl.hasError('maxlength') && carYearCtrl.touched\">You must enter exactly four characters</div>\n\n\t<div class=\"file-upload\">\n\t\t<span class=\"text\">Upload Image</span>\n\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t\t<input id=\"car-avatar\" name=\"carAvatar\" type=\"file\" (change)=\"fileChangeListener($event)\" />\n\t</div>\n\t\n\t<img-cropper [image]=\"data\" [settings]=\"cropperSettings\"></img-cropper>\n\t<div class=\"image-text\" *ngIf=\"!imageValid\">Image must be at least 110px x 110px</div>\n\t<button id=\"updateCarButton\" (click)=\"writeCarData()\" [disabled]=\"!editCarForm.valid\">\n\t\t<img class=\"button-image\" src=\"/assets/images/button-save.png\" />\n\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t</button>\n</form>\n"
 
 /***/ }),
 
@@ -2073,15 +2077,6 @@ var EditCarComponent = EditCarComponent_1 = (function () {
             };
         };
         myReader.readAsDataURL(file);
-    };
-    /**
-     * Trims input fields on losing focus
-     *
-     * @method onBlur
-     * @param event:any
-     */
-    EditCarComponent.prototype.onBlur = function (event) {
-        event.target.value = event.target.value.trim();
     };
     /**
      * Quits the component by routing away
@@ -2286,6 +2281,11 @@ function highchartsFactory() {
     dd(hc);
     return hc;
 }
+/**
+ * Shows details about a car using accordion widget
+ *
+ * @module CarDetailModule
+ */
 var CarDetailModule = (function () {
     function CarDetailModule() {
     }
@@ -2334,7 +2334,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/car-detail/fill-ups/add-fill-up/add-fill-up.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"addFillUpForm\" (ngSubmit)=\"onSubmit(addFillUpForm.value)\">\n\t\n\t<span class=\"input input--madoka\" [class.input--filled]=\"quantity.value !== ''\" >\n\t\t<input #quantity class=\"input__field input__field--madoka\" type=\"number\" id=\"quantity\" [formControl]=\"addFillUpForm.controls['quantity']\" (blur)=\"onBlur($event)\" autofocus />\n\t\t<label class=\"input__label input__label--madoka\" for=\"quantity\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Gallons</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addFillUpForm.controls['quantity'].hasError('required') && addFillUpForm.controls['quantity'].touched\">You must provide fuel quantity</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"price.value !== ''\" >\n\t\t<input #price class=\"input__field input__field--madoka\" type=\"text\" id=\"price\" [formControl]=\"addFillUpForm.controls['price']\" (blur)=\"onBlur($event)\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"price\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Price per gallon</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addFillUpForm.controls['price'].hasError('required') && addFillUpForm.controls['price'].touched\">You must provide fuel price</div>\n\t<div class=\"error\" *ngIf=\"addFillUpForm.controls['price'].hasError('pattern') && addFillUpForm.controls['price'].touched\">Not a valid number</div>\n\t\n\t<span class=\"input input--madoka\" [class.input--filled]=\"odometer.value !== ''\" >\n\t\t<input #odometer class=\"input__field input__field--madoka\" type=\"number\" id=\"odometer\" [formControl]=\"addFillUpForm.controls['odometer']\" (blur)=\"onBlur($event)\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"odometer\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Odometer</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addFillUpForm.controls['odometer'].hasError('required') && addFillUpForm.controls['odometer'].touched\">You must provide odometer value</div>\n\t\n\t<span class=\"input input--madoka\" [class.input--filled]=\"station.value !== ''\" >\n\t\t<input #station class=\"input__field input__field--madoka\" type=\"text\" id=\"station\" [formControl]=\"addFillUpForm.controls['station']\" (blur)=\"onBlur($event)\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"station\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Station</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addFillUpForm.controls['station'].hasError('maxlength') && addFillUpForm.controls['station'].touched\">At most 20 characters</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"date.value !== ''\" >\n\t\t<input #date class=\"input__field input__field--madoka\" type=\"date\" id=\"date\" [formControl]=\"addFillUpForm.controls['date']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"date\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\"></span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addFillUpForm.controls['date'].hasError('required') && addFillUpForm.controls['date'].touched\">You must enter a date</div>\n\n\t<button type=\"submit\" [disabled]=\"!addFillUpForm.valid\" >\n\t\t<img class=\"button-image\" src=\"/assets/images/button-save.png\" />\n\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t</button>\n</form>\n"
+module.exports = "<form [formGroup]=\"addFillUpForm\" (ngSubmit)=\"onSubmit(addFillUpForm.value)\">\n\t\n\t<span class=\"input input--madoka\" [class.input--filled]=\"quantity.value !== ''\" >\n\t\t<input #quantity class=\"input__field input__field--madoka\" type=\"number\" id=\"quantity\" [formControl]=\"addFillUpForm.controls['quantity']\" autofocus />\n\t\t<label class=\"input__label input__label--madoka\" for=\"quantity\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Gallons</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addFillUpForm.controls['quantity'].hasError('required') && addFillUpForm.controls['quantity'].touched\">You must provide fuel quantity</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"price.value !== ''\" >\n\t\t<input #price class=\"input__field input__field--madoka\" type=\"text\" id=\"price\" [formControl]=\"addFillUpForm.controls['price']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"price\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Price per gallon</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addFillUpForm.controls['price'].hasError('required') && addFillUpForm.controls['price'].touched\">You must provide fuel price</div>\n\t<div class=\"error\" *ngIf=\"addFillUpForm.controls['price'].hasError('pattern') && addFillUpForm.controls['price'].touched\">Not a valid number</div>\n\t\n\t<span class=\"input input--madoka\" [class.input--filled]=\"odometer.value !== ''\" >\n\t\t<input #odometer class=\"input__field input__field--madoka\" type=\"number\" id=\"odometer\" [formControl]=\"addFillUpForm.controls['odometer']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"odometer\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Odometer</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addFillUpForm.controls['odometer'].hasError('required') && addFillUpForm.controls['odometer'].touched\">You must provide odometer value</div>\n\t\n\t<span class=\"input input--madoka\" [class.input--filled]=\"station.value !== ''\" >\n\t\t<input #station class=\"input__field input__field--madoka\" type=\"text\" id=\"station\" [formControl]=\"addFillUpForm.controls['station']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"station\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Station</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addFillUpForm.controls['station'].hasError('maxlength') && addFillUpForm.controls['station'].touched\">At most 20 characters</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"date.value !== ''\" >\n\t\t<input #date class=\"input__field input__field--madoka\" type=\"date\" id=\"date\" [formControl]=\"addFillUpForm.controls['date']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"date\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\"></span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addFillUpForm.controls['date'].hasError('required') && addFillUpForm.controls['date'].touched\">You must enter a date</div>\n\n\t<button type=\"submit\" [disabled]=\"!addFillUpForm.valid\" >\n\t\t<img class=\"button-image\" src=\"/assets/images/button-save.png\" />\n\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t</button>\n</form>\n"
 
 /***/ }),
 
@@ -2433,15 +2433,6 @@ var AddFillUpComponent = (function () {
             .catch(function (error) { return _this.utilitiesService.handleError(error); });
     };
     /**
-      * Trims input fields on losing focus
-      *
-      * @method onBlur
-      * @param event:any
-      */
-    AddFillUpComponent.prototype.onBlur = function (event) {
-        event.target.value = event.target.value.trim();
-    };
-    /**
      * Quits the component by routing away
      *
      * @method cancel
@@ -2488,7 +2479,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/car-detail/fill-ups/edit-fill-up/edit-fill-up.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"editFillUpForm\" (ngSubmit)=\"onSubmit(editFillUpForm.value)\">\n\t\n\t<span class=\"input input--madoka\" [class.input--filled]=\"quantity.value !== ''\" >\n\t\t<input #quantity class=\"input__field input__field--madoka\" type=\"number\" id=\"quantity\" [formControl]=\"editFillUpForm.controls['quantity']\" (blur)=\"onBlur($event)\" autofocus />\n\t\t<label class=\"input__label input__label--madoka\" for=\"quantity\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Gallons</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editFillUpForm.controls['quantity'].hasError('required') && editFillUpForm.controls['quantity'].touched\">You must provide fuel quantity</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"price.value !== ''\" >\n\t\t<input #price class=\"input__field input__field--madoka\" type=\"text\" id=\"price\" [formControl]=\"editFillUpForm.controls['price']\" (blur)=\"onBlur($event)\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"price\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Price per gallon</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editFillUpForm.controls['price'].hasError('required') && editFillUpForm.controls['price'].touched\">You must provide fuel price</div>\n\t<div class=\"error\" *ngIf=\"editFillUpForm.controls['price'].hasError('pattern') && editFillUpForm.controls['price'].touched\">Not a valid number</div>\n\t\n\t<span class=\"input input--madoka\" [class.input--filled]=\"odometer.value !== ''\" >\n\t\t<input #odometer class=\"input__field input__field--madoka\" type=\"number\" id=\"odometer\" [formControl]=\"editFillUpForm.controls['odometer']\" (blur)=\"onBlur($event)\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"odometer\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Odometer</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editFillUpForm.controls['odometer'].hasError('required') && editFillUpForm.controls['odometer'].touched\">You must provide odometer value</div>\n\t\n\t<span class=\"input input--madoka\" [class.input--filled]=\"station.value !== ''\" >\n\t\t<input #station class=\"input__field input__field--madoka\" type=\"text\" id=\"station\" [formControl]=\"editFillUpForm.controls['station']\" (blur)=\"onBlur($event)\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"station\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Station</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editFillUpForm.controls['station'].hasError('maxlength') && editFillUpForm.controls['station'].touched\">At most 20 characters</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"date.value !== ''\" >\n\t\t<input #date class=\"input__field input__field--madoka\" type=\"date\" id=\"date\" [formControl]=\"editFillUpForm.controls['date']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"date\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\"></span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editFillUpForm.controls['date'].hasError('required') && editFillUpForm.controls['date'].touched\">You must enter a date</div>\n\n\t<button type=\"submit\" [disabled]=\"!editFillUpForm.valid\" >\n\t\t<img class=\"button-image\" src=\"/assets/images/button-save.png\" />\n\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t</button>\n</form>"
+module.exports = "<form [formGroup]=\"editFillUpForm\" (ngSubmit)=\"onSubmit(editFillUpForm.value)\">\n\t\n\t<span class=\"input input--madoka\" [class.input--filled]=\"quantity.value !== ''\" >\n\t\t<input #quantity class=\"input__field input__field--madoka\" type=\"number\" id=\"quantity\" [formControl]=\"editFillUpForm.controls['quantity']\" autofocus />\n\t\t<label class=\"input__label input__label--madoka\" for=\"quantity\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Gallons</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editFillUpForm.controls['quantity'].hasError('required') && editFillUpForm.controls['quantity'].touched\">You must provide fuel quantity</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"price.value !== ''\" >\n\t\t<input #price class=\"input__field input__field--madoka\" type=\"text\" id=\"price\" [formControl]=\"editFillUpForm.controls['price']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"price\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Price per gallon</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editFillUpForm.controls['price'].hasError('required') && editFillUpForm.controls['price'].touched\">You must provide fuel price</div>\n\t<div class=\"error\" *ngIf=\"editFillUpForm.controls['price'].hasError('pattern') && editFillUpForm.controls['price'].touched\">Not a valid number</div>\n\t\n\t<span class=\"input input--madoka\" [class.input--filled]=\"odometer.value !== ''\" >\n\t\t<input #odometer class=\"input__field input__field--madoka\" type=\"number\" id=\"odometer\" [formControl]=\"editFillUpForm.controls['odometer']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"odometer\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Odometer</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editFillUpForm.controls['odometer'].hasError('required') && editFillUpForm.controls['odometer'].touched\">You must provide odometer value</div>\n\t\n\t<span class=\"input input--madoka\" [class.input--filled]=\"station.value !== ''\" >\n\t\t<input #station class=\"input__field input__field--madoka\" type=\"text\" id=\"station\" [formControl]=\"editFillUpForm.controls['station']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"station\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Station</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editFillUpForm.controls['station'].hasError('maxlength') && editFillUpForm.controls['station'].touched\">At most 20 characters</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"date.value !== ''\" >\n\t\t<input #date class=\"input__field input__field--madoka\" type=\"date\" id=\"date\" [formControl]=\"editFillUpForm.controls['date']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"date\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\"></span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editFillUpForm.controls['date'].hasError('required') && editFillUpForm.controls['date'].touched\">You must enter a date</div>\n\n\t<button type=\"submit\" [disabled]=\"!editFillUpForm.valid\" >\n\t\t<img class=\"button-image\" src=\"/assets/images/button-save.png\" />\n\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t</button>\n</form>"
 
 /***/ }),
 
@@ -2588,15 +2579,6 @@ var EditFillUpComponent = (function () {
             _this.actionCreators.selectFillUp(editedFillUp);
         })
             .catch(function (error) { return _this.utilitiesService.handleError(error); });
-    };
-    /**
-      * Trims input fields on losing focus
-      *
-      * @method onBlur
-      * @param event:any
-      */
-    EditFillUpComponent.prototype.onBlur = function (event) {
-        event.target.value = event.target.value.trim();
     };
     /**
      * Quits the component by routing away
@@ -3069,7 +3051,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/car-detail/reminders/add-reminder/add-reminder.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"addReminderForm\" (ngSubmit)=\"onSubmit(addReminderForm.value)\">\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"text.value !== ''\" >\n\t\t<input #text class=\"input__field input__field--madoka\" type=\"text\" id=\"text\" [formControl]=\"addReminderForm.controls['text']\" (blur)=\"onBlur($event)\" autofocus />\n\t\t<label class=\"input__label input__label--madoka\" for=\"text\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Reminder text</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addReminderForm.controls['text'].hasError('required') && addReminderForm.controls['text'].touched\">You must provide reminder text</div>\n\t<div class=\"error\" *ngIf=\"addReminderForm.controls['text'].hasError('maxlength') && addReminderForm.controls['text'].touched\">At most 20 characters</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"date.value !== ''\" >\n\t\t<input #date class=\"input__field input__field--madoka\" type=\"date\" id=\"date\" [formControl]=\"addReminderForm.controls['date']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"date\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\"></span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addReminderForm.controls['date'].hasError('required') && addReminderForm.controls['date'].touched\">You must enter a date</div>\n\n\t<button type=\"submit\" [disabled]=\"!addReminderForm.valid\">\n\t\t<img class=\"button-image\" src=\"/assets/images/button-add.png\" />\n\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t</button>\n</form>\n"
+module.exports = "<form [formGroup]=\"addReminderForm\" (ngSubmit)=\"onSubmit(addReminderForm.value)\">\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"text.value !== ''\" >\n\t\t<input #text class=\"input__field input__field--madoka\" type=\"text\" id=\"text\" [formControl]=\"addReminderForm.controls['text']\" autofocus />\n\t\t<label class=\"input__label input__label--madoka\" for=\"text\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Reminder text</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addReminderForm.controls['text'].hasError('required') && addReminderForm.controls['text'].touched\">You must provide reminder text</div>\n\t<div class=\"error\" *ngIf=\"addReminderForm.controls['text'].hasError('maxlength') && addReminderForm.controls['text'].touched\">At most 20 characters</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"date.value !== ''\" >\n\t\t<input #date class=\"input__field input__field--madoka\" type=\"date\" id=\"date\" [formControl]=\"addReminderForm.controls['date']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"date\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\"></span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"addReminderForm.controls['date'].hasError('required') && addReminderForm.controls['date'].touched\">You must enter a date</div>\n\n\t<button type=\"submit\" [disabled]=\"!addReminderForm.valid\">\n\t\t<img class=\"button-image\" src=\"/assets/images/button-add.png\" />\n\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t</button>\n</form>\n"
 
 /***/ }),
 
@@ -3165,19 +3147,10 @@ var AddReminderComponent = (function () {
             .catch(function (error) { return _this.utilitiesService.handleError(error); });
     };
     /**
-      * Trims input fields on losing focus
-      *
-      * @method onBlur
-      * @param event:any
-      */
-    AddReminderComponent.prototype.onBlur = function (event) {
-        event.target.value = event.target.value.trim();
-    };
-    /**
-     * Quits the component by routing away
-     *
-     * @method cancel
-     */
+       * Quits the component by routing away
+       *
+       * @method cancel
+       */
     AddReminderComponent.prototype.cancel = function () {
         // Simply navigate back to reminders view
         this.router.navigate(['../'], { relativeTo: this.route }); // Go up to parent route	 	
@@ -3220,7 +3193,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/car-detail/reminders/edit-reminder/edit-reminder.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"editReminderForm\" (ngSubmit)=\"onSubmit(editReminderForm.value)\">\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"text.value !== ''\" >\n\t\t<input #text class=\"input__field input__field--madoka\" type=\"text\" id=\"text\" [formControl]=\"editReminderForm.controls['text']\" (blur)=\"onBlur($event)\" autofocus />\n\t\t<label class=\"input__label input__label--madoka\" for=\"text\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Reminder text</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editReminderForm.controls['text'].hasError('required') && editReminderForm.controls['text'].touched\">You must provide reminder text</div>\n\t<div class=\"error\" *ngIf=\"editReminderForm.controls['text'].hasError('maxlength') && editReminderForm.controls['text'].touched\">At most 20 characters</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"date.value !== ''\" >\n\t\t<input #date class=\"input__field input__field--madoka\" type=\"date\" id=\"date\" [formControl]=\"editReminderForm.controls['date']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"date\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\"></span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editReminderForm.controls['date'].hasError('required') && editReminderForm.controls['date'].touched\">You must enter date</div>\n\n\t<button type=\"submit\" [disabled]=\"!editReminderForm.valid\">\n\t\t<img class=\"button-image\" src=\"/assets/images/button-save.png\" />\n\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t</button>\n</form>\n"
+module.exports = "<form [formGroup]=\"editReminderForm\" (ngSubmit)=\"onSubmit(editReminderForm.value)\">\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"text.value !== ''\" >\n\t\t<input #text class=\"input__field input__field--madoka\" type=\"text\" id=\"text\" [formControl]=\"editReminderForm.controls['text']\" autofocus />\n\t\t<label class=\"input__label input__label--madoka\" for=\"text\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\">Reminder text</span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editReminderForm.controls['text'].hasError('required') && editReminderForm.controls['text'].touched\">You must provide reminder text</div>\n\t<div class=\"error\" *ngIf=\"editReminderForm.controls['text'].hasError('maxlength') && editReminderForm.controls['text'].touched\">At most 20 characters</div>\n\n\t<span class=\"input input--madoka\" [class.input--filled]=\"date.value !== ''\" >\n\t\t<input #date class=\"input__field input__field--madoka\" type=\"date\" id=\"date\" [formControl]=\"editReminderForm.controls['date']\" />\n\t\t<label class=\"input__label input__label--madoka\" for=\"date\">\n\t\t\t<svg class=\"graphic graphic--madoka\" width=\"100%\" height=\"100%\" viewBox=\"0 0 404 77\" preserveAspectRatio=\"none\">\n\t\t\t\t<path d=\"m0,0l404,0l0,77l-404,0l0,-77z\"/>\n\t\t\t</svg>\n\t\t\t<span class=\"input__label-content input__label-content--madoka\"></span>\n\t\t</label>\n\t</span>\n\t<div class=\"error\" *ngIf=\"editReminderForm.controls['date'].hasError('required') && editReminderForm.controls['date'].touched\">You must enter date</div>\n\n\t<button type=\"submit\" [disabled]=\"!editReminderForm.valid\">\n\t\t<img class=\"button-image\" src=\"/assets/images/button-save.png\" />\n\t\t<img class=\"button-image\" src=\"/assets/images/command-glass.png\" />\n\t</button>\n</form>\n"
 
 /***/ }),
 
@@ -3318,15 +3291,6 @@ var EditReminderComponent = (function () {
             _this.actionCreators.selectReminder(editedReminder);
         })
             .catch(function (error) { return _this.utilitiesService.handleError(error); });
-    };
-    /**
-     * Trims input fields on losing focus
-     *
-     * @method onBlur
-     * @param event:any
-     */
-    EditReminderComponent.prototype.onBlur = function (event) {
-        event.target.value = event.target.value.trim();
     };
     /**
      * Quits the component by routing away
@@ -3704,7 +3668,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".header {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-pack: justify;\n\t    -ms-flex-pack: justify;\n\t        justify-content: space-between;\n\t-webkit-box-align: center;\n\t    -ms-flex-align: center;\n\t        align-items: center;\n\tbackground-color: lightgrey;\n\tbackground-image: url(\"/assets/images/application-top.png\");\n\tbackground-size: 100% 100%;\n\tbackground-repeat: no-repeat;\n}\n.status-bar {\n\tmargin-left: 1.5em;\n}\n.wellcome {\n\tmargin-right: 1.5em;\n\tmargin-left: auto;\t/* This will push the flex item to the far right */\n\tmargin-top: 0.15rem; /* Just to perfectly align with menu text to the right */\n}\n.main-menu {\n\tmargin-right: 1.5em;\n}\n.main-menu a {\n\tfont-family: \"Segoe UI\", Frutiger, \"Frutiger Linotype\", \"Dejavu Sans\", \"Helvetica Neue\", Arial, sans-serif;\n\tfont-size: 0.8em;\n\tfont-weight: bold;\n\tcolor: darkcyan;\n\tcursor: pointer;\n}\n.main-menu span {\n\tfont-family: \"Segoe UI\", Frutiger, \"Frutiger Linotype\", \"Dejavu Sans\", \"Helvetica Neue\", Arial, sans-serif;\n\tfont-size: 0.8em;\n\tfont-weight: bold;\n}\n.application {\n\tposition: relative;\n\theight: 100vh;\n\tbackground-image: url(\"/assets/images/background.jpg\");\n\tbackground-size: 100%;\n\tbackground-repeat: no-repeat;\n}\n@media screen and (max-width: 1080px) {\n\t.application {\n\t\theight: 120vh;\n\t\tbackground-size: 1280px 100%;\n\t}\n}\n@media screen and (max-width: 786px) {\n\t.application {\n\t\theight: 160vh;\n\t}\n}\n", ""]);
+exports.push([module.i, ".header {\n\tdisplay: -webkit-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: flex;\n\t-webkit-box-pack: justify;\n\t    -ms-flex-pack: justify;\n\t        justify-content: space-between;\n\t-webkit-box-align: center;\n\t    -ms-flex-align: center;\n\t        align-items: center;\n\tbackground-color: lightgrey;\n\tbackground-image: url(\"/assets/images/application-top.png\");\n\tbackground-size: 100% 100%;\n\tbackground-repeat: no-repeat;\n}\n.status-bar {\n\tmargin-left: 1.5em;\n}\n.wellcome {\n\tmargin-right: 1.5em;\n\tmargin-left: auto;\t/* This will push the flex item to the far right */\n\tmargin-top: 0.15rem; /* Just to perfectly align with menu text to the right */\n}\n.main-menu {\n\tmargin-right: 1.5em;\n}\n.main-menu a {\n\tfont-family: \"Segoe UI\", Frutiger, \"Frutiger Linotype\", \"Dejavu Sans\", \"Helvetica Neue\", Arial, sans-serif;\n\tfont-size: 0.8em;\n\tfont-weight: bold;\n\tcolor: darkcyan;\n\tcursor: pointer;\n}\n.main-menu span {\n\tfont-family: \"Segoe UI\", Frutiger, \"Frutiger Linotype\", \"Dejavu Sans\", \"Helvetica Neue\", Arial, sans-serif;\n\tfont-size: 0.8em;\n\tfont-weight: bold;\n}\n.application {\n\tposition: relative;\n\theight: 100vh;\n\tbackground-image: url(\"/assets/images/background.jpg\");\n\tbackground-size: 100%;\n\tbackground-repeat: no-repeat;\n}\n.main-menu-icon {\n\tdisplay: none;\n}\n@media screen and (max-width: 1080px) {\n\t.application {\n\t\theight: 120vh;\n\t\tbackground-size: 1280px 100%;\n\t}\n}\n@media screen and (max-width: 786px) {\n\t.application {\n\t\theight: 160vh;\n\t}\n\t.main-menu-icon {\n\t\tdisplay: block;\n\t}\n\t.main-menu {\n\t\tdisplay: none;\n\t}\n}\n", ""]);
 
 // exports
 
@@ -3717,7 +3681,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/chrome/chrome.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"header\">\n\t<app-status-bar class=\"status-bar\"></app-status-bar>\n\t<div class=\"wellcome\">\n\t\t<app-wellcome></app-wellcome>\n\t</div>\n\t<div class=\"main-menu\">\n\t\t<span>[</span>\n\t\t<a routerLink=\"/dashboard\" id=\"menu-dashboard\">Dashboard</a>\n\t\t<span>|</span>\n\t\t<a routerLink=\"/profile\">Profile</a>\n\t\t<span>|</span>\n\t\t<a (click)=\"signOut()\">Sign out</a>\n\t\t<span>]</span>\n\t</div>\n</div>\n<div class=\"application\">\n\t<router-outlet></router-outlet>\n</div>"
+module.exports = "<div class=\"header\">\n\t<app-status-bar class=\"status-bar\"></app-status-bar>\n\t<div class=\"wellcome\">\n\t\t<app-wellcome></app-wellcome>\n\t</div>\n\t<div class=\"main-menu\">\n\t\t<span>[</span>\n\t\t<a routerLink=\"/dashboard\" id=\"menu-dashboard\">Dashboard</a>\n\t\t<span>|</span>\n\t\t<a routerLink=\"/profile\">Profile</a>\n\t\t<span>|</span>\n\t\t<a (click)=\"signOut()\">Sign out</a>\n\t\t<span>]</span>\n\t</div>\n\t<app-drop-down-menu (onSignOutClick)=\"signOut()\" class=\"main-menu-icon\"></app-drop-down-menu>\n</div>\n<div class=\"application\">\n\t<router-outlet></router-outlet>\n</div>"
 
 /***/ }),
 
@@ -3775,6 +3739,84 @@ ChromeComponent = __decorate([
 
 var _a, _b, _c;
 //# sourceMappingURL=chrome.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/chrome/drop-down-menu/drop-down-menu.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "button {\n\twidth: 1.2rem;\n\theight: 1.2rem;\n\tbackground:linear-gradient(to bottom, white 0%, white 20%,\n\t\ttransparent 20%, transparent 40%, white 40%, white 60%,\n\t\ttransparent 60%, transparent 80%, white 80%, white 100%\n\t);\n\tmargin-right: 0.2rem;\n}\n\n.main-menu {\n\tposition: absolute;\n\tright: 0;\n\tz-index: 20;\n\tbackground-color: lightgrey;\n\tborder: 1px solid black;\n}\n\na {\n\tdisplay: block;\n\tfont-family: \"Segoe UI\", Frutiger, \"Frutiger Linotype\", \"Dejavu Sans\", \"Helvetica Neue\", Arial, sans-serif;\n\tcursor: pointer;\n}\na:hover {\n\tbackground-color: white;\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/chrome/drop-down-menu/drop-down-menu.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<button (click)=\"MenuClick()\">\n</button>\n<div *ngIf=\"displayed\" class=\"main-menu\">\n\t<a routerLink=\"/dashboard\">Dashboard</a>\n\t<a routerLink=\"/profile\">Profile</a>\n\t<a (click)=\"SignOutClick()\">Sign out</a>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/chrome/drop-down-menu/drop-down-menu.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DropDownMenuComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+/**
+ * Provides drop-down main menu for narrow screens
+ *
+ * @class DropDownMenuComponent
+ */
+var DropDownMenuComponent = (function () {
+    function DropDownMenuComponent() {
+        this.onSignOutClick = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.displayed = false;
+    }
+    DropDownMenuComponent.prototype.ngOnInit = function () {
+    };
+    DropDownMenuComponent.prototype.SignOutClick = function () {
+        this.onSignOutClick.emit(true);
+    };
+    DropDownMenuComponent.prototype.MenuClick = function () {
+        this.displayed ? this.displayed = false : this.displayed = true;
+    };
+    return DropDownMenuComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", Object)
+], DropDownMenuComponent.prototype, "onSignOutClick", void 0);
+DropDownMenuComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-drop-down-menu',
+        template: __webpack_require__("../../../../../src/app/chrome/drop-down-menu/drop-down-menu.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/chrome/drop-down-menu/drop-down-menu.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], DropDownMenuComponent);
+
+//# sourceMappingURL=drop-down-menu.component.js.map
 
 /***/ }),
 
@@ -5093,6 +5135,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+/**
+ * Shows dashboard components
+ *
+ * @module DashboardModule
+ */
 var DashboardModule = (function () {
     function DashboardModule() {
     }
@@ -6752,6 +6799,11 @@ var routes = [
         ]
     }
 ];
+/**
+ * Contains application routing data
+ *
+ * @module RoutingModule
+ */
 var RoutingModule = (function () {
     function RoutingModule() {
     }
@@ -7109,8 +7161,13 @@ var _a, _b;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: true
+    production: false
 };
 //# sourceMappingURL=environment.js.map
 

@@ -1,1 +1,0 @@
-- Input field Angular validators messing up after trimming text fields
