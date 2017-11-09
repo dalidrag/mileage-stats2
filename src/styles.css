@@ -15,6 +15,10 @@ a:visited {
 	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
+*:focus {
+	border: 2px solid red !important;
+}
+
 
 /* For stylized input fields */
 .input {

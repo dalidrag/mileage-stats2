@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+## [1.0.1] - 2017-11-10
+### Changed
+- Focused element is made more visible by panting red border around it
+### Fixed
+- Sign-out now properly receives focus
 
 
 ## [1.1] - 2017-09-23
