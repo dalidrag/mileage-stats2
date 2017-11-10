@@ -33,6 +33,7 @@ export class CarCardComponent implements OnChanges {
 	milesPerGallon: number;
 	costPerMile: number;
 	costPerMonth: number;
+  imgCacheBustingURLFragment: string; 
 
   constructor(private router:Router, private utilitiesService:UtilitiesService) { }
 
@@ -47,6 +48,8 @@ export class CarCardComponent implements OnChanges {
     // Note the plus sign that drops any "extra" zeroes at the end.
     // It changes the result (which is a string) into a number again
     // which means that it uses only as many digits as necessary.
+
+    this.imgCacheBustingURLFragment = this.utilitiesService.avatarURLFragment;
   }
 
   switchToDetails(): void {

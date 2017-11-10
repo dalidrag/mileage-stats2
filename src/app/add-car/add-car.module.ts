@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule }   from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { ImageCropperModule } from '../image-cropper/image-cropper.module';
+import { ImageCropperModule } from 'ng2-img-cropper';
 
 import { AddCarButtonComponent } from './add-car-button/add-car-button.component';
 import { AddCarComponent } from './add-car.component';

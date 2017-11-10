@@ -6,7 +6,7 @@ import { ChartModule } from 'angular2-highcharts';
 import * as highcharts from 'highcharts';
 import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
 
-import { ImageCropperModule } from '../image-cropper/image-cropper.module';
+import { ImageCropperModule } from 'ng2-img-cropper';
 
 declare var require: any;
 

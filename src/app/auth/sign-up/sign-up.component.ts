@@ -21,7 +21,7 @@ import { AuthService } from '../../common/auth.service';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-	private username: string;
+	public username: string;
   showError: any;
   private userNames: Subject<string> = new Subject<string>();
 	usernameTaken: Observable<boolean> = new Observable<boolean>();

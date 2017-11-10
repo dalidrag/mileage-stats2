@@ -5,6 +5,7 @@ import { RouterModule }   from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 import { AddCarModule } from './add-car/add-car.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AuthModule } from './auth/auth.module';
@@ -24,6 +25,7 @@ import { AppComponent } from './app.component';
 
 // The class which handles AJAX data services
 import { DataService } from './common/data.service';
+
 import { NotificationHubService } from './common/notification-hub.service';
 import { UtilitiesService } from './common/utilities.service';
 import { AuthService } from './common/auth.service';
