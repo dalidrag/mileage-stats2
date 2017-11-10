@@ -5,7 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-## [1.0.1] - 2017-11-10
+
+
+## [1.1.1] - 2017-11-10
 ### Changed
 - Focused element is made more visible by panting red border around it
 - Application is now compiled ahead of time and starts much faster
