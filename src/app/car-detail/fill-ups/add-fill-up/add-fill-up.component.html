@@ -56,8 +56,11 @@
 	</span>
 	<div class="error" *ngIf="addFillUpForm.controls['date'].hasError('required') && addFillUpForm.controls['date'].touched">You must enter a date</div>
 
-	<button type="submit" [disabled]="!addFillUpForm.valid" >
-		<img class="button-image" src="/assets/images/button-save.png" />
-		<img class="button-image" src="/assets/images/command-glass.png" />
-	</button>
+	<div id="buttonContainer">
+		<button type="submit" [disabled]="!addFillUpForm.valid" >
+			<img class="button-image" src="/assets/images/button-save.png" />
+			<img class="button-image" src="/assets/images/command-glass.png" />
+		</button>
+		<button id="cancelButton" (click)="cancel()">Cancel</button>
+	</div>
 </form>

@@ -23,8 +23,11 @@
 	</span>
 	<div class="error" *ngIf="editReminderForm.controls['date'].hasError('required') && editReminderForm.controls['date'].touched">You must enter date</div>
 
-	<button type="submit" [disabled]="!editReminderForm.valid">
-		<img class="button-image" src="/assets/images/button-save.png" />
-		<img class="button-image" src="/assets/images/command-glass.png" />
-	</button>
+	<div id="buttonContainer">
+		<button type="submit" [disabled]="!editReminderForm.valid">
+			<img class="button-image" src="/assets/images/button-save.png" />
+			<img class="button-image" src="/assets/images/command-glass.png" />
+		</button>
+		<button id="cancelButton" (click)="cancel()">Cancel</button>
+	</div>
 </form>
