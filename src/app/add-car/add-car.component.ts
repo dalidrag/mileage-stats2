@@ -149,8 +149,8 @@ export class AddCarComponent implements OnInit, OnDestroy {
    * @method cancel
    */
    cancel() {
-      // Simply navigate back to reminders view
-      this.router.navigate(['dashboard']); // Go up to parent route     
+      // Simply navigate back to dashboard
+      this.router.navigate(['dashboard']);
    }
 
   /**

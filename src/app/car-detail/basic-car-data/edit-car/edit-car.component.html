@@ -46,9 +46,13 @@
 	</div>
 	
 	<img-cropper [image]="data" [settings]="cropperSettings"></img-cropper>
+	
+	<div id="buttonContainer">
 	<div class="image-text" *ngIf="!imageValid">Image must be at least 110px x 110px</div>
-	<button id="updateCarButton" (click)="writeCarData()" [disabled]="!editCarForm.valid">
-		<img class="button-image" src="/assets/images/button-save.png" />
-		<img class="button-image" src="/assets/images/command-glass.png" />
-	</button>
+		<button id="updateCarButton" (click)="writeCarData()" [disabled]="!editCarForm.valid">
+			<img class="button-image" src="/assets/images/button-save.png" />
+			<img class="button-image" src="/assets/images/command-glass.png" />
+		</button>
+		<button id="cancelButton" (click)="cancel()">Cancel</button>
+	</div>
 </form>
